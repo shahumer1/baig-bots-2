@@ -1,4 +1,4 @@
-/* All site colors live here. Theme variables follow the browser/OS preference. */
+/* All site colors live here. The header button selects the theme. */
 :root {
   color-scheme: light;
   --maroon:#701018;
@@ -137,8 +137,7 @@
   --tone-ff7a84:#FF7A84;
   --tone-fff:#FFF;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
+:root[data-theme="dark"] {
     color-scheme: dark;
     --circle-stroke:var(--tone-ff7a84);
     --impact-potential:var(--m300);
@@ -180,7 +179,6 @@
     --scene-core:#C8101E;
     --scene-shock:#FF4D5A;
     --scene-canvas-rgb:255,55,70;
-  }
 }
 @property --lg-a { syntax: '<color>'; inherits: true; initial-value: #E5060F; }
 @property --lg-b { syntax: '<color>'; inherits: true; initial-value: #DADADB; }

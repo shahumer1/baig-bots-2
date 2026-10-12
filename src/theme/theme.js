@@ -1,18 +1,18 @@
-export function getSystemTheme() {
-  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+const THEME_KEY = 'baig-bots-theme';
+
+export function getSavedTheme() {
+  try { return window.localStorage.getItem(THEME_KEY) === 'dark' ? 'dark' : 'light'; }
+  catch { return 'light'; }
 }
 
-export function followSystemTheme(root, onChange) {
-  const preference = window.matchMedia?.('(prefers-color-scheme: dark)');
-  const apply = () => {
-    const mode = preference?.matches ? 'dark' : 'light';
-    root.dataset.theme = mode;
-    document.documentElement.dataset.theme = mode;
-    onChange(mode === 'dark');
-  };
-  apply();
-  preference?.addEventListener?.('change', apply);
-  return () => preference?.removeEventListener?.('change', apply);
+export function saveTheme(mode) {
+  try { window.localStorage.setItem(THEME_KEY, mode); } catch { /* Storage can be unavailable. */ }
+}
+
+export function applyTheme(root, mode, onChange) {
+  root.dataset.theme = mode;
+  document.documentElement.dataset.theme = mode;
+  onChange(mode === 'dark');
 }
 
 export function themeColor(name) {

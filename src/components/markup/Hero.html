@@ -28,6 +28,7 @@
       <h1 class="h-display" data-hero-h1="">We build the systems that <em class="kin">think</em>, connect and scale.</h1>
       <p class="lead" data-hero="lead">Baig Bots delivers practical software, integration and automation services across enterprise applications, payment technology, data and modern digital experiences.</p>
       <div class="hero-act" data-hero="cta">
+        <!-- Previous input CTA kept for a future version.
         <form class="cmd" data-cmd="" aria-label="Tell us what you want to automate">
           <label class="cmd-in">
             <span class="cmd-pfx" aria-hidden="true">&gt;<i>_</i></span>
@@ -37,8 +38,15 @@
           <button class="btn btn-primary" type="submit" data-magnet="" data-press=""><span>Start a project</span>
             <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
         </form>
+        -->
+        <div class="hero-cta-card">
+          <div class="hero-cta-copy"><span>Have a project in mind?</span><strong>Let's make it work.</strong></div>
+          <a class="btn btn-primary" href="#contact" data-magnet="" data-press=""><span>Start a project</span>
+            <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        </div>
+        <div class="hero-ideas" data-ideas="">
         <div class="cmd-sugg" aria-label="Project ideas by service">
-          <span class="cs-k">Try</span>
+          <button class="cs-k" type="button" data-ideas-toggle="" aria-expanded="false" aria-controls="hero-ideas-panel">Explore ideas <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6L8 11L13 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
           <div class="cmd-sugg-viewport" data-sugg-slider="" role="region" aria-label="Service ideas. Scroll horizontally to see more." tabindex="0">
             <div class="cmd-sugg-track">
               <button type="button" title="AI Solutions &amp; Intelligent Agents" data-sugg="Build an AI support assistant that answers customer questions">AI support assistant</button>
@@ -59,6 +67,11 @@
               <button type="button" title="Dedicated Development Teams" data-sugg="Provide a dedicated development team for ongoing product work">Dedicated dev team</button>
             </div>
           </div>
+        </div>
+        <div class="ideas-panel" id="hero-ideas-panel" data-ideas-panel="" hidden="">
+          <span class="ideas-panel-title">Choose an idea</span>
+          <div class="ideas-grid" data-ideas-grid=""></div>
+        </div>
         </div>
         <a class="link-arrow cmd-explore" href="#services">Explore services
           <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>

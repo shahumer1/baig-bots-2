@@ -5,7 +5,7 @@ import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
 import * as THREE from 'three';
 import * as Motion from 'motion';
-import { followSystemTheme, themeColor } from './theme/theme.js';
+import { applyTheme, getSavedTheme, saveTheme, themeColor } from './theme/theme.js';
 
 
 export class BaigBotsSite {
@@ -70,7 +70,6 @@ export class BaigBotsSite {
     this._safe('progress', () => this._progress(ctx));
     this._safe('hero', () => this._hero(ctx));
     this._safe('three', () => this._hero3d(ctx));
-    this._safe('marquee', () => this._marquee(ctx));
     this._safe('headings', () => this._headings(ctx));
     this._safe('cards', () => this._cards(ctx));
     this._safe('statement', () => this._statement(ctx));
@@ -95,12 +94,23 @@ export class BaigBotsSite {
     this._cleanups.push(() => { ScrollTrigger.getAll().forEach((t) => t.kill()); });
   }
 
-  /* ---------- theme follows the browser/OS preference ---------- */
-  _theme() {
-    this._cleanups.push(followSystemTheme(this.root, (dark) => {
-      this.dark = dark;
-      this._themeHooks.forEach((fn) => { try { fn(dark); } catch (e) { console.error(e); } });
-    }));
+  /* ---------- manually selected theme ---------- */
+  _theme({ $ }) {
+    const toggle = $('[data-theme-toggle]');
+    const update = (mode, persist = false) => {
+      applyTheme(this.root, mode, (dark) => {
+        this.dark = dark;
+        this._themeHooks.forEach((fn) => { try { fn(dark); } catch (e) { console.error(e); } });
+      });
+      if (toggle) {
+        toggle.setAttribute('aria-label', mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        toggle.setAttribute('aria-pressed', String(mode === 'dark'));
+        toggle.title = mode === 'dark' ? 'Light theme' : 'Dark theme';
+      }
+      if (persist) { saveTheme(mode); }
+    };
+    update(getSavedTheme());
+    if (toggle) { this._on(toggle, 'click', () => update(this.dark ? 'light' : 'dark', true)); }
   }
 
   /* ---------- pointer: cursor ring, flashlight grid, shared position ---------- */
@@ -127,9 +137,13 @@ export class BaigBotsSite {
         rev.style.opacity = '1';
       }
       rx(e.clientX); ry(e.clientY); dx(e.clientX); dy(e.clientY);
-      rev.style.setProperty('--cx', e.clientX + 'px');
-      rev.style.setProperty('--cy', e.clientY + 'px');
       const t = e.target;
+      const overSlider = !!(t && t.closest && t.closest('.marqs,[data-sugg-slider]'));
+      rev.style.opacity = overSlider ? '0' : '1';
+      if (!overSlider) {
+        rev.style.setProperty('--cx', e.clientX + 'px');
+        rev.style.setProperty('--cy', e.clientY + 'px');
+      }
       if (t && t.closest) {
         ring.classList.toggle('hot', !!t.closest('a,button,[data-card],[data-stage],label,select,[role="tab"]'));
         ring.classList.toggle('txt', !!t.closest('input[type="text"],input[type="email"],input[type="tel"],input[type="number"],textarea'));
@@ -601,43 +615,6 @@ export class BaigBotsSite {
     this._cleanups.push(() => { cancelAnimationFrame(frameId); observer.disconnect(); });
   }
 
-  /* ---------- marquee: two kinetic strips driven by scroll velocity, slow under the cursor ---------- */
-  _marquee({ $, $$, reduce }) {
-    const band = $('[data-marq]');
-    const tracks = $$('[data-marq-track]');
-    if (!band || !tracks.length || reduce) { return; }
-    const loops = tracks.map((t) => {
-      const d = parseFloat(t.getAttribute('data-dir')) || 1;
-      const tw = d > 0
-        ? gsap.fromTo(t, { xPercent: 0 }, { xPercent: -33.3333, duration: 42, ease: 'none', repeat: -1 })
-        : gsap.fromTo(t, { xPercent: -33.3333 }, { xPercent: 0, duration: 54, ease: 'none', repeat: -1 });
-      return { tw, boost: 1 };
-    });
-    let dir = 1;
-    let boost = 1;
-    let hover = false;
-    ScrollTrigger.create({
-      start: 0,
-      end: 'max',
-      onUpdate: (self) => {
-        dir = self.direction || 1;
-        boost = 1 + Math.min(Math.abs(self.getVelocity()) / 220, 7);
-      }
-    });
-    this._on(band, 'pointerenter', () => { hover = true; });
-    this._on(band, 'pointerleave', () => { hover = false; });
-    const ease = () => {
-      boost += (1 - boost) * 0.04;
-      const target = hover ? dir * 0.12 : dir * boost;
-      loops.forEach((l) => {
-        const ts = l.tw.timeScale();
-        l.tw.timeScale(ts + (target - ts) * 0.08);
-      });
-    };
-    gsap.ticker.add(ease);
-    this._cleanups.push(() => gsap.ticker.remove(ease));
-  }
-
   /* ---------- section headings: masked line reveal, words hop on hover ---------- */
   _headings({ $$, reduce, fine }) {
     if (reduce) { return; }
@@ -874,29 +851,6 @@ export class BaigBotsSite {
     try { el.scrollIntoView({ behavior: this.reduce ? 'auto' : 'smooth', block: 'start' }); } catch (e) { el.scrollIntoView(); }
   }
 
-  _toBrief(text, engage) {
-    const form = this.root.querySelector('[data-brief]');
-    if (!form) { return; }
-    if (form.classList.contains('done') && this._briefReset) { this._briefReset(); }
-    const note = form.querySelector('[data-bnote]');
-    if (text) {
-      const ta = form.querySelector('textarea[name="details"]');
-      if (ta) {
-        ta.value = ta.value.trim() ? ta.value.trim() + '\n\n' + text : text;
-        ta.dispatchEvent(new Event('input', { bubbles: true }));
-      }
-      if (note) { note.textContent = '+ Added to step 02: ' + (text.length > 72 ? text.slice(0, 72) + '…' : text); }
-    }
-    if (engage) {
-      Array.from(form.querySelectorAll('input[name="engagement"]')).forEach((r) => { r.checked = r.value === engage; });
-      if (note) { note.textContent = '+ Model selected: ' + engage; }
-    }
-    this._scrollTo(form);
-    if (!this.reduce && note && note.textContent) {
-      gsap.fromTo(note, { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.6, delay: 0.5, ease: 'power3.out' });
-    }
-  }
-
   _toQuick(problem, description = '') {
     const form = this.root.querySelector('[data-quick-brief]');
     if (!form) { return; }
@@ -908,11 +862,12 @@ export class BaigBotsSite {
         option.textContent = problem;
         select.add(option);
       }
-      select.value = problem;
     }
-    if (description) { form.elements.description.value = description; }
+    select.value = problem || '';
+    form.elements.description.value = description;
     const status = form.querySelector('[data-quick-status]');
     if (status) { status.textContent = ''; }
+    if (typeof select.focus === 'function') { select.focus({ preventScroll: true }); }
     this._scrollTo(form);
   }
 
@@ -934,6 +889,11 @@ export class BaigBotsSite {
         this._toQuick(title);
       });
     });
+    $$('a[href="#contact"]').forEach((link) => this._on(link, 'click', (event) => {
+      if (event.defaultPrevented) { return; }
+      event.preventDefault();
+      this._toQuick('');
+    }));
     this._on(form, 'input', () => { status.textContent = ''; });
     this._on(form, 'change', () => { status.textContent = ''; });
     this._on(form, 'submit', (event) => {
@@ -943,25 +903,33 @@ export class BaigBotsSite {
     });
   }
 
-  /* ---------- hero command bar: typed placeholder, suggestions, hand-off to the brief ---------- */
+  /* ---------- hero idea slider: each idea opens the quick enquiry ---------- */
   _cmd({ $, $$, reduce }) {
-    const form = $('[data-cmd]');
-    if (!form) { return; }
-    const input = form.querySelector('input');
-    const ideas = ['Reconcile settlement files automatically', 'Route supplier invoices for approval', 'Answer customer questions with an AI assistant', 'Sync form leads to our CRM and QuickBooks', 'Alert us before production jobs fail'];
-    form.noValidate = true;
-    let idx = 0;
-    this._on(form, 'submit', (e) => {
-      e.preventDefault();
-      const v = input.value.trim();
-      this._toBrief(v ? 'Idea: ' + v : '', null);
-    });
-    $$('[data-sugg]').forEach((b) => this._on(b, 'click', () => {
-      input.value = b.getAttribute('data-sugg');
-      input.focus();
-      if (!reduce) { gsap.fromTo(form, { scale: 0.985 }, { scale: 1, duration: 0.5, ease: 'elastic.out(1, 0.4)' }); }
-    }));
+    const ideas = $('[data-ideas]');
     const slider = $('[data-sugg-slider]');
+    const panel = $('[data-ideas-panel]');
+    const grid = $('[data-ideas-grid]');
+    const toggle = $('[data-ideas-toggle]');
+    if (!ideas || !slider || !panel || !grid || !toggle) { return; }
+    $$('[data-sugg]', slider).forEach((button) => grid.appendChild(button.cloneNode(true)));
+    const showAll = (open) => {
+      panel.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    this._on(ideas, 'pointerenter', (event) => { if (event.pointerType === 'mouse') { showAll(true); } });
+    this._on(ideas, 'pointerleave', (event) => { if (event.pointerType === 'mouse') { showAll(false); } });
+    this._on(toggle, 'click', () => showAll(panel.hidden));
+    this._on(ideas, 'focusout', (event) => { if (!ideas.contains(event.relatedTarget)) { showAll(false); } });
+    this._on(ideas, 'keydown', (event) => {
+      if (event.key === 'Escape') { showAll(false); toggle.focus(); }
+    });
+    this._on(document, 'pointerdown', (event) => { if (!ideas.contains(event.target)) { showAll(false); } });
+    this._on(ideas, 'click', (event) => {
+      const button = event.target.closest('[data-sugg]');
+      if (!button) { return; }
+      showAll(false);
+      this._toQuick(button.getAttribute('title'), button.getAttribute('data-sugg'));
+    });
     if (slider) {
       let direction = 1;
       let activePointer = null;
@@ -969,7 +937,6 @@ export class BaigBotsSite {
       let dragging = false;
       let dragStartX = 0;
       let dragStartScroll = 0;
-      let focused = false;
       let holdUntil = 0;
       let suppressClick = false;
       let clickTimer = 0;
@@ -980,16 +947,14 @@ export class BaigBotsSite {
           clearTimeout(clickTimer);
           clickTimer = setTimeout(() => { suppressClick = false; }, 0);
           if (slider.contains(document.activeElement)) { document.activeElement.blur(); }
-          focused = false;
         }
         activePointer = null;
         touchDrag = false;
         dragging = false;
         slider.classList.remove('is-dragging');
-        holdUntil = window.performance.now() + 1200;
+        if (suppressClick) { holdUntil = window.performance.now() + 300; }
       };
       this._on(slider, 'pointerdown', (e) => {
-        holdUntil = window.performance.now() + 1200;
         if (e.button !== 0 && e.button !== undefined && e.pointerType !== 'touch') { return; }
         activePointer = e.pointerId;
         touchDrag = e.pointerType === 'touch';
@@ -1017,12 +982,10 @@ export class BaigBotsSite {
         e.stopPropagation();
         suppressClick = false;
       }, true);
-      this._on(slider, 'focusin', () => { focused = true; });
-      this._on(slider, 'focusout', (e) => { if (!slider.contains(e.relatedTarget)) { focused = false; holdUntil = window.performance.now() + 900; } });
       this._on(slider, 'keydown', (e) => {
         if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') { return; }
         e.preventDefault();
-        holdUntil = window.performance.now() + 1200;
+        holdUntil = window.performance.now() + 500;
         const step = Math.min(220, Math.max(120, slider.clientWidth * 0.7));
         const left = slider.scrollLeft + (e.key === 'ArrowRight' ? step : -step);
         if (typeof slider.scrollTo === 'function') { slider.scrollTo({ left, behavior: 'smooth' }); }
@@ -1035,7 +998,7 @@ export class BaigBotsSite {
           const elapsed = last ? Math.min(now - last, 64) : 0;
           last = now;
           const max = slider.scrollWidth - slider.clientWidth;
-          if (elapsed && max > 2 && activePointer === null && !focused && now >= holdUntil && !document.hidden) {
+          if (elapsed && max > 2 && activePointer === null && now >= holdUntil && !document.hidden) {
             const next = slider.scrollLeft + direction * elapsed * 0.055;
             if (next >= max) { slider.scrollLeft = max; direction = -1; }
             else if (next <= 0) { slider.scrollLeft = 0; direction = 1; }
@@ -1047,26 +1010,6 @@ export class BaigBotsSite {
         this._cleanups.push(() => { cancelAnimationFrame(frame); clearTimeout(clickTimer); });
       }
     }
-    this._on(input, 'focus', () => { input.setAttribute('placeholder', ideas[idx]); });
-    if (reduce) { return; }
-    let ch = 0;
-    let del = false;
-    let hold = 0;
-    const tick = () => {
-      if (document.activeElement === input || input.value) { return; }
-      const word = ideas[idx];
-      if (hold > 0) { hold -= 1; return; }
-      if (!del) {
-        ch += 1;
-        if (ch >= word.length) { del = true; hold = 34; }
-      } else {
-        ch -= 3;
-        if (ch <= 0) { ch = 0; del = false; idx = (idx + 1) % ideas.length; hold = 6; }
-      }
-      input.setAttribute('placeholder', word.slice(0, ch) + (ch < word.length ? '▍' : ''));
-    };
-    const iv = setInterval(tick, 48);
-    this._cleanups.push(() => clearInterval(iv));
   }
 
   /* ---------- capability cards: count and flip into view ---------- */
@@ -1119,12 +1062,9 @@ export class BaigBotsSite {
     const tabs = $$('[data-uc-tab]', sec);
     const panels = $$('[data-uc-panel]', sec);
     const nodes = $$('[data-pnode]', sec);
-    const body = $('.uc-body', sec);
     let cur = 0;
-    let auto = !reduce;
     let bar = null;
     let inview = false;
-    let hovering = false;
     const setNodes = (p, animate) => {
       nodes.forEach((nd, k) => {
         const nm = nd.querySelector('[data-pn]');
@@ -1141,11 +1081,10 @@ export class BaigBotsSite {
       tabs.forEach((t) => { const b = t.querySelector('.bar'); if (b) { gsap.set(b, { scaleX: 0 }); } });
       const b = tabs[cur].querySelector('.bar');
       if (!b) { return; }
-      if (!auto) { gsap.set(b, { scaleX: 1 }); return; }
-      bar = gsap.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 9, ease: 'none', paused: !inview || hovering, onComplete: () => show((cur + 1) % tabs.length, false, true) });
+      if (reduce) { gsap.set(b, { scaleX: 1 }); return; }
+      bar = gsap.fromTo(b, { scaleX: 0 }, { scaleX: 1, duration: 9, ease: 'none', paused: !inview, onComplete: () => show((cur + 1) % tabs.length, true) });
     };
-    const show = (i, user, animate) => {
-      if (user) { auto = false; }
+    const show = (i, animate) => {
       cur = i;
       tabs.forEach((t, k) => {
         const on = k === i;
@@ -1165,22 +1104,18 @@ export class BaigBotsSite {
       trigger: sec,
       start: 'top 70%',
       end: 'bottom 30%',
-      onToggle: (self) => { inview = self.isActive; if (bar) { if (inview && !hovering) { bar.play(); } else { bar.pause(); } } }
+      onToggle: (self) => { inview = self.isActive; if (bar) { if (inview) { bar.play(); } else { bar.pause(); } } }
     });
     tabs.forEach((t, k) => {
-      this._on(t, 'click', () => show(k, true, k !== cur));
+      this._on(t, 'click', () => show(k, k !== cur));
       this._on(t, 'keydown', (e) => {
         if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') { return; }
         e.preventDefault();
         const n = (k + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
-        show(n, true, true);
+        show(n, true);
         tabs[n].focus();
       });
     });
-    if (body) {
-      this._on(body, 'pointerenter', () => { hovering = true; if (bar) { bar.pause(); } });
-      this._on(body, 'pointerleave', () => { hovering = false; if (bar && inview) { bar.play(); } });
-    }
     $$('[data-uc-plan]', sec).forEach((a) => this._on(a, 'click', (e) => {
       e.preventDefault();
       this._toQuick(a.getAttribute('data-uc-plan'));
@@ -1192,7 +1127,7 @@ export class BaigBotsSite {
       });
       this._cleanups.push(() => hl.kill());
     }
-    show(0, false, false);
+    show(0, false);
   }
 
   /* ---------- savings estimator with a worked example ---------- */
@@ -1286,7 +1221,7 @@ export class BaigBotsSite {
       this._on(send, 'click', () => {
         const e = this._estimate;
         const what = e.proc ? ' for ' + e.proc.toLowerCase() : '';
-        this._toBrief('Savings estimate' + what + ': about ' + fmtN(e.saved) + ' h/year (' + money(e.cost, e.c, 0) + '/year), from ' + e.n + ' people × ' + e.h + ' h/week with ' + Math.round(e.s * 100) + '% automatable.', null);
+        this._toQuick('Business Process Automation', 'Savings estimate' + what + ': about ' + fmtN(e.saved) + ' h/year (' + money(e.cost, e.c, 0) + '/year), from ' + e.n + ' people × ' + e.h + ' h/week with ' + Math.round(e.s * 100) + '% automatable.');
       });
     }
   }
@@ -1310,9 +1245,9 @@ export class BaigBotsSite {
     this._cleanups.push(() => tl.kill());
   }
 
-  /* ---------- engagement table: pick a model straight into the brief ---------- */
+  /* ---------- engagement table: pick a model straight into the quick enquiry ---------- */
   _engage({ $$ }) {
-    $$('[data-pick]').forEach((b) => this._on(b, 'click', () => this._toBrief('', b.getAttribute('data-pick'))));
+    $$('[data-pick]').forEach((b) => this._on(b, 'click', () => this._toQuick(b.getAttribute('data-pick'))));
   }
 
   /* ---------- FAQ accordion ---------- */
