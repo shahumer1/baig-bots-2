@@ -1,0 +1,40 @@
+<section class="sec stackx" id="stack">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="dot"></span>05 — Technology</p>
+      <h2 class="h2" data-split="">The tools and standards behind the work.</h2>
+      <p class="lead">Selected technologies across automation, data and integration, plus the platforms your business already runs on.</p>
+    </div>
+    <div class="stack-grid">
+      <div class="cats">
+        <div class="hud cat" data-tilt=""><div class="cat-h"><span class="ck">A</span>Automation<span class="cc">03</span></div><ul><li><span>Power Automate</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li><li><span>Dataverse</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li><li><span>n8n</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li></ul></div>
+        <div class="hud cat" data-tilt=""><div class="cat-h"><span class="ck">B</span>Data<span class="cc">04</span></div><ul><li><span>Oracle SQL / PLSQL</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li><li><span>MongoDB</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li><li><span>Power BI</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li><li><span>Tableau</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li></ul></div>
+        <div class="hud cat" data-tilt=""><div class="cat-h"><span class="ck">C</span>Integration<span class="cc">04</span></div><ul><li><span>REST</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li><li><span>SOAP</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li><li><span>XML / XSD</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li><li><span>Webhooks</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li></ul></div>
+        <div class="hud cat" data-tilt=""><div class="cat-h"><span class="ck">D</span>Platforms<span class="cc">05</span></div><ul><li><span>SmartVista</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li><li><span>QuickBooks</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li><li><span>Gravity Forms</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li><li><span>Google Sheets</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li><li><span>Linux</span><i class="sig" aria-hidden="true"><b></b><b></b><b></b></i></li></ul></div>
+      </div>
+      <figure class="term" data-term="">
+        <figcaption class="term-bar"><span class="tb-d"><i></i><i></i><i></i></span><span>bb-flow · invoice-sync</span><span class="sp">sample run</span></figcaption>
+        <div class="term-body">
+          <div class="tln cmdl" data-tline=""><span class="tp">$</span><span class="tc">bb-flow run invoice-sync --env=prod</span></div>
+          <div class="tln" data-tline=""><span class="tp">›</span><span class="tk">connect</span><span class="tv">shared inbox</span><span class="ts ok">ok</span></div>
+          <div class="tln" data-tline=""><span class="tp">›</span><span class="tk">fetch</span><span class="tv">12 new documents</span><span class="ts">0.4s</span></div>
+          <div class="tln" data-tline=""><span class="tp">›</span><span class="tk">ai.extract</span><span class="tv">fields validated</span><span class="ts ok">12/12</span></div>
+          <div class="tln" data-tline=""><span class="tp">›</span><span class="tk">erp.api</span><span class="tv">POST /po/match</span><span class="ts ok">200</span></div>
+          <div class="tln" data-tline=""><span class="tp">›</span><span class="tk">approvals</span><span class="tv">exceptions routed to finance</span><span class="ts warn">2</span></div>
+          <div class="tln" data-tline=""><span class="tp">›</span><span class="tk">powerbi</span><span class="tv">dataset refreshed</span><span class="ts ok">ok</span></div>
+          <div class="tln done" data-tline=""><span class="tp">✓</span><span class="tk">done</span><span class="tv">run completed</span><span class="ts ok">3.1s</span></div>
+          <div class="tln cmdl gap" data-tline=""><span class="tp">$</span><span class="tc">bb-flow run settlement-recon --date=today</span></div>
+          <div class="tln" data-tline=""><span class="tp">›</span><span class="tk">fetch</span><span class="tv">scheme and switch files</span><span class="ts">3</span></div>
+          <div class="tln" data-tline=""><span class="tp">›</span><span class="tk">validate</span><span class="tv">xml/xsd schema</span><span class="ts ok">ok</span></div>
+          <div class="tln" data-tline=""><span class="tp">›</span><span class="tk">match</span><span class="tv">records against core</span><span class="ts ok">48,212</span></div>
+          <div class="tln" data-tline=""><span class="tp">›</span><span class="tk">exceptions</span><span class="tv">queued for review</span><span class="ts warn">17</span></div>
+          <div class="tln done" data-tline=""><span class="tp">✓</span><span class="tk">done</span><span class="tv">reconciliation report</span><span class="ts ok">ready</span></div>
+          <div class="tln cmdl"><span class="tp">$</span><span class="caret" data-caret=""></span></div>
+        </div>
+        <div class="term-foot"><span>Illustrative output</span><span>not live data</span></div>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
