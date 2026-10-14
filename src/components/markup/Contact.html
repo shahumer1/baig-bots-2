@@ -4,6 +4,10 @@
     <path class="t" d="M-10 560H140L180 520H380V460"></path>
     <path class="t" d="M1450 90H1260L1220 130H1040"></path>
     <path class="t" d="M1450 600H1300L1260 560H1100V500"></path>
+    <path class="pulse" pathLength="100" d="M-10 120H180L220 160H420"></path>
+    <path class="pulse" pathLength="100" d="M-10 560H140L180 520H380V460"></path>
+    <path class="pulse" pathLength="100" d="M1450 90H1260L1220 130H1040"></path>
+    <path class="pulse" pathLength="100" d="M1450 600H1300L1260 560H1100V500"></path>
     <circle class="n" cx="420" cy="160" r="5"></circle>
     <circle class="n" cx="380" cy="460" r="5"></circle>
     <circle class="n" cx="1040" cy="130" r="5"></circle>
@@ -19,8 +23,8 @@
           <div class="brief-top"><span class="led" aria-hidden="true"></span><span>Quick enquiry</span><span class="bt-step">One step</span></div>
           <div class="quick-body">
             <h3 id="quick-title">Tell us the problem. We'll take it from there.</h3>
-            <p>Just the essentials. No project brief needed.</p>
-            <label class="fld"><span class="lb">Problem / service / model</span><span class="ctl selw"><select name="problem" required=""><option value="">Choose a problem or service</option><option value="Not sure yet">Not sure yet</option></select><svg class="chev" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 5L7 9L11 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><i class="ul"></i></span></label>
+            <p>Just the essentials to get started.</p>
+            <div class="fld"><span class="lb" id="quick-problem-label">Problem / service / model</span><span class="ctl selw"><select name="problem" required="" aria-labelledby="quick-problem-label"><option value="">Choose a problem or service</option><option value="Not sure yet">Not sure yet</option></select><svg class="chev" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 5L7 9L11 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg><i class="ul"></i></span></div>
             <div class="quick-contact-row">
               <label class="fld"><span class="lb">Email</span><span class="ctl"><input type="email" name="email" autocomplete="email" placeholder="you@company.com" required=""><i class="ul"></i></span></label>
               <label class="fld"><span class="lb">Phone number</span><span class="ctl"><input type="tel" name="phone" autocomplete="tel" placeholder="Your number" required=""><i class="ul"></i></span></label>
@@ -31,6 +35,7 @@
             <small class="quick-demo-note">Frontend preview only — nothing is sent yet.</small>
           </div>
         </form>
+      <!-- Project brief retained for later use.
       <form class="brief" data-brief="" novalidate="" aria-labelledby="brief-title">
         <i class="brief-edge" aria-hidden="true"></i>
         <div class="brief-top"><span class="led" aria-hidden="true"></span><span id="brief-title">Project brief</span><span class="bt-step" data-bstep-label="" aria-live="polite">Step 01 / 03</span></div>
@@ -117,8 +122,10 @@
           <button class="bbtn ghost" type="button" data-breset="">Start another brief</button>
         </div>
       </form>
+      -->
       </div>
       <div class="contact-side">
+        <!-- Contact details block retained for later use.
         <p class="lead">Tell us what you want to build, automate or connect. We'll reply with a plan and a clear next step.</p>
         <ul class="contact-list">
           <li><span class="cl-k">Email</span><span>[YOUR EMAIL]</span></li>
@@ -126,12 +133,13 @@
           <li><span class="cl-k">Web</span><span>baigbots.com</span></li>
           <li><span class="cl-k">Office</span><span>NASTP · Suite No. 217</span></li>
         </ul>
+        -->
         <div class="next">
           <span class="next-t">What happens next</span>
           <ol>
-            <li><span class="k">01</span><span><b>We read your enquiry</b>and come back with any questions.</span></li>
-            <li><span class="k">02</span><span><b>Discovery call</b>to map requirements, systems and constraints.</span></li>
-            <li><span class="k">03</span><span><b>A clear plan</b>with architecture, scope and the next step.</span></li>
+            <li><span class="k">01</span><span><b>We read your enquiry</b>We come back with any questions.</span></li>
+            <li><span class="k">02</span><span><b>Discovery call</b>We map requirements, systems and constraints.</span></li>
+            <li><span class="k">03</span><span><b>A clear plan</b>You get the architecture, scope and next step.</span></li>
           </ol>
         </div>
       </div>

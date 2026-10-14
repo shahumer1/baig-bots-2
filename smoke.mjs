@@ -45,6 +45,10 @@ window.IntersectionObserver = globalThis.IntersectionObserver = class { observe(
 const errors = [];
 const originalError = console.error;
 console.error = (...args) => { errors.push(args.map(String).join(' ')); originalError(...args); };
+// The engagement cards render through React; this fixture exercises their data-pick click contract.
+const engagementPick = window.document.createElement('button');
+engagementPick.dataset.pick = 'Retainer support';
+window.document.querySelector('[data-engagement-cards]').append(engagementPick);
 const { BaigBotsSite } = await import('./src/site.js');
 const site = new BaigBotsSite();
 site.componentDidMount();
@@ -110,7 +114,15 @@ while (slider.scrollLeft === 0 && Date.now() < deadline) {
 assert(slider.scrollLeft > 0, 'the idea slider did not move continuously');
 suggestions[0].focus();
 suggestions[0].click();
-assert.equal(window.document.activeElement, quickForm.elements.problem, 'choosing an idea should focus the quick enquiry');
+const problemTrigger = quickForm.querySelector('.quick-problem-trigger');
+const problemMenu = quickForm.querySelector('.quick-problem-menu');
+assert.equal(window.document.activeElement, problemTrigger, 'choosing an idea should focus the quick enquiry');
+problemTrigger.click();
+assert.equal(problemTrigger.getAttribute('aria-expanded'), 'true', 'service dropdown did not open');
+assert.equal(problemMenu.querySelectorAll('[role="option"]').length, quickForm.elements.problem.options.length, 'service dropdown missed an option');
+problemMenu.querySelector('[data-value="Business Process Automation"]').click();
+assert.equal(quickForm.elements.problem.value, 'Business Process Automation', 'service dropdown did not update the form');
+assert.equal(problemMenu.hidden, true, 'service dropdown did not close after selection');
 const afterChoice = slider.scrollLeft;
 await new Promise((resolve) => setTimeout(resolve, 180));
 assert(slider.scrollLeft > afterChoice, 'the idea slider stopped after an idea was chosen');

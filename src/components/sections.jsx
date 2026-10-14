@@ -1,6 +1,8 @@
 import parse, { domToReact } from 'html-react-parser';
 import { DrawCircleText } from './DrawCircleText.jsx';
 import { AutomationImpactChart } from './AutomationImpactChart.jsx';
+import { ProcessGrowth } from './ProcessGrowth.jsx';
+import { EngagementCards } from './EngagementCards.jsx';
 import globalEffectsHtml from './markup/GlobalEffects.html?raw';
 import headerHtml from './markup/Header.html?raw';
 import heroHtml from './markup/Hero.html?raw';
@@ -44,8 +46,24 @@ export function Agents() {
 }
 export const Estimator = markupComponent(estimatorHtml);
 export const Stack = markupComponent(stackHtml);
-export const Process = markupComponent(processHtml);
-export const Engage = markupComponent(engageHtml);
+export function Process() {
+  return parse(processHtml, {
+    replace(node) {
+      if (node.attribs?.['data-process-growth'] !== undefined) {
+        return <ProcessGrowth />;
+      }
+    }
+  });
+}
+export function Engage() {
+  return parse(engageHtml, {
+    replace(node) {
+      if (node.attribs?.['data-engagement-cards'] !== undefined) {
+        return <EngagementCards />;
+      }
+    }
+  });
+}
 export const Faq = markupComponent(faqHtml);
 export const Contact = markupComponent(contactHtml);
 export const Footer = markupComponent(footerHtml);

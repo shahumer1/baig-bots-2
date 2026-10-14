@@ -837,6 +837,26 @@ export class BaigBotsSite {
     if (!reduce) {
       gsap.from($$('.cta-circuit .t'), { drawSVG: 0, duration: 2, ease: 'power2.inOut', stagger: 0.15, scrollTrigger: { trigger: sec, start: 'top 75%', toggleActions: 'play none none none' } });
       gsap.from($$('.cta-circuit .n'), { scale: 0, transformOrigin: '50% 50%', duration: 0.5, ease: 'back.out(3)', stagger: 0.15, delay: 1.2, scrollTrigger: { trigger: sec, start: 'top 75%', toggleActions: 'play none none none' } });
+      const pulses = $$('.cta-circuit .pulse', sec);
+      const pulseTweens = [];
+      ScrollTrigger.create({
+        trigger: sec,
+        start: 'top 75%',
+        once: true,
+        onEnter: () => {
+          gsap.to(pulses, { opacity: 0.9, duration: 0.5, stagger: 0.12 });
+          pulses.forEach((pulse, index) => {
+            pulseTweens.push(gsap.fromTo(pulse, { strokeDashoffset: 0 }, {
+              strokeDashoffset: -100,
+              duration: 5 + index * 0.8,
+              ease: 'none',
+              repeat: -1,
+              delay: index * 0.45,
+            }));
+          });
+        },
+      });
+      this._cleanups.push(() => pulseTweens.forEach((tween) => tween.kill()));
     }
     if (reduce || !fine) { return; }
     this._proximity(() => chars, 230, (c, k) => {
@@ -864,10 +884,11 @@ export class BaigBotsSite {
       }
     }
     select.value = problem || '';
+    select.dispatchEvent(new window.Event('change', { bubbles: true }));
     form.elements.description.value = description;
     const status = form.querySelector('[data-quick-status]');
     if (status) { status.textContent = ''; }
-    if (typeof select.focus === 'function') { select.focus({ preventScroll: true }); }
+    (this._quickProblemTrigger || select).focus({ preventScroll: true });
     this._scrollTo(form);
   }
 
@@ -889,6 +910,99 @@ export class BaigBotsSite {
         this._toQuick(title);
       });
     });
+    const control = select.closest('.ctl');
+    const trigger = document.createElement('button');
+    const triggerText = document.createElement('span');
+    const menu = document.createElement('div');
+    trigger.type = 'button';
+    trigger.className = 'quick-problem-trigger';
+    trigger.setAttribute('aria-haspopup', 'listbox');
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-controls', 'quick-problem-options');
+    trigger.setAttribute('aria-labelledby', 'quick-problem-label quick-problem-value');
+    triggerText.id = 'quick-problem-value';
+    trigger.appendChild(triggerText);
+    menu.id = 'quick-problem-options';
+    menu.className = 'quick-problem-menu';
+    menu.setAttribute('role', 'listbox');
+    menu.setAttribute('aria-labelledby', 'quick-problem-label');
+    menu.hidden = true;
+    select.classList.add('quick-problem-native');
+    select.tabIndex = -1;
+    select.setAttribute('aria-hidden', 'true');
+    control.insertBefore(trigger, select.nextSibling);
+    control.appendChild(menu);
+    this._quickProblemTrigger = trigger;
+    this._cleanups.push(() => { this._quickProblemTrigger = null; });
+    const closeMenu = () => {
+      menu.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+    };
+    const syncProblem = () => {
+      triggerText.textContent = select.selectedOptions[0]?.textContent || 'Choose a problem or service';
+      trigger.setAttribute('aria-invalid', select.value ? 'false' : 'true');
+    };
+    const openMenu = (focusOption = false) => {
+      menu.replaceChildren();
+      Array.from(select.options).forEach((option) => {
+        const item = document.createElement('div');
+        item.className = 'quick-problem-option';
+        item.setAttribute('role', 'option');
+        item.setAttribute('aria-selected', String(option.value === select.value));
+        item.tabIndex = -1;
+        item.textContent = option.textContent;
+        item.dataset.value = option.value;
+        menu.appendChild(item);
+      });
+      menu.hidden = false;
+      trigger.setAttribute('aria-expanded', 'true');
+      const bounds = control.getBoundingClientRect();
+      const below = window.innerHeight - bounds.bottom - 12;
+      const above = bounds.top - 12;
+      const openUp = below < 220 && above > below;
+      menu.classList.toggle('open-up', openUp);
+      menu.style.maxHeight = Math.max(100, Math.min(280, openUp ? above : below)) + 'px';
+      if (focusOption) {
+        const items = Array.from(menu.querySelectorAll('[role="option"]'));
+        (items.find((item) => item.getAttribute('aria-selected') === 'true') || items[0])?.focus();
+      }
+    };
+    syncProblem();
+    this._on(select, 'change', syncProblem);
+    this._on(trigger, 'click', () => { if (menu.hidden) { openMenu(); } else { closeMenu(); } });
+    this._on(trigger, 'keydown', (event) => {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') { event.preventDefault(); openMenu(true); }
+      if (event.key === 'Escape') { closeMenu(); }
+    });
+    this._on(menu, 'click', (event) => {
+      const item = event.target.closest('[role="option"]');
+      if (!item) { return; }
+      select.value = item.dataset.value;
+      select.dispatchEvent(new window.Event('change', { bubbles: true }));
+      closeMenu();
+      trigger.focus();
+    });
+    this._on(menu, 'keydown', (event) => {
+      const items = Array.from(menu.querySelectorAll('[role="option"]'));
+      const index = items.indexOf(document.activeElement);
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        items[(index + (event.key === 'ArrowDown' ? 1 : items.length - 1)) % items.length]?.focus();
+      } else if (event.key === 'Home' || event.key === 'End') {
+        event.preventDefault();
+        items[event.key === 'Home' ? 0 : items.length - 1]?.focus();
+      } else if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        document.activeElement.click();
+      } else if (event.key === 'Escape') {
+        event.preventDefault();
+        closeMenu();
+        trigger.focus();
+      } else if (event.key === 'Tab') { closeMenu(); }
+    });
+    this._on(document, 'pointerdown', (event) => { if (!control.contains(event.target)) { closeMenu(); } });
+    this._on(window, 'resize', closeMenu);
+    this._on(window, 'scroll', closeMenu);
     $$('a[href="#contact"]').forEach((link) => this._on(link, 'click', (event) => {
       if (event.defaultPrevented) { return; }
       event.preventDefault();
@@ -898,6 +1012,12 @@ export class BaigBotsSite {
     this._on(form, 'change', () => { status.textContent = ''; });
     this._on(form, 'submit', (event) => {
       event.preventDefault();
+      if (!select.value) {
+        status.textContent = 'Choose a problem or service.';
+        trigger.focus();
+        openMenu();
+        return;
+      }
       if (!form.reportValidity()) { return; }
       status.textContent = 'Preview ready — this enquiry has not been sent.';
     });

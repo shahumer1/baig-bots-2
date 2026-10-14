@@ -1,26 +1,29 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 
-// Example values illustrate the comparison; they are not measured customer results.
+// Illustrative values, not measured customer results.
 const metrics = [
-  { key: 'time', label: 'Time back', potential: 68, current: 12, angle: -90 },
-  { key: 'accuracy', label: 'Accuracy', potential: 92, current: 74, angle: 30 },
-  { key: 'routine', label: 'Routine work', potential: 82, current: 16, angle: 150 },
+  { key: 'time', label: 'Time back', ai: 68, without: 12 },
+  { key: 'accuracy', label: 'Accuracy', ai: 92, without: 74 },
+  { key: 'routine', label: 'Routine work', ai: 82, without: 16 },
 ];
 
-const point = (angle, value) => {
-  const radians = angle * Math.PI / 180;
-  const radius = 105 * value / 100;
-  return [200 + Math.cos(radians) * radius, 156 + Math.sin(radians) * radius];
-};
-
-const polygon = (values) => values.map((value, index) => point(metrics[index].angle, value).join(',')).join(' ');
-const outline = (values) => `${values.map((value, index) => `${index ? 'L' : 'M'}${point(metrics[index].angle, value).join(' ')}`).join('')}Z`;
+const xPositions = [104, 243, 382];
+const chartTop = 30;
+const chartBottom = 210;
+const chartY = (value) => chartBottom - (chartBottom - chartTop) * value / 100;
+const sharedStart = { x: 58, y: chartY(metrics[0].without) };
+const linePath = (series) => `M ${sharedStart.x} ${sharedStart.y} ${metrics.map((metric, index) =>
+  `L ${xPositions[index]} ${chartY(metric[series])}`
+).join(' ')}`;
+const gridLevels = [0, 25, 50, 75, 100];
+const lineVariants = (duration, delay = 0) => ({
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: { pathLength: 1.08, opacity: 1, transition: { pathLength: { duration, delay, ease: 'easeInOut' }, opacity: { duration: 0.15, delay } } },
+});
 
 export function AutomationImpactChart() {
   const [active, setActive] = useState(null);
-  const potential = metrics.map((metric) => metric.potential);
-  const current = metrics.map((metric) => metric.current);
   const selected = metrics.find((metric) => metric.key === active);
 
   return (
@@ -32,64 +35,67 @@ export function AutomationImpactChart() {
       </div>
 
       <div className="impact-plot">
-        <svg viewBox="0 0 400 265" role="img" aria-label="Illustrative comparison of automated and current workflows">
-          {[25, 50, 75, 100].map((level) => (
-            <polygon key={level} className="impact-ring" points={polygon(metrics.map(() => level))} />
+        <motion.svg
+          viewBox="0 0 440 230"
+          role="img"
+          aria-label="Line chart starting both series at the same point, then comparing with AI automation and without automation for time back, accuracy, and routine work"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.45 }}
+        >
+          {gridLevels.map((level) => (
+            <g key={level} className="impact-grid-line">
+              <line x1="48" x2="398" y1={chartY(level)} y2={chartY(level)} />
+              <text x="40" y={chartY(level) + 4} textAnchor="end">{level}</text>
+            </g>
           ))}
-          {metrics.map((metric) => {
-            const [x, y] = point(metric.angle, 100);
-            return <line key={metric.key} className="impact-axis" x1="200" y1="156" x2={x} y2={y} />;
-          })}
+          {xPositions.map((x, index) => (
+            <line key={metrics[index].key} className="impact-guide" x1={x} x2={x} y1={chartTop} y2={chartBottom} />
+          ))}
+          <motion.path className="impact-line without-halo" d={linePath('without')} variants={lineVariants(1.25)} />
           <motion.path
-            className="impact-shape current"
-            d={outline(current)}
-            initial={{ pathLength: 0, fillOpacity: 0 }}
-            whileInView={{ pathLength: 1, fillOpacity: 0.16 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 1.2, ease: 'easeInOut' }}
+            className="impact-line without"
+            d={linePath('without')}
+            variants={lineVariants(1.25)}
           />
           <motion.path
-            className="impact-shape potential"
-            d={outline(potential)}
-            initial={{ pathLength: 0, fillOpacity: 0 }}
-            whileInView={{ pathLength: 1, fillOpacity: 0.18 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ pathLength: { duration: 1.45, ease: 'easeInOut', delay: 0.2 }, fillOpacity: { duration: 0.6, delay: 1 } }}
+            className="impact-line ai"
+            d={linePath('ai')}
+            variants={lineVariants(1.45, 0.15)}
           />
-          {metrics.map((metric) => {
-            const [x, y] = point(metric.angle, metric.potential);
-            return <motion.circle key={metric.key} className={`impact-point ${active === metric.key ? 'active' : ''}`} cx={x} cy={y} r="4" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.5 }} transition={{ duration: 0.4, delay: 1.25 }} />;
-          })}
-        </svg>
-
-        {metrics.map((metric) => (
-          <button
-            key={metric.key}
-            className={`impact-metric ${metric.key}`}
-            type="button"
-            aria-label={`${metric.label}: automation potential ${metric.potential} percent, current process ${metric.current} percent`}
-            onMouseEnter={() => setActive(metric.key)}
-            onMouseLeave={() => setActive(null)}
-            onFocus={() => setActive(metric.key)}
-            onBlur={() => setActive(null)}
-            onClick={() => setActive(metric.key)}
-          >
-            <strong>{metric.potential}% <small>/ {metric.current}%</small></strong>
-            <span>{metric.label}</span>
-          </button>
-        ))}
+          <circle className="impact-dot without" cx={sharedStart.x} cy={sharedStart.y} r="4.5" />
+          {metrics.map((metric, index) => (
+            <g key={metric.key}>
+              <motion.circle className="impact-dot without" cx={xPositions[index]} cy={chartY(metric.without)} r="4.5"
+                variants={{ hidden: { scale: 0, opacity: 0 }, visible: { scale: 1, opacity: 1, transition: { delay: 1.25 + index * 0.07, duration: 0.25 } } }} />
+              <motion.circle className="impact-dot ai" cx={xPositions[index]} cy={chartY(metric.ai)} r="5"
+                variants={{ hidden: { scale: 0, opacity: 0 }, visible: { scale: 1, opacity: 1, transition: { delay: 1.6 + index * 0.07, duration: 0.25 } } }} />
+            </g>
+          ))}
+        </motion.svg>
         {selected && (
           <div className="impact-tooltip" role="status">
             <strong>{selected.label}</strong>
-            <span>Potential {selected.potential}%</span>
-            <span>Today {selected.current}%</span>
+            <span>With AI automation {selected.ai}%</span>
+            <span>Without automation {selected.without}%</span>
           </div>
         )}
       </div>
 
+      <div className="impact-metrics">
+        {metrics.map((metric) => (
+          <button key={metric.key} className="impact-metric" type="button"
+            aria-label={`${metric.label}: with AI automation ${metric.ai} percent, without automation ${metric.without} percent`}
+            onMouseEnter={() => setActive(metric.key)} onMouseLeave={() => setActive(null)}
+            onFocus={() => setActive(metric.key)} onBlur={() => setActive(null)} onClick={() => setActive(metric.key)}>
+            <span>{metric.label}</span>
+            <strong>{metric.ai}% <small>/ {metric.without}%</small></strong>
+          </button>
+        ))}
+      </div>
       <div className="impact-legend">
-        <span><i className="potential" />With automation</span>
-        <span><i className="current" />Today</span>
+        <span><i className="ai" />With AI automation</span>
+        <span><i className="without" />Without automation</span>
       </div>
       <p className="impact-note">Illustrative scenario · Actual impact depends on your workflow.</p>
     </div>
