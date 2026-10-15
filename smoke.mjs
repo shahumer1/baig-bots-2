@@ -1,9 +1,22 @@
-import fs from 'node:fs';
 import assert from 'node:assert/strict';
 import { JSDOM } from 'jsdom';
+import React from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { createServer } from 'vite';
+import { allServices } from './src/components/serviceData.js';
+import { innerIndustries, innerServices } from './src/components/innerData.js';
 
-const sections = ['GlobalEffects', 'Header', 'Hero', 'Marquees', 'Stats', 'Services', 'Solutions', 'Statement', 'Agents', 'Estimator', 'Stack', 'Process', 'Engage', 'Faq', 'Contact', 'Footer'];
-const page = `<div id="bb">${sections.map((name) => fs.readFileSync(`src/components/markup/${name}.html`, 'utf8')).join('')}</div>`;
+const vite = await createServer({ configLoader: 'runner', optimizeDeps: { disabled: true }, server: { middlewareMode: true }, appType: 'custom' });
+let page;
+let Page;
+let HeroScene;
+try {
+  ({ Page } = await vite.ssrLoadModule('/src/components/Page.jsx'));
+  ({ HeroScene } = await vite.ssrLoadModule('/src/components/HeroScene.jsx'));
+  page = renderToStaticMarkup(React.createElement(Page));
+} finally {
+  await vite.close();
+}
 assert(!page.includes('sc-camel-'), 'export-only SVG attributes remain');
 assert(page.includes('data-theme-toggle') && !page.includes('data-motion-btn'), 'theme toggle should be present without a motion control');
 const dom = new JSDOM(`<!doctype html><html><body>${page}</body></html>`, {
@@ -25,8 +38,9 @@ Object.assign(globalThis, {
 Object.defineProperty(globalThis, 'navigator', { value: window.navigator, configurable: true });
 let themeListener;
 let darkPreference = false;
+let reduceMotion = false;
 window.matchMedia = (query) => ({
-  get matches() { return query.includes('prefers-color-scheme') ? darkPreference : query.includes('pointer: fine'); },
+  get matches() { return query.includes('prefers-color-scheme') ? darkPreference : query.includes('prefers-reduced-motion') ? reduceMotion : query.includes('pointer: fine'); },
   addEventListener(type, listener) { if (query.includes('prefers-color-scheme') && type === 'change') themeListener = listener; },
   removeEventListener() {},
 });
@@ -45,10 +59,7 @@ window.IntersectionObserver = globalThis.IntersectionObserver = class { observe(
 const errors = [];
 const originalError = console.error;
 console.error = (...args) => { errors.push(args.map(String).join(' ')); originalError(...args); };
-// The engagement cards render through React; this fixture exercises their data-pick click contract.
-const engagementPick = window.document.createElement('button');
-engagementPick.dataset.pick = 'Retainer support';
-window.document.querySelector('[data-engagement-cards]').append(engagementPick);
+assert(window.document.querySelector('[data-pick="Retainer support"]'), 'React engagement cards did not render');
 const { BaigBotsSite } = await import('./src/site.js');
 const site = new BaigBotsSite();
 site.componentDidMount();
@@ -102,8 +113,11 @@ assert.equal(quickForm.elements.problem.value, 'AI support assistant', 'use case
 window.document.querySelector('[data-est-send]').click();
 assert.equal(quickForm.elements.problem.value, 'Business Process Automation', 'estimator did not select its service');
 assert.match(quickForm.elements.description.value, /Savings estimate/, 'estimator did not fill the description');
-window.document.querySelector('[data-nav] a[href="#contact"]').click();
-assert.equal(quickForm.elements.problem.value, '', 'general contact link kept an unrelated selection');
+assert.equal(window.document.querySelector('[data-nav] a[href="/contact"]')?.textContent.trim(), 'Contact Us', 'contact page missing from navigation');
+const desktopMenus = window.document.querySelectorAll('.links .nav-services');
+assert.equal(desktopMenus[0].querySelectorAll('.nav-service-list a').length, 10, 'services menu should contain all eight core pages, All Services and Other');
+assert.equal(desktopMenus[1].querySelectorAll('.nav-service-list a').length, innerIndustries.length + 1, 'industries menu should contain every industry and the overview');
+assert.equal(window.document.querySelectorAll('.mobile-panel .nav-services-mobile').length, 2, 'mobile navigation should have both dropdowns');
 const slider = window.document.querySelector('[data-sugg-slider]');
 Object.defineProperty(slider, 'clientWidth', { value: 320 });
 Object.defineProperty(slider, 'scrollWidth', { value: 2000 });
@@ -141,6 +155,75 @@ assert(slider.scrollLeft >= 355, 'mouse dragging did not move the slider');
 pointerOnSlider('pointerup', 40);
 assert.deepEqual(errors.filter((x) => !x.includes('Error creating WebGL context')), []);
 site.componentWillUnmount();
+const { createRoot } = await import('react-dom/client');
+globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+const sceneHost = window.document.createElement('div');
+window.document.body.append(sceneHost);
+const sceneRoot = createRoot(sceneHost);
+reduceMotion = true;
+await React.act(async () => { sceneRoot.render(React.createElement(HeroScene, { kind: 'services' })); });
+const activeService = () => [...sceneHost.querySelectorAll('.inner-directory-list button')].findIndex((button) => button.getAttribute('aria-pressed') === 'true');
+assert.equal(activeService(), 0, 'service hero should start on the first capability');
+await React.act(async () => { await new Promise((resolve) => setTimeout(resolve, 2100)); });
+assert.equal(activeService(), 1, 'service hero did not advance automatically');
+await React.act(async () => { sceneHost.querySelectorAll('.inner-directory-list button')[4].click(); });
+assert.equal(activeService(), 4, 'service hero did not respond to manual selection');
+await React.act(async () => { sceneRoot.render(React.createElement(HeroScene, { kind: 'web' })); });
+assert(sceneHost.textContent.includes('Interactive application'), 'web preview should start on the React view');
+await React.act(async () => { await new Promise((resolve) => setTimeout(resolve, 2100)); });
+assert(sceneHost.textContent.includes('Publish and update pages'), 'web preview did not advance to WordPress content');
+await React.act(async () => { sceneHost.querySelectorAll('.inner-scene-tabs button')[2].click(); });
+assert(sceneHost.textContent.includes('GET /api/records'), 'web preview did not show API content when selected');
+await React.act(async () => { sceneRoot.render(React.createElement(HeroScene, { kind: 'agents' })); });
+assert.equal(sceneHost.querySelectorAll('.inner-chat-message').length, 1, 'appointment conversation should start with one message');
+assert.equal(sceneHost.querySelectorAll('.inner-scene-tabs').length, 0, 'appointment conversation should not show stage tabs');
+const chatPane = sceneHost.querySelector('.inner-agent-messages');
+Object.defineProperty(chatPane, 'clientHeight', { configurable: true, value: 100 });
+Object.defineProperty(chatPane, 'scrollHeight', { configurable: true, value: 400 });
+await React.act(async () => { await new Promise((resolve) => setTimeout(resolve, 450)); });
+assert(sceneHost.querySelector('.inner-chat-typing'), 'assistant typing indicator did not appear');
+await React.act(async () => { await new Promise((resolve) => setTimeout(resolve, 120)); });
+assert(chatPane.scrollTop > 0 && chatPane.scrollTop < 300, 'appointment chat should scroll in steps, without jumping to the bottom');
+await React.act(async () => { await new Promise((resolve) => setTimeout(resolve, 1250)); });
+assert.equal(sceneHost.querySelectorAll('.inner-chat-message').length, 2, 'assistant reply did not arrive');
+assert(!sceneHost.querySelector('.inner-chat-typing'), 'typing indicator stayed after the assistant replied');
+await React.act(async () => { sceneRoot.unmount(); });
+reduceMotion = false;
+sceneHost.remove();
+const routes = ['/', '/services', '/services/other', '/industries', '/contact', ...innerServices.map((service) => `/services/${service.slug}`), ...innerIndustries.map((industry) => `/industries/${industry.slug}`), ...allServices.map((service) => `/services/${service.slug}`)];
+for (const route of routes) {
+  window.history.replaceState({}, '', route);
+  const html = renderToStaticMarkup(React.createElement(Page));
+  assert(html.includes('data-quick-brief'), `${route} did not render the contact form`);
+  assert(html.includes('<h1'), `${route} did not render its page heading`);
+  if (route === '/') assert(!html.includes('class="inner-circuit"'), 'The home page must keep its original circuit');
+  else {
+    const circuit = html.match(/<svg class="inner-circuit"[\s\S]*?<\/svg>/)?.[0];
+    assert(circuit, `${route} is missing the animated circuit background`);
+    assert.equal((circuit.match(/class="base"/g) || []).length, 8, `${route} should use the home page circuit paths`);
+    assert.equal((circuit.match(/class="packet"/g) || []).length, 5, `${route} should animate the home page circuit routes`);
+  }
+  if (route === '/services') assert.equal((html.match(/class="inner-service-card"/g) || []).length, innerServices.length, 'All Services must show the eight requested services');
+  if (route === '/services/other') assert(html.includes('React') && html.includes('n8n'), 'Other page must show the platform view');
+  if (innerServices.some((service) => route === `/services/${service.slug}`)) {
+    assert(html.includes('inner-hero-scene'), `${route} is missing its service hero`);
+    assert(html.includes('Types of work') && html.includes('Technology in context'), `${route} is missing detailed service content`);
+    const service = innerServices.find((item) => route === `/services/${item.slug}`);
+    assert(html.includes(`inner-scene-${service.visual}`), `${route} has the wrong hero scene`);
+    const motionElement = { web: 'inner-browser-preview-app', cloud: 'inner-cloud-data-packet', agents: 'inner-agent-chat', vision: 'inner-vision-sweep', crm: 'inner-crm-route', workflow: 'inner-workflow-signal', api: 'inner-api-wire', transform: 'inner-transform-arrow' }[service.visual];
+    assert(html.includes(motionElement), `${route} is missing its service-specific motion element`);
+    if (service.visual === 'cloud') {
+      assert.equal((html.match(/class="inner-cloud-node"/g) || []).length, 7, 'Cloud map must show seven connected systems');
+      assert(!html.includes('inner-scene-tabs'), 'Cloud map must not show stage tabs');
+    }
+  }
+  if (innerIndustries.some((industry) => route === `/industries/${industry.slug}`)) {
+    const industry = innerIndustries.find((item) => route === `/industries/${item.slug}`);
+    assert(html.includes(`inner-scene-industry-${industry.slug}`), `${route} is missing its industry hero`);
+  }
+  if (route === '/services/web-development') assert(html.includes('WordPress') && html.includes('Node.js'), 'web development stack is incomplete');
+  if (route === '/services') assert(!html.includes('inner-intro-graph'), 'the generic heading graph returned');
+}
 window.close();
 console.log('Motion startup smoke test passed');
 process.exit(0);

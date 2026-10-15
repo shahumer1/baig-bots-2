@@ -1,0 +1,88 @@
+import { useState } from 'react';
+import { allServices as legacyServices } from './serviceData.js';
+import { innerIndustries, innerServices, innerServicePath, projectReferences } from './innerData.js';
+import { Reveal } from './Reveal.jsx';
+import { HeroScene } from './HeroScene.jsx';
+import { CircuitLines } from './CircuitLines.jsx';
+import { industryEditorial, serviceEditorial } from './innerEditorial.js';
+
+function PageIntro({ eyebrow, title, description, scene = 'services', industry, children }) {
+  return <header className="inner-intro wrap">
+    <CircuitLines variant="inner" />
+    <div className="inner-intro-copy"><p className="eyebrow"><span className="dot" />{eyebrow}</p><h1 className="h-display">{title}</h1><p className="lead">{description}</p>{children}</div>
+    <HeroScene kind={scene} industry={industry}/>
+  </header>;
+}
+
+function ServiceTile({ service, index }) {
+  return <Reveal className="inner-tile"><article className="inner-service-card">
+    <div className="inner-tile-top"><span>{String(index + 1).padStart(2,'0')} / SERVICE</span><span aria-hidden="true">↗</span></div>
+    <div className="inner-card-symbol" data-kind={service.visual} aria-hidden="true">{({web:'{ }',cloud:'☁',agents:'✳',vision:'◎',crm:'▦',workflow:'◇',api:'⇄',transform:'↗'})[service.visual] || '◇'}</div>
+    <h2><a href={innerServicePath(service)}>{service.title}</a></h2><p>{service.intro}</p>
+    <div className="inner-card-foot"><span>{service.visualSteps?.join(' → ') || 'Explore capability'}</span><a href={innerServicePath(service)} aria-label={`Explore ${service.title}`}>Explore <span aria-hidden="true">↗</span></a></div>
+  </article></Reveal>;
+}
+
+export function ServicesIndex({ category = 'all' }) {
+  if (category === 'other') return <OtherPage />;
+  return <main id="top" className="inner-page"><PageIntro scene="services" eyebrow="All services" title="Services built around your business." description="Explore web development, cloud infrastructure, AI, connected systems and automation. Select a service to see the work behind it."><a className="inner-text-link" href="#service-grid">Explore the services <span aria-hidden="true">↘</span></a></PageIntro>
+    <section id="service-grid" className="inner-section wrap"><div className="inner-section-head"><p className="eyebrow"><span className="dot"/>01 / Capabilities</p><h2 className="h2">Choose a starting point.</h2></div><div className="inner-card-grid">{innerServices.map((service,index)=><ServiceTile key={service.slug} service={service} index={index}/>)}</div></section>
+    <section className="inner-section wrap inner-editorial-lead"><Reveal><p className="eyebrow"><span className="dot"/>How the work fits together</p><h2 className="h2">One useful flow may cross several services.</h2></Reveal><Reveal><p>A web portal may need a CRM connection. An AI agent may need a booking API and a human handover. An automation may start in a form and finish in a team notification. We scope the actual journey first, then choose the services and platforms it needs.</p></Reveal></section>
+    <section className="inner-section wrap"><div className="inner-section-head"><p className="eyebrow"><span className="dot"/>Examples of delivery</p><h2 className="h2">From an interface to an operating workflow.</h2></div><div className="inner-editorial-grid"><Reveal className="inner-editorial-card"><span className="inner-kicker">PRODUCT</span><h3>Websites and applications</h3><p>Responsive sites, content-managed pages, dashboards and portals with the interactions people need to complete a task.</p></Reveal><Reveal className="inner-editorial-card"><span className="inner-kicker">CONNECTION</span><h3>Systems that share context</h3><p>APIs, webhooks and CRM or ERP links that move relevant information between the tools a team already uses.</p></Reveal><Reveal className="inner-editorial-card"><span className="inner-kicker">AUTOMATION</span><h3>Repeatable work with a clear owner</h3><p>Triggers, approvals, notifications and exceptions designed so people can see what happened and what comes next.</p></Reveal><Reveal className="inner-editorial-card"><span className="inner-kicker">AI</span><h3>Scoped assistance</h3><p>Conversational or visual workflows with defined information, review steps and a way to hand work back to a person.</p></Reveal></div></section>
+    <section className="inner-section wrap"><Reveal className="inner-feature-band"><div><p className="eyebrow"><span className="dot"/>Connected delivery</p><h2 className="h2">From a single integration to a joined-up workflow.</h2></div><a className="btn btn-primary" href="/services/other"><span>Explore platforms and use cases ↗</span></a></Reveal></section>
+  </main>;
+}
+
+function OtherPage() {
+  const [selected, setSelected] = useState('Platforms');
+  const stack = [...new Set(innerServices.flatMap(service => service.stack))];
+  return <main id="top" className="inner-page"><PageIntro scene="other" eyebrow="Other / connected capabilities" title="The tools behind the work." description="Explore the platforms, integrations and use cases that can connect to a broader delivery plan." />
+    <section className="inner-section wrap inner-editorial-lead"><Reveal><p className="eyebrow"><span className="dot"/>Choosing a platform</p><h2 className="h2">Start with the process, then the tool.</h2></Reveal><Reveal><p>React and Node.js may suit a custom application, while WordPress may suit a site that a content team edits often. Tools such as n8n, Zapier or Power Automate can connect repeatable steps. CRM and workspace platforms bring their own records and permissions. The right combination depends on the existing systems and who will maintain the result.</p></Reveal></section>
+    <section className="inner-section wrap"><div className="inner-tabs" role="group" aria-label="Explore capabilities">{['Platforms','Use cases','More services'].map(tab=><button type="button" key={tab} onClick={()=>setSelected(tab)} aria-pressed={selected===tab}>{tab}</button>)}</div>
+      {selected==='Platforms' && <Reveal className="inner-platform-board"><div className="inner-platform-core">BAIG <b>BOTS</b><small>CONNECT / BUILD / AUTOMATE</small></div><div className="inner-platform-list">{stack.map((name,index)=><span key={name} style={{'--i':index}}>{name}</span>)}</div></Reveal>}
+      {selected==='Use cases' && <div className="inner-reference-grid">{projectReferences.map(([name,detail])=><Reveal key={name} className="inner-reference"><span className="inner-kicker">PROJECT / USE CASE</span><h2>{name}</h2><p>{detail}</p></Reveal>)}</div>}
+      {selected==='More services' && <div className="inner-reference-grid">{legacyServices.filter(item=>!innerServices.some(service=>service.title===item.title)).map(item=><Reveal key={item.slug} className="inner-reference"><span className="inner-kicker">ADDITIONAL SERVICE</span><h2>{item.title}</h2><p>{item.description}</p><a href={`/services/${item.slug}`}>Explore ↗</a></Reveal>)}</div>}
+    </section>
+    <section className="inner-section wrap"><div className="inner-section-head"><p className="eyebrow"><span className="dot"/>What gets decided first</p><h2 className="h2">A stack with a reason behind it.</h2></div><div className="inner-approach-list"><Reveal className="inner-approach-row"><span>01</span><p>Which task or customer journey should the system support?</p></Reveal><Reveal className="inner-approach-row"><span>02</span><p>Which existing tools hold the data and who owns each handover?</p></Reveal><Reveal className="inner-approach-row"><span>03</span><p>What needs a custom interface, and what can be configured or connected?</p></Reveal></div></section>
+  </main>;
+}
+
+export function ServiceDetail({ service }) {
+  const isNew = !!service.visual;
+  const title = service.title;
+  const intro = service.intro || service.description;
+  const focus = service.focus || service.points || [service.description];
+  const scene = isNew ? service.visual : service.slug.includes('ai') ? 'agents' : service.slug.includes('cloud') ? 'cloud' : service.slug.includes('api') ? 'api' : service.slug.includes('crm') ? 'crm' : service.slug.includes('web') ? 'web' : 'workflow';
+  const editorial = serviceEditorial[service.slug];
+  const related = innerServices.filter(item=>item.slug!==service.slug).slice(0,3);
+  return <main id="top" className="inner-page"><PageIntro scene={scene} eyebrow="Services / explore" title={title} description={intro}>{isNew && <div className="inner-hero-tools"><span>TECH / PLATFORMS</span>{service.stack.slice(0,4).map(tool=><b key={tool}>{tool}</b>)}</div>}<a className="btn btn-primary" href={`/contact?service=${encodeURIComponent(title)}`}><span>Discuss this service ↗</span></a></PageIntro>
+    {editorial && <section className="inner-section wrap inner-editorial-lead"><Reveal><p className="eyebrow"><span className="dot"/>What this service covers</p><h2 className="h2">Built for a real job, not a template.</h2></Reveal><Reveal><p>{editorial.summary}</p></Reveal></section>}
+    {editorial && <section className="inner-section wrap"><div className="inner-section-head"><p className="eyebrow"><span className="dot"/>Types of work</p><h2 className="h2">What we can build and connect.</h2></div><div className="inner-editorial-grid">{editorial.types.map(([heading,body],index)=><Reveal key={heading} className="inner-editorial-card"><span className="inner-kicker">{String(index+1).padStart(2,'0')} / OUTPUT</span><h3>{heading}</h3><p>{body}</p></Reveal>)}</div></section>}
+    <section className="inner-section wrap"><div className="inner-section-head"><p className="eyebrow"><span className="dot"/>Focus areas</p><h2 className="h2">What we can work on.</h2></div><div className="inner-focus-grid">{focus.map((point,index)=><Reveal key={point} className="inner-focus-card"><span>{String(index+1).padStart(2,'0')}</span><h3>{point}</h3><i aria-hidden="true">↗</i></Reveal>)}</div></section>
+    {editorial && <section className="inner-section wrap inner-stack-section"><div className="inner-section-head"><p className="eyebrow"><span className="dot"/>Technology in context</p><h2 className="h2">Tools selected for the work.</h2><p className="inner-help">The final stack depends on your existing systems, content needs and scope.</p></div><div className="inner-stack-grid">{editorial.stackNotes.map(([name,note])=><Reveal key={name} className="inner-stack-note"><h3>{name}</h3><p>{note}</p></Reveal>)}</div></section>}
+    {editorial && <section className="inner-section wrap"><div className="inner-section-head"><p className="eyebrow"><span className="dot"/>How a project starts</p><h2 className="h2">A clear path from idea to working flow.</h2></div><div className="inner-approach-list">{editorial.approach.map((step,index)=><Reveal key={step} className="inner-approach-row"><span>{String(index+1).padStart(2,'0')}</span><p>{step}</p></Reveal>)}</div></section>}
+    {service.project && <section className="inner-section wrap"><Reveal className="inner-case"><div><p className="eyebrow"><span className="dot"/>Related project reference</p><h2 className="h2">{service.project}</h2><p>{service.projectDetail}</p></div><div className="inner-case-mark" aria-hidden="true">↗</div></Reveal></section>}
+    <section className="inner-section wrap"><div className="inner-section-head"><p className="eyebrow"><span className="dot"/>Keep exploring</p><h2 className="h2">Related services.</h2></div><div className="inner-card-grid">{related.map((item,index)=><ServiceTile key={item.slug} service={item} index={index}/>)}</div></section>
+  </main>;
+}
+
+export function IndustriesPage() {
+  return <main id="top" className="inner-page"><PageIntro scene="industries" eyebrow="Industries" title="Workflows shaped by the people who use them." description="Explore how connected software, AI and automation can support the practical work in each industry." />
+    <section className="inner-section wrap"><div className="inner-section-head"><p className="eyebrow"><span className="dot"/>Industry paths</p><h2 className="h2">Where the work happens.</h2></div><div className="inner-industry-grid">{innerIndustries.map((industry,index)=><Reveal key={industry.slug} className="inner-industry-card"><span className="inner-kicker">{String(index+1).padStart(2,'0')} / INDUSTRY</span><h2><a href={`/industries/${industry.slug}`}>{industry.title}</a></h2><p>{industry.intro}</p><div className="inner-industry-line" aria-hidden="true"><i/><i/><i/></div><a href={`/industries/${industry.slug}`}>Explore industry ↗</a></Reveal>)}</div></section>
+    <section className="inner-section wrap inner-editorial-lead"><Reveal><p className="eyebrow"><span className="dot"/>Across industries</p><h2 className="h2">The systems change. The questions stay practical.</h2></Reveal><Reveal><p>Where does a request begin? Which record carries it forward? Who needs to review a decision, and what happens when a step fails? These questions shape an integration or automation more than an industry label alone. The pages above show workflows and project references relevant to each field.</p></Reveal></section>
+  </main>;
+}
+
+export function IndustryDetail({ industry }) {
+  const services=industry.services.map(slug=>innerServices.find(item=>item.slug===slug)).filter(Boolean);
+  const detail = industryEditorial[industry.slug];
+  return <main id="top" className="inner-page"><PageIntro scene="industry" industry={industry} eyebrow="Industries / explore" title={industry.title} description={industry.intro}><a className="btn btn-primary" href={`/contact?service=${encodeURIComponent(industry.title)}`}><span>Talk about your workflow ↗</span></a></PageIntro>
+    <section className="inner-section wrap inner-editorial-lead"><Reveal><p className="eyebrow"><span className="dot"/>The work behind the page</p><h2 className="h2">Make each handover clearer.</h2></Reveal><Reveal><p>{detail?.body}</p></Reveal></section>
+    <section className="inner-section wrap"><div className="inner-section-head"><p className="eyebrow"><span className="dot"/>Example workflow</p><h2 className="h2">From first request to next action.</h2></div><div className="inner-approach-list">{detail?.workflow.map((step,index)=><Reveal key={step} className="inner-approach-row"><span>{String(index+1).padStart(2,'0')}</span><p>{step}</p></Reveal>)}</div></section>
+    {industry.scenario && <section className="inner-section wrap"><Reveal className="inner-case"><div><p className="eyebrow"><span className="dot"/>Project reference</p><h2 className="h2">{industry.scenario}</h2><p>{industry.detail}</p></div><div className="inner-case-mark" aria-hidden="true">↗</div></Reveal></section>}
+    <section className="inner-section wrap"><div className="inner-section-head"><p className="eyebrow"><span className="dot"/>Relevant services</p><h2 className="h2">Explore the capabilities.</h2></div><div className="inner-card-grid">{services.map((item,index)=><ServiceTile key={item.slug} service={item} index={index}/>)}</div></section>
+  </main>;
+}
+
+export function ContactLanding() { return <main id="top" className="inner-page inner-contact-landing"><PageIntro scene="contact" eyebrow="Contact Us" title="Tell us what you want to connect, build or automate." description="Choose a service below, or use the quick enquiry form. Your description can be brief; we can clarify the details together."/><section className="inner-section wrap"><div className="inner-section-head"><p className="eyebrow"><span className="dot"/>Choose a direction</p><h2 className="h2">Start with the work you need done.</h2><p className="inner-help">A service selection adds context to the form below. If your project spans several areas, describe the whole workflow instead.</p></div><div className="inner-contact-options">{innerServices.map(item=><a key={item.slug} href={`/contact?service=${encodeURIComponent(item.title)}`}>{item.title}<span aria-hidden="true">↗</span></a>)}</div></section></main>; }
+export function NotFoundPage() { return <main id="top" className="inner-page"><PageIntro scene="not-found" eyebrow="Page not found" title="This page isn't here." description="Use the navigation to find a service or industry."/><div className="wrap inner-not-found"><a className="btn btn-primary" href="/"><span>Back to Home</span></a></div></main>; }

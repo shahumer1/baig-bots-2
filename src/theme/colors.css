@@ -40,6 +40,11 @@
   --rv:rgba(112,16,24,.3);
   --shadow:rgba(25,25,25,.45);
   --ring:rgba(112,16,24,.16);
+  --cloud-node-bg:rgba(245,218,221,.88);
+  --cloud-node-border:rgba(112,16,24,.36);
+  --cloud-node-rim:rgba(255,255,255,.9);
+  --cloud-node-shadow:rgba(112,16,24,.18);
+  --cloud-route:rgba(112,16,24,.34);
   --logo-red:#E5060F;
   --logo-silver:#DADADB;
   --logo-glow:rgba(229,6,15,0);
@@ -178,6 +183,11 @@
     --rv:rgba(255,60,70,.32);
     --shadow:rgba(0,0,0,.72);
     --ring:rgba(255,46,62,.3);
+    --cloud-node-bg:rgba(42,19,24,.88);
+    --cloud-node-border:rgba(255,96,112,.48);
+    --cloud-node-rim:rgba(255,255,255,.24);
+    --cloud-node-shadow:rgba(255,46,62,.22);
+    --cloud-route:rgba(255,106,119,.42);
     --logo-red:#FF2238;
     --logo-silver:#E8E9EC;
     --logo-glow:rgba(255,34,56,.38);

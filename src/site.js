@@ -233,20 +233,26 @@ export class BaigBotsSite {
     if (typeof stop === 'function') { this._cleanups.push(stop); }
   }
 
+  /* ---------- shared circuit motion for the home and inner-page heroes ---------- */
+  _animateCircuit(selector, { $$ }) {
+    gsap.from($$(`${selector} .base`), { drawSVG: 0, duration: 2.2, ease: 'power2.inOut', stagger: 0.12, delay: 0.2 });
+    gsap.from($$(`${selector} .node`), { scale: 0, transformOrigin: '50% 50%', duration: 0.5, ease: 'back.out(3)', stagger: 0.12, delay: 1.3 });
+    gsap.fromTo($$(`${selector} .pulse`), { opacity: 0 }, { opacity: 0.9, duration: 0.6, delay: 2.2 });
+    $$(`${selector} .pulse`).forEach((path, index) => {
+      gsap.fromTo(path, { strokeDashoffset: 0 }, { strokeDashoffset: -100, duration: 5 + index * 0.9, ease: 'none', repeat: -1, delay: 2 + index * 0.6 });
+    });
+  }
+
   /* ---------- hero: circuit draw, kinetic headline, entrance ---------- */
   _hero({ $, $$, reduce, fine }) {
     const h1 = $('[data-hero-h1]');
+    if (!h1) { return; }
     this._heroChars = [];
     if (fine && !reduce) {
       this._proximity(() => this._heroChars, 150, (c, k) => { c.el.style.setProperty('--k', k.toFixed(3)); });
     }
     if (reduce) { return; }
-    gsap.from($$('.hero-circuit .base'), { drawSVG: 0, duration: 2.2, ease: 'power2.inOut', stagger: 0.12, delay: 0.2 });
-    gsap.from($$('.hero-circuit .node'), { scale: 0, transformOrigin: '50% 50%', duration: 0.5, ease: 'back.out(3)', stagger: 0.12, delay: 1.3 });
-    gsap.fromTo($$('.hero-circuit .pulse'), { opacity: 0 }, { opacity: 0.9, duration: 0.6, delay: 2.2 });
-    $$('.hero-circuit .pulse').forEach((p, i) => {
-      gsap.fromTo(p, { strokeDashoffset: 0 }, { strokeDashoffset: -100, duration: 5 + i * 0.9, ease: 'none', repeat: -1, delay: 2 + i * 0.6 });
-    });
+    this._animateCircuit('.hero-circuit', { $$ });
     gsap.from('[data-hero="eyebrow"]', { y: 16, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.1 });
     gsap.from('[data-hero="lead"]', { y: 24, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 0.95 });
     gsap.from('[data-hero="cta"] > *', { y: 22, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 1.1, stagger: 0.1 });
@@ -288,6 +294,7 @@ export class BaigBotsSite {
   _hero3d({ $, reduce }) {
     const stage = $('[data-stage]');
     const canvas = $('[data-gl]');
+    if (!stage || !canvas) { return; }
     const hero = $('.hero');
     const T = THREE;
     let renderer;
@@ -719,7 +726,7 @@ export class BaigBotsSite {
         if (rx && fine && !reduce) { rx((px - 0.5) * amt); ry(-(py - 0.5) * amt); }
       });
       if (rx) { this._on(card, 'pointerleave', () => { rx(0); ry(0); }); }
-      const title = card.querySelector('h3');
+      const title = card.querySelector('h3 a') || card.querySelector('h3');
       if (title && card.hasAttribute('data-card') && !reduce) {
         const txt = title.textContent;
         this._on(card, 'pointerenter', () => gsap.to(title, { duration: 0.6, scrambleText: { text: txt, chars: 'lowerCase', speed: 1 }, overwrite: true }));
@@ -731,6 +738,7 @@ export class BaigBotsSite {
   _statement({ $, $$, reduce, fine }) {
     const sec = $('[data-stmt]');
     const text = $('[data-stmt-text]');
+    if (!sec || !text) { return; }
     if (reduce) { return; }
     $$('[data-px]', sec).forEach((layer) => {
       gsap.to(layer, { yPercent: parseFloat(layer.getAttribute('data-px')), ease: 'none', scrollTrigger: { trigger: sec, start: 'top bottom', end: 'bottom top', scrub: true } });
@@ -802,6 +810,7 @@ export class BaigBotsSite {
   _process({ $, $$, reduce }) {
     const tl = $('[data-tl]');
     const prog = $('[data-tl-prog]');
+    if (!tl || !prog) { return; }
     const steps = $$('[data-step]');
     if (!reduce) {
       gsap.to(prog, { scaleY: 1, ease: 'none', scrollTrigger: { trigger: tl, start: 'top 70%', end: 'bottom 62%', scrub: 0.4 } });
@@ -901,10 +910,12 @@ export class BaigBotsSite {
     links.forEach((link) => {
       const title = link.closest('.card, .line-item')?.querySelector('h3, h4')?.textContent.trim();
       if (!title) { return; }
-      const option = document.createElement('option');
-      option.value = title;
-      option.textContent = title;
-      select.add(option);
+      if (!Array.from(select.options).some((option) => option.value === title)) {
+        const option = document.createElement('option');
+        option.value = title;
+        option.textContent = title;
+        select.add(option);
+      }
       this._on(link, 'click', (event) => {
         event.preventDefault();
         this._toQuick(title);
@@ -968,6 +979,17 @@ export class BaigBotsSite {
       }
     };
     syncProblem();
+    const requestedService = new URLSearchParams(window.location.search).get('service');
+    if (requestedService) {
+      if (!Array.from(select.options).some((option) => option.value === requestedService)) {
+        const option = document.createElement('option');
+        option.value = requestedService;
+        option.textContent = requestedService;
+        select.add(option);
+      }
+      select.value = requestedService;
+      syncProblem();
+    }
     this._on(select, 'change', syncProblem);
     this._on(trigger, 'click', () => { if (menu.hidden) { openMenu(); } else { closeMenu(); } });
     this._on(trigger, 'keydown', (event) => {

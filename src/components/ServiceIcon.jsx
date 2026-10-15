@@ -1,0 +1,14 @@
+const icons = [
+<svg className="ic" viewBox="0 0 48 48" aria-hidden="true"><rect pathLength="1" x="9" y="16" width="30" height="22" rx="6"></rect><path pathLength="1" d="M24 16V10"></path><circle pathLength="1" cx="24" cy="7.5" r="2"></circle><circle pathLength="1" cx="18" cy="26" r="2.4"></circle><circle pathLength="1" cx="30" cy="26" r="2.4"></circle><path pathLength="1" d="M19 32H29"></path><path pathLength="1" d="M5 24V29"></path><path pathLength="1" d="M43 24V29"></path></svg>,
+<svg className="ic" viewBox="0 0 48 48" aria-hidden="true"><rect pathLength="1" x="5" y="6" width="12" height="12" rx="3"></rect><rect pathLength="1" x="31" y="6" width="12" height="12" rx="3"></rect><rect pathLength="1" x="18" y="30" width="12" height="12" rx="3"></rect><path pathLength="1" d="M17 12H31"></path><path pathLength="1" d="M37 18V24H24V30"></path></svg>,
+<svg className="ic" viewBox="0 0 48 48" aria-hidden="true"><rect pathLength="1" x="5" y="9" width="38" height="30" rx="4"></rect><path pathLength="1" d="M5 17H43"></path><path pathLength="1" d="M19 24L15 28L19 32"></path><path pathLength="1" d="M29 24L33 28L29 32"></path><path pathLength="1" d="M25 23L23 33"></path></svg>,
+<svg className="ic" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M5 24H13"></path><rect pathLength="1" x="13" y="15" width="9" height="18" rx="2"></rect><rect pathLength="1" x="26" y="15" width="9" height="18" rx="2"></rect><path pathLength="1" d="M35 24H43"></path><path pathLength="1" d="M22 21H26"></path><path pathLength="1" d="M22 27H26"></path></svg>,
+<svg className="ic" viewBox="0 0 48 48" aria-hidden="true"><rect pathLength="1" x="5" y="11" width="38" height="26" rx="4"></rect><path pathLength="1" d="M5 18H43"></path><rect pathLength="1" x="10" y="24" width="8" height="7" rx="1.5"></rect><path pathLength="1" d="M26 29H37"></path><path pathLength="1" d="M26 24H32"></path></svg>,
+<svg className="ic" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M7 41H41"></path><rect pathLength="1" x="10" y="27" width="6" height="14"></rect><rect pathLength="1" x="21" y="19" width="6" height="22"></rect><rect pathLength="1" x="32" y="11" width="6" height="30"></rect><path pathLength="1" d="M8 20L18 12L26 15L39 5"></path></svg>,
+<svg className="ic" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M14 36H33.5A8 8 0 0 0 35 20.2A11 11 0 0 0 13.6 22.6A7 7 0 0 0 14 36Z"></path><path pathLength="1" d="M24 41V28"></path><path pathLength="1" d="M19.5 32.5L24 28L28.5 32.5"></path></svg>,
+<svg className="ic" viewBox="0 0 48 48" aria-hidden="true"><circle pathLength="1" cx="21" cy="21" r="13"></circle><path pathLength="1" d="M30.5 30.5L42 42"></path><path pathLength="1" d="M12 21H16L18.5 15L23 27L25.5 21H30"></path></svg>
+];
+
+export function ServiceIcon({ index }) {
+  return icons[index] || null;
+}
