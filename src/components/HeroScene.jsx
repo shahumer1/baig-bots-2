@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { innerIndustries, innerServices } from './innerData.js';
 import { industryEditorial } from './innerEditorial.js';
+import { RobotWorkstation } from './RobotWorkstation.jsx';
+import { motion } from 'motion/react';
+import { Preview } from './ServiceExperience.jsx';
+import { legacyExperience } from './serviceExperienceData.js';
 
 const heroTabs = {
   web:['React app','WordPress site','Node.js API'],
@@ -51,7 +55,7 @@ function WebPreview({ active }) {
   return <div className="inner-browser-preview inner-browser-preview-app" key="react">
     <div className="inner-browser-overline">INTERFACE / COMPONENTS</div>
     <div className="inner-browser-title">Interactive application</div>
-    <div className="inner-app-layout"><span>Overview <b>↗</b></span><div><i/><i/><i/></div></div>
+    <div className="inner-app-layout"><span>Overview <b>→</b></span><div><i/><i/><i/></div></div>
     <div className="inner-browser-action">React + JavaScript</div>
   </div>;
 }
@@ -190,14 +194,26 @@ function ServiceScene({ kind }) {
   </SceneFrame>;
 }
 
+function LegacyServiceScene({ service }) {
+  const experience = legacyExperience[service.slug];
+  const [active] = useMovingSelection(experience.areas.length, 3300);
+  const [area, lead, , steps] = experience.areas[active];
+  return <div className="legacy-hero-scene" aria-label={`Animated ${service.title} service preview`}>
+    <motion.div key={`${service.slug}-${active}`} initial={{opacity:0,y:12}} animate={{opacity:1,y:0}} transition={{duration:.5,ease:[.22,1,.36,1]}}>
+      <Preview kind={experience.kind} steps={steps} title={service.title} caption={`0${active+1} / ${area.toUpperCase()}`}/>
+      <div className="legacy-hero-description"><span className="inner-kicker">SERVICE IN MOTION / 0{active+1}</span><strong>{lead}</strong></div>
+    </motion.div>
+  </div>;
+}
+
 function ServicesScene() {
   const [active,setActive]=useMovingSelection(innerServices.length, 2000);
-  return <SceneFrame label="SERVICE DIRECTORY" note="AUTO / EXPLORE A CAPABILITY" className="inner-scene-directory"><div className="inner-directory-layout"><div className="inner-directory-list">{innerServices.map((item,index)=><button type="button" key={item.slug} aria-pressed={active===index} onClick={()=>setActive(index)}><span>{String(index+1).padStart(2,'0')}</span>{item.title}</button>)}</div><div key={active} className="inner-directory-feature"><span>SELECTED SERVICE</span><strong>{innerServices[active].title}</strong><p>{innerServices[active].intro}</p><a href={`/services/${innerServices[active].slug}`}>View service ↗</a></div></div></SceneFrame>;
+  return <SceneFrame label="SERVICE DIRECTORY" note="AUTO / EXPLORE A CAPABILITY" className="inner-scene-directory"><div className="inner-directory-layout"><div className="inner-directory-list">{innerServices.map((item,index)=><button type="button" key={item.slug} aria-pressed={active===index} onClick={()=>setActive(index)}><span>{String(index+1).padStart(2,'0')}</span>{item.title}</button>)}</div><div key={active} className="inner-directory-feature"><span>SELECTED SERVICE</span><strong>{innerServices[active].title}</strong><p>{innerServices[active].intro}</p><a href={`/services/${innerServices[active].slug}`}>View service →</a></div></div></SceneFrame>;
 }
 
 function IndustriesScene() {
   const [active,setActive]=useMovingSelection(innerIndustries.length, 2000);
-  return <SceneFrame label="INDUSTRY DIRECTORY" note="AUTO / CHOOSE A WORKFLOW" className="inner-scene-directory"><div className="inner-directory-layout"><div className="inner-directory-list">{innerIndustries.map((item,index)=><button type="button" key={item.slug} aria-pressed={active===index} onClick={()=>setActive(index)}><span>{String(index+1).padStart(2,'0')}</span>{item.title}</button>)}</div><div key={active} className="inner-directory-feature"><span>INDUSTRY FOCUS</span><strong>{innerIndustries[active].title}</strong><p>{innerIndustries[active].intro}</p><a href={`/industries/${innerIndustries[active].slug}`}>View industry ↗</a></div></div></SceneFrame>;
+  return <SceneFrame label="INDUSTRY DIRECTORY" note="AUTO / CHOOSE A WORKFLOW" className="inner-scene-directory"><div className="inner-directory-layout"><div className="inner-directory-list">{innerIndustries.map((item,index)=><button type="button" key={item.slug} aria-pressed={active===index} onClick={()=>setActive(index)}><span>{String(index+1).padStart(2,'0')}</span>{item.title}</button>)}</div><div key={active} className="inner-directory-feature"><span>INDUSTRY FOCUS</span><strong>{innerIndustries[active].title}</strong><p>{innerIndustries[active].intro}</p><a href={`/industries/${innerIndustries[active].slug}`}>View industry →</a></div></div></SceneFrame>;
 }
 
 function IndustryScene({ industry }) {
@@ -213,14 +229,16 @@ function OtherScene() {
 }
 
 function ContactScene() {
-  return <SceneFrame label="PROJECT ENQUIRY" note="A SIMPLE START" className="inner-scene-contact"><div className="inner-contact-scene-list"><div><span>01</span><b>Choose a direction</b><i/></div><div><span>02</span><b>Describe the work</b><i/></div><div><span>03</span><b>Review the next step</b><i/></div></div><a href="#contact">Open quick enquiry ↘</a></SceneFrame>;
+  return <SceneFrame label="PROJECT ENQUIRY" note="A SIMPLE START" className="inner-scene-contact"><div className="inner-contact-scene-list"><div><span>01</span><b>Choose a direction</b><i/></div><div><span>02</span><b>Describe the work</b><i/></div><div><span>03</span><b>Review the next step</b><i/></div></div><a href="#contact">Open quick enquiry →</a></SceneFrame>;
 }
 
 function NotFoundScene() {
-  return <SceneFrame label="ROUTE NOT FOUND" note="FIND YOUR WAY" className="inner-scene-not-found"><div className="inner-not-found-code">404<span>/</span></div><div className="inner-not-found-links"><a href="/services">All services ↗</a><a href="/industries">Industries ↗</a><a href="/contact">Contact Us ↗</a></div></SceneFrame>;
+  return <SceneFrame label="ROUTE NOT FOUND" note="FIND YOUR WAY" className="inner-scene-not-found"><div className="inner-not-found-code">404<span>/</span></div><div className="inner-not-found-links"><a href="/services">All services →</a><a href="/industries">Industries →</a><a href="/contact">Contact Us →</a></div></SceneFrame>;
 }
 
-export function HeroScene({ kind, industry }) {
+export function HeroScene({ kind, industry, legacyService }) {
+  if (kind==='robot') return <RobotWorkstation/>;
+  if (legacyService && legacyExperience[legacyService.slug]) return <LegacyServiceScene service={legacyService}/>;
   if (kind==='cloud') return <CloudScene/>;
   if (kind==='agents') return <AgentsScene/>;
   if (kind==='services') return <ServicesScene/>;

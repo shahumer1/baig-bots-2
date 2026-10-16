@@ -1,0 +1,599 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/RobotWorkstation.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=cd36e925"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+var _s = $RefreshSig$();
+import __vite__cjsImport1_react from "/node_modules/.vite/deps/react.js?v=cd36e925"; const useEffect = __vite__cjsImport1_react["useEffect"]; const useRef = __vite__cjsImport1_react["useRef"]; const useState = __vite__cjsImport1_react["useState"];
+export function RobotWorkstation() {
+  _s();
+  const sceneRef = useRef(null);
+  const [isActive, setIsActive] = useState(false);
+  useEffect(() => {
+    const scene = sceneRef.current;
+    if (!scene || !("IntersectionObserver" in window)) {
+      setIsActive(true);
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => setIsActive(entry.isIntersecting), { threshold: 0.25 });
+    observer.observe(scene);
+    return () => observer.disconnect();
+  }, []);
+  return /* @__PURE__ */ jsxDEV("div", { ref: sceneRef, className: `inner-hero-scene inner-scene-workstation${isActive ? " is-active" : ""}`, children: [
+    /* @__PURE__ */ jsxDEV("div", { className: "inner-scene-head", children: [
+      /* @__PURE__ */ jsxDEV("span", { className: "inner-scene-led" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 19,
+        columnNumber: 39
+      }, this),
+      /* @__PURE__ */ jsxDEV("span", { children: "CUSTOM SOFTWARE / AI AT WORK" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 19,
+        columnNumber: 75
+      }, this),
+      /* @__PURE__ */ jsxDEV("span", { className: "inner-scene-note", children: "IDEA → PRODUCT" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 19,
+        columnNumber: 116
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+      lineNumber: 19,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "workstation-art", role: "img", "aria-label": "Animated AI robot rising from a laptop screen, blinking and surrounded by chat icons", children: /* @__PURE__ */ jsxDEV("svg", { viewBox: "0 0 520 390", "aria-hidden": "true", focusable: "false", children: [
+      /* @__PURE__ */ jsxDEV("defs", { children: [
+        /* @__PURE__ */ jsxDEV("linearGradient", { id: "workstation-shell", x1: "0", y1: "0", x2: "1", y2: "1", children: [
+          /* @__PURE__ */ jsxDEV("stop", { stopColor: "#ffffff" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 23,
+            columnNumber: 78
+          }, this),
+          /* @__PURE__ */ jsxDEV("stop", { offset: ".46", stopColor: "#e7e9ea" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 23,
+            columnNumber: 106
+          }, this),
+          /* @__PURE__ */ jsxDEV("stop", { offset: "1", stopColor: "#9ca4a7" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 23,
+            columnNumber: 147
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 23,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("linearGradient", { id: "workstation-shell-side", x1: "0", y1: "0", x2: "1", y2: ".7", children: [
+          /* @__PURE__ */ jsxDEV("stop", { stopColor: "#889397" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 24,
+            columnNumber: 84
+          }, this),
+          /* @__PURE__ */ jsxDEV("stop", { offset: "1", stopColor: "#dee2e3" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 24,
+            columnNumber: 112
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 24,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("linearGradient", { id: "workstation-visor", x1: "0", y1: "0", x2: "1", y2: "1", children: [
+          /* @__PURE__ */ jsxDEV("stop", { stopColor: "#50575c" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 25,
+            columnNumber: 78
+          }, this),
+          /* @__PURE__ */ jsxDEV("stop", { offset: ".36", stopColor: "#1c2024" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 25,
+            columnNumber: 106
+          }, this),
+          /* @__PURE__ */ jsxDEV("stop", { offset: "1", stopColor: "#07090b" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 25,
+            columnNumber: 147
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 25,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("linearGradient", { id: "workstation-screen", x1: "0", y1: "0", x2: "0", y2: "1", children: [
+          /* @__PURE__ */ jsxDEV("stop", { stopColor: "var(--accent)" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 26,
+            columnNumber: 79
+          }, this),
+          /* @__PURE__ */ jsxDEV("stop", { offset: "1", stopColor: "#28080d" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 26,
+            columnNumber: 113
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 26,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("linearGradient", { id: "workstation-tablet-edge", x1: "0", y1: "0", x2: "0", y2: "1", children: [
+          /* @__PURE__ */ jsxDEV("stop", { stopColor: "#f7f8f8" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 27,
+            columnNumber: 84
+          }, this),
+          /* @__PURE__ */ jsxDEV("stop", { offset: "1", stopColor: "#91999d" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 27,
+            columnNumber: 112
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 27,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("radialGradient", { id: "workstation-aura", children: [
+          /* @__PURE__ */ jsxDEV("stop", { stopColor: "var(--ring)" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 28,
+            columnNumber: 49
+          }, this),
+          /* @__PURE__ */ jsxDEV("stop", { offset: "1", stopColor: "transparent" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 28,
+            columnNumber: 81
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 28,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 22,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("ellipse", { className: "workstation-aura", cx: "260", cy: "230", rx: "205", ry: "155", fill: "url(#workstation-aura)" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 31,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("path", { className: "workstation-circuit", d: "M23 125h51l24 24h35M497 150h-49l-24 24h-30M35 260h49l26-26h21M485 257h-51l-25-25h-27" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 32,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("circle", { className: "workstation-circuit-dot", cx: "23", cy: "125", r: "3" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 33,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("circle", { className: "workstation-circuit-dot", cx: "497", cy: "150", r: "3" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 33,
+        columnNumber: 78
+      }, this),
+      /* @__PURE__ */ jsxDEV("g", { className: "workstation-chat-icon workstation-chat-icon-left", children: [
+        /* @__PURE__ */ jsxDEV("path", { d: "M49 73q0-16 17-16h35q16 0 16 16v13q0 16-16 16H82l-12 11-1-11h-3q-17 0-17-16Z" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 36,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("circle", { cx: "70", cy: "80", r: "3" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 37,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("circle", { cx: "83", cy: "80", r: "3" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 37,
+          columnNumber: 43
+        }, this),
+        /* @__PURE__ */ jsxDEV("circle", { cx: "96", cy: "80", r: "3" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 37,
+          columnNumber: 75
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 35,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("g", { className: "workstation-chat-icon workstation-chat-icon-right", children: [
+        /* @__PURE__ */ jsxDEV("path", { d: "M401 54q0-16 17-16h39q17 0 17 16v25q0 16-17 16h-12l-12 11-1-11h-14q-17 0-17-16Z" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 40,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-chat-line", d: "M414 57h46m-46 10h46m-46 10h32" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 41,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 39,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("g", { className: "workstation-chat-icon workstation-chat-icon-small", children: [
+        /* @__PURE__ */ jsxDEV("path", { d: "M431 176q0-12 13-12h22q13 0 13 12v9q0 12-13 12h-9l-9 8v-8h-4q-13 0-13-12Z" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 44,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("circle", { cx: "446", cy: "181", r: "2.4" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 45,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("circle", { cx: "455", cy: "181", r: "2.4" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 45,
+          columnNumber: 47
+        }, this),
+        /* @__PURE__ */ jsxDEV("circle", { cx: "464", cy: "181", r: "2.4" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 45,
+          columnNumber: 83
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 43,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("ellipse", { className: "workstation-platform-shadow", cx: "260", cy: "356", rx: "202", ry: "15" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 48,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("ellipse", { className: "workstation-platform-ring ring-one", cx: "260", cy: "335", rx: "222", ry: "31" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 49,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("ellipse", { className: "workstation-platform-ring ring-two", cx: "260", cy: "335", rx: "193", ry: "24" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 50,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("path", { className: "workstation-platform-back", d: "M101 294h318l44 36H57Z" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 51,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("path", { className: "workstation-platform-screen", d: "M119 300h282l36 24H83Z" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 52,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("path", { className: "workstation-platform-grid", d: "M130 309h260m-240 7h220m-160-12-18 19m122-19 18 19" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 53,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("ellipse", { className: "workstation-platform-light", cx: "260", cy: "316", rx: "95", ry: "13" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 54,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("g", { className: "workstation-robot", children: /* @__PURE__ */ jsxDEV("g", { className: "workstation-robot-float", children: [
+        /* @__PURE__ */ jsxDEV("g", { className: "workstation-robot-arm workstation-robot-arm-left", children: [
+          /* @__PURE__ */ jsxDEV("path", { className: "workstation-arm-shadow", d: "M216 229q-26-8-40 10l-33 8-19-28" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 58,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("path", { className: "workstation-arm-shell", d: "M216 224q-26-8-39 10l-34 6-19-27" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 59,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { className: "workstation-joint", cx: "177", cy: "235", r: "14" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 60,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { className: "workstation-joint-center", cx: "177", cy: "235", r: "6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 60,
+            columnNumber: 78
+          }, this),
+          /* @__PURE__ */ jsxDEV("path", { className: "workstation-palm", d: "M112 192q9-7 19 0l4 22-11 10-14-8Z" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 61,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("path", { className: "workstation-fingers", d: "m111 194-9-17m18 11-4-20m12 21 2-18m-21 28-14-7" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 62,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 57,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("g", { className: "workstation-robot-arm workstation-robot-arm-right", children: [
+          /* @__PURE__ */ jsxDEV("path", { className: "workstation-arm-shadow", d: "M306 229q26-8 40 10l33 8 19-28" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 65,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("path", { className: "workstation-arm-shell", d: "M306 224q26-8 39 10l34 6 19-27" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 66,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { className: "workstation-joint", cx: "345", cy: "235", r: "14" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 67,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { className: "workstation-joint-center", cx: "345", cy: "235", r: "6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 67,
+            columnNumber: 78
+          }, this),
+          /* @__PURE__ */ jsxDEV("path", { className: "workstation-palm", d: "M410 192q-9-7-19 0l-4 22 11 10 14-8Z" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 68,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("path", { className: "workstation-fingers", d: "m411 194 9-17m-18 11 4-20m-12 21-2-18m21 28 14-7" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 69,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 64,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-neck-shadow", d: "M220 183h81v36h-81Z" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 72,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-neck", d: "M225 185h71v32h-71Z" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 73,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-neck-seam", d: "M230 199h61m-58 9h56" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 74,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-body-shadow", d: "M210 219q-15 3-17 22l-3 57q0 23 22 25h97q23-2 23-25l-3-57q-2-19-17-22Z" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 75,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-body", d: "M211 214q-15 3-17 22l-3 57q0 23 22 25h94q23-2 23-25l-3-57q-2-19-17-22Z" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 76,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-body-shine", d: "M208 226q-8 7-8 22v43" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 77,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-body-panel", d: "M221 234h78l11 15-5 40h-89l-5-40Z" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 78,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-chest-slot", d: "M244 250h32" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 79,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("circle", { className: "workstation-chest-led", cx: "239", cy: "294", r: "2.5" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 80,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("circle", { className: "workstation-chest-led", cx: "260", cy: "294", r: "2.5" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 80,
+          columnNumber: 81
+        }, this),
+        /* @__PURE__ */ jsxDEV("circle", { className: "workstation-chest-led", cx: "281", cy: "294", r: "2.5" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 80,
+          columnNumber: 151
+        }, this),
+        /* @__PURE__ */ jsxDEV("ellipse", { className: "workstation-body-base", cx: "260", cy: "319", rx: "47", ry: "8" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 81,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-antenna", d: "M220 100 207 59m107 41 13-41" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 83,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("circle", { className: "workstation-antenna-tip", cx: "206", cy: "56", r: "5" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 84,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("circle", { className: "workstation-antenna-tip", cx: "328", cy: "56", r: "5" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 84,
+          columnNumber: 80
+        }, this),
+        /* @__PURE__ */ jsxDEV("ellipse", { className: "workstation-ear-shadow", cx: "171", cy: "146", rx: "18", ry: "30" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 85,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("ellipse", { className: "workstation-ear-shadow", cx: "349", cy: "146", rx: "18", ry: "30" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 85,
+          columnNumber: 91
+        }, this),
+        /* @__PURE__ */ jsxDEV("ellipse", { className: "workstation-ear", cx: "173", cy: "145", rx: "16", ry: "28" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 86,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("ellipse", { className: "workstation-ear", cx: "347", cy: "145", rx: "16", ry: "28" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 86,
+          columnNumber: 84
+        }, this),
+        /* @__PURE__ */ jsxDEV("ellipse", { className: "workstation-ear-core", cx: "173", cy: "145", rx: "7", ry: "18" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 87,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("ellipse", { className: "workstation-ear-core", cx: "347", cy: "145", rx: "7", ry: "18" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 87,
+          columnNumber: 88
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-head-shadow", d: "M164 120q0-32 35-36h121q36 4 36 36v51q0 33-36 38H200q-36-5-36-38Z" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 88,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-head", d: "M163 115q0-32 36-37h121q37 5 37 37v55q0 34-37 39H200q-37-5-37-39Z" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 89,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-head-shine", d: "M178 114q2-18 24-22h111" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 90,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-visor", d: "M183 117q0-17 20-19h114q20 2 20 19v50q0 18-20 20H203q-20-2-20-20Z" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 91,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-visor-gloss", d: "M192 110q4-7 17-7h68l-61 79h-14q-11-1-11-16Z" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 92,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("g", { className: "workstation-eyes", children: [
+          /* @__PURE__ */ jsxDEV("g", { className: "workstation-eye", children: [
+            /* @__PURE__ */ jsxDEV("circle", { className: "workstation-eye-ring", cx: "227", cy: "145", r: "17" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+              lineNumber: 94,
+              columnNumber: 44
+            }, this),
+            /* @__PURE__ */ jsxDEV("circle", { className: "workstation-eye-inner", cx: "227", cy: "145", r: "7" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+              lineNumber: 94,
+              columnNumber: 112
+            }, this),
+            /* @__PURE__ */ jsxDEV("circle", { className: "workstation-eye-glint", cx: "223", cy: "141", r: "2" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+              lineNumber: 94,
+              columnNumber: 180
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 94,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ jsxDEV("g", { className: "workstation-eye", children: [
+            /* @__PURE__ */ jsxDEV("circle", { className: "workstation-eye-ring", cx: "293", cy: "145", r: "17" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+              lineNumber: 95,
+              columnNumber: 44
+            }, this),
+            /* @__PURE__ */ jsxDEV("circle", { className: "workstation-eye-inner", cx: "293", cy: "145", r: "7" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+              lineNumber: 95,
+              columnNumber: 112
+            }, this),
+            /* @__PURE__ */ jsxDEV("circle", { className: "workstation-eye-glint", cx: "289", cy: "141", r: "2" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+              lineNumber: 95,
+              columnNumber: 180
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+            lineNumber: 95,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 93,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV("path", { className: "workstation-face-seam", d: "M232 199h56" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+          lineNumber: 97,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 56,
+        columnNumber: 42
+      }, this) }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 56,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("path", { className: "workstation-platform-front", d: "M57 330h406l-9 23H66Z" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 100,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("path", { className: "workstation-platform-lip", d: "M69 338h382" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 101,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("path", { className: "workstation-platform-port", d: "M119 343h48m183 0h38" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+        lineNumber: 102,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+      lineNumber: 21,
+      columnNumber: 7
+    }, this) }, void 0, false, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+      lineNumber: 20,
+      columnNumber: 5
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx",
+    lineNumber: 18,
+    columnNumber: 10
+  }, this);
+}
+_s(RobotWorkstation, "6GdfCLZYdknSy5Z+CA1mh2C7BXY=");
+_c = RobotWorkstation;
+var _c;
+$RefreshReg$(_c, "RobotWorkstation");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "C:/Users/Umer/Desktop/baig-bots-2/src/components/RobotWorkstation.jsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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QkFBd0IsSUFBRyxPQUFNLElBQUcsT0FBTSxHQUFFLE9BQTlEO0FBQUE7QUFBQTtBQUFBO0FBQUEsbUJBQWlFO0FBQUEsWUFBRSx1QkFBQyxZQUFPLFdBQVUseUJBQXdCLElBQUcsT0FBTSxJQUFHLE9BQU0sR0FBRSxPQUE5RDtBQUFBO0FBQUE7QUFBQTtBQUFBLG1CQUFpRTtBQUFBLGVBQXRPO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQXdPO0FBQUEsYUFGMU87QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUdBO0FBQUEsUUFDQSx1QkFBQyxVQUFLLFdBQVUseUJBQXdCLEdBQUUsaUJBQTFDO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBdUQ7QUFBQSxXQXpDeEI7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQTBDakMsS0ExQ0E7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQTBDSTtBQUFBLE1BRUosdUJBQUMsVUFBSyxXQUFVLDhCQUE2QixHQUFFLDJCQUEvQztBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQXNFO0FBQUEsTUFDdEUsdUJBQUMsVUFBSyxXQUFVLDRCQUEyQixHQUFFLGlCQUE3QztBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQTBEO0FBQUEsTUFDMUQsdUJBQUMsVUFBSyxXQUFVLDZCQUE0QixHQUFFLDBCQUE5QztBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQW9FO0FBQUEsU0FqRnRFO0FBQUE7QUFBQTtBQUFBO0FBQUEsV0FrRkEsS0FuRkY7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQW9GQTtBQUFBLE9BdEZLO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0F1RlA7QUFDRjtBQUFDRixHQXZHZUQsa0JBQWdCO0FBQUEsS0FBaEJBO0FBQWdCLElBQUFlO0FBQUEsYUFBQUEsSUFBQSIsIm5hbWVzIjpbInVzZUVmZmVjdCIsInVzZVJlZiIsInVzZVN0YXRlIiwiUm9ib3RXb3Jrc3RhdGlvbiIsIl9zIiwic2NlbmVSZWYiLCJpc0FjdGl2ZSIsInNldElzQWN0aXZlIiwic2NlbmUiLCJjdXJyZW50Iiwid2luZG93Iiwib2JzZXJ2ZXIiLCJJbnRlcnNlY3Rpb25PYnNlcnZlciIsImVudHJ5IiwiaXNJbnRlcnNlY3RpbmciLCJ0aHJlc2hvbGQiLCJvYnNlcnZlIiwiZGlzY29ubmVjdCIsIl9jIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIlJvYm90V29ya3N0YXRpb24uanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZUVmZmVjdCwgdXNlUmVmLCB1c2VTdGF0ZSB9IGZyb20gJ3JlYWN0JztcblxuZXhwb3J0IGZ1bmN0aW9uIFJvYm90V29ya3N0YXRpb24oKSB7XG4gIGNvbnN0IHNjZW5lUmVmID0gdXNlUmVmKG51bGwpO1xuICBjb25zdCBbaXNBY3RpdmUsIHNldElzQWN0aXZlXSA9IHVzZVN0YXRlKGZhbHNlKTtcblxuICB1c2VFZmZlY3QoKCkgPT4ge1xuICAgIGNvbnN0IHNjZW5lID0gc2NlbmVSZWYuY3VycmVudDtcbiAgICBpZiAoIXNjZW5lIHx8ICEoJ0ludGVyc2VjdGlvbk9ic2VydmVyJyBpbiB3aW5kb3cpKSB7XG4gICAgICBzZXRJc0FjdGl2ZSh0cnVlKTtcbiAgICAgIHJldHVybjtcbiAgICB9XG4gICAgY29uc3Qgb2JzZXJ2ZXIgPSBuZXcgSW50ZXJzZWN0aW9uT2JzZXJ2ZXIoKFtlbnRyeV0pID0+IHNldElzQWN0aXZlKGVudHJ5LmlzSW50ZXJzZWN0aW5nKSwgeyB0aHJlc2hvbGQ6IDAuMjUgfSk7XG4gICAgb2JzZXJ2ZXIub2JzZXJ2ZShzY2VuZSk7XG4gICAgcmV0dXJuICgpID0+IG9ic2VydmVyLmRpc2Nvbm5lY3QoKTtcbiAgfSwgW10pO1xuXG4gIHJldHVybiA8ZGl2IHJlZj17c2NlbmVSZWZ9IGNsYXNzTmFtZT17YGlubmVyLWhlcm8tc2NlbmUgaW5uZXItc2NlbmUtd29ya3N0YXRpb24ke2lzQWN0aXZlID8gJyBpcy1hY3RpdmUnIDogJyd9YH0+XG4gICAgPGRpdiBjbGFzc05hbWU9XCJpbm5lci1zY2VuZS1oZWFkXCI+PHNwYW4gY2xhc3NOYW1lPVwiaW5uZXItc2NlbmUtbGVkXCIvPjxzcGFuPkNVU1RPTSBTT0ZUV0FSRSAvIEFJIEFUIFdPUks8L3NwYW4+PHNwYW4gY2xhc3NOYW1lPVwiaW5uZXItc2NlbmUtbm90ZVwiPklERUEg4oaSIFBST0RVQ1Q8L3NwYW4+PC9kaXY+XG4gICAgPGRpdiBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1hcnRcIiByb2xlPVwiaW1nXCIgYXJpYS1sYWJlbD1cIkFuaW1hdGVkIEFJIHJvYm90IHJpc2luZyBmcm9tIGEgbGFwdG9wIHNjcmVlbiwgYmxpbmtpbmcgYW5kIHN1cnJvdW5kZWQgYnkgY2hhdCBpY29uc1wiPlxuICAgICAgPHN2ZyB2aWV3Qm94PVwiMCAwIDUyMCAzOTBcIiBhcmlhLWhpZGRlbj1cInRydWVcIiBmb2N1c2FibGU9XCJmYWxzZVwiPlxuICAgICAgICA8ZGVmcz5cbiAgICAgICAgICA8bGluZWFyR3JhZGllbnQgaWQ9XCJ3b3Jrc3RhdGlvbi1zaGVsbFwiIHgxPVwiMFwiIHkxPVwiMFwiIHgyPVwiMVwiIHkyPVwiMVwiPjxzdG9wIHN0b3BDb2xvcj1cIiNmZmZmZmZcIi8+PHN0b3Agb2Zmc2V0PVwiLjQ2XCIgc3RvcENvbG9yPVwiI2U3ZTllYVwiLz48c3RvcCBvZmZzZXQ9XCIxXCIgc3RvcENvbG9yPVwiIzljYTRhN1wiLz48L2xpbmVhckdyYWRpZW50PlxuICAgICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD1cIndvcmtzdGF0aW9uLXNoZWxsLXNpZGVcIiB4MT1cIjBcIiB5MT1cIjBcIiB4Mj1cIjFcIiB5Mj1cIi43XCI+PHN0b3Agc3RvcENvbG9yPVwiIzg4OTM5N1wiLz48c3RvcCBvZmZzZXQ9XCIxXCIgc3RvcENvbG9yPVwiI2RlZTJlM1wiLz48L2xpbmVhckdyYWRpZW50PlxuICAgICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD1cIndvcmtzdGF0aW9uLXZpc29yXCIgeDE9XCIwXCIgeTE9XCIwXCIgeDI9XCIxXCIgeTI9XCIxXCI+PHN0b3Agc3RvcENvbG9yPVwiIzUwNTc1Y1wiLz48c3RvcCBvZmZzZXQ9XCIuMzZcIiBzdG9wQ29sb3I9XCIjMWMyMDI0XCIvPjxzdG9wIG9mZnNldD1cIjFcIiBzdG9wQ29sb3I9XCIjMDcwOTBiXCIvPjwvbGluZWFyR3JhZGllbnQ+XG4gICAgICAgICAgPGxpbmVhckdyYWRpZW50IGlkPVwid29ya3N0YXRpb24tc2NyZWVuXCIgeDE9XCIwXCIgeTE9XCIwXCIgeDI9XCIwXCIgeTI9XCIxXCI+PHN0b3Agc3RvcENvbG9yPVwidmFyKC0tYWNjZW50KVwiLz48c3RvcCBvZmZzZXQ9XCIxXCIgc3RvcENvbG9yPVwiIzI4MDgwZFwiLz48L2xpbmVhckdyYWRpZW50PlxuICAgICAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD1cIndvcmtzdGF0aW9uLXRhYmxldC1lZGdlXCIgeDE9XCIwXCIgeTE9XCIwXCIgeDI9XCIwXCIgeTI9XCIxXCI+PHN0b3Agc3RvcENvbG9yPVwiI2Y3ZjhmOFwiLz48c3RvcCBvZmZzZXQ9XCIxXCIgc3RvcENvbG9yPVwiIzkxOTk5ZFwiLz48L2xpbmVhckdyYWRpZW50PlxuICAgICAgICAgIDxyYWRpYWxHcmFkaWVudCBpZD1cIndvcmtzdGF0aW9uLWF1cmFcIj48c3RvcCBzdG9wQ29sb3I9XCJ2YXIoLS1yaW5nKVwiLz48c3RvcCBvZmZzZXQ9XCIxXCIgc3RvcENvbG9yPVwidHJhbnNwYXJlbnRcIi8+PC9yYWRpYWxHcmFkaWVudD5cbiAgICAgICAgPC9kZWZzPlxuXG4gICAgICAgIDxlbGxpcHNlIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWF1cmFcIiBjeD1cIjI2MFwiIGN5PVwiMjMwXCIgcng9XCIyMDVcIiByeT1cIjE1NVwiIGZpbGw9XCJ1cmwoI3dvcmtzdGF0aW9uLWF1cmEpXCIvPlxuICAgICAgICA8cGF0aCBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1jaXJjdWl0XCIgZD1cIk0yMyAxMjVoNTFsMjQgMjRoMzVNNDk3IDE1MGgtNDlsLTI0IDI0aC0zME0zNSAyNjBoNDlsMjYtMjZoMjFNNDg1IDI1N2gtNTFsLTI1LTI1aC0yN1wiLz5cbiAgICAgICAgPGNpcmNsZSBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1jaXJjdWl0LWRvdFwiIGN4PVwiMjNcIiBjeT1cIjEyNVwiIHI9XCIzXCIvPjxjaXJjbGUgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tY2lyY3VpdC1kb3RcIiBjeD1cIjQ5N1wiIGN5PVwiMTUwXCIgcj1cIjNcIi8+XG5cbiAgICAgICAgPGcgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tY2hhdC1pY29uIHdvcmtzdGF0aW9uLWNoYXQtaWNvbi1sZWZ0XCI+XG4gICAgICAgICAgPHBhdGggZD1cIk00OSA3M3EwLTE2IDE3LTE2aDM1cTE2IDAgMTYgMTZ2MTNxMCAxNi0xNiAxNkg4MmwtMTIgMTEtMS0xMWgtM3EtMTcgMC0xNy0xNlpcIi8+XG4gICAgICAgICAgPGNpcmNsZSBjeD1cIjcwXCIgY3k9XCI4MFwiIHI9XCIzXCIvPjxjaXJjbGUgY3g9XCI4M1wiIGN5PVwiODBcIiByPVwiM1wiLz48Y2lyY2xlIGN4PVwiOTZcIiBjeT1cIjgwXCIgcj1cIjNcIi8+XG4gICAgICAgIDwvZz5cbiAgICAgICAgPGcgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tY2hhdC1pY29uIHdvcmtzdGF0aW9uLWNoYXQtaWNvbi1yaWdodFwiPlxuICAgICAgICAgIDxwYXRoIGQ9XCJNNDAxIDU0cTAtMTYgMTctMTZoMzlxMTcgMCAxNyAxNnYyNXEwIDE2LTE3IDE2aC0xMmwtMTIgMTEtMS0xMWgtMTRxLTE3IDAtMTctMTZaXCIvPlxuICAgICAgICAgIDxwYXRoIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWNoYXQtbGluZVwiIGQ9XCJNNDE0IDU3aDQ2bS00NiAxMGg0Nm0tNDYgMTBoMzJcIi8+XG4gICAgICAgIDwvZz5cbiAgICAgICAgPGcgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tY2hhdC1pY29uIHdvcmtzdGF0aW9uLWNoYXQtaWNvbi1zbWFsbFwiPlxuICAgICAgICAgIDxwYXRoIGQ9XCJNNDMxIDE3NnEwLTEyIDEzLTEyaDIycTEzIDAgMTMgMTJ2OXEwIDEyLTEzIDEyaC05bC05IDh2LThoLTRxLTEzIDAtMTMtMTJaXCIvPlxuICAgICAgICAgIDxjaXJjbGUgY3g9XCI0NDZcIiBjeT1cIjE4MVwiIHI9XCIyLjRcIi8+PGNpcmNsZSBjeD1cIjQ1NVwiIGN5PVwiMTgxXCIgcj1cIjIuNFwiLz48Y2lyY2xlIGN4PVwiNDY0XCIgY3k9XCIxODFcIiByPVwiMi40XCIvPlxuICAgICAgICA8L2c+XG5cbiAgICAgICAgPGVsbGlwc2UgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tcGxhdGZvcm0tc2hhZG93XCIgY3g9XCIyNjBcIiBjeT1cIjM1NlwiIHJ4PVwiMjAyXCIgcnk9XCIxNVwiLz5cbiAgICAgICAgPGVsbGlwc2UgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tcGxhdGZvcm0tcmluZyByaW5nLW9uZVwiIGN4PVwiMjYwXCIgY3k9XCIzMzVcIiByeD1cIjIyMlwiIHJ5PVwiMzFcIi8+XG4gICAgICAgIDxlbGxpcHNlIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLXBsYXRmb3JtLXJpbmcgcmluZy10d29cIiBjeD1cIjI2MFwiIGN5PVwiMzM1XCIgcng9XCIxOTNcIiByeT1cIjI0XCIvPlxuICAgICAgICA8cGF0aCBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1wbGF0Zm9ybS1iYWNrXCIgZD1cIk0xMDEgMjk0aDMxOGw0NCAzNkg1N1pcIi8+XG4gICAgICAgIDxwYXRoIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLXBsYXRmb3JtLXNjcmVlblwiIGQ9XCJNMTE5IDMwMGgyODJsMzYgMjRIODNaXCIvPlxuICAgICAgICA8cGF0aCBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1wbGF0Zm9ybS1ncmlkXCIgZD1cIk0xMzAgMzA5aDI2MG0tMjQwIDdoMjIwbS0xNjAtMTItMTggMTltMTIyLTE5IDE4IDE5XCIvPlxuICAgICAgICA8ZWxsaXBzZSBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1wbGF0Zm9ybS1saWdodFwiIGN4PVwiMjYwXCIgY3k9XCIzMTZcIiByeD1cIjk1XCIgcnk9XCIxM1wiLz5cblxuICAgICAgICA8ZyBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1yb2JvdFwiPjxnIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLXJvYm90LWZsb2F0XCI+XG4gICAgICAgICAgPGcgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tcm9ib3QtYXJtIHdvcmtzdGF0aW9uLXJvYm90LWFybS1sZWZ0XCI+XG4gICAgICAgICAgICA8cGF0aCBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1hcm0tc2hhZG93XCIgZD1cIk0yMTYgMjI5cS0yNi04LTQwIDEwbC0zMyA4LTE5LTI4XCIvPlxuICAgICAgICAgICAgPHBhdGggY2xhc3NOYW1lPVwid29ya3N0YXRpb24tYXJtLXNoZWxsXCIgZD1cIk0yMTYgMjI0cS0yNi04LTM5IDEwbC0zNCA2LTE5LTI3XCIvPlxuICAgICAgICAgICAgPGNpcmNsZSBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1qb2ludFwiIGN4PVwiMTc3XCIgY3k9XCIyMzVcIiByPVwiMTRcIi8+PGNpcmNsZSBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1qb2ludC1jZW50ZXJcIiBjeD1cIjE3N1wiIGN5PVwiMjM1XCIgcj1cIjZcIi8+XG4gICAgICAgICAgICA8cGF0aCBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1wYWxtXCIgZD1cIk0xMTIgMTkycTktNyAxOSAwbDQgMjItMTEgMTAtMTQtOFpcIi8+XG4gICAgICAgICAgICA8cGF0aCBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1maW5nZXJzXCIgZD1cIm0xMTEgMTk0LTktMTdtMTggMTEtNC0yMG0xMiAyMSAyLTE4bS0yMSAyOC0xNC03XCIvPlxuICAgICAgICAgIDwvZz5cbiAgICAgICAgICA8ZyBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1yb2JvdC1hcm0gd29ya3N0YXRpb24tcm9ib3QtYXJtLXJpZ2h0XCI+XG4gICAgICAgICAgICA8cGF0aCBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1hcm0tc2hhZG93XCIgZD1cIk0zMDYgMjI5cTI2LTggNDAgMTBsMzMgOCAxOS0yOFwiLz5cbiAgICAgICAgICAgIDxwYXRoIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWFybS1zaGVsbFwiIGQ9XCJNMzA2IDIyNHEyNi04IDM5IDEwbDM0IDYgMTktMjdcIi8+XG4gICAgICAgICAgICA8Y2lyY2xlIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWpvaW50XCIgY3g9XCIzNDVcIiBjeT1cIjIzNVwiIHI9XCIxNFwiLz48Y2lyY2xlIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWpvaW50LWNlbnRlclwiIGN4PVwiMzQ1XCIgY3k9XCIyMzVcIiByPVwiNlwiLz5cbiAgICAgICAgICAgIDxwYXRoIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLXBhbG1cIiBkPVwiTTQxMCAxOTJxLTktNy0xOSAwbC00IDIyIDExIDEwIDE0LThaXCIvPlxuICAgICAgICAgICAgPHBhdGggY2xhc3NOYW1lPVwid29ya3N0YXRpb24tZmluZ2Vyc1wiIGQ9XCJtNDExIDE5NCA5LTE3bS0xOCAxMSA0LTIwbS0xMiAyMS0yLTE4bTIxIDI4IDE0LTdcIi8+XG4gICAgICAgICAgPC9nPlxuXG4gICAgICAgICAgPHBhdGggY2xhc3NOYW1lPVwid29ya3N0YXRpb24tbmVjay1zaGFkb3dcIiBkPVwiTTIyMCAxODNoODF2MzZoLTgxWlwiLz5cbiAgICAgICAgICA8cGF0aCBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1uZWNrXCIgZD1cIk0yMjUgMTg1aDcxdjMyaC03MVpcIi8+XG4gICAgICAgICAgPHBhdGggY2xhc3NOYW1lPVwid29ya3N0YXRpb24tbmVjay1zZWFtXCIgZD1cIk0yMzAgMTk5aDYxbS01OCA5aDU2XCIvPlxuICAgICAgICAgIDxwYXRoIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWJvZHktc2hhZG93XCIgZD1cIk0yMTAgMjE5cS0xNSAzLTE3IDIybC0zIDU3cTAgMjMgMjIgMjVoOTdxMjMtMiAyMy0yNWwtMy01N3EtMi0xOS0xNy0yMlpcIi8+XG4gICAgICAgICAgPHBhdGggY2xhc3NOYW1lPVwid29ya3N0YXRpb24tYm9keVwiIGQ9XCJNMjExIDIxNHEtMTUgMy0xNyAyMmwtMyA1N3EwIDIzIDIyIDI1aDk0cTIzLTIgMjMtMjVsLTMtNTdxLTItMTktMTctMjJaXCIvPlxuICAgICAgICAgIDxwYXRoIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWJvZHktc2hpbmVcIiBkPVwiTTIwOCAyMjZxLTggNy04IDIydjQzXCIvPlxuICAgICAgICAgIDxwYXRoIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWJvZHktcGFuZWxcIiBkPVwiTTIyMSAyMzRoNzhsMTEgMTUtNSA0MGgtODlsLTUtNDBaXCIvPlxuICAgICAgICAgIDxwYXRoIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWNoZXN0LXNsb3RcIiBkPVwiTTI0NCAyNTBoMzJcIi8+XG4gICAgICAgICAgPGNpcmNsZSBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1jaGVzdC1sZWRcIiBjeD1cIjIzOVwiIGN5PVwiMjk0XCIgcj1cIjIuNVwiLz48Y2lyY2xlIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWNoZXN0LWxlZFwiIGN4PVwiMjYwXCIgY3k9XCIyOTRcIiByPVwiMi41XCIvPjxjaXJjbGUgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tY2hlc3QtbGVkXCIgY3g9XCIyODFcIiBjeT1cIjI5NFwiIHI9XCIyLjVcIi8+XG4gICAgICAgICAgPGVsbGlwc2UgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tYm9keS1iYXNlXCIgY3g9XCIyNjBcIiBjeT1cIjMxOVwiIHJ4PVwiNDdcIiByeT1cIjhcIi8+XG5cbiAgICAgICAgICA8cGF0aCBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1hbnRlbm5hXCIgZD1cIk0yMjAgMTAwIDIwNyA1OW0xMDcgNDEgMTMtNDFcIi8+XG4gICAgICAgICAgPGNpcmNsZSBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1hbnRlbm5hLXRpcFwiIGN4PVwiMjA2XCIgY3k9XCI1NlwiIHI9XCI1XCIvPjxjaXJjbGUgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tYW50ZW5uYS10aXBcIiBjeD1cIjMyOFwiIGN5PVwiNTZcIiByPVwiNVwiLz5cbiAgICAgICAgICA8ZWxsaXBzZSBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1lYXItc2hhZG93XCIgY3g9XCIxNzFcIiBjeT1cIjE0NlwiIHJ4PVwiMThcIiByeT1cIjMwXCIvPjxlbGxpcHNlIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWVhci1zaGFkb3dcIiBjeD1cIjM0OVwiIGN5PVwiMTQ2XCIgcng9XCIxOFwiIHJ5PVwiMzBcIi8+XG4gICAgICAgICAgPGVsbGlwc2UgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tZWFyXCIgY3g9XCIxNzNcIiBjeT1cIjE0NVwiIHJ4PVwiMTZcIiByeT1cIjI4XCIvPjxlbGxpcHNlIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWVhclwiIGN4PVwiMzQ3XCIgY3k9XCIxNDVcIiByeD1cIjE2XCIgcnk9XCIyOFwiLz5cbiAgICAgICAgICA8ZWxsaXBzZSBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1lYXItY29yZVwiIGN4PVwiMTczXCIgY3k9XCIxNDVcIiByeD1cIjdcIiByeT1cIjE4XCIvPjxlbGxpcHNlIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWVhci1jb3JlXCIgY3g9XCIzNDdcIiBjeT1cIjE0NVwiIHJ4PVwiN1wiIHJ5PVwiMThcIi8+XG4gICAgICAgICAgPHBhdGggY2xhc3NOYW1lPVwid29ya3N0YXRpb24taGVhZC1zaGFkb3dcIiBkPVwiTTE2NCAxMjBxMC0zMiAzNS0zNmgxMjFxMzYgNCAzNiAzNnY1MXEwIDMzLTM2IDM4SDIwMHEtMzYtNS0zNi0zOFpcIi8+XG4gICAgICAgICAgPHBhdGggY2xhc3NOYW1lPVwid29ya3N0YXRpb24taGVhZFwiIGQ9XCJNMTYzIDExNXEwLTMyIDM2LTM3aDEyMXEzNyA1IDM3IDM3djU1cTAgMzQtMzcgMzlIMjAwcS0zNy01LTM3LTM5WlwiLz5cbiAgICAgICAgICA8cGF0aCBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1oZWFkLXNoaW5lXCIgZD1cIk0xNzggMTE0cTItMTggMjQtMjJoMTExXCIvPlxuICAgICAgICAgIDxwYXRoIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLXZpc29yXCIgZD1cIk0xODMgMTE3cTAtMTcgMjAtMTloMTE0cTIwIDIgMjAgMTl2NTBxMCAxOC0yMCAyMEgyMDNxLTIwLTItMjAtMjBaXCIvPlxuICAgICAgICAgIDxwYXRoIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLXZpc29yLWdsb3NzXCIgZD1cIk0xOTIgMTEwcTQtNyAxNy03aDY4bC02MSA3OWgtMTRxLTExLTEtMTEtMTZaXCIvPlxuICAgICAgICAgIDxnIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWV5ZXNcIj5cbiAgICAgICAgICAgIDxnIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWV5ZVwiPjxjaXJjbGUgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tZXllLXJpbmdcIiBjeD1cIjIyN1wiIGN5PVwiMTQ1XCIgcj1cIjE3XCIvPjxjaXJjbGUgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tZXllLWlubmVyXCIgY3g9XCIyMjdcIiBjeT1cIjE0NVwiIHI9XCI3XCIvPjxjaXJjbGUgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tZXllLWdsaW50XCIgY3g9XCIyMjNcIiBjeT1cIjE0MVwiIHI9XCIyXCIvPjwvZz5cbiAgICAgICAgICAgIDxnIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLWV5ZVwiPjxjaXJjbGUgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tZXllLXJpbmdcIiBjeD1cIjI5M1wiIGN5PVwiMTQ1XCIgcj1cIjE3XCIvPjxjaXJjbGUgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tZXllLWlubmVyXCIgY3g9XCIyOTNcIiBjeT1cIjE0NVwiIHI9XCI3XCIvPjxjaXJjbGUgY2xhc3NOYW1lPVwid29ya3N0YXRpb24tZXllLWdsaW50XCIgY3g9XCIyODlcIiBjeT1cIjE0MVwiIHI9XCIyXCIvPjwvZz5cbiAgICAgICAgICA8L2c+XG4gICAgICAgICAgPHBhdGggY2xhc3NOYW1lPVwid29ya3N0YXRpb24tZmFjZS1zZWFtXCIgZD1cIk0yMzIgMTk5aDU2XCIvPlxuICAgICAgICA8L2c+PC9nPlxuXG4gICAgICAgIDxwYXRoIGNsYXNzTmFtZT1cIndvcmtzdGF0aW9uLXBsYXRmb3JtLWZyb250XCIgZD1cIk01NyAzMzBoNDA2bC05IDIzSDY2WlwiLz5cbiAgICAgICAgPHBhdGggY2xhc3NOYW1lPVwid29ya3N0YXRpb24tcGxhdGZvcm0tbGlwXCIgZD1cIk02OSAzMzhoMzgyXCIvPlxuICAgICAgICA8cGF0aCBjbGFzc05hbWU9XCJ3b3Jrc3RhdGlvbi1wbGF0Zm9ybS1wb3J0XCIgZD1cIk0xMTkgMzQzaDQ4bTE4MyAwaDM4XCIvPlxuICAgICAgPC9zdmc+XG4gICAgPC9kaXY+XG4gIDwvZGl2Pjtcbn1cbiJdLCJmaWxlIjoiQzovVXNlcnMvVW1lci9EZXNrdG9wL2JhaWctYm90cy0yL3NyYy9jb21wb25lbnRzL1JvYm90V29ya3N0YXRpb24uanN4In0=

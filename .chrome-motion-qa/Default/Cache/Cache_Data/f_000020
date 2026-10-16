@@ -1,0 +1,336 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/AutomationImpactChart.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=cd36e925"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+var _s = $RefreshSig$();
+import __vite__cjsImport1_react from "/node_modules/.vite/deps/react.js?v=cd36e925"; const useState = __vite__cjsImport1_react["useState"];
+import { motion } from "/node_modules/.vite/deps/motion_react.js?v=cd36e925";
+const metrics = [
+  { key: "time", label: "Time back", ai: 68, without: 12 },
+  { key: "accuracy", label: "Accuracy", ai: 92, without: 74 },
+  { key: "routine", label: "Routine work", ai: 82, without: 16 }
+];
+const xPositions = [104, 243, 382];
+const chartTop = 30;
+const chartBottom = 210;
+const chartY = (value) => chartBottom - (chartBottom - chartTop) * value / 100;
+const sharedStart = { x: 58, y: chartY(metrics[0].without) };
+const linePath = (series) => `M ${sharedStart.x} ${sharedStart.y} ${metrics.map(
+  (metric, index) => `L ${xPositions[index]} ${chartY(metric[series])}`
+).join(" ")}`;
+const gridLevels = [0, 25, 50, 75, 100];
+const lineVariants = (duration, delay = 0) => ({
+  hidden: { pathLength: 0, opacity: 0 },
+  visible: { pathLength: 1.08, opacity: 1, transition: { pathLength: { duration, delay, ease: "easeInOut" }, opacity: { duration: 0.15, delay } } }
+});
+export function AutomationImpactChart() {
+  _s();
+  const [active, setActive] = useState(null);
+  const selected = metrics.find((metric) => metric.key === active);
+  return /* @__PURE__ */ jsxDEV("div", { className: "impact-card", "data-tilt": "", children: [
+    /* @__PURE__ */ jsxDEV("div", { className: "impact-heading", children: [
+      /* @__PURE__ */ jsxDEV("span", { className: "impact-kicker", children: "Automation opportunity" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+        lineNumber: 32,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("h3", { children: "Make more time for meaningful work." }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+        lineNumber: 33,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("p", { children: "See what repetitive work could give back to your team." }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+        lineNumber: 34,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+      lineNumber: 31,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "impact-plot", children: [
+      /* @__PURE__ */ jsxDEV(
+        motion.svg,
+        {
+          viewBox: "0 0 440 230",
+          role: "img",
+          "aria-label": "Line chart starting both series at the same point, then comparing with AI automation and without automation for time back, accuracy, and routine work",
+          initial: "hidden",
+          whileInView: "visible",
+          viewport: { once: true, amount: 0.45 },
+          children: [
+            gridLevels.map(
+              (level) => /* @__PURE__ */ jsxDEV("g", { className: "impact-grid-line", children: [
+                /* @__PURE__ */ jsxDEV("line", { x1: "48", x2: "398", y1: chartY(level), y2: chartY(level) }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+                  lineNumber: 48,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("text", { x: "40", y: chartY(level) + 4, textAnchor: "end", children: level }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+                  lineNumber: 49,
+                  columnNumber: 15
+                }, this)
+              ] }, level, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+                lineNumber: 47,
+                columnNumber: 11
+              }, this)
+            ),
+            xPositions.map(
+              (x, index) => /* @__PURE__ */ jsxDEV("line", { className: "impact-guide", x1: x, x2: x, y1: chartTop, y2: chartBottom }, metrics[index].key, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+                lineNumber: 53,
+                columnNumber: 11
+              }, this)
+            ),
+            /* @__PURE__ */ jsxDEV(motion.path, { className: "impact-line without-halo", d: linePath("without"), variants: lineVariants(1.25) }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+              lineNumber: 55,
+              columnNumber: 11
+            }, this),
+            /* @__PURE__ */ jsxDEV(
+              motion.path,
+              {
+                className: "impact-line without",
+                d: linePath("without"),
+                variants: lineVariants(1.25)
+              },
+              void 0,
+              false,
+              {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+                lineNumber: 56,
+                columnNumber: 11
+              },
+              this
+            ),
+            /* @__PURE__ */ jsxDEV(
+              motion.path,
+              {
+                className: "impact-line ai",
+                d: linePath("ai"),
+                variants: lineVariants(1.45, 0.15)
+              },
+              void 0,
+              false,
+              {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+                lineNumber: 61,
+                columnNumber: 11
+              },
+              this
+            ),
+            /* @__PURE__ */ jsxDEV("circle", { className: "impact-dot without", cx: sharedStart.x, cy: sharedStart.y, r: "4.5" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+              lineNumber: 66,
+              columnNumber: 11
+            }, this),
+            metrics.map(
+              (metric, index) => /* @__PURE__ */ jsxDEV("g", { children: [
+                /* @__PURE__ */ jsxDEV(
+                  motion.circle,
+                  {
+                    className: "impact-dot without",
+                    cx: xPositions[index],
+                    cy: chartY(metric.without),
+                    r: "4.5",
+                    variants: { hidden: { scale: 0, opacity: 0 }, visible: { scale: 1, opacity: 1, transition: { delay: 1.25 + index * 0.07, duration: 0.25 } } }
+                  },
+                  void 0,
+                  false,
+                  {
+                    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+                    lineNumber: 69,
+                    columnNumber: 15
+                  },
+                  this
+                ),
+                /* @__PURE__ */ jsxDEV(
+                  motion.circle,
+                  {
+                    className: "impact-dot ai",
+                    cx: xPositions[index],
+                    cy: chartY(metric.ai),
+                    r: "5",
+                    variants: { hidden: { scale: 0, opacity: 0 }, visible: { scale: 1, opacity: 1, transition: { delay: 1.6 + index * 0.07, duration: 0.25 } } }
+                  },
+                  void 0,
+                  false,
+                  {
+                    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+                    lineNumber: 71,
+                    columnNumber: 15
+                  },
+                  this
+                )
+              ] }, metric.key, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+                lineNumber: 68,
+                columnNumber: 11
+              }, this)
+            )
+          ]
+        },
+        void 0,
+        true,
+        {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+          lineNumber: 38,
+          columnNumber: 9
+        },
+        this
+      ),
+      selected && /* @__PURE__ */ jsxDEV("div", { className: "impact-tooltip", role: "status", children: [
+        /* @__PURE__ */ jsxDEV("strong", { children: selected.label }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+          lineNumber: 78,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: [
+          "With AI automation ",
+          selected.ai,
+          "%"
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+          lineNumber: 79,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: [
+          "Without automation ",
+          selected.without,
+          "%"
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+          lineNumber: 80,
+          columnNumber: 13
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+        lineNumber: 77,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+      lineNumber: 37,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "impact-metrics", children: metrics.map(
+      (metric) => /* @__PURE__ */ jsxDEV(
+        "button",
+        {
+          className: "impact-metric",
+          type: "button",
+          "aria-label": `${metric.label}: with AI automation ${metric.ai} percent, without automation ${metric.without} percent`,
+          onMouseEnter: () => setActive(metric.key),
+          onMouseLeave: () => setActive(null),
+          onFocus: () => setActive(metric.key),
+          onBlur: () => setActive(null),
+          onClick: () => setActive(metric.key),
+          children: [
+            /* @__PURE__ */ jsxDEV("span", { children: metric.label }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+              lineNumber: 91,
+              columnNumber: 13
+            }, this),
+            /* @__PURE__ */ jsxDEV("strong", { children: [
+              metric.ai,
+              "% ",
+              /* @__PURE__ */ jsxDEV("small", { children: [
+                "/ ",
+                metric.without,
+                "%"
+              ] }, void 0, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+                lineNumber: 92,
+                columnNumber: 34
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+              lineNumber: 92,
+              columnNumber: 13
+            }, this)
+          ]
+        },
+        metric.key,
+        true,
+        {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+          lineNumber: 87,
+          columnNumber: 9
+        },
+        this
+      )
+    ) }, void 0, false, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+      lineNumber: 85,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "impact-legend", children: [
+      /* @__PURE__ */ jsxDEV("span", { children: [
+        /* @__PURE__ */ jsxDEV("i", { className: "ai" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+          lineNumber: 97,
+          columnNumber: 15
+        }, this),
+        "With AI automation"
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+        lineNumber: 97,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV("span", { children: [
+        /* @__PURE__ */ jsxDEV("i", { className: "without" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+          lineNumber: 98,
+          columnNumber: 15
+        }, this),
+        "Without automation"
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+        lineNumber: 98,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+      lineNumber: 96,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV("p", { className: "impact-note", children: "Illustrative scenario · Actual impact depends on your workflow." }, void 0, false, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+      lineNumber: 100,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx",
+    lineNumber: 30,
+    columnNumber: 5
+  }, this);
+}
+_s(AutomationImpactChart, "UiziKGcot5E8nbuQQ2ZlRLdhk5k=");
+_c = AutomationImpactChart;
+var _c;
+$RefreshReg$(_c, "AutomationImpactChart");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "C:/Users/Umer/Desktop/baig-bots-2/src/components/AutomationImpactChart.jsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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QTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsTUFNQTtBQUFBLElBQ0QsS0FUSDtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBVUE7QUFBQSxJQUNBLHVCQUFDLFNBQUksV0FBVSxpQkFDYjtBQUFBLDZCQUFDLFVBQUs7QUFBQSwrQkFBQyxPQUFFLFdBQVUsUUFBYjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWlCO0FBQUEsUUFBRztBQUFBLFdBQTFCO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBNEM7QUFBQSxNQUM1Qyx1QkFBQyxVQUFLO0FBQUEsK0JBQUMsT0FBRSxXQUFVLGFBQWI7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFzQjtBQUFBLFFBQUc7QUFBQSxXQUEvQjtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQWlEO0FBQUEsU0FGbkQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQUdBO0FBQUEsSUFDQSx1QkFBQyxPQUFFLFdBQVUsZUFBYywrRUFBM0I7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQUEwRjtBQUFBLE9BdEU1RjtBQUFBO0FBQUE7QUFBQTtBQUFBLFNBdUVBO0FBRUo7QUFBQzZCLEdBOUVlRCx1QkFBcUI7QUFBQSxLQUFyQkE7QUFBcUIsSUFBQVU7QUFBQSxhQUFBQSxJQUFBIiwibmFtZXMiOlsidXNlU3RhdGUiLCJtb3Rpb24iLCJtZXRyaWNzIiwia2V5IiwibGFiZWwiLCJhaSIsIndpdGhvdXQiLCJ4UG9zaXRpb25zIiwiY2hhcnRUb3AiLCJjaGFydEJvdHRvbSIsImNoYXJ0WSIsInZhbHVlIiwic2hhcmVkU3RhcnQiLCJ4IiwieSIsImxpbmVQYXRoIiwic2VyaWVzIiwibWFwIiwibWV0cmljIiwiaW5kZXgiLCJqb2luIiwiZ3JpZExldmVscyIsImxpbmVWYXJpYW50cyIsImR1cmF0aW9uIiwiZGVsYXkiLCJoaWRkZW4iLCJwYXRoTGVuZ3RoIiwib3BhY2l0eSIsInZpc2libGUiLCJ0cmFuc2l0aW9uIiwiZWFzZSIsIkF1dG9tYXRpb25JbXBhY3RDaGFydCIsIl9zIiwiYWN0aXZlIiwic2V0QWN0aXZlIiwic2VsZWN0ZWQiLCJmaW5kIiwib25jZSIsImFtb3VudCIsImxldmVsIiwic2NhbGUiLCJfYyJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJBdXRvbWF0aW9uSW1wYWN0Q2hhcnQuanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgbW90aW9uIH0gZnJvbSAnbW90aW9uL3JlYWN0JztcblxuLy8gSWxsdXN0cmF0aXZlIHZhbHVlcywgbm90IG1lYXN1cmVkIGN1c3RvbWVyIHJlc3VsdHMuXG5jb25zdCBtZXRyaWNzID0gW1xuICB7IGtleTogJ3RpbWUnLCBsYWJlbDogJ1RpbWUgYmFjaycsIGFpOiA2OCwgd2l0aG91dDogMTIgfSxcbiAgeyBrZXk6ICdhY2N1cmFjeScsIGxhYmVsOiAnQWNjdXJhY3knLCBhaTogOTIsIHdpdGhvdXQ6IDc0IH0sXG4gIHsga2V5OiAncm91dGluZScsIGxhYmVsOiAnUm91dGluZSB3b3JrJywgYWk6IDgyLCB3aXRob3V0OiAxNiB9LFxuXTtcblxuY29uc3QgeFBvc2l0aW9ucyA9IFsxMDQsIDI0MywgMzgyXTtcbmNvbnN0IGNoYXJ0VG9wID0gMzA7XG5jb25zdCBjaGFydEJvdHRvbSA9IDIxMDtcbmNvbnN0IGNoYXJ0WSA9ICh2YWx1ZSkgPT4gY2hhcnRCb3R0b20gLSAoY2hhcnRCb3R0b20gLSBjaGFydFRvcCkgKiB2YWx1ZSAvIDEwMDtcbmNvbnN0IHNoYXJlZFN0YXJ0ID0geyB4OiA1OCwgeTogY2hhcnRZKG1ldHJpY3NbMF0ud2l0aG91dCkgfTtcbmNvbnN0IGxpbmVQYXRoID0gKHNlcmllcykgPT4gYE0gJHtzaGFyZWRTdGFydC54fSAke3NoYXJlZFN0YXJ0Lnl9ICR7bWV0cmljcy5tYXAoKG1ldHJpYywgaW5kZXgpID0+XG4gIGBMICR7eFBvc2l0aW9uc1tpbmRleF19ICR7Y2hhcnRZKG1ldHJpY1tzZXJpZXNdKX1gXG4pLmpvaW4oJyAnKX1gO1xuY29uc3QgZ3JpZExldmVscyA9IFswLCAyNSwgNTAsIDc1LCAxMDBdO1xuY29uc3QgbGluZVZhcmlhbnRzID0gKGR1cmF0aW9uLCBkZWxheSA9IDApID0+ICh7XG4gIGhpZGRlbjogeyBwYXRoTGVuZ3RoOiAwLCBvcGFjaXR5OiAwIH0sXG4gIHZpc2libGU6IHsgcGF0aExlbmd0aDogMS4wOCwgb3BhY2l0eTogMSwgdHJhbnNpdGlvbjogeyBwYXRoTGVuZ3RoOiB7IGR1cmF0aW9uLCBkZWxheSwgZWFzZTogJ2Vhc2VJbk91dCcgfSwgb3BhY2l0eTogeyBkdXJhdGlvbjogMC4xNSwgZGVsYXkgfSB9IH0sXG59KTtcblxuZXhwb3J0IGZ1bmN0aW9uIEF1dG9tYXRpb25JbXBhY3RDaGFydCgpIHtcbiAgY29uc3QgW2FjdGl2ZSwgc2V0QWN0aXZlXSA9IHVzZVN0YXRlKG51bGwpO1xuICBjb25zdCBzZWxlY3RlZCA9IG1ldHJpY3MuZmluZCgobWV0cmljKSA9PiBtZXRyaWMua2V5ID09PSBhY3RpdmUpO1xuXG4gIHJldHVybiAoXG4gICAgPGRpdiBjbGFzc05hbWU9XCJpbXBhY3QtY2FyZFwiIGRhdGEtdGlsdD1cIlwiPlxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJpbXBhY3QtaGVhZGluZ1wiPlxuICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJpbXBhY3Qta2lja2VyXCI+QXV0b21hdGlvbiBvcHBvcnR1bml0eTwvc3Bhbj5cbiAgICAgICAgPGgzPk1ha2UgbW9yZSB0aW1lIGZvciBtZWFuaW5nZnVsIHdvcmsuPC9oMz5cbiAgICAgICAgPHA+U2VlIHdoYXQgcmVwZXRpdGl2ZSB3b3JrIGNvdWxkIGdpdmUgYmFjayB0byB5b3VyIHRlYW0uPC9wPlxuICAgICAgPC9kaXY+XG5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaW1wYWN0LXBsb3RcIj5cbiAgICAgICAgPG1vdGlvbi5zdmdcbiAgICAgICAgICB2aWV3Qm94PVwiMCAwIDQ0MCAyMzBcIlxuICAgICAgICAgIHJvbGU9XCJpbWdcIlxuICAgICAgICAgIGFyaWEtbGFiZWw9XCJMaW5lIGNoYXJ0IHN0YXJ0aW5nIGJvdGggc2VyaWVzIGF0IHRoZSBzYW1lIHBvaW50LCB0aGVuIGNvbXBhcmluZyB3aXRoIEFJIGF1dG9tYXRpb24gYW5kIHdpdGhvdXQgYXV0b21hdGlvbiBmb3IgdGltZSBiYWNrLCBhY2N1cmFjeSwgYW5kIHJvdXRpbmUgd29ya1wiXG4gICAgICAgICAgaW5pdGlhbD1cImhpZGRlblwiXG4gICAgICAgICAgd2hpbGVJblZpZXc9XCJ2aXNpYmxlXCJcbiAgICAgICAgICB2aWV3cG9ydD17eyBvbmNlOiB0cnVlLCBhbW91bnQ6IDAuNDUgfX1cbiAgICAgICAgPlxuICAgICAgICAgIHtncmlkTGV2ZWxzLm1hcCgobGV2ZWwpID0+IChcbiAgICAgICAgICAgIDxnIGtleT17bGV2ZWx9IGNsYXNzTmFtZT1cImltcGFjdC1ncmlkLWxpbmVcIj5cbiAgICAgICAgICAgICAgPGxpbmUgeDE9XCI0OFwiIHgyPVwiMzk4XCIgeTE9e2NoYXJ0WShsZXZlbCl9IHkyPXtjaGFydFkobGV2ZWwpfSAvPlxuICAgICAgICAgICAgICA8dGV4dCB4PVwiNDBcIiB5PXtjaGFydFkobGV2ZWwpICsgNH0gdGV4dEFuY2hvcj1cImVuZFwiPntsZXZlbH08L3RleHQ+XG4gICAgICAgICAgICA8L2c+XG4gICAgICAgICAgKSl9XG4gICAgICAgICAge3hQb3NpdGlvbnMubWFwKCh4LCBpbmRleCkgPT4gKFxuICAgICAgICAgICAgPGxpbmUga2V5PXttZXRyaWNzW2luZGV4XS5rZXl9IGNsYXNzTmFtZT1cImltcGFjdC1ndWlkZVwiIHgxPXt4fSB4Mj17eH0geTE9e2NoYXJ0VG9wfSB5Mj17Y2hhcnRCb3R0b219IC8+XG4gICAgICAgICAgKSl9XG4gICAgICAgICAgPG1vdGlvbi5wYXRoIGNsYXNzTmFtZT1cImltcGFjdC1saW5lIHdpdGhvdXQtaGFsb1wiIGQ9e2xpbmVQYXRoKCd3aXRob3V0Jyl9IHZhcmlhbnRzPXtsaW5lVmFyaWFudHMoMS4yNSl9IC8+XG4gICAgICAgICAgPG1vdGlvbi5wYXRoXG4gICAgICAgICAgICBjbGFzc05hbWU9XCJpbXBhY3QtbGluZSB3aXRob3V0XCJcbiAgICAgICAgICAgIGQ9e2xpbmVQYXRoKCd3aXRob3V0Jyl9XG4gICAgICAgICAgICB2YXJpYW50cz17bGluZVZhcmlhbnRzKDEuMjUpfVxuICAgICAgICAgIC8+XG4gICAgICAgICAgPG1vdGlvbi5wYXRoXG4gICAgICAgICAgICBjbGFzc05hbWU9XCJpbXBhY3QtbGluZSBhaVwiXG4gICAgICAgICAgICBkPXtsaW5lUGF0aCgnYWknKX1cbiAgICAgICAgICAgIHZhcmlhbnRzPXtsaW5lVmFyaWFudHMoMS40NSwgMC4xNSl9XG4gICAgICAgICAgLz5cbiAgICAgICAgICA8Y2lyY2xlIGNsYXNzTmFtZT1cImltcGFjdC1kb3Qgd2l0aG91dFwiIGN4PXtzaGFyZWRTdGFydC54fSBjeT17c2hhcmVkU3RhcnQueX0gcj1cIjQuNVwiIC8+XG4gICAgICAgICAge21ldHJpY3MubWFwKChtZXRyaWMsIGluZGV4KSA9PiAoXG4gICAgICAgICAgICA8ZyBrZXk9e21ldHJpYy5rZXl9PlxuICAgICAgICAgICAgICA8bW90aW9uLmNpcmNsZSBjbGFzc05hbWU9XCJpbXBhY3QtZG90IHdpdGhvdXRcIiBjeD17eFBvc2l0aW9uc1tpbmRleF19IGN5PXtjaGFydFkobWV0cmljLndpdGhvdXQpfSByPVwiNC41XCJcbiAgICAgICAgICAgICAgICB2YXJpYW50cz17eyBoaWRkZW46IHsgc2NhbGU6IDAsIG9wYWNpdHk6IDAgfSwgdmlzaWJsZTogeyBzY2FsZTogMSwgb3BhY2l0eTogMSwgdHJhbnNpdGlvbjogeyBkZWxheTogMS4yNSArIGluZGV4ICogMC4wNywgZHVyYXRpb246IDAuMjUgfSB9IH19IC8+XG4gICAgICAgICAgICAgIDxtb3Rpb24uY2lyY2xlIGNsYXNzTmFtZT1cImltcGFjdC1kb3QgYWlcIiBjeD17eFBvc2l0aW9uc1tpbmRleF19IGN5PXtjaGFydFkobWV0cmljLmFpKX0gcj1cIjVcIlxuICAgICAgICAgICAgICAgIHZhcmlhbnRzPXt7IGhpZGRlbjogeyBzY2FsZTogMCwgb3BhY2l0eTogMCB9LCB2aXNpYmxlOiB7IHNjYWxlOiAxLCBvcGFjaXR5OiAxLCB0cmFuc2l0aW9uOiB7IGRlbGF5OiAxLjYgKyBpbmRleCAqIDAuMDcsIGR1cmF0aW9uOiAwLjI1IH0gfSB9fSAvPlxuICAgICAgICAgICAgPC9nPlxuICAgICAgICAgICkpfVxuICAgICAgICA8L21vdGlvbi5zdmc+XG4gICAgICAgIHtzZWxlY3RlZCAmJiAoXG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJpbXBhY3QtdG9vbHRpcFwiIHJvbGU9XCJzdGF0dXNcIj5cbiAgICAgICAgICAgIDxzdHJvbmc+e3NlbGVjdGVkLmxhYmVsfTwvc3Ryb25nPlxuICAgICAgICAgICAgPHNwYW4+V2l0aCBBSSBhdXRvbWF0aW9uIHtzZWxlY3RlZC5haX0lPC9zcGFuPlxuICAgICAgICAgICAgPHNwYW4+V2l0aG91dCBhdXRvbWF0aW9uIHtzZWxlY3RlZC53aXRob3V0fSU8L3NwYW4+XG4gICAgICAgICAgPC9kaXY+XG4gICAgICAgICl9XG4gICAgICA8L2Rpdj5cblxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJpbXBhY3QtbWV0cmljc1wiPlxuICAgICAgICB7bWV0cmljcy5tYXAoKG1ldHJpYykgPT4gKFxuICAgICAgICAgIDxidXR0b24ga2V5PXttZXRyaWMua2V5fSBjbGFzc05hbWU9XCJpbXBhY3QtbWV0cmljXCIgdHlwZT1cImJ1dHRvblwiXG4gICAgICAgICAgICBhcmlhLWxhYmVsPXtgJHttZXRyaWMubGFiZWx9OiB3aXRoIEFJIGF1dG9tYXRpb24gJHttZXRyaWMuYWl9IHBlcmNlbnQsIHdpdGhvdXQgYXV0b21hdGlvbiAke21ldHJpYy53aXRob3V0fSBwZXJjZW50YH1cbiAgICAgICAgICAgIG9uTW91c2VFbnRlcj17KCkgPT4gc2V0QWN0aXZlKG1ldHJpYy5rZXkpfSBvbk1vdXNlTGVhdmU9eygpID0+IHNldEFjdGl2ZShudWxsKX1cbiAgICAgICAgICAgIG9uRm9jdXM9eygpID0+IHNldEFjdGl2ZShtZXRyaWMua2V5KX0gb25CbHVyPXsoKSA9PiBzZXRBY3RpdmUobnVsbCl9IG9uQ2xpY2s9eygpID0+IHNldEFjdGl2ZShtZXRyaWMua2V5KX0+XG4gICAgICAgICAgICA8c3Bhbj57bWV0cmljLmxhYmVsfTwvc3Bhbj5cbiAgICAgICAgICAgIDxzdHJvbmc+e21ldHJpYy5haX0lIDxzbWFsbD4vIHttZXRyaWMud2l0aG91dH0lPC9zbWFsbD48L3N0cm9uZz5cbiAgICAgICAgICA8L2J1dHRvbj5cbiAgICAgICAgKSl9XG4gICAgICA8L2Rpdj5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaW1wYWN0LWxlZ2VuZFwiPlxuICAgICAgICA8c3Bhbj48aSBjbGFzc05hbWU9XCJhaVwiIC8+V2l0aCBBSSBhdXRvbWF0aW9uPC9zcGFuPlxuICAgICAgICA8c3Bhbj48aSBjbGFzc05hbWU9XCJ3aXRob3V0XCIgLz5XaXRob3V0IGF1dG9tYXRpb248L3NwYW4+XG4gICAgICA8L2Rpdj5cbiAgICAgIDxwIGNsYXNzTmFtZT1cImltcGFjdC1ub3RlXCI+SWxsdXN0cmF0aXZlIHNjZW5hcmlvIMK3IEFjdHVhbCBpbXBhY3QgZGVwZW5kcyBvbiB5b3VyIHdvcmtmbG93LjwvcD5cbiAgICA8L2Rpdj5cbiAgKTtcbn1cbiJdLCJmaWxlIjoiQzovVXNlcnMvVW1lci9EZXNrdG9wL2JhaWctYm90cy0yL3NyYy9jb21wb25lbnRzL0F1dG9tYXRpb25JbXBhY3RDaGFydC5qc3gifQ==

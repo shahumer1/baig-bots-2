@@ -1,0 +1,283 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/Process.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=cd36e925"; const Fragment = __vite__cjsImport0_react_jsxDevRuntime["Fragment"]; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import { ProcessGrowth } from "/src/components/ProcessGrowth.jsx";
+export function Process() {
+  return /* @__PURE__ */ jsxDEV(Fragment, { children: /* @__PURE__ */ jsxDEV("section", { className: "sec", id: "process", children: /* @__PURE__ */ jsxDEV("div", { className: "wrap proc-grid", children: [
+    /* @__PURE__ */ jsxDEV("div", { className: "proc-side", children: [
+      /* @__PURE__ */ jsxDEV("p", { className: "eyebrow", children: [
+        /* @__PURE__ */ jsxDEV("span", { className: "dot" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 6,
+          columnNumber: 30
+        }, this),
+        "06 — Process"
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+        lineNumber: 6,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("h2", { className: "h2", "data-split": "", children: "A clear path from requirement to live system." }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+        lineNumber: 7,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("p", { className: "lead muted", children: "No black boxes. You see the plan, the progress and the test results at every stage." }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+        lineNumber: 8,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("a", { className: "btn btn-primary", href: "#contact", "data-magnet": "", "data-press": "", children: [
+        /* @__PURE__ */ jsxDEV("span", { children: "Talk to us" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 9,
+          columnNumber: 83
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "18", height: "18", viewBox: "0 0 20 20", "aria-hidden": "true", children: /* @__PURE__ */ jsxDEV("path", { d: "M3 10H16M11 5L16 10L11 15", fill: "none", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 10,
+          columnNumber: 76
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 10,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+        lineNumber: 9,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV(ProcessGrowth, {}, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+        lineNumber: 11,
+        columnNumber: 7
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+      lineNumber: 5,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "tl", "data-tl": "", children: [
+      /* @__PURE__ */ jsxDEV("i", { className: "tl-prog", "data-tl-prog": "" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+        lineNumber: 14,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "step", "data-step": "", children: [
+        /* @__PURE__ */ jsxDEV("span", { className: "n", children: "01" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 16,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("h3", { children: "Discover" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 17,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { children: "We start from business requirements: goals, systems, data and bottlenecks, and agree what a good result looks like." }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 18,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("ul", { className: "tags", children: [
+          /* @__PURE__ */ jsxDEV("li", { children: "Requirements" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 19,
+            columnNumber: 30
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: "Audit" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 19,
+            columnNumber: 51
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: "Roadmap" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 19,
+            columnNumber: 65
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 19,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+        lineNumber: 15,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "step", "data-step": "", children: [
+        /* @__PURE__ */ jsxDEV("span", { className: "n", children: "02" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 22,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("h3", { children: "Architect" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 23,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { children: "A practical architecture covering security, licensing, infrastructure and operations, signed off before the build." }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 24,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("ul", { className: "tags", children: [
+          /* @__PURE__ */ jsxDEV("li", { children: "Architecture" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 25,
+            columnNumber: 30
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: "Prototype" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 25,
+            columnNumber: 51
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: "Security" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 25,
+            columnNumber: 69
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 25,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+        lineNumber: 21,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "step", "data-step": "", children: [
+        /* @__PURE__ */ jsxDEV("span", { className: "n", children: "03" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 28,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("h3", { children: "Build & integrate" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 29,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { children: "Short cycles with working demos. Software, APIs, automation and AI come together around your existing platforms." }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 30,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("ul", { className: "tags", children: [
+          /* @__PURE__ */ jsxDEV("li", { children: "Software" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 31,
+            columnNumber: 30
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: "APIs" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 31,
+            columnNumber: 47
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: "Automation" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 31,
+            columnNumber: 60
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: "AI" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 31,
+            columnNumber: 79
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 31,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+        lineNumber: 27,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "step", "data-step": "", children: [
+        /* @__PURE__ */ jsxDEV("span", { className: "n", children: "04" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 34,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("h3", { children: "Test, launch & support" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 35,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { children: "UAT and SIT, a careful deployment, then monitoring and ongoing support, or a clean handover to your team." }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 36,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("ul", { className: "tags", children: [
+          /* @__PURE__ */ jsxDEV("li", { children: "UAT / SIT" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 37,
+            columnNumber: 30
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: "Deploy" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 37,
+            columnNumber: 48
+          }, this),
+          /* @__PURE__ */ jsxDEV("li", { children: "Support" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+            lineNumber: 37,
+            columnNumber: 63
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+          lineNumber: 37,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+        lineNumber: 33,
+        columnNumber: 7
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+      lineNumber: 13,
+      columnNumber: 5
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+    lineNumber: 4,
+    columnNumber: 3
+  }, this) }, void 0, false, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+    lineNumber: 3,
+    columnNumber: 12
+  }, this) }, void 0, false, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx",
+    lineNumber: 3,
+    columnNumber: 10
+  }, this);
+}
+_c = Process;
+var _c;
+$RefreshReg$(_c, "Process");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "C:/Users/Umer/Desktop/baig-bots-2/src/components/Process.jsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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O0FBQUE7QUFBQTtBQUFBLGlCQUFhO0FBQUEsVUFBSyx1QkFBQyxRQUFHLHNCQUFKO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQVU7QUFBQSxVQUFLLHVCQUFDLFFBQUcsdUJBQUo7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBVztBQUFBLGFBQWpFO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBc0U7QUFBQSxXQUp4RTtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBS0E7QUFBQSxTQXpCRjtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBMEJBO0FBQUEsT0FuQ0Y7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQW9DQSxLQXJDUztBQUFBO0FBQUE7QUFBQTtBQUFBLFNBc0NYLEtBdENTO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0F5Q1Q7QUFDQTtBQUFDQyxLQTNDZUQ7QUFBTyxJQUFBQztBQUFBLGFBQUFBLElBQUEiLCJuYW1lcyI6WyJQcm9jZXNzR3Jvd3RoIiwiUHJvY2VzcyIsIl9jIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIlByb2Nlc3MuanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFByb2Nlc3NHcm93dGggfSBmcm9tICcuL1Byb2Nlc3NHcm93dGguanN4JztcbmV4cG9ydCBmdW5jdGlvbiBQcm9jZXNzKCkge1xuICByZXR1cm4gPD48c2VjdGlvbiBjbGFzc05hbWU9XCJzZWNcIiBpZD1cInByb2Nlc3NcIj5cclxuICA8ZGl2IGNsYXNzTmFtZT1cIndyYXAgcHJvYy1ncmlkXCI+XHJcbiAgICA8ZGl2IGNsYXNzTmFtZT1cInByb2Mtc2lkZVwiPlxyXG4gICAgICA8cCBjbGFzc05hbWU9XCJleWVicm93XCI+PHNwYW4gY2xhc3NOYW1lPVwiZG90XCI+PC9zcGFuPjA2IOKAlCBQcm9jZXNzPC9wPlxyXG4gICAgICA8aDIgY2xhc3NOYW1lPVwiaDJcIiBkYXRhLXNwbGl0PVwiXCI+QSBjbGVhciBwYXRoIGZyb20gcmVxdWlyZW1lbnQgdG8gbGl2ZSBzeXN0ZW0uPC9oMj5cclxuICAgICAgPHAgY2xhc3NOYW1lPVwibGVhZCBtdXRlZFwiPk5vIGJsYWNrIGJveGVzLiBZb3Ugc2VlIHRoZSBwbGFuLCB0aGUgcHJvZ3Jlc3MgYW5kIHRoZSB0ZXN0IHJlc3VsdHMgYXQgZXZlcnkgc3RhZ2UuPC9wPlxyXG4gICAgICA8YSBjbGFzc05hbWU9XCJidG4gYnRuLXByaW1hcnlcIiBocmVmPVwiI2NvbnRhY3RcIiBkYXRhLW1hZ25ldD1cIlwiIGRhdGEtcHJlc3M9XCJcIj48c3Bhbj5UYWxrIHRvIHVzPC9zcGFuPlxyXG4gICAgICAgIDxzdmcgd2lkdGg9XCIxOFwiIGhlaWdodD1cIjE4XCIgdmlld0JveD1cIjAgMCAyMCAyMFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMyAxMEgxNk0xMSA1TDE2IDEwTDExIDE1XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuOFwiIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIj48L3BhdGg+PC9zdmc+PC9hPlxyXG4gICAgICA8UHJvY2Vzc0dyb3d0aCAvPlxyXG4gICAgPC9kaXY+XHJcbiAgICA8ZGl2IGNsYXNzTmFtZT1cInRsXCIgZGF0YS10bD1cIlwiPlxyXG4gICAgICA8aSBjbGFzc05hbWU9XCJ0bC1wcm9nXCIgZGF0YS10bC1wcm9nPVwiXCI+PC9pPlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInN0ZXBcIiBkYXRhLXN0ZXA9XCJcIj5cclxuICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJuXCI+MDE8L3NwYW4+XHJcbiAgICAgICAgPGgzPkRpc2NvdmVyPC9oMz5cclxuICAgICAgICA8cD5XZSBzdGFydCBmcm9tIGJ1c2luZXNzIHJlcXVpcmVtZW50czogZ29hbHMsIHN5c3RlbXMsIGRhdGEgYW5kIGJvdHRsZW5lY2tzLCBhbmQgYWdyZWUgd2hhdCBhIGdvb2QgcmVzdWx0IGxvb2tzIGxpa2UuPC9wPlxyXG4gICAgICAgIDx1bCBjbGFzc05hbWU9XCJ0YWdzXCI+PGxpPlJlcXVpcmVtZW50czwvbGk+PGxpPkF1ZGl0PC9saT48bGk+Um9hZG1hcDwvbGk+PC91bD5cclxuICAgICAgPC9kaXY+XHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwic3RlcFwiIGRhdGEtc3RlcD1cIlwiPlxyXG4gICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cIm5cIj4wMjwvc3Bhbj5cclxuICAgICAgICA8aDM+QXJjaGl0ZWN0PC9oMz5cclxuICAgICAgICA8cD5BIHByYWN0aWNhbCBhcmNoaXRlY3R1cmUgY292ZXJpbmcgc2VjdXJpdHksIGxpY2Vuc2luZywgaW5mcmFzdHJ1Y3R1cmUgYW5kIG9wZXJhdGlvbnMsIHNpZ25lZCBvZmYgYmVmb3JlIHRoZSBidWlsZC48L3A+XHJcbiAgICAgICAgPHVsIGNsYXNzTmFtZT1cInRhZ3NcIj48bGk+QXJjaGl0ZWN0dXJlPC9saT48bGk+UHJvdG90eXBlPC9saT48bGk+U2VjdXJpdHk8L2xpPjwvdWw+XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInN0ZXBcIiBkYXRhLXN0ZXA9XCJcIj5cclxuICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJuXCI+MDM8L3NwYW4+XHJcbiAgICAgICAgPGgzPkJ1aWxkICZhbXA7IGludGVncmF0ZTwvaDM+XHJcbiAgICAgICAgPHA+U2hvcnQgY3ljbGVzIHdpdGggd29ya2luZyBkZW1vcy4gU29mdHdhcmUsIEFQSXMsIGF1dG9tYXRpb24gYW5kIEFJIGNvbWUgdG9nZXRoZXIgYXJvdW5kIHlvdXIgZXhpc3RpbmcgcGxhdGZvcm1zLjwvcD5cclxuICAgICAgICA8dWwgY2xhc3NOYW1lPVwidGFnc1wiPjxsaT5Tb2Z0d2FyZTwvbGk+PGxpPkFQSXM8L2xpPjxsaT5BdXRvbWF0aW9uPC9saT48bGk+QUk8L2xpPjwvdWw+XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cInN0ZXBcIiBkYXRhLXN0ZXA9XCJcIj5cclxuICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJuXCI+MDQ8L3NwYW4+XHJcbiAgICAgICAgPGgzPlRlc3QsIGxhdW5jaCAmYW1wOyBzdXBwb3J0PC9oMz5cclxuICAgICAgICA8cD5VQVQgYW5kIFNJVCwgYSBjYXJlZnVsIGRlcGxveW1lbnQsIHRoZW4gbW9uaXRvcmluZyBhbmQgb25nb2luZyBzdXBwb3J0LCBvciBhIGNsZWFuIGhhbmRvdmVyIHRvIHlvdXIgdGVhbS48L3A+XHJcbiAgICAgICAgPHVsIGNsYXNzTmFtZT1cInRhZ3NcIj48bGk+VUFUIC8gU0lUPC9saT48bGk+RGVwbG95PC9saT48bGk+U3VwcG9ydDwvbGk+PC91bD5cclxuICAgICAgPC9kaXY+XHJcbiAgICA8L2Rpdj5cclxuICA8L2Rpdj5cclxuPC9zZWN0aW9uPlxyXG5cclxuey8qIEVOR0FHRSAqL31cclxuPC8+O1xufVxuIl0sImZpbGUiOiJDOi9Vc2Vycy9VbWVyL0Rlc2t0b3AvYmFpZy1ib3RzLTIvc3JjL2NvbXBvbmVudHMvUHJvY2Vzcy5qc3gifQ==

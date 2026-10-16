@@ -5,14 +5,19 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { createServer } from 'vite';
 import { allServices } from './src/components/serviceData.js';
 import { innerIndustries, innerServices } from './src/components/innerData.js';
+import { serviceGrowthData } from './src/components/serviceGrowthData.js';
 
 const vite = await createServer({ configLoader: 'runner', optimizeDeps: { disabled: true }, server: { middlewareMode: true }, appType: 'custom' });
 let page;
 let Page;
 let HeroScene;
+let ServiceExperience;
+let Header;
 try {
   ({ Page } = await vite.ssrLoadModule('/src/components/Page.jsx'));
   ({ HeroScene } = await vite.ssrLoadModule('/src/components/HeroScene.jsx'));
+  ({ ServiceExperience } = await vite.ssrLoadModule('/src/components/ServiceExperience.jsx'));
+  ({ Header } = await vite.ssrLoadModule('/src/components/Header.jsx'));
   page = renderToStaticMarkup(React.createElement(Page));
 } finally {
   await vite.close();
@@ -157,6 +162,24 @@ assert.deepEqual(errors.filter((x) => !x.includes('Error creating WebGL context'
 site.componentWillUnmount();
 const { createRoot } = await import('react-dom/client');
 globalThis.IS_REACT_ACT_ENVIRONMENT = true;
+const navHost = window.document.createElement('div');
+window.document.body.append(navHost);
+const navRoot = createRoot(navHost);
+await React.act(async () => { navRoot.render(React.createElement(Header, { inner: true })); });
+const navDropdowns = navHost.querySelectorAll('.nav-services');
+navDropdowns[0].open = true;
+navDropdowns[0].querySelector('summary').dispatchEvent(new window.Event('pointerdown', { bubbles: true }));
+assert(navDropdowns[0].open, 'clicking inside a navbar dropdown should keep it open');
+window.document.body.dispatchEvent(new window.Event('pointerdown', { bubbles: true }));
+assert(!navDropdowns[0].open, 'clicking outside the navbar dropdown should close it');
+navDropdowns[0].open = true;
+navDropdowns[1].querySelector('summary').dispatchEvent(new window.Event('pointerdown', { bubbles: true }));
+assert(!navDropdowns[0].open, 'opening another navbar dropdown should close the previous one');
+navDropdowns[1].open = true;
+window.document.dispatchEvent(new window.KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
+assert(!navDropdowns[1].open, 'Escape should close an open navbar dropdown');
+await React.act(async () => { navRoot.unmount(); });
+navHost.remove();
 const sceneHost = window.document.createElement('div');
 window.document.body.append(sceneHost);
 const sceneRoot = createRoot(sceneHost);
@@ -190,11 +213,30 @@ assert(!sceneHost.querySelector('.inner-chat-typing'), 'typing indicator stayed 
 await React.act(async () => { sceneRoot.unmount(); });
 reduceMotion = false;
 sceneHost.remove();
+const experienceHost = window.document.createElement('div');
+window.document.body.append(experienceHost);
+const experienceRoot = createRoot(experienceHost);
+const paymentService = allServices.find((service) => service.slug === 'fintech-payment-technology');
+await React.act(async () => { experienceRoot.render(React.createElement(ServiceExperience, { service: paymentService })); });
+assert(experienceHost.textContent.includes('Card issuing and acquiring workflows'), 'service detail did not show its first area');
+await React.act(async () => { experienceHost.querySelectorAll('.sx-choice')[2].click(); });
+assert(experienceHost.textContent.includes('Compare records and surface the items that need review.'), 'selecting a service area did not update the explanation');
+assert(experienceHost.querySelector('.sx-choice[aria-pressed="true"]')?.textContent.includes('Clearing'), 'selected service area was not marked active');
+await React.act(async () => { experienceRoot.unmount(); });
+experienceHost.remove();
 const routes = ['/', '/services', '/services/other', '/industries', '/contact', ...innerServices.map((service) => `/services/${service.slug}`), ...innerIndustries.map((industry) => `/industries/${industry.slug}`), ...allServices.map((service) => `/services/${service.slug}`)];
 for (const route of routes) {
   window.history.replaceState({}, '', route);
   const html = renderToStaticMarkup(React.createElement(Page));
-  assert(html.includes('data-quick-brief'), `${route} did not render the contact form`);
+  const detailService = [...innerServices, ...allServices].find((service) => route === `/services/${service.slug}`);
+  if (detailService) {
+    assert(serviceGrowthData[detailService.slug]?.[2]?.length === 3, `${route} is missing service-specific business value copy`);
+    assert(html.includes('growth-panel') && html.includes('growth-track'), `${route} is missing its animated business value section`);
+    assert(!html.includes('data-quick-brief'), `${route} should link to Contact instead of showing a form`);
+    assert(html.includes(`/contact?service=${encodeURIComponent(detailService.title)}`), `${route} CTA does not lead to Contact`);
+    if (route === '/services/custom-software-saas') assert(html.includes('cs-explorer') && html.includes('Customer and admin portals'), 'Custom Software interactive section is missing');
+    else assert(html.includes('sx-explorer') && html.includes('sx-preview'), `${route} is missing its interactive service section`);
+  } else assert(html.includes('data-quick-brief'), `${route} did not render the contact form`);
   assert(html.includes('<h1'), `${route} did not render its page heading`);
   if (route === '/') assert(!html.includes('class="inner-circuit"'), 'The home page must keep its original circuit');
   else {
@@ -215,6 +257,12 @@ for (const route of routes) {
     if (service.visual === 'cloud') {
       assert.equal((html.match(/class="inner-cloud-node"/g) || []).length, 7, 'Cloud map must show seven connected systems');
       assert(!html.includes('inner-scene-tabs'), 'Cloud map must not show stage tabs');
+      const routes = [...html.matchAll(/class="inner-cloud-route" d="([^"]+)"/g)];
+      assert.equal(routes.length, 7, 'Cloud map must show seven routes');
+      for (const [, path] of routes) {
+        const points = [...path.matchAll(/[ML] (\d+) (\d+)/g)].map(([, x, y]) => [Number(x), Number(y)]);
+        assert(points.length > 1 && points.every(([x, y], index) => index === 0 || x === points[index - 1][0] || y === points[index - 1][1]), 'Cloud routes must use right-angle turns');
+      }
     }
   }
   if (innerIndustries.some((industry) => route === `/industries/${industry.slug}`)) {

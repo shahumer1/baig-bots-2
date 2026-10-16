@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { coreServices, servicePath } from './serviceData.js';
 import { innerIndustries, innerServices, innerServicePath } from './innerData.js';
 
@@ -28,7 +29,29 @@ function NavDropdown({ label, links, mobile = false }) {
 }
 
 export function Header({ inner = false }) {
-  return <header className="nav on-dark" data-nav="">
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const closeDropdowns = (event) => {
+      headerRef.current?.querySelectorAll('details[open]').forEach((dropdown) => {
+        if (!dropdown.contains(event.target)) dropdown.open = false;
+      });
+    };
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') {
+        headerRef.current?.querySelectorAll('details[open]').forEach((dropdown) => { dropdown.open = false; });
+      }
+    };
+
+    document.addEventListener('pointerdown', closeDropdowns);
+    document.addEventListener('keydown', closeOnEscape);
+    return () => {
+      document.removeEventListener('pointerdown', closeDropdowns);
+      document.removeEventListener('keydown', closeOnEscape);
+    };
+  }, []);
+
+  return <header ref={headerRef} className="nav on-dark" data-nav="">
     <div className="wrap nav-in">
       <a className="brand" href="/" aria-label="Baig Bots — home">
         <span className="blg" aria-hidden="true"><i className="lg-s"></i><i className="lg-ss"></i><i className="lg-r"></i><i className="lg-rs"></i><i className="lg-sh"></i></span>

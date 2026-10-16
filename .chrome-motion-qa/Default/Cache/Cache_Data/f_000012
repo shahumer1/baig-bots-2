@@ -1,0 +1,375 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/Faq.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=cd36e925"; const Fragment = __vite__cjsImport0_react_jsxDevRuntime["Fragment"]; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+export function Faq() {
+  return /* @__PURE__ */ jsxDEV(Fragment, { children: /* @__PURE__ */ jsxDEV("section", { className: "sec", id: "faq", children: /* @__PURE__ */ jsxDEV("div", { className: "wrap faq-grid", children: [
+    /* @__PURE__ */ jsxDEV("div", { className: "faq-side", children: [
+      /* @__PURE__ */ jsxDEV("p", { className: "eyebrow", children: [
+        /* @__PURE__ */ jsxDEV("span", { className: "dot" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 5,
+          columnNumber: 30
+        }, this),
+        "08 — FAQ"
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+        lineNumber: 5,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("h2", { className: "h2", "data-split": "", children: "Questions we hear before a project starts." }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+        lineNumber: 6,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("p", { className: "lead muted", children: "Something else on your mind? Add it to your brief and we will answer it in our reply." }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+        lineNumber: 7,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("a", { className: "link-arrow", href: "#contact", children: [
+        "Ask us directly",
+        /* @__PURE__ */ jsxDEV("svg", { width: "18", height: "18", viewBox: "0 0 20 20", "aria-hidden": "true", children: /* @__PURE__ */ jsxDEV("path", { d: "M3 10H16M11 5L16 10L11 15", fill: "none", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 9,
+          columnNumber: 76
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 9,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+        lineNumber: 8,
+        columnNumber: 7
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+      lineNumber: 4,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "faq-list", children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "faq-item", "data-faq": "", children: [
+        /* @__PURE__ */ jsxDEV("h3", { className: "faq-h", children: /* @__PURE__ */ jsxDEV("button", { className: "faq-q", type: "button", id: "faq-q1", "aria-expanded": "true", "aria-controls": "faq-a1", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "n", children: "01" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 13,
+            columnNumber: 127
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "qt", children: "Can you work with the systems we already have?" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 13,
+            columnNumber: 156
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "pm", "aria-hidden": "true" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 13,
+            columnNumber: 230
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 13,
+          columnNumber: 31
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 13,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "faq-a", id: "faq-a1", role: "region", "aria-labelledby": "faq-q1", children: /* @__PURE__ */ jsxDEV("p", { children: "Yes. Most of our work connects to platforms you already run: card and payment systems, ERPs, CRMs, databases and spreadsheets. We map what is there during discovery and integrate rather than replace wherever that makes sense." }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 14,
+          columnNumber: 83
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 14,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+        lineNumber: 12,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "faq-item", "data-faq": "", children: [
+        /* @__PURE__ */ jsxDEV("h3", { className: "faq-h", children: /* @__PURE__ */ jsxDEV("button", { className: "faq-q", type: "button", id: "faq-q2", "aria-expanded": "true", "aria-controls": "faq-a2", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "n", children: "02" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 17,
+            columnNumber: 127
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "qt", children: "How does a project start?" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 17,
+            columnNumber: 156
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "pm", "aria-hidden": "true" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 17,
+            columnNumber: 209
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 17,
+          columnNumber: 31
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 17,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "faq-a", id: "faq-a2", role: "region", "aria-labelledby": "faq-q2", children: /* @__PURE__ */ jsxDEV("p", { children: "With your business requirements. We agree the goals, a practical architecture and clear, testable outcomes. Scope, integrations and technology choices, including security, licensing, infrastructure and operational needs, are finalised during discovery." }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 18,
+          columnNumber: 83
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 18,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+        lineNumber: 16,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "faq-item", "data-faq": "", children: [
+        /* @__PURE__ */ jsxDEV("h3", { className: "faq-h", children: /* @__PURE__ */ jsxDEV("button", { className: "faq-q", type: "button", id: "faq-q3", "aria-expanded": "true", "aria-controls": "faq-a3", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "n", children: "03" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 21,
+            columnNumber: 127
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "qt", children: "Do you support payment platforms like SmartVista?" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 21,
+            columnNumber: 156
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "pm", "aria-hidden": "true" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 21,
+            columnNumber: 233
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 21,
+          columnNumber: 31
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 21,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "faq-a", id: "faq-a3", role: "region", "aria-labelledby": "faq-q3", children: /* @__PURE__ */ jsxDEV("p", { children: "Yes. Fintech is one of our core lines: SmartVista services, card issuing and acquiring, ATM/POS transactions, transaction processing, card billing, clearing, settlement and reconciliation." }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 22,
+          columnNumber: 83
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 22,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+        lineNumber: 20,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "faq-item", "data-faq": "", children: [
+        /* @__PURE__ */ jsxDEV("h3", { className: "faq-h", children: /* @__PURE__ */ jsxDEV("button", { className: "faq-q", type: "button", id: "faq-q4", "aria-expanded": "true", "aria-controls": "faq-a4", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "n", children: "04" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 25,
+            columnNumber: 127
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "qt", children: "Which automation tools do you use?" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 25,
+            columnNumber: 156
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "pm", "aria-hidden": "true" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 25,
+            columnNumber: 218
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 25,
+          columnNumber: 31
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 25,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "faq-a", id: "faq-a4", role: "region", "aria-labelledby": "faq-q4", children: /* @__PURE__ */ jsxDEV("p", { children: "Microsoft Power Automate and Dataverse, n8n, webhooks and custom code where it is needed. We choose the tool that fits your process and licensing, not the other way round." }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 26,
+          columnNumber: 83
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 26,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+        lineNumber: 24,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "faq-item", "data-faq": "", children: [
+        /* @__PURE__ */ jsxDEV("h3", { className: "faq-h", children: /* @__PURE__ */ jsxDEV("button", { className: "faq-q", type: "button", id: "faq-q5", "aria-expanded": "true", "aria-controls": "faq-a5", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "n", children: "05" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 29,
+            columnNumber: 127
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "qt", children: "Can you help after launch?" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 29,
+            columnNumber: 156
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "pm", "aria-hidden": "true" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 29,
+            columnNumber: 210
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 29,
+          columnNumber: 31
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 29,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "faq-a", id: "faq-a5", role: "region", "aria-labelledby": "faq-q5", children: /* @__PURE__ */ jsxDEV("p", { children: "Yes. Retainer support and dedicated technical resources cover incident analysis, root-cause assessment, UAT/SIT support, performance reviews and production troubleshooting." }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 30,
+          columnNumber: 83
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 30,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+        lineNumber: 28,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "faq-item", "data-faq": "", children: [
+        /* @__PURE__ */ jsxDEV("h3", { className: "faq-h", children: /* @__PURE__ */ jsxDEV("button", { className: "faq-q", type: "button", id: "faq-q6", "aria-expanded": "true", "aria-controls": "faq-a6", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "n", children: "06" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 33,
+            columnNumber: 127
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "qt", children: "Do you also handle design, marketing and content?" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 33,
+            columnNumber: 156
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "pm", "aria-hidden": "true" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 33,
+            columnNumber: 233
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 33,
+          columnNumber: 31
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 33,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "faq-a", id: "faq-a6", role: "region", "aria-labelledby": "faq-q6", children: /* @__PURE__ */ jsxDEV("p", { children: "Yes, through our complementary service lines: web and mobile, CRM and ERP, UI/UX, branding, digital marketing and SEO, and video content, delivered by dedicated specialists and project teams." }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 34,
+          columnNumber: 83
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 34,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+        lineNumber: 32,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "faq-item", "data-faq": "", children: [
+        /* @__PURE__ */ jsxDEV("h3", { className: "faq-h", children: /* @__PURE__ */ jsxDEV("button", { className: "faq-q", type: "button", id: "faq-q7", "aria-expanded": "true", "aria-controls": "faq-a7", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "n", children: "07" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 37,
+            columnNumber: 127
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "qt", children: "Where are you based?" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 37,
+            columnNumber: 156
+          }, this),
+          /* @__PURE__ */ jsxDEV("span", { className: "pm", "aria-hidden": "true" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+            lineNumber: 37,
+            columnNumber: 204
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 37,
+          columnNumber: 31
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 37,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "faq-a", id: "faq-a7", role: "region", "aria-labelledby": "faq-q7", children: /* @__PURE__ */ jsxDEV("p", { children: "Our office is at NASTP, Suite No. 217, and we also work with clients remotely." }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 38,
+          columnNumber: 83
+        }, this) }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+          lineNumber: 38,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+        lineNumber: 36,
+        columnNumber: 7
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+      lineNumber: 11,
+      columnNumber: 5
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+    lineNumber: 3,
+    columnNumber: 3
+  }, this) }, void 0, false, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+    lineNumber: 2,
+    columnNumber: 12
+  }, this) }, void 0, false, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx",
+    lineNumber: 2,
+    columnNumber: 10
+  }, this);
+}
+_c = Faq;
+var _c;
+$RefreshReg$(_c, "Faq");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "C:/Users/Umer/Desktop/baig-bots-2/src/components/Faq.jsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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QXdDO0FBQUEsYUFBck47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUE0TixLQUFsUDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQTJQO0FBQUEsUUFDM1AsdUJBQUMsU0FBSSxXQUFVLFNBQVEsSUFBRyxVQUFTLE1BQUssVUFBUyxtQkFBZ0IsVUFBUyxpQ0FBQyxPQUFFLDhGQUFIO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBaUYsS0FBM0o7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUErSjtBQUFBLFdBRmpLO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFHQTtBQUFBLFNBNUJGO0FBQUE7QUFBQTtBQUFBO0FBQUEsV0E2QkE7QUFBQSxPQXJDRjtBQUFBO0FBQUE7QUFBQTtBQUFBLFNBc0NBLEtBdkNTO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0F3Q1gsS0F4Q1M7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQTJDVDtBQUNBO0FBQUNDLEtBN0NlRDtBQUFHLElBQUFDO0FBQUEsYUFBQUEsSUFBQSIsIm5hbWVzIjpbIkZhcSIsIl9jIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIkZhcS5qc3giXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGZ1bmN0aW9uIEZhcSgpIHtcbiAgcmV0dXJuIDw+PHNlY3Rpb24gY2xhc3NOYW1lPVwic2VjXCIgaWQ9XCJmYXFcIj5cclxuICA8ZGl2IGNsYXNzTmFtZT1cIndyYXAgZmFxLWdyaWRcIj5cclxuICAgIDxkaXYgY2xhc3NOYW1lPVwiZmFxLXNpZGVcIj5cclxuICAgICAgPHAgY2xhc3NOYW1lPVwiZXllYnJvd1wiPjxzcGFuIGNsYXNzTmFtZT1cImRvdFwiPjwvc3Bhbj4wOCDigJQgRkFRPC9wPlxyXG4gICAgICA8aDIgY2xhc3NOYW1lPVwiaDJcIiBkYXRhLXNwbGl0PVwiXCI+UXVlc3Rpb25zIHdlIGhlYXIgYmVmb3JlIGEgcHJvamVjdCBzdGFydHMuPC9oMj5cclxuICAgICAgPHAgY2xhc3NOYW1lPVwibGVhZCBtdXRlZFwiPlNvbWV0aGluZyBlbHNlIG9uIHlvdXIgbWluZD8gQWRkIGl0IHRvIHlvdXIgYnJpZWYgYW5kIHdlIHdpbGwgYW5zd2VyIGl0IGluIG91ciByZXBseS48L3A+XHJcbiAgICAgIDxhIGNsYXNzTmFtZT1cImxpbmstYXJyb3dcIiBocmVmPVwiI2NvbnRhY3RcIj5Bc2sgdXMgZGlyZWN0bHlcclxuICAgICAgICA8c3ZnIHdpZHRoPVwiMThcIiBoZWlnaHQ9XCIxOFwiIHZpZXdCb3g9XCIwIDAgMjAgMjBcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48cGF0aCBkPVwiTTMgMTBIMTZNMTEgNUwxNiAxMEwxMSAxNVwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjhcIiBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCI+PC9wYXRoPjwvc3ZnPjwvYT5cclxuICAgIDwvZGl2PlxyXG4gICAgPGRpdiBjbGFzc05hbWU9XCJmYXEtbGlzdFwiPlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImZhcS1pdGVtXCIgZGF0YS1mYXE9XCJcIj5cclxuICAgICAgICA8aDMgY2xhc3NOYW1lPVwiZmFxLWhcIj48YnV0dG9uIGNsYXNzTmFtZT1cImZhcS1xXCIgdHlwZT1cImJ1dHRvblwiIGlkPVwiZmFxLXExXCIgYXJpYS1leHBhbmRlZD1cInRydWVcIiBhcmlhLWNvbnRyb2xzPVwiZmFxLWExXCI+PHNwYW4gY2xhc3NOYW1lPVwiblwiPjAxPC9zcGFuPjxzcGFuIGNsYXNzTmFtZT1cInF0XCI+Q2FuIHlvdSB3b3JrIHdpdGggdGhlIHN5c3RlbXMgd2UgYWxyZWFkeSBoYXZlPzwvc3Bhbj48c3BhbiBjbGFzc05hbWU9XCJwbVwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjwvc3Bhbj48L2J1dHRvbj48L2gzPlxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmFxLWFcIiBpZD1cImZhcS1hMVwiIHJvbGU9XCJyZWdpb25cIiBhcmlhLWxhYmVsbGVkYnk9XCJmYXEtcTFcIj48cD5ZZXMuIE1vc3Qgb2Ygb3VyIHdvcmsgY29ubmVjdHMgdG8gcGxhdGZvcm1zIHlvdSBhbHJlYWR5IHJ1bjogY2FyZCBhbmQgcGF5bWVudCBzeXN0ZW1zLCBFUlBzLCBDUk1zLCBkYXRhYmFzZXMgYW5kIHNwcmVhZHNoZWV0cy4gV2UgbWFwIHdoYXQgaXMgdGhlcmUgZHVyaW5nIGRpc2NvdmVyeSBhbmQgaW50ZWdyYXRlIHJhdGhlciB0aGFuIHJlcGxhY2Ugd2hlcmV2ZXIgdGhhdCBtYWtlcyBzZW5zZS48L3A+PC9kaXY+XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImZhcS1pdGVtXCIgZGF0YS1mYXE9XCJcIj5cclxuICAgICAgICA8aDMgY2xhc3NOYW1lPVwiZmFxLWhcIj48YnV0dG9uIGNsYXNzTmFtZT1cImZhcS1xXCIgdHlwZT1cImJ1dHRvblwiIGlkPVwiZmFxLXEyXCIgYXJpYS1leHBhbmRlZD1cInRydWVcIiBhcmlhLWNvbnRyb2xzPVwiZmFxLWEyXCI+PHNwYW4gY2xhc3NOYW1lPVwiblwiPjAyPC9zcGFuPjxzcGFuIGNsYXNzTmFtZT1cInF0XCI+SG93IGRvZXMgYSBwcm9qZWN0IHN0YXJ0Pzwvc3Bhbj48c3BhbiBjbGFzc05hbWU9XCJwbVwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjwvc3Bhbj48L2J1dHRvbj48L2gzPlxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmFxLWFcIiBpZD1cImZhcS1hMlwiIHJvbGU9XCJyZWdpb25cIiBhcmlhLWxhYmVsbGVkYnk9XCJmYXEtcTJcIj48cD5XaXRoIHlvdXIgYnVzaW5lc3MgcmVxdWlyZW1lbnRzLiBXZSBhZ3JlZSB0aGUgZ29hbHMsIGEgcHJhY3RpY2FsIGFyY2hpdGVjdHVyZSBhbmQgY2xlYXIsIHRlc3RhYmxlIG91dGNvbWVzLiBTY29wZSwgaW50ZWdyYXRpb25zIGFuZCB0ZWNobm9sb2d5IGNob2ljZXMsIGluY2x1ZGluZyBzZWN1cml0eSwgbGljZW5zaW5nLCBpbmZyYXN0cnVjdHVyZSBhbmQgb3BlcmF0aW9uYWwgbmVlZHMsIGFyZSBmaW5hbGlzZWQgZHVyaW5nIGRpc2NvdmVyeS48L3A+PC9kaXY+XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImZhcS1pdGVtXCIgZGF0YS1mYXE9XCJcIj5cclxuICAgICAgICA8aDMgY2xhc3NOYW1lPVwiZmFxLWhcIj48YnV0dG9uIGNsYXNzTmFtZT1cImZhcS1xXCIgdHlwZT1cImJ1dHRvblwiIGlkPVwiZmFxLXEzXCIgYXJpYS1leHBhbmRlZD1cInRydWVcIiBhcmlhLWNvbnRyb2xzPVwiZmFxLWEzXCI+PHNwYW4gY2xhc3NOYW1lPVwiblwiPjAzPC9zcGFuPjxzcGFuIGNsYXNzTmFtZT1cInF0XCI+RG8geW91IHN1cHBvcnQgcGF5bWVudCBwbGF0Zm9ybXMgbGlrZSBTbWFydFZpc3RhPzwvc3Bhbj48c3BhbiBjbGFzc05hbWU9XCJwbVwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjwvc3Bhbj48L2J1dHRvbj48L2gzPlxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmFxLWFcIiBpZD1cImZhcS1hM1wiIHJvbGU9XCJyZWdpb25cIiBhcmlhLWxhYmVsbGVkYnk9XCJmYXEtcTNcIj48cD5ZZXMuIEZpbnRlY2ggaXMgb25lIG9mIG91ciBjb3JlIGxpbmVzOiBTbWFydFZpc3RhIHNlcnZpY2VzLCBjYXJkIGlzc3VpbmcgYW5kIGFjcXVpcmluZywgQVRNL1BPUyB0cmFuc2FjdGlvbnMsIHRyYW5zYWN0aW9uIHByb2Nlc3NpbmcsIGNhcmQgYmlsbGluZywgY2xlYXJpbmcsIHNldHRsZW1lbnQgYW5kIHJlY29uY2lsaWF0aW9uLjwvcD48L2Rpdj5cclxuICAgICAgPC9kaXY+XHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmFxLWl0ZW1cIiBkYXRhLWZhcT1cIlwiPlxyXG4gICAgICAgIDxoMyBjbGFzc05hbWU9XCJmYXEtaFwiPjxidXR0b24gY2xhc3NOYW1lPVwiZmFxLXFcIiB0eXBlPVwiYnV0dG9uXCIgaWQ9XCJmYXEtcTRcIiBhcmlhLWV4cGFuZGVkPVwidHJ1ZVwiIGFyaWEtY29udHJvbHM9XCJmYXEtYTRcIj48c3BhbiBjbGFzc05hbWU9XCJuXCI+MDQ8L3NwYW4+PHNwYW4gY2xhc3NOYW1lPVwicXRcIj5XaGljaCBhdXRvbWF0aW9uIHRvb2xzIGRvIHlvdSB1c2U/PC9zcGFuPjxzcGFuIGNsYXNzTmFtZT1cInBtXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PC9zcGFuPjwvYnV0dG9uPjwvaDM+XHJcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmYXEtYVwiIGlkPVwiZmFxLWE0XCIgcm9sZT1cInJlZ2lvblwiIGFyaWEtbGFiZWxsZWRieT1cImZhcS1xNFwiPjxwPk1pY3Jvc29mdCBQb3dlciBBdXRvbWF0ZSBhbmQgRGF0YXZlcnNlLCBuOG4sIHdlYmhvb2tzIGFuZCBjdXN0b20gY29kZSB3aGVyZSBpdCBpcyBuZWVkZWQuIFdlIGNob29zZSB0aGUgdG9vbCB0aGF0IGZpdHMgeW91ciBwcm9jZXNzIGFuZCBsaWNlbnNpbmcsIG5vdCB0aGUgb3RoZXIgd2F5IHJvdW5kLjwvcD48L2Rpdj5cclxuICAgICAgPC9kaXY+XHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmFxLWl0ZW1cIiBkYXRhLWZhcT1cIlwiPlxyXG4gICAgICAgIDxoMyBjbGFzc05hbWU9XCJmYXEtaFwiPjxidXR0b24gY2xhc3NOYW1lPVwiZmFxLXFcIiB0eXBlPVwiYnV0dG9uXCIgaWQ9XCJmYXEtcTVcIiBhcmlhLWV4cGFuZGVkPVwidHJ1ZVwiIGFyaWEtY29udHJvbHM9XCJmYXEtYTVcIj48c3BhbiBjbGFzc05hbWU9XCJuXCI+MDU8L3NwYW4+PHNwYW4gY2xhc3NOYW1lPVwicXRcIj5DYW4geW91IGhlbHAgYWZ0ZXIgbGF1bmNoPzwvc3Bhbj48c3BhbiBjbGFzc05hbWU9XCJwbVwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjwvc3Bhbj48L2J1dHRvbj48L2gzPlxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmFxLWFcIiBpZD1cImZhcS1hNVwiIHJvbGU9XCJyZWdpb25cIiBhcmlhLWxhYmVsbGVkYnk9XCJmYXEtcTVcIj48cD5ZZXMuIFJldGFpbmVyIHN1cHBvcnQgYW5kIGRlZGljYXRlZCB0ZWNobmljYWwgcmVzb3VyY2VzIGNvdmVyIGluY2lkZW50IGFuYWx5c2lzLCByb290LWNhdXNlIGFzc2Vzc21lbnQsIFVBVC9TSVQgc3VwcG9ydCwgcGVyZm9ybWFuY2UgcmV2aWV3cyBhbmQgcHJvZHVjdGlvbiB0cm91Ymxlc2hvb3RpbmcuPC9wPjwvZGl2PlxyXG4gICAgICA8L2Rpdj5cclxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJmYXEtaXRlbVwiIGRhdGEtZmFxPVwiXCI+XHJcbiAgICAgICAgPGgzIGNsYXNzTmFtZT1cImZhcS1oXCI+PGJ1dHRvbiBjbGFzc05hbWU9XCJmYXEtcVwiIHR5cGU9XCJidXR0b25cIiBpZD1cImZhcS1xNlwiIGFyaWEtZXhwYW5kZWQ9XCJ0cnVlXCIgYXJpYS1jb250cm9scz1cImZhcS1hNlwiPjxzcGFuIGNsYXNzTmFtZT1cIm5cIj4wNjwvc3Bhbj48c3BhbiBjbGFzc05hbWU9XCJxdFwiPkRvIHlvdSBhbHNvIGhhbmRsZSBkZXNpZ24sIG1hcmtldGluZyBhbmQgY29udGVudD88L3NwYW4+PHNwYW4gY2xhc3NOYW1lPVwicG1cIiBhcmlhLWhpZGRlbj1cInRydWVcIj48L3NwYW4+PC9idXR0b24+PC9oMz5cclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZhcS1hXCIgaWQ9XCJmYXEtYTZcIiByb2xlPVwicmVnaW9uXCIgYXJpYS1sYWJlbGxlZGJ5PVwiZmFxLXE2XCI+PHA+WWVzLCB0aHJvdWdoIG91ciBjb21wbGVtZW50YXJ5IHNlcnZpY2UgbGluZXM6IHdlYiBhbmQgbW9iaWxlLCBDUk0gYW5kIEVSUCwgVUkvVVgsIGJyYW5kaW5nLCBkaWdpdGFsIG1hcmtldGluZyBhbmQgU0VPLCBhbmQgdmlkZW8gY29udGVudCwgZGVsaXZlcmVkIGJ5IGRlZGljYXRlZCBzcGVjaWFsaXN0cyBhbmQgcHJvamVjdCB0ZWFtcy48L3A+PC9kaXY+XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImZhcS1pdGVtXCIgZGF0YS1mYXE9XCJcIj5cclxuICAgICAgICA8aDMgY2xhc3NOYW1lPVwiZmFxLWhcIj48YnV0dG9uIGNsYXNzTmFtZT1cImZhcS1xXCIgdHlwZT1cImJ1dHRvblwiIGlkPVwiZmFxLXE3XCIgYXJpYS1leHBhbmRlZD1cInRydWVcIiBhcmlhLWNvbnRyb2xzPVwiZmFxLWE3XCI+PHNwYW4gY2xhc3NOYW1lPVwiblwiPjA3PC9zcGFuPjxzcGFuIGNsYXNzTmFtZT1cInF0XCI+V2hlcmUgYXJlIHlvdSBiYXNlZD88L3NwYW4+PHNwYW4gY2xhc3NOYW1lPVwicG1cIiBhcmlhLWhpZGRlbj1cInRydWVcIj48L3NwYW4+PC9idXR0b24+PC9oMz5cclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImZhcS1hXCIgaWQ9XCJmYXEtYTdcIiByb2xlPVwicmVnaW9uXCIgYXJpYS1sYWJlbGxlZGJ5PVwiZmFxLXE3XCI+PHA+T3VyIG9mZmljZSBpcyBhdCBOQVNUUCwgU3VpdGUgTm8uIDIxNywgYW5kIHdlIGFsc28gd29yayB3aXRoIGNsaWVudHMgcmVtb3RlbHkuPC9wPjwvZGl2PlxyXG4gICAgICA8L2Rpdj5cclxuICAgIDwvZGl2PlxyXG4gIDwvZGl2PlxyXG48L3NlY3Rpb24+XHJcblxyXG57LyogQ1RBICovfVxyXG48Lz47XG59XG4iXSwiZmlsZSI6IkM6L1VzZXJzL1VtZXIvRGVza3RvcC9iYWlnLWJvdHMtMi9zcmMvY29tcG9uZW50cy9GYXEuanN4In0=

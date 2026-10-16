@@ -1,0 +1,712 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/Estimator.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=cd36e925"; const Fragment = __vite__cjsImport0_react_jsxDevRuntime["Fragment"]; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+export function Estimator() {
+  return /* @__PURE__ */ jsxDEV(Fragment, { children: /* @__PURE__ */ jsxDEV("section", { className: "sec", id: "estimate", children: /* @__PURE__ */ jsxDEV("div", { className: "wrap", children: [
+    /* @__PURE__ */ jsxDEV("div", { className: "sec-head", children: [
+      /* @__PURE__ */ jsxDEV("p", { className: "eyebrow", children: [
+        /* @__PURE__ */ jsxDEV("span", { className: "dot" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+          lineNumber: 5,
+          columnNumber: 30
+        }, this),
+        "04 — Savings estimator"
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+        lineNumber: 5,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("h2", { className: "h2", "data-split": "", children: "See how many hours automation could give back." }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+        lineNumber: 6,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("p", { className: "lead muted", children: "Set the sliders for one manual process. The maths is written out underneath, so you can check every number." }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+        lineNumber: 7,
+        columnNumber: 7
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+      lineNumber: 4,
+      columnNumber: 5
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "est-grid", "data-est": "", children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "hud est-ctrl", children: [
+        /* @__PURE__ */ jsxDEV("div", { className: "hud-bar", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "led" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 11,
+            columnNumber: 34
+          }, this),
+          "Inputs",
+          /* @__PURE__ */ jsxDEV("span", { className: "sp", children: "one process" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 11,
+            columnNumber: 69
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+          lineNumber: 11,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "est-in", children: [
+          /* @__PURE__ */ jsxDEV("fieldset", { className: "proc", children: [
+            /* @__PURE__ */ jsxDEV("legend", { className: "rl", children: "Which process?" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 13,
+              columnNumber: 38
+            }, this),
+            /* @__PURE__ */ jsxDEV("div", { className: "segl", children: [
+              /* @__PURE__ */ jsxDEV("label", { children: [
+                /* @__PURE__ */ jsxDEV("input", { type: "radio", name: "proc", defaultValue: "Invoices" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 13,
+                  columnNumber: 113
+                }, this),
+                /* @__PURE__ */ jsxDEV("span", { children: "Invoices" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 13,
+                  columnNumber: 171
+                }, this)
+              ] }, void 0, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 13,
+                columnNumber: 106
+              }, this),
+              /* @__PURE__ */ jsxDEV("label", { children: [
+                /* @__PURE__ */ jsxDEV("input", { type: "radio", name: "proc", defaultValue: "Reconciliation", defaultChecked: true }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 13,
+                  columnNumber: 207
+                }, this),
+                /* @__PURE__ */ jsxDEV("span", { children: "Reconciliation" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 13,
+                  columnNumber: 286
+                }, this)
+              ] }, void 0, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 13,
+                columnNumber: 200
+              }, this),
+              /* @__PURE__ */ jsxDEV("label", { children: [
+                /* @__PURE__ */ jsxDEV("input", { type: "radio", name: "proc", defaultValue: "Data entry" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 13,
+                  columnNumber: 328
+                }, this),
+                /* @__PURE__ */ jsxDEV("span", { children: "Data entry" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 13,
+                  columnNumber: 388
+                }, this)
+              ] }, void 0, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 13,
+                columnNumber: 321
+              }, this),
+              /* @__PURE__ */ jsxDEV("label", { children: [
+                /* @__PURE__ */ jsxDEV("input", { type: "radio", name: "proc", defaultValue: "Reporting" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 13,
+                  columnNumber: 426
+                }, this),
+                /* @__PURE__ */ jsxDEV("span", { children: "Reporting" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 13,
+                  columnNumber: 485
+                }, this)
+              ] }, void 0, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 13,
+                columnNumber: 419
+              }, this),
+              /* @__PURE__ */ jsxDEV("label", { children: [
+                /* @__PURE__ */ jsxDEV("input", { type: "radio", name: "proc", defaultValue: "Support queries" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 13,
+                  columnNumber: 522
+                }, this),
+                /* @__PURE__ */ jsxDEV("span", { children: "Support queries" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 13,
+                  columnNumber: 587
+                }, this)
+              ] }, void 0, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 13,
+                columnNumber: 515
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 13,
+              columnNumber: 84
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 13,
+            columnNumber: 11
+          }, this),
+          /* @__PURE__ */ jsxDEV("label", { className: "rng", children: [
+            /* @__PURE__ */ jsxDEV("span", { className: "rng-top", children: [
+              /* @__PURE__ */ jsxDEV("span", { className: "rl", children: "People doing this work" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 14,
+                columnNumber: 60
+              }, this),
+              /* @__PURE__ */ jsxDEV("output", { "data-o": "people", children: "3" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 14,
+                columnNumber: 110
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 14,
+              columnNumber: 34
+            }, this),
+            /* @__PURE__ */ jsxDEV("input", { type: "range", name: "people", min: "1", max: "50", step: "1" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 14,
+              columnNumber: 151
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { className: "rng-scale", children: [
+              /* @__PURE__ */ jsxDEV("span", { children: "1" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 14,
+                columnNumber: 241
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { children: "50" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 14,
+                columnNumber: 255
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 14,
+              columnNumber: 213
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 14,
+            columnNumber: 11
+          }, this),
+          /* @__PURE__ */ jsxDEV("label", { className: "rng", children: [
+            /* @__PURE__ */ jsxDEV("span", { className: "rng-top", children: [
+              /* @__PURE__ */ jsxDEV("span", { className: "rl", children: "Hours each, per week" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 15,
+                columnNumber: 60
+              }, this),
+              /* @__PURE__ */ jsxDEV("output", { "data-o": "hours", children: "6 h" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 15,
+                columnNumber: 108
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 15,
+              columnNumber: 34
+            }, this),
+            /* @__PURE__ */ jsxDEV("input", { type: "range", name: "hours", min: "1", max: "40", step: "1" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 15,
+              columnNumber: 150
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { className: "rng-scale", children: [
+              /* @__PURE__ */ jsxDEV("span", { children: "1 h" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 15,
+                columnNumber: 239
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { children: "40 h" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 15,
+                columnNumber: 255
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 15,
+              columnNumber: 211
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 15,
+            columnNumber: 11
+          }, this),
+          /* @__PURE__ */ jsxDEV("label", { className: "rng", children: [
+            /* @__PURE__ */ jsxDEV("span", { className: "rng-top", children: [
+              /* @__PURE__ */ jsxDEV("span", { className: "rl", children: "Share that could be automated" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 16,
+                columnNumber: 60
+              }, this),
+              /* @__PURE__ */ jsxDEV("output", { "data-o": "share", children: "60%" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 16,
+                columnNumber: 117
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 16,
+              columnNumber: 34
+            }, this),
+            /* @__PURE__ */ jsxDEV("input", { type: "range", name: "share", min: "10", max: "90", step: "5" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 16,
+              columnNumber: 159
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { className: "rng-scale", children: [
+              /* @__PURE__ */ jsxDEV("span", { children: "10%" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 16,
+                columnNumber: 249
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { children: "90%" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 16,
+                columnNumber: 265
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 16,
+              columnNumber: 221
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 16,
+            columnNumber: 11
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { className: "rate", children: [
+            /* @__PURE__ */ jsxDEV("label", { className: "fl2", children: [
+              /* @__PURE__ */ jsxDEV("span", { className: "rl", children: "Hourly cost per person" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 18,
+                columnNumber: 36
+              }, this),
+              /* @__PURE__ */ jsxDEV("input", { className: "inp", type: "number", name: "rate", min: "0", step: "0.5", inputMode: "decimal", placeholder: "15" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 18,
+                columnNumber: 86
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 18,
+              columnNumber: 13
+            }, this),
+            /* @__PURE__ */ jsxDEV("label", { className: "fl2", children: [
+              /* @__PURE__ */ jsxDEV("span", { className: "rl", children: "Currency" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 19,
+                columnNumber: 36
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { className: "selw", children: [
+                /* @__PURE__ */ jsxDEV("select", { className: "inp", name: "currency", children: [
+                  /* @__PURE__ */ jsxDEV("option", { children: "USD" }, void 0, false, {
+                    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                    lineNumber: 19,
+                    columnNumber: 135
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("option", { children: "PKR" }, void 0, false, {
+                    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                    lineNumber: 19,
+                    columnNumber: 155
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("option", { children: "AED" }, void 0, false, {
+                    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                    lineNumber: 19,
+                    columnNumber: 175
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("option", { children: "SAR" }, void 0, false, {
+                    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                    lineNumber: 19,
+                    columnNumber: 195
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("option", { children: "GBP" }, void 0, false, {
+                    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                    lineNumber: 19,
+                    columnNumber: 215
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("option", { children: "EUR" }, void 0, false, {
+                    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                    lineNumber: 19,
+                    columnNumber: 235
+                  }, this)
+                ] }, void 0, true, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 19,
+                  columnNumber: 95
+                }, this),
+                /* @__PURE__ */ jsxDEV("svg", { className: "chev", width: "14", height: "14", viewBox: "0 0 14 14", "aria-hidden": "true", children: /* @__PURE__ */ jsxDEV("path", { d: "M3 5L7 9L11 5", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 19,
+                  columnNumber: 348
+                }, this) }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 19,
+                  columnNumber: 264
+                }, this)
+              ] }, void 0, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 19,
+                columnNumber: 72
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 19,
+              columnNumber: 13
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 17,
+            columnNumber: 11
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+          lineNumber: 12,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+        lineNumber: 10,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "hud est-out", children: [
+        /* @__PURE__ */ jsxDEV("div", { className: "hud-bar", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "led" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 24,
+            columnNumber: 34
+          }, this),
+          "Estimate",
+          /* @__PURE__ */ jsxDEV("span", { className: "sp", children: "per year" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 24,
+            columnNumber: 71
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+          lineNumber: 24,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "est-top", children: [
+          /* @__PURE__ */ jsxDEV("div", { className: "gauge", children: [
+            /* @__PURE__ */ jsxDEV("svg", { viewBox: "0 0 120 120", "aria-hidden": "true", children: [
+              /* @__PURE__ */ jsxDEV("circle", { className: "g-track", cx: "60", cy: "60", r: "52", pathLength: "100" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 26,
+                columnNumber: 80
+              }, this),
+              /* @__PURE__ */ jsxDEV("circle", { className: "g-tick", cx: "60", cy: "60", r: "44", pathLength: "100" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 26,
+                columnNumber: 157
+              }, this),
+              /* @__PURE__ */ jsxDEV("circle", { className: "g-val", "data-ring": "", cx: "60", cy: "60", r: "52", pathLength: "100" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 26,
+                columnNumber: 233
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 26,
+              columnNumber: 34
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { className: "g-c", children: [
+              /* @__PURE__ */ jsxDEV("b", { "data-o": "ring", children: "60%" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 26,
+                columnNumber: 349
+              }, this),
+              /* @__PURE__ */ jsxDEV("i", { children: "automated" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 26,
+                columnNumber: 373
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 26,
+              columnNumber: 327
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 26,
+            columnNumber: 11
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { className: "kpis", children: [
+            /* @__PURE__ */ jsxDEV("div", { className: "kpi", children: [
+              /* @__PURE__ */ jsxDEV("span", { className: "kl", children: "Hours back per year" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 28,
+                columnNumber: 34
+              }, this),
+              /* @__PURE__ */ jsxDEV("span", { className: "kv", "data-k": "hours", children: "518" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 28,
+                columnNumber: 81
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 28,
+              columnNumber: 13
+            }, this),
+            /* @__PURE__ */ jsxDEV("div", { className: "kpi-row", children: [
+              /* @__PURE__ */ jsxDEV("div", { className: "kpi", children: [
+                /* @__PURE__ */ jsxDEV("span", { className: "kl", children: "Cost saved per year" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 29,
+                  columnNumber: 59
+                }, this),
+                /* @__PURE__ */ jsxDEV("span", { className: "kv sm", "data-k": "cost", children: "$7,776" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 29,
+                  columnNumber: 106
+                }, this)
+              ] }, void 0, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 29,
+                columnNumber: 38
+              }, this),
+              /* @__PURE__ */ jsxDEV("div", { className: "kpi", children: [
+                /* @__PURE__ */ jsxDEV("span", { className: "kl", children: "Full-time staff freed" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 29,
+                  columnNumber: 184
+                }, this),
+                /* @__PURE__ */ jsxDEV("span", { className: "kv sm", "data-k": "fte", children: "0.27" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                  lineNumber: 29,
+                  columnNumber: 233
+                }, this)
+              ] }, void 0, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+                lineNumber: 29,
+                columnNumber: 163
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 29,
+              columnNumber: 13
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 27,
+            columnNumber: 11
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+          lineNumber: 25,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "bars", children: [
+          /* @__PURE__ */ jsxDEV("div", { className: "bar-r", children: [
+            /* @__PURE__ */ jsxDEV("span", { className: "bl", children: "Today" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 33,
+              columnNumber: 34
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { className: "bt", children: /* @__PURE__ */ jsxDEV("i", { "data-bar": "before" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 33,
+              columnNumber: 88
+            }, this) }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 33,
+              columnNumber: 67
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { className: "bv", "data-bv": "before", children: "864 h" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 33,
+              columnNumber: 120
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 33,
+            columnNumber: 11
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { className: "bar-r", children: [
+            /* @__PURE__ */ jsxDEV("span", { className: "bl", children: "With automation" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 34,
+              columnNumber: 34
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { className: "bt", children: /* @__PURE__ */ jsxDEV("i", { "data-bar": "after" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 34,
+              columnNumber: 98
+            }, this) }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 34,
+              columnNumber: 77
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { className: "bv", "data-bv": "after", children: "346 h" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 34,
+              columnNumber: 129
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 34,
+            columnNumber: 11
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+          lineNumber: 32,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "calc", "aria-live": "polite", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "calc-t", children: "Worked example" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 37,
+            columnNumber: 11
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { className: "cl", children: [
+            /* @__PURE__ */ jsxDEV("span", { "data-w": "1", children: "3 people × 6 h/week × 48 weeks" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 38,
+              columnNumber: 31
+            }, this),
+            /* @__PURE__ */ jsxDEV("b", { "data-wv": "1", children: "= 864 h/year" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 38,
+              columnNumber: 85
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 38,
+            columnNumber: 11
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { className: "cl", children: [
+            /* @__PURE__ */ jsxDEV("span", { "data-w": "2", children: "864 h × 60% automatable" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 39,
+              columnNumber: 31
+            }, this),
+            /* @__PURE__ */ jsxDEV("b", { "data-wv": "2", children: "= 518 h saved" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 39,
+              columnNumber: 78
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 39,
+            columnNumber: 11
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { className: "cl", children: [
+            /* @__PURE__ */ jsxDEV("span", { "data-w": "3", children: "518 h × $15/h" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 40,
+              columnNumber: 31
+            }, this),
+            /* @__PURE__ */ jsxDEV("b", { "data-wv": "3", children: "= $7,776/year" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 40,
+              columnNumber: 68
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 40,
+            columnNumber: 11
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { className: "cl", children: [
+            /* @__PURE__ */ jsxDEV("span", { "data-w": "4", children: "518 h ÷ 1,920 h per full-time person" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 41,
+              columnNumber: 31
+            }, this),
+            /* @__PURE__ */ jsxDEV("b", { "data-wv": "4", children: "= 0.27 FTE" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 41,
+              columnNumber: 91
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 41,
+            columnNumber: 11
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+          lineNumber: 36,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "est-foot", children: [
+          /* @__PURE__ */ jsxDEV("p", { children: "Assumes 48 working weeks and a 40-hour week. This is an estimate only: we confirm real numbers during discovery." }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 43,
+            columnNumber: 35
+          }, this),
+          /* @__PURE__ */ jsxDEV("button", { className: "btn btn-primary btn-sm", type: "button", "data-est-send": "", "data-magnet": "", "data-press": "", children: [
+            /* @__PURE__ */ jsxDEV("span", { children: "Ask about this estimate" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 43,
+              columnNumber: 257
+            }, this),
+            /* @__PURE__ */ jsxDEV("svg", { width: "18", height: "18", viewBox: "0 0 20 20", "aria-hidden": "true", children: /* @__PURE__ */ jsxDEV("path", { d: "M3 10H16M11 5L16 10L11 15", fill: "none", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 44,
+              columnNumber: 78
+            }, this) }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+              lineNumber: 44,
+              columnNumber: 11
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+            lineNumber: 43,
+            columnNumber: 154
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+          lineNumber: 43,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+        lineNumber: 23,
+        columnNumber: 7
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+      lineNumber: 9,
+      columnNumber: 5
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+    lineNumber: 3,
+    columnNumber: 3
+  }, this) }, void 0, false, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+    lineNumber: 2,
+    columnNumber: 12
+  }, this) }, void 0, false, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx",
+    lineNumber: 2,
+    columnNumber: 10
+  }, this);
+}
+_c = Estimator;
+var _c;
+$RefreshReg$(_c, "Estimator");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "C:/Users/Umer/Desktop/baig-bots-2/src/components/Estimator.jsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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RztBQUFBLG1DQUFDLFVBQUssdUNBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxtQkFBNkI7QUFBQSxZQUNuUix1QkFBQyxTQUFJLE9BQU0sTUFBSyxRQUFPLE1BQUssU0FBUSxhQUFZLGVBQVksUUFBTyxpQ0FBQyxVQUFLLEdBQUUsNkJBQTRCLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksT0FBTSxlQUFjLFNBQVEsZ0JBQWUsV0FBN0g7QUFBQTtBQUFBO0FBQUE7QUFBQSxtQkFBcUksS0FBeE07QUFBQTtBQUFBO0FBQUE7QUFBQSxtQkFBK007QUFBQSxlQURoRTtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUNzRTtBQUFBLGFBRHZOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFDZ087QUFBQSxXQXJCbE87QUFBQTtBQUFBO0FBQUE7QUFBQSxhQXNCQTtBQUFBLFNBcENGO0FBQUE7QUFBQTtBQUFBO0FBQUEsV0FxQ0E7QUFBQSxPQTNDRjtBQUFBO0FBQUE7QUFBQTtBQUFBLFNBNENBLEtBN0NTO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0E4Q1gsS0E5Q1M7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQWlEVDtBQUNBO0FBQUNDLEtBbkRlRDtBQUFTLElBQUFDO0FBQUEsYUFBQUEsSUFBQSIsIm5hbWVzIjpbIkVzdGltYXRvciIsIl9jIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIkVzdGltYXRvci5qc3giXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGZ1bmN0aW9uIEVzdGltYXRvcigpIHtcbiAgcmV0dXJuIDw+PHNlY3Rpb24gY2xhc3NOYW1lPVwic2VjXCIgaWQ9XCJlc3RpbWF0ZVwiPlxyXG4gIDxkaXYgY2xhc3NOYW1lPVwid3JhcFwiPlxyXG4gICAgPGRpdiBjbGFzc05hbWU9XCJzZWMtaGVhZFwiPlxyXG4gICAgICA8cCBjbGFzc05hbWU9XCJleWVicm93XCI+PHNwYW4gY2xhc3NOYW1lPVwiZG90XCI+PC9zcGFuPjA0IOKAlCBTYXZpbmdzIGVzdGltYXRvcjwvcD5cclxuICAgICAgPGgyIGNsYXNzTmFtZT1cImgyXCIgZGF0YS1zcGxpdD1cIlwiPlNlZSBob3cgbWFueSBob3VycyBhdXRvbWF0aW9uIGNvdWxkIGdpdmUgYmFjay48L2gyPlxyXG4gICAgICA8cCBjbGFzc05hbWU9XCJsZWFkIG11dGVkXCI+U2V0IHRoZSBzbGlkZXJzIGZvciBvbmUgbWFudWFsIHByb2Nlc3MuIFRoZSBtYXRocyBpcyB3cml0dGVuIG91dCB1bmRlcm5lYXRoLCBzbyB5b3UgY2FuIGNoZWNrIGV2ZXJ5IG51bWJlci48L3A+XHJcbiAgICA8L2Rpdj5cclxuICAgIDxkaXYgY2xhc3NOYW1lPVwiZXN0LWdyaWRcIiBkYXRhLWVzdD1cIlwiPlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImh1ZCBlc3QtY3RybFwiPlxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaHVkLWJhclwiPjxzcGFuIGNsYXNzTmFtZT1cImxlZFwiPjwvc3Bhbj5JbnB1dHM8c3BhbiBjbGFzc05hbWU9XCJzcFwiPm9uZSBwcm9jZXNzPC9zcGFuPjwvZGl2PlxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZXN0LWluXCI+XHJcbiAgICAgICAgICA8ZmllbGRzZXQgY2xhc3NOYW1lPVwicHJvY1wiPjxsZWdlbmQgY2xhc3NOYW1lPVwicmxcIj5XaGljaCBwcm9jZXNzPzwvbGVnZW5kPjxkaXYgY2xhc3NOYW1lPVwic2VnbFwiPjxsYWJlbD48aW5wdXQgdHlwZT1cInJhZGlvXCIgbmFtZT1cInByb2NcIiBkZWZhdWx0VmFsdWU9XCJJbnZvaWNlc1wiIC8+PHNwYW4+SW52b2ljZXM8L3NwYW4+PC9sYWJlbD48bGFiZWw+PGlucHV0IHR5cGU9XCJyYWRpb1wiIG5hbWU9XCJwcm9jXCIgZGVmYXVsdFZhbHVlPVwiUmVjb25jaWxpYXRpb25cIiBkZWZhdWx0Q2hlY2tlZCAvPjxzcGFuPlJlY29uY2lsaWF0aW9uPC9zcGFuPjwvbGFiZWw+PGxhYmVsPjxpbnB1dCB0eXBlPVwicmFkaW9cIiBuYW1lPVwicHJvY1wiIGRlZmF1bHRWYWx1ZT1cIkRhdGEgZW50cnlcIiAvPjxzcGFuPkRhdGEgZW50cnk8L3NwYW4+PC9sYWJlbD48bGFiZWw+PGlucHV0IHR5cGU9XCJyYWRpb1wiIG5hbWU9XCJwcm9jXCIgZGVmYXVsdFZhbHVlPVwiUmVwb3J0aW5nXCIgLz48c3Bhbj5SZXBvcnRpbmc8L3NwYW4+PC9sYWJlbD48bGFiZWw+PGlucHV0IHR5cGU9XCJyYWRpb1wiIG5hbWU9XCJwcm9jXCIgZGVmYXVsdFZhbHVlPVwiU3VwcG9ydCBxdWVyaWVzXCIgLz48c3Bhbj5TdXBwb3J0IHF1ZXJpZXM8L3NwYW4+PC9sYWJlbD48L2Rpdj48L2ZpZWxkc2V0PlxyXG4gICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT1cInJuZ1wiPjxzcGFuIGNsYXNzTmFtZT1cInJuZy10b3BcIj48c3BhbiBjbGFzc05hbWU9XCJybFwiPlBlb3BsZSBkb2luZyB0aGlzIHdvcms8L3NwYW4+PG91dHB1dCBkYXRhLW89XCJwZW9wbGVcIj4zPC9vdXRwdXQ+PC9zcGFuPjxpbnB1dCB0eXBlPVwicmFuZ2VcIiBuYW1lPVwicGVvcGxlXCIgbWluPVwiMVwiIG1heD1cIjUwXCIgc3RlcD1cIjFcIiAvPjxzcGFuIGNsYXNzTmFtZT1cInJuZy1zY2FsZVwiPjxzcGFuPjE8L3NwYW4+PHNwYW4+NTA8L3NwYW4+PC9zcGFuPjwvbGFiZWw+XHJcbiAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPVwicm5nXCI+PHNwYW4gY2xhc3NOYW1lPVwicm5nLXRvcFwiPjxzcGFuIGNsYXNzTmFtZT1cInJsXCI+SG91cnMgZWFjaCwgcGVyIHdlZWs8L3NwYW4+PG91dHB1dCBkYXRhLW89XCJob3Vyc1wiPjYgaDwvb3V0cHV0Pjwvc3Bhbj48aW5wdXQgdHlwZT1cInJhbmdlXCIgbmFtZT1cImhvdXJzXCIgbWluPVwiMVwiIG1heD1cIjQwXCIgc3RlcD1cIjFcIiAvPjxzcGFuIGNsYXNzTmFtZT1cInJuZy1zY2FsZVwiPjxzcGFuPjEgaDwvc3Bhbj48c3Bhbj40MCBoPC9zcGFuPjwvc3Bhbj48L2xhYmVsPlxyXG4gICAgICAgICAgPGxhYmVsIGNsYXNzTmFtZT1cInJuZ1wiPjxzcGFuIGNsYXNzTmFtZT1cInJuZy10b3BcIj48c3BhbiBjbGFzc05hbWU9XCJybFwiPlNoYXJlIHRoYXQgY291bGQgYmUgYXV0b21hdGVkPC9zcGFuPjxvdXRwdXQgZGF0YS1vPVwic2hhcmVcIj42MCU8L291dHB1dD48L3NwYW4+PGlucHV0IHR5cGU9XCJyYW5nZVwiIG5hbWU9XCJzaGFyZVwiIG1pbj1cIjEwXCIgbWF4PVwiOTBcIiBzdGVwPVwiNVwiIC8+PHNwYW4gY2xhc3NOYW1lPVwicm5nLXNjYWxlXCI+PHNwYW4+MTAlPC9zcGFuPjxzcGFuPjkwJTwvc3Bhbj48L3NwYW4+PC9sYWJlbD5cclxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicmF0ZVwiPlxyXG4gICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPVwiZmwyXCI+PHNwYW4gY2xhc3NOYW1lPVwicmxcIj5Ib3VybHkgY29zdCBwZXIgcGVyc29uPC9zcGFuPjxpbnB1dCBjbGFzc05hbWU9XCJpbnBcIiB0eXBlPVwibnVtYmVyXCIgbmFtZT1cInJhdGVcIiBtaW49XCIwXCIgc3RlcD1cIjAuNVwiIGlucHV0TW9kZT1cImRlY2ltYWxcIiBwbGFjZWhvbGRlcj1cIjE1XCIgLz48L2xhYmVsPlxyXG4gICAgICAgICAgICA8bGFiZWwgY2xhc3NOYW1lPVwiZmwyXCI+PHNwYW4gY2xhc3NOYW1lPVwicmxcIj5DdXJyZW5jeTwvc3Bhbj48c3BhbiBjbGFzc05hbWU9XCJzZWx3XCI+PHNlbGVjdCBjbGFzc05hbWU9XCJpbnBcIiBuYW1lPVwiY3VycmVuY3lcIj48b3B0aW9uPlVTRDwvb3B0aW9uPjxvcHRpb24+UEtSPC9vcHRpb24+PG9wdGlvbj5BRUQ8L29wdGlvbj48b3B0aW9uPlNBUjwvb3B0aW9uPjxvcHRpb24+R0JQPC9vcHRpb24+PG9wdGlvbj5FVVI8L29wdGlvbj48L3NlbGVjdD48c3ZnIGNsYXNzTmFtZT1cImNoZXZcIiB3aWR0aD1cIjE0XCIgaGVpZ2h0PVwiMTRcIiB2aWV3Qm94PVwiMCAwIDE0IDE0XCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PHBhdGggZD1cIk0zIDVMNyA5TDExIDVcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48L3N2Zz48L3NwYW4+PC9sYWJlbD5cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgICA8L2Rpdj5cclxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJodWQgZXN0LW91dFwiPlxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaHVkLWJhclwiPjxzcGFuIGNsYXNzTmFtZT1cImxlZFwiPjwvc3Bhbj5Fc3RpbWF0ZTxzcGFuIGNsYXNzTmFtZT1cInNwXCI+cGVyIHllYXI8L3NwYW4+PC9kaXY+XHJcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJlc3QtdG9wXCI+XHJcbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImdhdWdlXCI+PHN2ZyB2aWV3Qm94PVwiMCAwIDEyMCAxMjBcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48Y2lyY2xlIGNsYXNzTmFtZT1cImctdHJhY2tcIiBjeD1cIjYwXCIgY3k9XCI2MFwiIHI9XCI1MlwiIHBhdGhMZW5ndGg9XCIxMDBcIj48L2NpcmNsZT48Y2lyY2xlIGNsYXNzTmFtZT1cImctdGlja1wiIGN4PVwiNjBcIiBjeT1cIjYwXCIgcj1cIjQ0XCIgcGF0aExlbmd0aD1cIjEwMFwiPjwvY2lyY2xlPjxjaXJjbGUgY2xhc3NOYW1lPVwiZy12YWxcIiBkYXRhLXJpbmc9XCJcIiBjeD1cIjYwXCIgY3k9XCI2MFwiIHI9XCI1MlwiIHBhdGhMZW5ndGg9XCIxMDBcIj48L2NpcmNsZT48L3N2Zz48c3BhbiBjbGFzc05hbWU9XCJnLWNcIj48YiBkYXRhLW89XCJyaW5nXCI+NjAlPC9iPjxpPmF1dG9tYXRlZDwvaT48L3NwYW4+PC9kaXY+XHJcbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImtwaXNcIj5cclxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJrcGlcIj48c3BhbiBjbGFzc05hbWU9XCJrbFwiPkhvdXJzIGJhY2sgcGVyIHllYXI8L3NwYW4+PHNwYW4gY2xhc3NOYW1lPVwia3ZcIiBkYXRhLWs9XCJob3Vyc1wiPjUxODwvc3Bhbj48L2Rpdj5cclxuICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJrcGktcm93XCI+PGRpdiBjbGFzc05hbWU9XCJrcGlcIj48c3BhbiBjbGFzc05hbWU9XCJrbFwiPkNvc3Qgc2F2ZWQgcGVyIHllYXI8L3NwYW4+PHNwYW4gY2xhc3NOYW1lPVwia3Ygc21cIiBkYXRhLWs9XCJjb3N0XCI+JDcsNzc2PC9zcGFuPjwvZGl2PjxkaXYgY2xhc3NOYW1lPVwia3BpXCI+PHNwYW4gY2xhc3NOYW1lPVwia2xcIj5GdWxsLXRpbWUgc3RhZmYgZnJlZWQ8L3NwYW4+PHNwYW4gY2xhc3NOYW1lPVwia3Ygc21cIiBkYXRhLWs9XCJmdGVcIj4wLjI3PC9zcGFuPjwvZGl2PjwvZGl2PlxyXG4gICAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJiYXJzXCI+XHJcbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImJhci1yXCI+PHNwYW4gY2xhc3NOYW1lPVwiYmxcIj5Ub2RheTwvc3Bhbj48c3BhbiBjbGFzc05hbWU9XCJidFwiPjxpIGRhdGEtYmFyPVwiYmVmb3JlXCI+PC9pPjwvc3Bhbj48c3BhbiBjbGFzc05hbWU9XCJidlwiIGRhdGEtYnY9XCJiZWZvcmVcIj44NjQgaDwvc3Bhbj48L2Rpdj5cclxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYmFyLXJcIj48c3BhbiBjbGFzc05hbWU9XCJibFwiPldpdGggYXV0b21hdGlvbjwvc3Bhbj48c3BhbiBjbGFzc05hbWU9XCJidFwiPjxpIGRhdGEtYmFyPVwiYWZ0ZXJcIj48L2k+PC9zcGFuPjxzcGFuIGNsYXNzTmFtZT1cImJ2XCIgZGF0YS1idj1cImFmdGVyXCI+MzQ2IGg8L3NwYW4+PC9kaXY+XHJcbiAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjYWxjXCIgYXJpYS1saXZlPVwicG9saXRlXCI+XHJcbiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJjYWxjLXRcIj5Xb3JrZWQgZXhhbXBsZTwvc3Bhbj5cclxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2xcIj48c3BhbiBkYXRhLXc9XCIxXCI+MyBwZW9wbGUgw5cgNiBoL3dlZWsgw5cgNDggd2Vla3M8L3NwYW4+PGIgZGF0YS13dj1cIjFcIj49IDg2NCBoL3llYXI8L2I+PC9kaXY+XHJcbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImNsXCI+PHNwYW4gZGF0YS13PVwiMlwiPjg2NCBoIMOXIDYwJSBhdXRvbWF0YWJsZTwvc3Bhbj48YiBkYXRhLXd2PVwiMlwiPj0gNTE4IGggc2F2ZWQ8L2I+PC9kaXY+XHJcbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImNsXCI+PHNwYW4gZGF0YS13PVwiM1wiPjUxOCBoIMOXICQxNS9oPC9zcGFuPjxiIGRhdGEtd3Y9XCIzXCI+PSAkNyw3NzYveWVhcjwvYj48L2Rpdj5cclxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2xcIj48c3BhbiBkYXRhLXc9XCI0XCI+NTE4IGggw7cgMSw5MjAgaCBwZXIgZnVsbC10aW1lIHBlcnNvbjwvc3Bhbj48YiBkYXRhLXd2PVwiNFwiPj0gMC4yNyBGVEU8L2I+PC9kaXY+XHJcbiAgICAgICAgPC9kaXY+XHJcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJlc3QtZm9vdFwiPjxwPkFzc3VtZXMgNDggd29ya2luZyB3ZWVrcyBhbmQgYSA0MC1ob3VyIHdlZWsuIFRoaXMgaXMgYW4gZXN0aW1hdGUgb25seTogd2UgY29uZmlybSByZWFsIG51bWJlcnMgZHVyaW5nIGRpc2NvdmVyeS48L3A+PGJ1dHRvbiBjbGFzc05hbWU9XCJidG4gYnRuLXByaW1hcnkgYnRuLXNtXCIgdHlwZT1cImJ1dHRvblwiIGRhdGEtZXN0LXNlbmQ9XCJcIiBkYXRhLW1hZ25ldD1cIlwiIGRhdGEtcHJlc3M9XCJcIj48c3Bhbj5Bc2sgYWJvdXQgdGhpcyBlc3RpbWF0ZTwvc3Bhbj5cclxuICAgICAgICAgIDxzdmcgd2lkdGg9XCIxOFwiIGhlaWdodD1cIjE4XCIgdmlld0JveD1cIjAgMCAyMCAyMFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMyAxMEgxNk0xMSA1TDE2IDEwTDExIDE1XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuOFwiIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIj48L3BhdGg+PC9zdmc+PC9idXR0b24+PC9kaXY+XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgPC9kaXY+XHJcbiAgPC9kaXY+XHJcbjwvc2VjdGlvbj5cclxuXHJcbnsvKiBTVEFDSyAqL31cclxuPC8+O1xufVxuIl0sImZpbGUiOiJDOi9Vc2Vycy9VbWVyL0Rlc2t0b3AvYmFpZy1ib3RzLTIvc3JjL2NvbXBvbmVudHMvRXN0aW1hdG9yLmpzeCJ9

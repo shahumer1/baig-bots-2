@@ -68,7 +68,7 @@ export function Page() {
       {page.kind === 'industry-detail' && <IndustryDetail industry={page.industry} />}
       {page.kind === 'not-found' && <NotFoundPage />}
       {page.kind === 'contact' && <ContactLanding />}
-      <Contact inner={page.kind !== 'home'} />
+      {page.kind !== 'detail' && <Contact inner={page.kind !== 'home'} />}
       <Footer inner={page.kind !== 'home'} />
     </div>
   );

@@ -1,0 +1,1051 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/Marquees.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=cd36e925"; const Fragment = __vite__cjsImport0_react_jsxDevRuntime["Fragment"]; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+export function Marquees() {
+  return /* @__PURE__ */ jsxDEV(Fragment, { children: /* @__PURE__ */ jsxDEV("section", { className: "marqs", "aria-label": "Services and technologies", "data-marq": "", children: [
+    /* @__PURE__ */ jsxDEV("div", { className: "marq-row r1", children: /* @__PURE__ */ jsxDEV("div", { className: "marq-track", "data-marq-track": "", "data-dir": "1", children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "marq-set", children: [
+        /* @__PURE__ */ jsxDEV("span", { children: "AI Solutions" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 33
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 125
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 255
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 58
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Business Automation" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 353
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 452
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 582
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 385
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Custom Software & SaaS" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 680
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 786
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 916
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 719
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "APIs & Integrations" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 1014
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 1117
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 1247
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 1050
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Fintech & Payments" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 1345
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 1447
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 1577
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 1380
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Data & BI" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 1675
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 1768
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 1898
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 1701
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Cloud & Managed IT" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 1996
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 2098
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 2228
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 2031
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Enterprise Support" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 2326
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 2424
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 5,
+            columnNumber: 2554
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 5,
+          columnNumber: 2357
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+        lineNumber: 5,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "marq-set", "aria-hidden": "true", children: [
+        /* @__PURE__ */ jsxDEV("span", { children: "AI Solutions" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 52
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 144
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 274
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 77
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Business Automation" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 372
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 471
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 601
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 404
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Custom Software & SaaS" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 699
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 805
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 935
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 738
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "APIs & Integrations" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 1033
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 1136
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 1266
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 1069
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Fintech & Payments" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 1364
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 1466
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 1596
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 1399
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Data & BI" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 1694
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 1787
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 1917
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 1720
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Cloud & Managed IT" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 2015
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 2117
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 2247
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 2050
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Enterprise Support" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 2345
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 2443
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 6,
+            columnNumber: 2573
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 6,
+          columnNumber: 2376
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+        lineNumber: 6,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "marq-set", "aria-hidden": "true", children: [
+        /* @__PURE__ */ jsxDEV("span", { children: "AI Solutions" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 52
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 144
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 274
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 77
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Business Automation" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 372
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 471
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 601
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 404
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Custom Software & SaaS" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 699
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 805
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 935
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 738
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "APIs & Integrations" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 1033
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 1136
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 1266
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 1069
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Fintech & Payments" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 1364
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 1466
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 1596
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 1399
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Data & BI" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 1694
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 1787
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 1917
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 1720
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Cloud & Managed IT" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 2015
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 2117
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 2247
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 2050
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Enterprise Support" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 2345
+        }, this),
+        /* @__PURE__ */ jsxDEV("svg", { width: "30", height: "14", viewBox: "0 0 30 14", "aria-hidden": "true", children: [
+          /* @__PURE__ */ jsxDEV("path", { d: "M0 7H10L14 3H19", fill: "none", stroke: "currentColor", strokeWidth: "1.6", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 2443
+          }, this),
+          /* @__PURE__ */ jsxDEV("circle", { cx: "24", cy: "7", r: "3.2", fill: "none", stroke: "currentColor", strokeWidth: "1.6" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+            lineNumber: 7,
+            columnNumber: 2573
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 7,
+          columnNumber: 2376
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+        lineNumber: 7,
+        columnNumber: 7
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+      lineNumber: 4,
+      columnNumber: 5
+    }, this) }, void 0, false, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+      lineNumber: 3,
+      columnNumber: 3
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "marq-row r2", children: /* @__PURE__ */ jsxDEV("div", { className: "marq-track", "data-marq-track": "", "data-dir": "-1", children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "marq-set", children: [
+        /* @__PURE__ */ jsxDEV("span", { children: "Power Automate" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 33
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 60
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "n8n" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 67
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 83
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Dataverse" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 90
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 112
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Oracle SQL / PLSQL" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 119
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 150
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "MongoDB" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 157
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 177
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Power BI" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 184
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 205
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Tableau" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 212
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 232
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "REST" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 239
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 256
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "SOAP" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 263
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 280
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "XML / XSD" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 287
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 309
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Webhooks" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 316
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 337
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "SmartVista" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 344
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 367
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "QuickBooks" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 374
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 397
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Google Sheets" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 404
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 430
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Linux" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 437
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 12,
+          columnNumber: 455
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+        lineNumber: 12,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "marq-set", "aria-hidden": "true", children: [
+        /* @__PURE__ */ jsxDEV("span", { children: "Power Automate" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 52
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 79
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "n8n" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 86
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 102
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Dataverse" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 109
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 131
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Oracle SQL / PLSQL" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 138
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 169
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "MongoDB" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 176
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 196
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Power BI" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 203
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 224
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Tableau" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 231
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 251
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "REST" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 258
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 275
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "SOAP" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 282
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 299
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "XML / XSD" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 306
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 328
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Webhooks" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 335
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 356
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "SmartVista" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 363
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 386
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "QuickBooks" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 393
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 416
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Google Sheets" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 423
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 449
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Linux" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 456
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 13,
+          columnNumber: 474
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+        lineNumber: 13,
+        columnNumber: 7
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "marq-set", "aria-hidden": "true", children: [
+        /* @__PURE__ */ jsxDEV("span", { children: "Power Automate" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 52
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 79
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "n8n" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 86
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 102
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Dataverse" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 109
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 131
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Oracle SQL / PLSQL" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 138
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 169
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "MongoDB" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 176
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 196
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Power BI" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 203
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 224
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Tableau" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 231
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 251
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "REST" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 258
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 275
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "SOAP" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 282
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 299
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "XML / XSD" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 306
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 328
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Webhooks" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 335
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 356
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "SmartVista" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 363
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 386
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "QuickBooks" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 393
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 416
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Google Sheets" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 423
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 449
+        }, this),
+        /* @__PURE__ */ jsxDEV("span", { children: "Linux" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 456
+        }, this),
+        /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+          lineNumber: 14,
+          columnNumber: 474
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+        lineNumber: 14,
+        columnNumber: 7
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+      lineNumber: 11,
+      columnNumber: 5
+    }, this) }, void 0, false, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+      lineNumber: 10,
+      columnNumber: 3
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+    lineNumber: 2,
+    columnNumber: 12
+  }, this) }, void 0, false, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx",
+    lineNumber: 2,
+    columnNumber: 10
+  }, this);
+}
+_c = Marquees;
+var _c;
+$RefreshReg$(_c, "Marquees");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "C:/Users/Umer/Desktop/baig-bots-2/src/components/Marquees.jsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBQ1MsbUJBR3VCLGNBSHZCO0FBREYsZ0JBQVNBLFdBQVc7QUFDekIsU0FBTyxtQ0FBRSxpQ0FBQyxhQUFRLFdBQVUsU0FBUSxjQUFXLDZCQUE0QixhQUFVLElBQ3JGO0FBQUEsMkJBQUMsU0FBSSxXQUFVLGVBQ2IsaUNBQUMsU0FBSSxXQUFVLGNBQWEsbUJBQWdCLElBQUcsWUFBUyxLQUN0RDtBQUFBLDZCQUFDLFNBQUksV0FBVSxZQUFXO0FBQUEsK0JBQUMsVUFBSyw0QkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWtCO0FBQUEsUUFBTyx1QkFBQyxTQUFJLE9BQU0sTUFBSyxRQUFPLE1BQUssU0FBUSxhQUFZLGVBQVksUUFBTztBQUFBLGlDQUFDLFVBQUssR0FBRSxtQkFBa0IsTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxPQUFNLGVBQWMsU0FBUSxnQkFBZSxXQUFuSDtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUEySDtBQUFBLFVBQU8sdUJBQUMsWUFBTyxJQUFHLE1BQUssSUFBRyxLQUFJLEdBQUUsT0FBTSxNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLFNBQTdFO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQW1GO0FBQUEsYUFBeFI7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFpUztBQUFBLFFBQU0sdUJBQUMsVUFBSyxtQ0FBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQXlCO0FBQUEsUUFBTyx1QkFBQyxTQUFJLE9BQU0sTUFBSyxRQUFPLE1BQUssU0FBUSxhQUFZLGVBQVksUUFBTztBQUFBLGlDQUFDLFVBQUssR0FBRSxtQkFBa0IsTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxPQUFNLGVBQWMsU0FBUSxnQkFBZSxXQUFuSDtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUEySDtBQUFBLFVBQU8sdUJBQUMsWUFBTyxJQUFHLE1BQUssSUFBRyxLQUFJLEdBQUUsT0FBTSxNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLFNBQTdFO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQW1GO0FBQUEsYUFBeFI7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFpUztBQUFBLFFBQU0sdUJBQUMsVUFBSyxzQ0FBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWdDO0FBQUEsUUFBTyx1QkFBQyxTQUFJLE9BQU0sTUFBSyxRQUFPLE1BQUssU0FBUSxhQUFZLGVBQVksUUFBTztBQUFBLGlDQUFDLFVBQUssR0FBRSxtQkFBa0IsTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxPQUFNLGVBQWMsU0FBUSxnQkFBZSxXQUFuSDtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUEySDtBQUFBLFVBQU8sdUJBQUMsWUFBTyxJQUFHLE1BQUssSUFBRyxLQUFJLEdBQUUsT0FBTSxNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLFNBQTdFO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQW1GO0FBQUEsYUFBeFI7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFpUztBQUFBLFFBQU0sdUJBQUMsVUFBSyxtQ0FBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQTZCO0FBQUEsUUFBTyx1QkFBQyxTQUFJLE9BQU0sTUFBSyxRQUFPLE1BQUssU0FBUSxhQUFZLGVBQVksUUFBTztBQUFBLGlDQUFDLFVBQUssR0FBRSxtQkFBa0IsTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxPQUFNLGVBQWMsU0FBUSxnQkFBZSxXQUFuSDtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUEySDtBQUFBLFVBQU8sdUJBQUMsWUFBTyxJQUFHLE1BQUssSUFBRyxLQUFJLEdBQUUsT0FBTSxNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLFNBQTdFO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQW1GO0FBQUEsYUFBeFI7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFpUztBQUFBLFFBQU0sdUJBQUMsVUFBSyxrQ0FBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQTRCO0FBQUEsUUFBTyx1QkFBQyxTQUFJLE9BQU0sTUFBSyxRQUFPLE1BQUssU0FBUSxhQUFZLGVBQVksUUFBTztBQUFBLGlDQUFDLFVBQUssR0FBRSxtQkFBa0IsTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxPQUFNLGVBQWMsU0FBUSxnQkFBZSxXQUFuSDtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUEySDtBQUFBLFVBQU8sdUJBQUMsWUFBTyxJQUFHLE1BQUssSUFBRyxLQUFJLEdBQUUsT0FBTSxNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLFNBQTdFO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQW1GO0FBQUEsYUFBeFI7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFpUztBQUFBLFFBQU0sdUJBQUMsVUFBSyx5QkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQW1CO0FBQUEsUUFBTyx1QkFBQyxTQUFJLE9BQU0sTUFBSyxRQUFPLE1BQUssU0FBUSxhQUFZLGVBQVksUUFBTztBQUFBLGlDQUFDLFVBQUssR0FBRSxtQkFBa0IsTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxPQUFNLGVBQWMsU0FBUSxnQkFBZSxXQUFuSDtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUEySDtBQUFBLFVBQU8sdUJBQUMsWUFBTyxJQUFHLE1BQUssSUFBRyxLQUFJLEdBQUUsT0FBTSxNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLFNBQTdFO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQW1GO0FBQUEsYUFBeFI7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFpUztBQUFBLFFBQU0sdUJBQUMsVUFBSyxrQ0FBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQTRCO0FBQUEsUUFBTyx1QkFBQyxTQUFJLE9BQU0sTUFBSyxRQUFPLE1BQUssU0FBUSxhQUFZLGVBQVksUUFBTztBQUFBLGlDQUFDLFVBQUssR0FBRSxtQkFBa0IsTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxPQUFNLGVBQWMsU0FBUSxnQkFBZSxXQUFuSDtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUEySDtBQUFBLFVBQU8sdUJBQUMsWUFBTyxJQUFHLE1BQUssSUFBRyxLQUFJLEdBQUUsT0FBTSxNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLFNBQTdFO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQW1GO0FBQUEsYUFBeFI7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFpUztBQUFBLFFBQU0sdUJBQUMsVUFBSyxrQ0FBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQXdCO0FBQUEsUUFBTyx1QkFBQyxTQUFJLE9BQU0sTUFBSyxRQUFPLE1BQUssU0FBUSxhQUFZLGVBQVksUUFBTztBQUFBLGlDQUFDLFVBQUssR0FBRSxtQkFBa0IsTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxPQUFNLGVBQWMsU0FBUSxnQkFBZSxXQUFuSDtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUEySDtBQUFBLFVBQU8sdUJBQUMsWUFBTyxJQUFHLE1BQUssSUFBRyxLQUFJLEdBQUUsT0FBTSxNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLFNBQTdFO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQW1GO0FBQUEsYUFBeFI7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFpUztBQUFBLFdBQS9rRjtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQXFsRjtBQUFBLE1BQ3JsRix1QkFBQyxTQUFJLFdBQVUsWUFBVyxlQUFZLFFBQU87QUFBQSwrQkFBQyxVQUFLLDRCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBa0I7QUFBQSxRQUFPLHVCQUFDLFNBQUksT0FBTSxNQUFLLFFBQU8sTUFBSyxTQUFRLGFBQVksZUFBWSxRQUFPO0FBQUEsaUNBQUMsVUFBSyxHQUFFLG1CQUFrQixNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLE9BQU0sZUFBYyxTQUFRLGdCQUFlLFdBQW5IO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQTJIO0FBQUEsVUFBTyx1QkFBQyxZQUFPLElBQUcsTUFBSyxJQUFHLEtBQUksR0FBRSxPQUFNLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksU0FBN0U7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBbUY7QUFBQSxhQUF4UjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWlTO0FBQUEsUUFBTSx1QkFBQyxVQUFLLG1DQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBeUI7QUFBQSxRQUFPLHVCQUFDLFNBQUksT0FBTSxNQUFLLFFBQU8sTUFBSyxTQUFRLGFBQVksZUFBWSxRQUFPO0FBQUEsaUNBQUMsVUFBSyxHQUFFLG1CQUFrQixNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLE9BQU0sZUFBYyxTQUFRLGdCQUFlLFdBQW5IO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQTJIO0FBQUEsVUFBTyx1QkFBQyxZQUFPLElBQUcsTUFBSyxJQUFHLEtBQUksR0FBRSxPQUFNLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksU0FBN0U7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBbUY7QUFBQSxhQUF4UjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWlTO0FBQUEsUUFBTSx1QkFBQyxVQUFLLHNDQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBZ0M7QUFBQSxRQUFPLHVCQUFDLFNBQUksT0FBTSxNQUFLLFFBQU8sTUFBSyxTQUFRLGFBQVksZUFBWSxRQUFPO0FBQUEsaUNBQUMsVUFBSyxHQUFFLG1CQUFrQixNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLE9BQU0sZUFBYyxTQUFRLGdCQUFlLFdBQW5IO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQTJIO0FBQUEsVUFBTyx1QkFBQyxZQUFPLElBQUcsTUFBSyxJQUFHLEtBQUksR0FBRSxPQUFNLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksU0FBN0U7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBbUY7QUFBQSxhQUF4UjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWlTO0FBQUEsUUFBTSx1QkFBQyxVQUFLLG1DQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBNkI7QUFBQSxRQUFPLHVCQUFDLFNBQUksT0FBTSxNQUFLLFFBQU8sTUFBSyxTQUFRLGFBQVksZUFBWSxRQUFPO0FBQUEsaUNBQUMsVUFBSyxHQUFFLG1CQUFrQixNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLE9BQU0sZUFBYyxTQUFRLGdCQUFlLFdBQW5IO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQTJIO0FBQUEsVUFBTyx1QkFBQyxZQUFPLElBQUcsTUFBSyxJQUFHLEtBQUksR0FBRSxPQUFNLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksU0FBN0U7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBbUY7QUFBQSxhQUF4UjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWlTO0FBQUEsUUFBTSx1QkFBQyxVQUFLLGtDQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBNEI7QUFBQSxRQUFPLHVCQUFDLFNBQUksT0FBTSxNQUFLLFFBQU8sTUFBSyxTQUFRLGFBQVksZUFBWSxRQUFPO0FBQUEsaUNBQUMsVUFBSyxHQUFFLG1CQUFrQixNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLE9BQU0sZUFBYyxTQUFRLGdCQUFlLFdBQW5IO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQTJIO0FBQUEsVUFBTyx1QkFBQyxZQUFPLElBQUcsTUFBSyxJQUFHLEtBQUksR0FBRSxPQUFNLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksU0FBN0U7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBbUY7QUFBQSxhQUF4UjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWlTO0FBQUEsUUFBTSx1QkFBQyxVQUFLLHlCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBbUI7QUFBQSxRQUFPLHVCQUFDLFNBQUksT0FBTSxNQUFLLFFBQU8sTUFBSyxTQUFRLGFBQVksZUFBWSxRQUFPO0FBQUEsaUNBQUMsVUFBSyxHQUFFLG1CQUFrQixNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLE9BQU0sZUFBYyxTQUFRLGdCQUFlLFdBQW5IO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQTJIO0FBQUEsVUFBTyx1QkFBQyxZQUFPLElBQUcsTUFBSyxJQUFHLEtBQUksR0FBRSxPQUFNLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksU0FBN0U7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBbUY7QUFBQSxhQUF4UjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWlTO0FBQUEsUUFBTSx1QkFBQyxVQUFLLGtDQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBNEI7QUFBQSxRQUFPLHVCQUFDLFNBQUksT0FBTSxNQUFLLFFBQU8sTUFBSyxTQUFRLGFBQVksZUFBWSxRQUFPO0FBQUEsaUNBQUMsVUFBSyxHQUFFLG1CQUFrQixNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLE9BQU0sZUFBYyxTQUFRLGdCQUFlLFdBQW5IO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQTJIO0FBQUEsVUFBTyx1QkFBQyxZQUFPLElBQUcsTUFBSyxJQUFHLEtBQUksR0FBRSxPQUFNLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksU0FBN0U7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBbUY7QUFBQSxhQUF4UjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWlTO0FBQUEsUUFBTSx1QkFBQyxVQUFLLGtDQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBd0I7QUFBQSxRQUFPLHVCQUFDLFNBQUksT0FBTSxNQUFLLFFBQU8sTUFBSyxTQUFRLGFBQVksZUFBWSxRQUFPO0FBQUEsaUNBQUMsVUFBSyxHQUFFLG1CQUFrQixNQUFLLFFBQU8sUUFBTyxnQkFBZSxhQUFZLE9BQU0sZUFBYyxTQUFRLGdCQUFlLFdBQW5IO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQTJIO0FBQUEsVUFBTyx1QkFBQyxZQUFPLElBQUcsTUFBSyxJQUFHLEtBQUksR0FBRSxPQUFNLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksU0FBN0U7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBbUY7QUFBQSxhQUF4UjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWlTO0FBQUEsV0FBbG1GO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBd21GO0FBQUEsTUFDeG1GLHVCQUFDLFNBQUksV0FBVSxZQUFXLGVBQVksUUFBTztBQUFBLCtCQUFDLFVBQUssNEJBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFrQjtBQUFBLFFBQU8sdUJBQUMsU0FBSSxPQUFNLE1BQUssUUFBTyxNQUFLLFNBQVEsYUFBWSxlQUFZLFFBQU87QUFBQSxpQ0FBQyxVQUFLLEdBQUUsbUJBQWtCLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksT0FBTSxlQUFjLFNBQVEsZ0JBQWUsV0FBbkg7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBMkg7QUFBQSxVQUFPLHVCQUFDLFlBQU8sSUFBRyxNQUFLLElBQUcsS0FBSSxHQUFFLE9BQU0sTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxTQUE3RTtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUFtRjtBQUFBLGFBQXhSO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBaVM7QUFBQSxRQUFNLHVCQUFDLFVBQUssbUNBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUF5QjtBQUFBLFFBQU8sdUJBQUMsU0FBSSxPQUFNLE1BQUssUUFBTyxNQUFLLFNBQVEsYUFBWSxlQUFZLFFBQU87QUFBQSxpQ0FBQyxVQUFLLEdBQUUsbUJBQWtCLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksT0FBTSxlQUFjLFNBQVEsZ0JBQWUsV0FBbkg7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBMkg7QUFBQSxVQUFPLHVCQUFDLFlBQU8sSUFBRyxNQUFLLElBQUcsS0FBSSxHQUFFLE9BQU0sTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxTQUE3RTtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUFtRjtBQUFBLGFBQXhSO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBaVM7QUFBQSxRQUFNLHVCQUFDLFVBQUssc0NBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFnQztBQUFBLFFBQU8sdUJBQUMsU0FBSSxPQUFNLE1BQUssUUFBTyxNQUFLLFNBQVEsYUFBWSxlQUFZLFFBQU87QUFBQSxpQ0FBQyxVQUFLLEdBQUUsbUJBQWtCLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksT0FBTSxlQUFjLFNBQVEsZ0JBQWUsV0FBbkg7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBMkg7QUFBQSxVQUFPLHVCQUFDLFlBQU8sSUFBRyxNQUFLLElBQUcsS0FBSSxHQUFFLE9BQU0sTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxTQUE3RTtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUFtRjtBQUFBLGFBQXhSO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBaVM7QUFBQSxRQUFNLHVCQUFDLFVBQUssbUNBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUE2QjtBQUFBLFFBQU8sdUJBQUMsU0FBSSxPQUFNLE1BQUssUUFBTyxNQUFLLFNBQVEsYUFBWSxlQUFZLFFBQU87QUFBQSxpQ0FBQyxVQUFLLEdBQUUsbUJBQWtCLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksT0FBTSxlQUFjLFNBQVEsZ0JBQWUsV0FBbkg7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBMkg7QUFBQSxVQUFPLHVCQUFDLFlBQU8sSUFBRyxNQUFLLElBQUcsS0FBSSxHQUFFLE9BQU0sTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxTQUE3RTtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUFtRjtBQUFBLGFBQXhSO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBaVM7QUFBQSxRQUFNLHVCQUFDLFVBQUssa0NBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUE0QjtBQUFBLFFBQU8sdUJBQUMsU0FBSSxPQUFNLE1BQUssUUFBTyxNQUFLLFNBQVEsYUFBWSxlQUFZLFFBQU87QUFBQSxpQ0FBQyxVQUFLLEdBQUUsbUJBQWtCLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksT0FBTSxlQUFjLFNBQVEsZ0JBQWUsV0FBbkg7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBMkg7QUFBQSxVQUFPLHVCQUFDLFlBQU8sSUFBRyxNQUFLLElBQUcsS0FBSSxHQUFFLE9BQU0sTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxTQUE3RTtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUFtRjtBQUFBLGFBQXhSO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBaVM7QUFBQSxRQUFNLHVCQUFDLFVBQUsseUJBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFtQjtBQUFBLFFBQU8sdUJBQUMsU0FBSSxPQUFNLE1BQUssUUFBTyxNQUFLLFNBQVEsYUFBWSxlQUFZLFFBQU87QUFBQSxpQ0FBQyxVQUFLLEdBQUUsbUJBQWtCLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksT0FBTSxlQUFjLFNBQVEsZ0JBQWUsV0FBbkg7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBMkg7QUFBQSxVQUFPLHVCQUFDLFlBQU8sSUFBRyxNQUFLLElBQUcsS0FBSSxHQUFFLE9BQU0sTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxTQUE3RTtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUFtRjtBQUFBLGFBQXhSO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBaVM7QUFBQSxRQUFNLHVCQUFDLFVBQUssa0NBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUE0QjtBQUFBLFFBQU8sdUJBQUMsU0FBSSxPQUFNLE1BQUssUUFBTyxNQUFLLFNBQVEsYUFBWSxlQUFZLFFBQU87QUFBQSxpQ0FBQyxVQUFLLEdBQUUsbUJBQWtCLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksT0FBTSxlQUFjLFNBQVEsZ0JBQWUsV0FBbkg7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBMkg7QUFBQSxVQUFPLHVCQUFDLFlBQU8sSUFBRyxNQUFLLElBQUcsS0FBSSxHQUFFLE9BQU0sTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxTQUE3RTtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUFtRjtBQUFBLGFBQXhSO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBaVM7QUFBQSxRQUFNLHVCQUFDLFVBQUssa0NBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUF3QjtBQUFBLFFBQU8sdUJBQUMsU0FBSSxPQUFNLE1BQUssUUFBTyxNQUFLLFNBQVEsYUFBWSxlQUFZLFFBQU87QUFBQSxpQ0FBQyxVQUFLLEdBQUUsbUJBQWtCLE1BQUssUUFBTyxRQUFPLGdCQUFlLGFBQVksT0FBTSxlQUFjLFNBQVEsZ0JBQWUsV0FBbkg7QUFBQTtBQUFBO0FBQUE7QUFBQSxpQkFBMkg7QUFBQSxVQUFPLHVCQUFDLFlBQU8sSUFBRyxNQUFLLElBQUcsS0FBSSxHQUFFLE9BQU0sTUFBSyxRQUFPLFFBQU8sZ0JBQWUsYUFBWSxTQUE3RTtBQUFBO0FBQUE7QUFBQTtBQUFBLGlCQUFtRjtBQUFBLGFBQXhSO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBaVM7QUFBQSxXQUFsbUY7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQUF3bUY7QUFBQSxTQUgxbUY7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQUlBLEtBTEY7QUFBQTtBQUFBO0FBQUE7QUFBQSxXQU1BO0FBQUEsSUFDQSx1QkFBQyxTQUFJLFdBQVUsZUFDYixpQ0FBQyxTQUFJLFdBQVUsY0FBYSxtQkFBZ0IsSUFBRyxZQUFTLE1BQ3REO0FBQUEsNkJBQUMsU0FBSSxXQUFVLFlBQVc7QUFBQSwrQkFBQyxVQUFLLDhCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBb0I7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLG1CQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBUztBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUsseUJBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFlO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSyxrQ0FBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQXdCO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSyx1QkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWE7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLHdCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBYztBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUssdUJBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFhO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSyxvQkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQVU7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLG9CQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBVTtBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUsseUJBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFlO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSyx3QkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWM7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLDBCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBZ0I7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLDBCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBZ0I7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLDZCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBbUI7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLHFCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBVztBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxXQUFuYztBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQXVjO0FBQUEsTUFDdmMsdUJBQUMsU0FBSSxXQUFVLFlBQVcsZUFBWSxRQUFPO0FBQUEsK0JBQUMsVUFBSyw4QkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQW9CO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSyxtQkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQVM7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLHlCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBZTtBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUssa0NBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUF3QjtBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUssdUJBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFhO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSyx3QkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWM7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLHVCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBYTtBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUssb0JBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFVO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSyxvQkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQVU7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLHlCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBZTtBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUssd0JBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFjO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSywwQkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWdCO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSywwQkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWdCO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSyw2QkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQW1CO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSyxxQkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQVc7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsV0FBdGQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxhQUEwZDtBQUFBLE1BQzFkLHVCQUFDLFNBQUksV0FBVSxZQUFXLGVBQVksUUFBTztBQUFBLCtCQUFDLFVBQUssOEJBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFvQjtBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUssbUJBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFTO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSyx5QkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWU7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLGtDQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBd0I7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLHVCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBYTtBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUssd0JBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFjO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSyx1QkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWE7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLG9CQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBVTtBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUssb0JBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFVO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFFBQUksdUJBQUMsVUFBSyx5QkFBTjtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQWU7QUFBQSxRQUFPLHVCQUFDLFNBQUQ7QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFHO0FBQUEsUUFBSSx1QkFBQyxVQUFLLHdCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBYztBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUssMEJBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFnQjtBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUssMEJBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFnQjtBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUssNkJBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFtQjtBQUFBLFFBQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBQUc7QUFBQSxRQUFJLHVCQUFDLFVBQUsscUJBQU47QUFBQTtBQUFBO0FBQUE7QUFBQSxlQUFXO0FBQUEsUUFBTyx1QkFBQyxTQUFEO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBRztBQUFBLFdBQXRkO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBMGQ7QUFBQSxTQUg1ZDtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBSUEsS0FMRjtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBTUE7QUFBQSxPQWRTO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0FlWCxLQWZTO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0FtQlQ7QUFDQTtBQUFDQyxLQXJCZUQ7QUFBUSxJQUFBQztBQUFBLGFBQUFBLElBQUEiLCJuYW1lcyI6WyJNYXJxdWVlcyIsIl9jIl0sImlnbm9yZUxpc3QiOltdLCJzb3VyY2VzIjpbIk1hcnF1ZWVzLmpzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgZnVuY3Rpb24gTWFycXVlZXMoKSB7XG4gIHJldHVybiA8PjxzZWN0aW9uIGNsYXNzTmFtZT1cIm1hcnFzXCIgYXJpYS1sYWJlbD1cIlNlcnZpY2VzIGFuZCB0ZWNobm9sb2dpZXNcIiBkYXRhLW1hcnE9XCJcIj5cclxuICA8ZGl2IGNsYXNzTmFtZT1cIm1hcnEtcm93IHIxXCI+XHJcbiAgICA8ZGl2IGNsYXNzTmFtZT1cIm1hcnEtdHJhY2tcIiBkYXRhLW1hcnEtdHJhY2s9XCJcIiBkYXRhLWRpcj1cIjFcIj5cclxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJtYXJxLXNldFwiPjxzcGFuPkFJIFNvbHV0aW9uczwvc3Bhbj48c3ZnIHdpZHRoPVwiMzBcIiBoZWlnaHQ9XCIxNFwiIHZpZXdCb3g9XCIwIDAgMzAgMTRcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48cGF0aCBkPVwiTTAgN0gxMEwxNCAzSDE5XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIj48L3BhdGg+PGNpcmNsZSBjeD1cIjI0XCIgY3k9XCI3XCIgcj1cIjMuMlwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjZcIj48L2NpcmNsZT48L3N2Zz48c3Bhbj5CdXNpbmVzcyBBdXRvbWF0aW9uPC9zcGFuPjxzdmcgd2lkdGg9XCIzMFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAzMCAxNFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMCA3SDEwTDE0IDNIMTlcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48Y2lyY2xlIGN4PVwiMjRcIiBjeT1cIjdcIiByPVwiMy4yXCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiPjwvY2lyY2xlPjwvc3ZnPjxzcGFuPkN1c3RvbSBTb2Z0d2FyZSAmYW1wOyBTYWFTPC9zcGFuPjxzdmcgd2lkdGg9XCIzMFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAzMCAxNFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMCA3SDEwTDE0IDNIMTlcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48Y2lyY2xlIGN4PVwiMjRcIiBjeT1cIjdcIiByPVwiMy4yXCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiPjwvY2lyY2xlPjwvc3ZnPjxzcGFuPkFQSXMgJmFtcDsgSW50ZWdyYXRpb25zPC9zcGFuPjxzdmcgd2lkdGg9XCIzMFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAzMCAxNFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMCA3SDEwTDE0IDNIMTlcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48Y2lyY2xlIGN4PVwiMjRcIiBjeT1cIjdcIiByPVwiMy4yXCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiPjwvY2lyY2xlPjwvc3ZnPjxzcGFuPkZpbnRlY2ggJmFtcDsgUGF5bWVudHM8L3NwYW4+PHN2ZyB3aWR0aD1cIjMwXCIgaGVpZ2h0PVwiMTRcIiB2aWV3Qm94PVwiMCAwIDMwIDE0XCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PHBhdGggZD1cIk0wIDdIMTBMMTQgM0gxOVwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjZcIiBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCI+PC9wYXRoPjxjaXJjbGUgY3g9XCIyNFwiIGN5PVwiN1wiIHI9XCIzLjJcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCI+PC9jaXJjbGU+PC9zdmc+PHNwYW4+RGF0YSAmYW1wOyBCSTwvc3Bhbj48c3ZnIHdpZHRoPVwiMzBcIiBoZWlnaHQ9XCIxNFwiIHZpZXdCb3g9XCIwIDAgMzAgMTRcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48cGF0aCBkPVwiTTAgN0gxMEwxNCAzSDE5XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIj48L3BhdGg+PGNpcmNsZSBjeD1cIjI0XCIgY3k9XCI3XCIgcj1cIjMuMlwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjZcIj48L2NpcmNsZT48L3N2Zz48c3Bhbj5DbG91ZCAmYW1wOyBNYW5hZ2VkIElUPC9zcGFuPjxzdmcgd2lkdGg9XCIzMFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAzMCAxNFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMCA3SDEwTDE0IDNIMTlcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48Y2lyY2xlIGN4PVwiMjRcIiBjeT1cIjdcIiByPVwiMy4yXCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiPjwvY2lyY2xlPjwvc3ZnPjxzcGFuPkVudGVycHJpc2UgU3VwcG9ydDwvc3Bhbj48c3ZnIHdpZHRoPVwiMzBcIiBoZWlnaHQ9XCIxNFwiIHZpZXdCb3g9XCIwIDAgMzAgMTRcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48cGF0aCBkPVwiTTAgN0gxMEwxNCAzSDE5XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIj48L3BhdGg+PGNpcmNsZSBjeD1cIjI0XCIgY3k9XCI3XCIgcj1cIjMuMlwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjZcIj48L2NpcmNsZT48L3N2Zz48L2Rpdj5cclxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJtYXJxLXNldFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxzcGFuPkFJIFNvbHV0aW9uczwvc3Bhbj48c3ZnIHdpZHRoPVwiMzBcIiBoZWlnaHQ9XCIxNFwiIHZpZXdCb3g9XCIwIDAgMzAgMTRcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48cGF0aCBkPVwiTTAgN0gxMEwxNCAzSDE5XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIj48L3BhdGg+PGNpcmNsZSBjeD1cIjI0XCIgY3k9XCI3XCIgcj1cIjMuMlwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjZcIj48L2NpcmNsZT48L3N2Zz48c3Bhbj5CdXNpbmVzcyBBdXRvbWF0aW9uPC9zcGFuPjxzdmcgd2lkdGg9XCIzMFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAzMCAxNFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMCA3SDEwTDE0IDNIMTlcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48Y2lyY2xlIGN4PVwiMjRcIiBjeT1cIjdcIiByPVwiMy4yXCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiPjwvY2lyY2xlPjwvc3ZnPjxzcGFuPkN1c3RvbSBTb2Z0d2FyZSAmYW1wOyBTYWFTPC9zcGFuPjxzdmcgd2lkdGg9XCIzMFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAzMCAxNFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMCA3SDEwTDE0IDNIMTlcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48Y2lyY2xlIGN4PVwiMjRcIiBjeT1cIjdcIiByPVwiMy4yXCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiPjwvY2lyY2xlPjwvc3ZnPjxzcGFuPkFQSXMgJmFtcDsgSW50ZWdyYXRpb25zPC9zcGFuPjxzdmcgd2lkdGg9XCIzMFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAzMCAxNFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMCA3SDEwTDE0IDNIMTlcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48Y2lyY2xlIGN4PVwiMjRcIiBjeT1cIjdcIiByPVwiMy4yXCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiPjwvY2lyY2xlPjwvc3ZnPjxzcGFuPkZpbnRlY2ggJmFtcDsgUGF5bWVudHM8L3NwYW4+PHN2ZyB3aWR0aD1cIjMwXCIgaGVpZ2h0PVwiMTRcIiB2aWV3Qm94PVwiMCAwIDMwIDE0XCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PHBhdGggZD1cIk0wIDdIMTBMMTQgM0gxOVwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjZcIiBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCI+PC9wYXRoPjxjaXJjbGUgY3g9XCIyNFwiIGN5PVwiN1wiIHI9XCIzLjJcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCI+PC9jaXJjbGU+PC9zdmc+PHNwYW4+RGF0YSAmYW1wOyBCSTwvc3Bhbj48c3ZnIHdpZHRoPVwiMzBcIiBoZWlnaHQ9XCIxNFwiIHZpZXdCb3g9XCIwIDAgMzAgMTRcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48cGF0aCBkPVwiTTAgN0gxMEwxNCAzSDE5XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIj48L3BhdGg+PGNpcmNsZSBjeD1cIjI0XCIgY3k9XCI3XCIgcj1cIjMuMlwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjZcIj48L2NpcmNsZT48L3N2Zz48c3Bhbj5DbG91ZCAmYW1wOyBNYW5hZ2VkIElUPC9zcGFuPjxzdmcgd2lkdGg9XCIzMFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAzMCAxNFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMCA3SDEwTDE0IDNIMTlcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48Y2lyY2xlIGN4PVwiMjRcIiBjeT1cIjdcIiByPVwiMy4yXCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiPjwvY2lyY2xlPjwvc3ZnPjxzcGFuPkVudGVycHJpc2UgU3VwcG9ydDwvc3Bhbj48c3ZnIHdpZHRoPVwiMzBcIiBoZWlnaHQ9XCIxNFwiIHZpZXdCb3g9XCIwIDAgMzAgMTRcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48cGF0aCBkPVwiTTAgN0gxMEwxNCAzSDE5XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIj48L3BhdGg+PGNpcmNsZSBjeD1cIjI0XCIgY3k9XCI3XCIgcj1cIjMuMlwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjZcIj48L2NpcmNsZT48L3N2Zz48L2Rpdj5cclxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJtYXJxLXNldFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxzcGFuPkFJIFNvbHV0aW9uczwvc3Bhbj48c3ZnIHdpZHRoPVwiMzBcIiBoZWlnaHQ9XCIxNFwiIHZpZXdCb3g9XCIwIDAgMzAgMTRcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48cGF0aCBkPVwiTTAgN0gxMEwxNCAzSDE5XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIj48L3BhdGg+PGNpcmNsZSBjeD1cIjI0XCIgY3k9XCI3XCIgcj1cIjMuMlwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjZcIj48L2NpcmNsZT48L3N2Zz48c3Bhbj5CdXNpbmVzcyBBdXRvbWF0aW9uPC9zcGFuPjxzdmcgd2lkdGg9XCIzMFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAzMCAxNFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMCA3SDEwTDE0IDNIMTlcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48Y2lyY2xlIGN4PVwiMjRcIiBjeT1cIjdcIiByPVwiMy4yXCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiPjwvY2lyY2xlPjwvc3ZnPjxzcGFuPkN1c3RvbSBTb2Z0d2FyZSAmYW1wOyBTYWFTPC9zcGFuPjxzdmcgd2lkdGg9XCIzMFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAzMCAxNFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMCA3SDEwTDE0IDNIMTlcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48Y2lyY2xlIGN4PVwiMjRcIiBjeT1cIjdcIiByPVwiMy4yXCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiPjwvY2lyY2xlPjwvc3ZnPjxzcGFuPkFQSXMgJmFtcDsgSW50ZWdyYXRpb25zPC9zcGFuPjxzdmcgd2lkdGg9XCIzMFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAzMCAxNFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMCA3SDEwTDE0IDNIMTlcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48Y2lyY2xlIGN4PVwiMjRcIiBjeT1cIjdcIiByPVwiMy4yXCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiPjwvY2lyY2xlPjwvc3ZnPjxzcGFuPkZpbnRlY2ggJmFtcDsgUGF5bWVudHM8L3NwYW4+PHN2ZyB3aWR0aD1cIjMwXCIgaGVpZ2h0PVwiMTRcIiB2aWV3Qm94PVwiMCAwIDMwIDE0XCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PHBhdGggZD1cIk0wIDdIMTBMMTQgM0gxOVwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjZcIiBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCI+PC9wYXRoPjxjaXJjbGUgY3g9XCIyNFwiIGN5PVwiN1wiIHI9XCIzLjJcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCI+PC9jaXJjbGU+PC9zdmc+PHNwYW4+RGF0YSAmYW1wOyBCSTwvc3Bhbj48c3ZnIHdpZHRoPVwiMzBcIiBoZWlnaHQ9XCIxNFwiIHZpZXdCb3g9XCIwIDAgMzAgMTRcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48cGF0aCBkPVwiTTAgN0gxMEwxNCAzSDE5XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIj48L3BhdGg+PGNpcmNsZSBjeD1cIjI0XCIgY3k9XCI3XCIgcj1cIjMuMlwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjZcIj48L2NpcmNsZT48L3N2Zz48c3Bhbj5DbG91ZCAmYW1wOyBNYW5hZ2VkIElUPC9zcGFuPjxzdmcgd2lkdGg9XCIzMFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAzMCAxNFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMCA3SDEwTDE0IDNIMTlcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS42XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48Y2lyY2xlIGN4PVwiMjRcIiBjeT1cIjdcIiByPVwiMy4yXCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiPjwvY2lyY2xlPjwvc3ZnPjxzcGFuPkVudGVycHJpc2UgU3VwcG9ydDwvc3Bhbj48c3ZnIHdpZHRoPVwiMzBcIiBoZWlnaHQ9XCIxNFwiIHZpZXdCb3g9XCIwIDAgMzAgMTRcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48cGF0aCBkPVwiTTAgN0gxMEwxNCAzSDE5XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuNlwiIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIj48L3BhdGg+PGNpcmNsZSBjeD1cIjI0XCIgY3k9XCI3XCIgcj1cIjMuMlwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjZcIj48L2NpcmNsZT48L3N2Zz48L2Rpdj5cclxuICAgIDwvZGl2PlxyXG4gIDwvZGl2PlxyXG4gIDxkaXYgY2xhc3NOYW1lPVwibWFycS1yb3cgcjJcIj5cclxuICAgIDxkaXYgY2xhc3NOYW1lPVwibWFycS10cmFja1wiIGRhdGEtbWFycS10cmFjaz1cIlwiIGRhdGEtZGlyPVwiLTFcIj5cclxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJtYXJxLXNldFwiPjxzcGFuPlBvd2VyIEF1dG9tYXRlPC9zcGFuPjxpPjwvaT48c3Bhbj5uOG48L3NwYW4+PGk+PC9pPjxzcGFuPkRhdGF2ZXJzZTwvc3Bhbj48aT48L2k+PHNwYW4+T3JhY2xlIFNRTCAvIFBMU1FMPC9zcGFuPjxpPjwvaT48c3Bhbj5Nb25nb0RCPC9zcGFuPjxpPjwvaT48c3Bhbj5Qb3dlciBCSTwvc3Bhbj48aT48L2k+PHNwYW4+VGFibGVhdTwvc3Bhbj48aT48L2k+PHNwYW4+UkVTVDwvc3Bhbj48aT48L2k+PHNwYW4+U09BUDwvc3Bhbj48aT48L2k+PHNwYW4+WE1MIC8gWFNEPC9zcGFuPjxpPjwvaT48c3Bhbj5XZWJob29rczwvc3Bhbj48aT48L2k+PHNwYW4+U21hcnRWaXN0YTwvc3Bhbj48aT48L2k+PHNwYW4+UXVpY2tCb29rczwvc3Bhbj48aT48L2k+PHNwYW4+R29vZ2xlIFNoZWV0czwvc3Bhbj48aT48L2k+PHNwYW4+TGludXg8L3NwYW4+PGk+PC9pPjwvZGl2PlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cIm1hcnEtc2V0XCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PHNwYW4+UG93ZXIgQXV0b21hdGU8L3NwYW4+PGk+PC9pPjxzcGFuPm44bjwvc3Bhbj48aT48L2k+PHNwYW4+RGF0YXZlcnNlPC9zcGFuPjxpPjwvaT48c3Bhbj5PcmFjbGUgU1FMIC8gUExTUUw8L3NwYW4+PGk+PC9pPjxzcGFuPk1vbmdvREI8L3NwYW4+PGk+PC9pPjxzcGFuPlBvd2VyIEJJPC9zcGFuPjxpPjwvaT48c3Bhbj5UYWJsZWF1PC9zcGFuPjxpPjwvaT48c3Bhbj5SRVNUPC9zcGFuPjxpPjwvaT48c3Bhbj5TT0FQPC9zcGFuPjxpPjwvaT48c3Bhbj5YTUwgLyBYU0Q8L3NwYW4+PGk+PC9pPjxzcGFuPldlYmhvb2tzPC9zcGFuPjxpPjwvaT48c3Bhbj5TbWFydFZpc3RhPC9zcGFuPjxpPjwvaT48c3Bhbj5RdWlja0Jvb2tzPC9zcGFuPjxpPjwvaT48c3Bhbj5Hb29nbGUgU2hlZXRzPC9zcGFuPjxpPjwvaT48c3Bhbj5MaW51eDwvc3Bhbj48aT48L2k+PC9kaXY+XHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwibWFycS1zZXRcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48c3Bhbj5Qb3dlciBBdXRvbWF0ZTwvc3Bhbj48aT48L2k+PHNwYW4+bjhuPC9zcGFuPjxpPjwvaT48c3Bhbj5EYXRhdmVyc2U8L3NwYW4+PGk+PC9pPjxzcGFuPk9yYWNsZSBTUUwgLyBQTFNRTDwvc3Bhbj48aT48L2k+PHNwYW4+TW9uZ29EQjwvc3Bhbj48aT48L2k+PHNwYW4+UG93ZXIgQkk8L3NwYW4+PGk+PC9pPjxzcGFuPlRhYmxlYXU8L3NwYW4+PGk+PC9pPjxzcGFuPlJFU1Q8L3NwYW4+PGk+PC9pPjxzcGFuPlNPQVA8L3NwYW4+PGk+PC9pPjxzcGFuPlhNTCAvIFhTRDwvc3Bhbj48aT48L2k+PHNwYW4+V2ViaG9va3M8L3NwYW4+PGk+PC9pPjxzcGFuPlNtYXJ0VmlzdGE8L3NwYW4+PGk+PC9pPjxzcGFuPlF1aWNrQm9va3M8L3NwYW4+PGk+PC9pPjxzcGFuPkdvb2dsZSBTaGVldHM8L3NwYW4+PGk+PC9pPjxzcGFuPkxpbnV4PC9zcGFuPjxpPjwvaT48L2Rpdj5cclxuICAgIDwvZGl2PlxyXG4gIDwvZGl2PlxyXG48L3NlY3Rpb24+XHJcblxyXG57LyogU1RBVFMgKi99XHJcblxyXG48Lz47XG59XG4iXSwiZmlsZSI6IkM6L1VzZXJzL1VtZXIvRGVza3RvcC9iYWlnLWJvdHMtMi9zcmMvY29tcG9uZW50cy9NYXJxdWVlcy5qc3gifQ==

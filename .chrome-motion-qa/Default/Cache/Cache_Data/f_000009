@@ -1,0 +1,362 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/Hero.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=cd36e925"; const Fragment = __vite__cjsImport0_react_jsxDevRuntime["Fragment"]; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import { CircuitLines } from "/src/components/CircuitLines.jsx";
+export function Hero() {
+  return /* @__PURE__ */ jsxDEV(Fragment, { children: /* @__PURE__ */ jsxDEV("section", { className: "hero", id: "top", "data-hero": "", children: [
+    /* @__PURE__ */ jsxDEV(CircuitLines, {}, void 0, false, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+      lineNumber: 5,
+      columnNumber: 3
+    }, this),
+    /* @__PURE__ */ jsxDEV("div", { className: "wrap hero-grid", children: [
+      /* @__PURE__ */ jsxDEV("div", { className: "hero-copy", children: [
+        /* @__PURE__ */ jsxDEV("p", { className: "eyebrow", "data-hero": "eyebrow", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "dot" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+            lineNumber: 8,
+            columnNumber: 50
+          }, this),
+          "Software · Automation · AI solutions"
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+          lineNumber: 8,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ jsxDEV("h1", { className: "h-display", "data-hero-h1": "", children: [
+          "We build the systems that ",
+          /* @__PURE__ */ jsxDEV("em", { className: "kin", children: "think" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+            lineNumber: 9,
+            columnNumber: 75
+          }, this),
+          ", connect and scale."
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+          lineNumber: 9,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ jsxDEV("p", { className: "lead", "data-hero": "lead", children: "Baig Bots delivers practical software, integration and automation services across enterprise applications, payment technology, data and modern digital experiences." }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+          lineNumber: 10,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "hero-act", "data-hero": "cta", children: [
+          /* @__PURE__ */ jsxDEV("div", { className: "hero-cta-card", children: [
+            /* @__PURE__ */ jsxDEV("div", { className: "hero-cta-copy", children: [
+              /* @__PURE__ */ jsxDEV("span", { children: "Have a project in mind?" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                lineNumber: 24,
+                columnNumber: 42
+              }, this),
+              /* @__PURE__ */ jsxDEV("strong", { children: "Let's make it work." }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                lineNumber: 24,
+                columnNumber: 78
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+              lineNumber: 24,
+              columnNumber: 11
+            }, this),
+            /* @__PURE__ */ jsxDEV("a", { className: "btn btn-primary", href: "#contact", "data-magnet": "", "data-press": "", children: [
+              /* @__PURE__ */ jsxDEV("span", { children: "Start a project" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                lineNumber: 25,
+                columnNumber: 87
+              }, this),
+              /* @__PURE__ */ jsxDEV("svg", { width: "18", height: "18", viewBox: "0 0 20 20", "aria-hidden": "true", children: /* @__PURE__ */ jsxDEV("path", { d: "M3 10H16M11 5L16 10L11 15", fill: "none", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                lineNumber: 26,
+                columnNumber: 80
+              }, this) }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                lineNumber: 26,
+                columnNumber: 13
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+              lineNumber: 25,
+              columnNumber: 11
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+            lineNumber: 23,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { className: "hero-ideas", "data-ideas": "", children: [
+            /* @__PURE__ */ jsxDEV("div", { className: "cmd-sugg", "aria-label": "Project ideas by service", children: [
+              /* @__PURE__ */ jsxDEV("button", { className: "cs-k", type: "button", "data-ideas-toggle": "", "aria-expanded": "false", "aria-controls": "hero-ideas-panel", children: [
+                "Explore ideas ",
+                /* @__PURE__ */ jsxDEV("svg", { width: "14", height: "14", viewBox: "0 0 16 16", fill: "none", "aria-hidden": "true", children: /* @__PURE__ */ jsxDEV("path", { d: "M3 6L8 11L13 6", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 30,
+                  columnNumber: 219
+                }, this) }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 30,
+                  columnNumber: 140
+                }, this)
+              ] }, void 0, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                lineNumber: 30,
+                columnNumber: 11
+              }, this),
+              /* @__PURE__ */ jsxDEV("div", { className: "cmd-sugg-viewport", "data-sugg-slider": "", role: "region", "aria-label": "Service ideas. Scroll horizontally to see more.", tabIndex: "0", children: /* @__PURE__ */ jsxDEV("div", { className: "cmd-sugg-track", children: [
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "AI Solutions & Intelligent Agents", "data-sugg": "Build an AI support assistant that answers customer questions", children: "AI support assistant" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 33,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "Business Process Automation", "data-sugg": "Route supplier invoices for approval automatically", children: "Invoice approvals" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 34,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "Custom Software & SaaS", "data-sugg": "Build a custom operations portal for our team", children: "Operations portal" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 35,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "APIs & System Integrations", "data-sugg": "Sync form leads to our CRM and QuickBooks", children: "CRM + QuickBooks sync" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 36,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "Fintech & Payment Technology", "data-sugg": "Reconcile payment settlement files automatically", children: "Payment reconciliation" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 37,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "Data Engineering & BI", "data-sugg": "Create a live dashboard for sales and operations data", children: "Live BI dashboard" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 38,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "Cloud & Managed IT", "data-sugg": "Migrate our systems to a managed cloud environment", children: "Cloud migration" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 39,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "Enterprise Support & Consulting", "data-sugg": "Monitor our enterprise systems and alert us before jobs fail", children: "System monitoring" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 40,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "Web & Mobile Development", "data-sugg": "Build a mobile app for our customers", children: "Customer mobile app" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 41,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "CRM & ERP Solutions", "data-sugg": "Set up a CRM workflow to manage leads and follow-ups", children: "CRM lead workflow" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 42,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "UI/UX & Product Design", "data-sugg": "Design and prototype a better product experience", children: "Product prototype" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 43,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "Branding & Graphic Design", "data-sugg": "Create a brand identity and design guidelines", children: "Brand identity" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 44,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "Digital Marketing & SEO", "data-sugg": "Improve our search visibility and plan an SEO campaign", children: "SEO growth plan" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 45,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "Video & Digital Content", "data-sugg": "Produce a short explainer video for our product", children: "Product explainer video" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 46,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "AI Extensions & Emerging Tech", "data-sugg": "Add an AI voice assistant to our customer service workflow", children: "AI voice assistant" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 47,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV("button", { type: "button", title: "Dedicated Development Teams", "data-sugg": "Provide a dedicated development team for ongoing product work", children: "Dedicated dev team" }, void 0, false, {
+                  fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                  lineNumber: 48,
+                  columnNumber: 15
+                }, this)
+              ] }, void 0, true, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                lineNumber: 32,
+                columnNumber: 13
+              }, this) }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                lineNumber: 31,
+                columnNumber: 11
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+              lineNumber: 29,
+              columnNumber: 9
+            }, this),
+            /* @__PURE__ */ jsxDEV("div", { className: "ideas-panel", id: "hero-ideas-panel", "data-ideas-panel": "", hidden: true, children: [
+              /* @__PURE__ */ jsxDEV("span", { className: "ideas-panel-title", children: "Choose an idea" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                lineNumber: 53,
+                columnNumber: 11
+              }, this),
+              /* @__PURE__ */ jsxDEV("div", { className: "ideas-grid", "data-ideas-grid": "" }, void 0, false, {
+                fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+                lineNumber: 54,
+                columnNumber: 11
+              }, this)
+            ] }, void 0, true, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+              lineNumber: 52,
+              columnNumber: 9
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+            lineNumber: 28,
+            columnNumber: 9
+          }, this),
+          /* @__PURE__ */ jsxDEV("a", { className: "link-arrow cmd-explore", href: "#services", children: [
+            "Explore services",
+            /* @__PURE__ */ jsxDEV("svg", { width: "18", height: "18", viewBox: "0 0 20 20", "aria-hidden": "true", children: /* @__PURE__ */ jsxDEV("path", { d: "M3 10H16M11 5L16 10L11 15", fill: "none", stroke: "currentColor", strokeWidth: "1.8", strokeLinecap: "round", strokeLinejoin: "round" }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+              lineNumber: 58,
+              columnNumber: 78
+            }, this) }, void 0, false, {
+              fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+              lineNumber: 58,
+              columnNumber: 11
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+            lineNumber: 57,
+            columnNumber: 9
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+          lineNumber: 11,
+          columnNumber: 7
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+        lineNumber: 7,
+        columnNumber: 5
+      }, this),
+      /* @__PURE__ */ jsxDEV("div", { className: "hero-stage", "data-stage": "", children: [
+        /* @__PURE__ */ jsxDEV("canvas", { className: "gl", "data-gl": "", "aria-hidden": "true" }, void 0, false, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+          lineNumber: 62,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "chip c1", "data-depth": "22", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "pdot" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+            lineNumber: 63,
+            columnNumber: 48
+          }, this),
+          "AI agent · Call,Chat"
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+          lineNumber: 63,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "chip c2", "data-depth": "-16", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "pdot" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+            lineNumber: 64,
+            columnNumber: 49
+          }, this),
+          "Custom Software & SaaS"
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+          lineNumber: 64,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "chip c3", "data-depth": "30", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "pdot" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+            lineNumber: 65,
+            columnNumber: 48
+          }, this),
+          "Workflow · automated"
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+          lineNumber: 65,
+          columnNumber: 7
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "chip c4", "data-depth": "38", children: [
+          /* @__PURE__ */ jsxDEV("span", { className: "pdot" }, void 0, false, {
+            fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+            lineNumber: 66,
+            columnNumber: 48
+          }, this),
+          "APIs & System Integrations"
+        ] }, void 0, true, {
+          fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+          lineNumber: 66,
+          columnNumber: 7
+        }, this)
+      ] }, void 0, true, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+        lineNumber: 61,
+        columnNumber: 5
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+      lineNumber: 6,
+      columnNumber: 3
+    }, this),
+    /* @__PURE__ */ jsxDEV("a", { className: "cue", href: "#services", "aria-label": "Scroll to services", children: [
+      /* @__PURE__ */ jsxDEV("span", { children: "Scroll" }, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+        lineNumber: 69,
+        columnNumber: 71
+      }, this),
+      /* @__PURE__ */ jsxDEV("i", {}, void 0, false, {
+        fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+        lineNumber: 69,
+        columnNumber: 90
+      }, this)
+    ] }, void 0, true, {
+      fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+      lineNumber: 69,
+      columnNumber: 3
+    }, this)
+  ] }, void 0, true, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+    lineNumber: 4,
+    columnNumber: 12
+  }, this) }, void 0, false, {
+    fileName: "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx",
+    lineNumber: 4,
+    columnNumber: 10
+  }, this);
+}
+_c = Hero;
+var _c;
+$RefreshReg$(_c, "Hero");
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+function $RefreshReg$(type, id) {
+  return RefreshRuntime.register(type, "C:/Users/Umer/Desktop/baig-bots-2/src/components/Hero.jsx " + id);
+}
+function $RefreshSig$() {
+  return RefreshRuntime.createSignatureFunctionForTransform();
+}
+
+//# sourceMappingURL=data:application/json;base64,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QVUsY0FBVyxNQUFLO0FBQUEsaUNBQUMsVUFBSyxXQUFVLFVBQWhCO0FBQUE7QUFBQTtBQUFBO0FBQUEsaUJBQXVCO0FBQUEsVUFBTztBQUFBLGFBQXZFO0FBQUE7QUFBQTtBQUFBO0FBQUEsZUFBcUc7QUFBQSxXQUx2RztBQUFBO0FBQUE7QUFBQTtBQUFBLGFBTUE7QUFBQSxTQTdERjtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBOERBO0FBQUEsSUFDQSx1QkFBQyxPQUFFLFdBQVUsT0FBTSxNQUFLLGFBQVksY0FBVyxzQkFBcUI7QUFBQSw2QkFBQyxVQUFLLHNCQUFOO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFBWTtBQUFBLE1BQU8sdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBQUc7QUFBQSxTQUExRjtBQUFBO0FBQUE7QUFBQTtBQUFBLFdBQThGO0FBQUEsT0FqRXJGO0FBQUE7QUFBQTtBQUFBO0FBQUEsU0FrRVgsS0FsRVM7QUFBQTtBQUFBO0FBQUE7QUFBQSxTQXFFVDtBQUNBO0FBQUNDLEtBdkVlRDtBQUFJLElBQUFDO0FBQUEsYUFBQUEsSUFBQSIsIm5hbWVzIjpbIkNpcmN1aXRMaW5lcyIsIkhlcm8iLCJfYyJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJIZXJvLmpzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDaXJjdWl0TGluZXMgfSBmcm9tICcuL0NpcmN1aXRMaW5lcy5qc3gnO1xuXG5leHBvcnQgZnVuY3Rpb24gSGVybygpIHtcbiAgcmV0dXJuIDw+PHNlY3Rpb24gY2xhc3NOYW1lPVwiaGVyb1wiIGlkPVwidG9wXCIgZGF0YS1oZXJvPVwiXCI+XHJcbiAgPENpcmN1aXRMaW5lcyAvPlxuICA8ZGl2IGNsYXNzTmFtZT1cIndyYXAgaGVyby1ncmlkXCI+XHJcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImhlcm8tY29weVwiPlxyXG4gICAgICA8cCBjbGFzc05hbWU9XCJleWVicm93XCIgZGF0YS1oZXJvPVwiZXllYnJvd1wiPjxzcGFuIGNsYXNzTmFtZT1cImRvdFwiPjwvc3Bhbj5Tb2Z0d2FyZSDCtyBBdXRvbWF0aW9uIMK3IEFJIHNvbHV0aW9uczwvcD5cclxuICAgICAgPGgxIGNsYXNzTmFtZT1cImgtZGlzcGxheVwiIGRhdGEtaGVyby1oMT1cIlwiPldlIGJ1aWxkIHRoZSBzeXN0ZW1zIHRoYXQgPGVtIGNsYXNzTmFtZT1cImtpblwiPnRoaW5rPC9lbT4sIGNvbm5lY3QgYW5kIHNjYWxlLjwvaDE+XHJcbiAgICAgIDxwIGNsYXNzTmFtZT1cImxlYWRcIiBkYXRhLWhlcm89XCJsZWFkXCI+QmFpZyBCb3RzIGRlbGl2ZXJzIHByYWN0aWNhbCBzb2Z0d2FyZSwgaW50ZWdyYXRpb24gYW5kIGF1dG9tYXRpb24gc2VydmljZXMgYWNyb3NzIGVudGVycHJpc2UgYXBwbGljYXRpb25zLCBwYXltZW50IHRlY2hub2xvZ3ksIGRhdGEgYW5kIG1vZGVybiBkaWdpdGFsIGV4cGVyaWVuY2VzLjwvcD5cclxuICAgICAgPGRpdiBjbGFzc05hbWU9XCJoZXJvLWFjdFwiIGRhdGEtaGVybz1cImN0YVwiPlxyXG4gICAgICAgIHsvKiBQcmV2aW91cyBpbnB1dCBDVEEga2VwdCBmb3IgYSBmdXR1cmUgdmVyc2lvbi5cclxuICAgICAgICAgPGZvcm0gY2xhc3M9XCJjbWRcIiBkYXRhLWNtZD1cIlwiIGFyaWEtbGFiZWw9XCJUZWxsIHVzIHdoYXQgeW91IHdhbnQgdG8gYXV0b21hdGVcIj5cclxuICAgICAgICAgIDxsYWJlbCBjbGFzcz1cImNtZC1pblwiPlxyXG4gICAgICAgICAgICA8c3BhbiBjbGFzcz1cImNtZC1wZnhcIiBhcmlhLWhpZGRlbj1cInRydWVcIj4mZ3Q7PGk+XzwvaT48L3NwYW4+XHJcbiAgICAgICAgICAgIDxzcGFuIGNsYXNzPVwic3JcIj5XaGF0IGRvIHlvdSB3YW50IHRvIGJ1aWxkIG9yIGF1dG9tYXRlPzwvc3Bhbj5cclxuICAgICAgICAgICAgPGlucHV0IHR5cGU9XCJ0ZXh0XCIgbmFtZT1cImlkZWFcIiBhdXRvY29tcGxldGU9XCJvZmZcIiBwbGFjZWhvbGRlcj1cIlJlY29uY2lsZSBzZXR0bGVtZW50IGZpbGVzIGF1dG9tYXRpY2FsbHlcIiBkYXRhLWNtZC1pbnB1dD1cIlwiPlxyXG4gICAgICAgICAgPC9sYWJlbD5cclxuICAgICAgICAgIDxidXR0b24gY2xhc3M9XCJidG4gYnRuLXByaW1hcnlcIiB0eXBlPVwic3VibWl0XCIgZGF0YS1tYWduZXQ9XCJcIiBkYXRhLXByZXNzPVwiXCI+PHNwYW4+U3RhcnQgYSBwcm9qZWN0PC9zcGFuPlxyXG4gICAgICAgICAgICA8c3ZnIHdpZHRoPVwiMThcIiBoZWlnaHQ9XCIxOFwiIHZpZXdCb3g9XCIwIDAgMjAgMjBcIiBhcmlhLWhpZGRlbj1cInRydWVcIj48cGF0aCBkPVwiTTMgMTBIMTZNMTEgNUwxNiAxMEwxMSAxNVwiIGZpbGw9XCJub25lXCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlLXdpZHRoPVwiMS44XCIgc3Ryb2tlLWxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZS1saW5lam9pbj1cInJvdW5kXCI+PC9wYXRoPjwvc3ZnPjwvYnV0dG9uPlxyXG4gICAgICAgICA8L2Zvcm0+XHJcbiAgICAgICAgICovfVxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaGVyby1jdGEtY2FyZFwiPlxyXG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJoZXJvLWN0YS1jb3B5XCI+PHNwYW4+SGF2ZSBhIHByb2plY3QgaW4gbWluZD88L3NwYW4+PHN0cm9uZz5MZXQncyBtYWtlIGl0IHdvcmsuPC9zdHJvbmc+PC9kaXY+XHJcbiAgICAgICAgICA8YSBjbGFzc05hbWU9XCJidG4gYnRuLXByaW1hcnlcIiBocmVmPVwiI2NvbnRhY3RcIiBkYXRhLW1hZ25ldD1cIlwiIGRhdGEtcHJlc3M9XCJcIj48c3Bhbj5TdGFydCBhIHByb2plY3Q8L3NwYW4+XHJcbiAgICAgICAgICAgIDxzdmcgd2lkdGg9XCIxOFwiIGhlaWdodD1cIjE4XCIgdmlld0JveD1cIjAgMCAyMCAyMFwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPjxwYXRoIGQ9XCJNMyAxMEgxNk0xMSA1TDE2IDEwTDExIDE1XCIgZmlsbD1cIm5vbmVcIiBzdHJva2U9XCJjdXJyZW50Q29sb3JcIiBzdHJva2VXaWR0aD1cIjEuOFwiIHN0cm9rZUxpbmVjYXA9XCJyb3VuZFwiIHN0cm9rZUxpbmVqb2luPVwicm91bmRcIj48L3BhdGg+PC9zdmc+PC9hPlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaGVyby1pZGVhc1wiIGRhdGEtaWRlYXM9XCJcIj5cclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImNtZC1zdWdnXCIgYXJpYS1sYWJlbD1cIlByb2plY3QgaWRlYXMgYnkgc2VydmljZVwiPlxyXG4gICAgICAgICAgPGJ1dHRvbiBjbGFzc05hbWU9XCJjcy1rXCIgdHlwZT1cImJ1dHRvblwiIGRhdGEtaWRlYXMtdG9nZ2xlPVwiXCIgYXJpYS1leHBhbmRlZD1cImZhbHNlXCIgYXJpYS1jb250cm9scz1cImhlcm8taWRlYXMtcGFuZWxcIj5FeHBsb3JlIGlkZWFzIDxzdmcgd2lkdGg9XCIxNFwiIGhlaWdodD1cIjE0XCIgdmlld0JveD1cIjAgMCAxNiAxNlwiIGZpbGw9XCJub25lXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PHBhdGggZD1cIk0zIDZMOCAxMUwxMyA2XCIgc3Ryb2tlPVwiY3VycmVudENvbG9yXCIgc3Ryb2tlV2lkdGg9XCIxLjhcIiBzdHJva2VMaW5lY2FwPVwicm91bmRcIiBzdHJva2VMaW5lam9pbj1cInJvdW5kXCI+PC9wYXRoPjwvc3ZnPjwvYnV0dG9uPlxyXG4gICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjbWQtc3VnZy12aWV3cG9ydFwiIGRhdGEtc3VnZy1zbGlkZXI9XCJcIiByb2xlPVwicmVnaW9uXCIgYXJpYS1sYWJlbD1cIlNlcnZpY2UgaWRlYXMuIFNjcm9sbCBob3Jpem9udGFsbHkgdG8gc2VlIG1vcmUuXCIgdGFiSW5kZXg9XCIwXCI+XHJcbiAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY21kLXN1Z2ctdHJhY2tcIj5cclxuICAgICAgICAgICAgICA8YnV0dG9uIHR5cGU9XCJidXR0b25cIiB0aXRsZT1cIkFJIFNvbHV0aW9ucyAmIEludGVsbGlnZW50IEFnZW50c1wiIGRhdGEtc3VnZz1cIkJ1aWxkIGFuIEFJIHN1cHBvcnQgYXNzaXN0YW50IHRoYXQgYW5zd2VycyBjdXN0b21lciBxdWVzdGlvbnNcIj5BSSBzdXBwb3J0IGFzc2lzdGFudDwvYnV0dG9uPlxyXG4gICAgICAgICAgICAgIDxidXR0b24gdHlwZT1cImJ1dHRvblwiIHRpdGxlPVwiQnVzaW5lc3MgUHJvY2VzcyBBdXRvbWF0aW9uXCIgZGF0YS1zdWdnPVwiUm91dGUgc3VwcGxpZXIgaW52b2ljZXMgZm9yIGFwcHJvdmFsIGF1dG9tYXRpY2FsbHlcIj5JbnZvaWNlIGFwcHJvdmFsczwvYnV0dG9uPlxyXG4gICAgICAgICAgICAgIDxidXR0b24gdHlwZT1cImJ1dHRvblwiIHRpdGxlPVwiQ3VzdG9tIFNvZnR3YXJlICYgU2FhU1wiIGRhdGEtc3VnZz1cIkJ1aWxkIGEgY3VzdG9tIG9wZXJhdGlvbnMgcG9ydGFsIGZvciBvdXIgdGVhbVwiPk9wZXJhdGlvbnMgcG9ydGFsPC9idXR0b24+XHJcbiAgICAgICAgICAgICAgPGJ1dHRvbiB0eXBlPVwiYnV0dG9uXCIgdGl0bGU9XCJBUElzICYgU3lzdGVtIEludGVncmF0aW9uc1wiIGRhdGEtc3VnZz1cIlN5bmMgZm9ybSBsZWFkcyB0byBvdXIgQ1JNIGFuZCBRdWlja0Jvb2tzXCI+Q1JNICsgUXVpY2tCb29rcyBzeW5jPC9idXR0b24+XHJcbiAgICAgICAgICAgICAgPGJ1dHRvbiB0eXBlPVwiYnV0dG9uXCIgdGl0bGU9XCJGaW50ZWNoICYgUGF5bWVudCBUZWNobm9sb2d5XCIgZGF0YS1zdWdnPVwiUmVjb25jaWxlIHBheW1lbnQgc2V0dGxlbWVudCBmaWxlcyBhdXRvbWF0aWNhbGx5XCI+UGF5bWVudCByZWNvbmNpbGlhdGlvbjwvYnV0dG9uPlxyXG4gICAgICAgICAgICAgIDxidXR0b24gdHlwZT1cImJ1dHRvblwiIHRpdGxlPVwiRGF0YSBFbmdpbmVlcmluZyAmIEJJXCIgZGF0YS1zdWdnPVwiQ3JlYXRlIGEgbGl2ZSBkYXNoYm9hcmQgZm9yIHNhbGVzIGFuZCBvcGVyYXRpb25zIGRhdGFcIj5MaXZlIEJJIGRhc2hib2FyZDwvYnV0dG9uPlxyXG4gICAgICAgICAgICAgIDxidXR0b24gdHlwZT1cImJ1dHRvblwiIHRpdGxlPVwiQ2xvdWQgJiBNYW5hZ2VkIElUXCIgZGF0YS1zdWdnPVwiTWlncmF0ZSBvdXIgc3lzdGVtcyB0byBhIG1hbmFnZWQgY2xvdWQgZW52aXJvbm1lbnRcIj5DbG91ZCBtaWdyYXRpb248L2J1dHRvbj5cclxuICAgICAgICAgICAgICA8YnV0dG9uIHR5cGU9XCJidXR0b25cIiB0aXRsZT1cIkVudGVycHJpc2UgU3VwcG9ydCAmIENvbnN1bHRpbmdcIiBkYXRhLXN1Z2c9XCJNb25pdG9yIG91ciBlbnRlcnByaXNlIHN5c3RlbXMgYW5kIGFsZXJ0IHVzIGJlZm9yZSBqb2JzIGZhaWxcIj5TeXN0ZW0gbW9uaXRvcmluZzwvYnV0dG9uPlxyXG4gICAgICAgICAgICAgIDxidXR0b24gdHlwZT1cImJ1dHRvblwiIHRpdGxlPVwiV2ViICYgTW9iaWxlIERldmVsb3BtZW50XCIgZGF0YS1zdWdnPVwiQnVpbGQgYSBtb2JpbGUgYXBwIGZvciBvdXIgY3VzdG9tZXJzXCI+Q3VzdG9tZXIgbW9iaWxlIGFwcDwvYnV0dG9uPlxyXG4gICAgICAgICAgICAgIDxidXR0b24gdHlwZT1cImJ1dHRvblwiIHRpdGxlPVwiQ1JNICYgRVJQIFNvbHV0aW9uc1wiIGRhdGEtc3VnZz1cIlNldCB1cCBhIENSTSB3b3JrZmxvdyB0byBtYW5hZ2UgbGVhZHMgYW5kIGZvbGxvdy11cHNcIj5DUk0gbGVhZCB3b3JrZmxvdzwvYnV0dG9uPlxyXG4gICAgICAgICAgICAgIDxidXR0b24gdHlwZT1cImJ1dHRvblwiIHRpdGxlPVwiVUkvVVggJiBQcm9kdWN0IERlc2lnblwiIGRhdGEtc3VnZz1cIkRlc2lnbiBhbmQgcHJvdG90eXBlIGEgYmV0dGVyIHByb2R1Y3QgZXhwZXJpZW5jZVwiPlByb2R1Y3QgcHJvdG90eXBlPC9idXR0b24+XHJcbiAgICAgICAgICAgICAgPGJ1dHRvbiB0eXBlPVwiYnV0dG9uXCIgdGl0bGU9XCJCcmFuZGluZyAmIEdyYXBoaWMgRGVzaWduXCIgZGF0YS1zdWdnPVwiQ3JlYXRlIGEgYnJhbmQgaWRlbnRpdHkgYW5kIGRlc2lnbiBndWlkZWxpbmVzXCI+QnJhbmQgaWRlbnRpdHk8L2J1dHRvbj5cclxuICAgICAgICAgICAgICA8YnV0dG9uIHR5cGU9XCJidXR0b25cIiB0aXRsZT1cIkRpZ2l0YWwgTWFya2V0aW5nICYgU0VPXCIgZGF0YS1zdWdnPVwiSW1wcm92ZSBvdXIgc2VhcmNoIHZpc2liaWxpdHkgYW5kIHBsYW4gYW4gU0VPIGNhbXBhaWduXCI+U0VPIGdyb3d0aCBwbGFuPC9idXR0b24+XHJcbiAgICAgICAgICAgICAgPGJ1dHRvbiB0eXBlPVwiYnV0dG9uXCIgdGl0bGU9XCJWaWRlbyAmIERpZ2l0YWwgQ29udGVudFwiIGRhdGEtc3VnZz1cIlByb2R1Y2UgYSBzaG9ydCBleHBsYWluZXIgdmlkZW8gZm9yIG91ciBwcm9kdWN0XCI+UHJvZHVjdCBleHBsYWluZXIgdmlkZW88L2J1dHRvbj5cclxuICAgICAgICAgICAgICA8YnV0dG9uIHR5cGU9XCJidXR0b25cIiB0aXRsZT1cIkFJIEV4dGVuc2lvbnMgJiBFbWVyZ2luZyBUZWNoXCIgZGF0YS1zdWdnPVwiQWRkIGFuIEFJIHZvaWNlIGFzc2lzdGFudCB0byBvdXIgY3VzdG9tZXIgc2VydmljZSB3b3JrZmxvd1wiPkFJIHZvaWNlIGFzc2lzdGFudDwvYnV0dG9uPlxyXG4gICAgICAgICAgICAgIDxidXR0b24gdHlwZT1cImJ1dHRvblwiIHRpdGxlPVwiRGVkaWNhdGVkIERldmVsb3BtZW50IFRlYW1zXCIgZGF0YS1zdWdnPVwiUHJvdmlkZSBhIGRlZGljYXRlZCBkZXZlbG9wbWVudCB0ZWFtIGZvciBvbmdvaW5nIHByb2R1Y3Qgd29ya1wiPkRlZGljYXRlZCBkZXYgdGVhbTwvYnV0dG9uPlxyXG4gICAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWRlYXMtcGFuZWxcIiBpZD1cImhlcm8taWRlYXMtcGFuZWxcIiBkYXRhLWlkZWFzLXBhbmVsPVwiXCIgaGlkZGVuPlxyXG4gICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwiaWRlYXMtcGFuZWwtdGl0bGVcIj5DaG9vc2UgYW4gaWRlYTwvc3Bhbj5cclxuICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaWRlYXMtZ3JpZFwiIGRhdGEtaWRlYXMtZ3JpZD1cIlwiPjwvZGl2PlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgICAgIDxhIGNsYXNzTmFtZT1cImxpbmstYXJyb3cgY21kLWV4cGxvcmVcIiBocmVmPVwiI3NlcnZpY2VzXCI+RXhwbG9yZSBzZXJ2aWNlc1xyXG4gICAgICAgICAgPHN2ZyB3aWR0aD1cIjE4XCIgaGVpZ2h0PVwiMThcIiB2aWV3Qm94PVwiMCAwIDIwIDIwXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PHBhdGggZD1cIk0zIDEwSDE2TTExIDVMMTYgMTBMMTEgMTVcIiBmaWxsPVwibm9uZVwiIHN0cm9rZT1cImN1cnJlbnRDb2xvclwiIHN0cm9rZVdpZHRoPVwiMS44XCIgc3Ryb2tlTGluZWNhcD1cInJvdW5kXCIgc3Ryb2tlTGluZWpvaW49XCJyb3VuZFwiPjwvcGF0aD48L3N2Zz48L2E+XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgPC9kaXY+XHJcbiAgICA8ZGl2IGNsYXNzTmFtZT1cImhlcm8tc3RhZ2VcIiBkYXRhLXN0YWdlPVwiXCI+XHJcbiAgICAgIDxjYW52YXMgY2xhc3NOYW1lPVwiZ2xcIiBkYXRhLWdsPVwiXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+PC9jYW52YXM+XHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2hpcCBjMVwiIGRhdGEtZGVwdGg9XCIyMlwiPjxzcGFuIGNsYXNzTmFtZT1cInBkb3RcIj48L3NwYW4+QUkgYWdlbnQgwrcgQ2FsbCxDaGF0PC9kaXY+XHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2hpcCBjMlwiIGRhdGEtZGVwdGg9XCItMTZcIj48c3BhbiBjbGFzc05hbWU9XCJwZG90XCI+PC9zcGFuPkN1c3RvbSBTb2Z0d2FyZSAmYW1wOyBTYWFTPC9kaXY+XHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2hpcCBjM1wiIGRhdGEtZGVwdGg9XCIzMFwiPjxzcGFuIGNsYXNzTmFtZT1cInBkb3RcIj48L3NwYW4+V29ya2Zsb3cgwrcgYXV0b21hdGVkPC9kaXY+XHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2hpcCBjNFwiIGRhdGEtZGVwdGg9XCIzOFwiPjxzcGFuIGNsYXNzTmFtZT1cInBkb3RcIj48L3NwYW4+QVBJcyAmYW1wOyBTeXN0ZW0gSW50ZWdyYXRpb25zPC9kaXY+XHJcbiAgICA8L2Rpdj5cclxuICA8L2Rpdj5cclxuICA8YSBjbGFzc05hbWU9XCJjdWVcIiBocmVmPVwiI3NlcnZpY2VzXCIgYXJpYS1sYWJlbD1cIlNjcm9sbCB0byBzZXJ2aWNlc1wiPjxzcGFuPlNjcm9sbDwvc3Bhbj48aT48L2k+PC9hPlxyXG48L3NlY3Rpb24+XHJcblxyXG57LyogTUFSUVVFRSAqL31cclxuPC8+O1xufVxuIl0sImZpbGUiOiJDOi9Vc2Vycy9VbWVyL0Rlc2t0b3AvYmFpZy1ib3RzLTIvc3JjL2NvbXBvbmVudHMvSGVyby5qc3gifQ==
