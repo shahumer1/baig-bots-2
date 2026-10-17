@@ -40,7 +40,10 @@ export function Page() {
     document.title = page.kind === 'home' ? 'Baig Bots — Digital Solutions' : `${page.title} — Baig Bots`;
     const site = new BaigBotsSite();
     site.componentDidMount();
-    return () => site.componentWillUnmount();
+    const anchorFrame = page.kind === 'industry-detail' && window.location.hash
+      ? window.requestAnimationFrame(() => document.getElementById(decodeURIComponent(window.location.hash.slice(1)))?.scrollIntoView({ block: 'start', behavior: 'instant' }))
+      : null;
+    return () => { if (anchorFrame !== null) window.cancelAnimationFrame(anchorFrame); site.componentWillUnmount(); };
   }, []);
 
   return (

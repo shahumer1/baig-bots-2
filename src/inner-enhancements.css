@@ -1,0 +1,109 @@
+/* Shared details for service and industry routes; homepage styles stay untouched. */
+.inner-page .tech-label { display: inline-flex; align-items: center; gap: 8px; min-width: 0; }
+.inner-page .tech-icon { display: inline-grid; flex: none; place-items: center; width: 19px; height: 19px; color: var(--head); }
+.inner-page .tech-icon svg { display: block; width: 100%; height: 100%; }
+.inner-page .tech-icon-pair { display: inline-flex; flex: none; align-items: center; gap: 3px; }
+.inner-page .tech-icon-pair .tech-icon { width: 22px; height: 22px; }
+.inner-page .inner-hero-tools b { display: inline-flex; align-items: center; min-height: 32px; padding: 5px 9px; font-weight: 500; }
+.inner-page .inner-hero-tools .tech-icon { width: 16px; height: 16px; }
+.inner-page .inner-stack-note h3 { display: flex; align-items: center; gap: 12px; }
+.inner-page .inner-stack-note h3 .tech-icon { width: 28px; height: 28px; }
+.inner-page .inner-platform-list > span { display: inline-flex; align-items: center; }
+
+.project-steps-section { position: relative; }
+.project-steps-section .inner-section-head { margin-bottom: 20px; }
+.project-steps-scroll { position: relative; height: calc(var(--step-count) * 115vh); min-height: 1500px; }
+.project-steps-sticky {
+  position: sticky;
+  top: 110px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  height: min(70vh, 550px);
+  min-height: 420px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--card);
+  clip-path: var(--cut-corner-shape);
+  box-shadow: 0 28px 58px -50px var(--shadow);
+}
+.project-steps-sticky::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .48;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 43px 43px;
+  mask-image: linear-gradient(110deg, transparent 25%, #000 100%);
+}
+.project-steps-meta { position: relative; z-index: 1; display: flex; justify-content: space-between; gap: 12px; padding: 18px clamp(22px, 4vw, 50px); border-bottom: 1px solid var(--line); color: var(--head); font: 600 10px var(--f-mono); letter-spacing: .13em; }
+.project-steps-frame { position: relative; display: grid; align-items: center; min-height: 0; padding: 20px clamp(22px, 5vw, 70px); }
+.project-step-card { position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(18px, 3vw, 48px); width: 100%; }
+.project-step-number { display: block; margin-bottom: 18px; color: var(--head); font: 700 clamp(2rem, 5vw, 4.8rem)/1 var(--f-display); letter-spacing: -.07em; }
+.project-step-card p { max-width: 34ch; margin: 0; color: var(--text); font: 650 clamp(1.35rem, 2.7vw, 2.8rem)/1.25 var(--f-display); letter-spacing: -.04em; }
+.project-step-progress { position: relative; z-index: 1; display: flex; gap: 6px; padding: 0 clamp(22px, 4vw, 50px) 22px; }
+.project-step-progress span { flex: 1; height: 3px; background: var(--line); transition: background .3s ease; }
+.project-step-progress span.is-active { background: var(--accent); }
+.project-steps-cta { margin-top: 20px; }
+
+.inner-page .inner-case { position: relative; isolation: isolate; overflow: hidden; }
+.inner-page .inner-case > :not(.inner-case-pattern) { position: relative; z-index: 1; }
+.inner-case-pattern { position: absolute; z-index: 0; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.case-pattern-base { fill: none; stroke: rgba(255,255,255,.27); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.case-pattern-packet { fill: #fff; filter: drop-shadow(0 0 5px #fff); }
+.case-pattern-node { fill: var(--accent); stroke: rgba(255,255,255,.55); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+
+.inner-page .inner-related-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.inner-page .inner-related-grid .inner-service-card { height: 290px; min-height: 0; padding: 20px; }
+.inner-page .inner-related-grid .inner-card-symbol { width: 46px; height: 46px; margin: 13px 0 11px; font-size: 21px; }
+.inner-page .inner-related-grid .inner-service-card h2 { margin-bottom: 8px; font-size: clamp(1rem, 1.3vw, 1.2rem); }
+.inner-page .inner-related-grid .inner-service-card p { display: -webkit-box; margin-bottom: 12px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; font-size: .88rem; }
+.inner-page .inner-related-grid .inner-card-foot { padding-top: 10px; font-size: .76rem; }
+.inner-page .inner-related-grid .inner-card-foot > span:first-child { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; }
+
+/* Use the established cut-corner silhouette for every filled CTA on inner routes. */
+.inner-page .btn,
+.inner-page .project-steps-cta { clip-path: var(--cut-corner-shape); border-radius: 0; }
+.inner-page .btn-primary { background: var(--accent); color: #fff; }
+.inner-page .btn-inverse { background: #fff; color: var(--maroon); }
+.inner-page .btn:focus-visible { outline: 3px solid var(--head); outline-offset: 4px; }
+
+/* Assemble the business-value content as its panel enters the viewport. */
+.inner-page .growth-panel:not(.is-visible) .growth-head > div { opacity: 0; transform: translateX(-90px); }
+.inner-page .growth-panel:not(.is-visible) .growth-head > p { opacity: 0; transform: translateX(90px); }
+.inner-page .growth-panel:not(.is-visible) .growth-item { opacity: 0; transform: translateY(85px); }
+.inner-page .growth-panel:not(.is-visible) .growth-foot { opacity: 0; transform: translateY(45px); }
+.inner-page .growth-panel.is-visible .growth-head > div { animation: growth-assemble-left .85s .1s both var(--ease); }
+.inner-page .growth-panel.is-visible .growth-head > p { animation: growth-assemble-right .85s .22s both var(--ease); }
+.inner-page .growth-panel.is-visible .growth-item { animation: growth-assemble-up .8s calc(.35s + var(--growth-delay)) both var(--ease); }
+.inner-page .growth-panel.is-visible .growth-foot { animation: growth-assemble-up .8s 1.2s both var(--ease); }
+@keyframes growth-assemble-left { from { opacity: 0; transform: translateX(-90px); } to { opacity: 1; transform: none; } }
+@keyframes growth-assemble-right { from { opacity: 0; transform: translateX(90px); } to { opacity: 1; transform: none; } }
+@keyframes growth-assemble-up { from { opacity: 0; transform: translateY(85px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 800px) {
+  .inner-page .inner-related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-steps-sticky { top: 80px; }
+}
+@media (max-width: 620px) {
+  .project-steps-scroll { height: calc(var(--step-count) * 108vh); min-height: 1500px; }
+  .project-steps-sticky { height: min(77vh, 560px); min-height: 465px; }
+  .project-steps-meta { font-size: 8px; }
+  .project-step-card { grid-template-columns: 1fr; gap: 10px; }
+  .project-step-number { margin-bottom: 5px; font-size: clamp(2.1rem, 8vw, 3rem); }
+  .project-step-card p { max-width: 30ch; font-size: clamp(1.15rem, 4.4vw, 1.65rem); }
+  .inner-page .inner-related-grid { grid-template-columns: 1fr; }
+  .inner-page .inner-related-grid .inner-service-card { height: 290px; min-height: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .inner-page .growth-panel:not(.is-visible) .growth-head > div,
+  .inner-page .growth-panel:not(.is-visible) .growth-head > p,
+  .inner-page .growth-panel:not(.is-visible) .growth-item,
+  .inner-page .growth-panel:not(.is-visible) .growth-foot { opacity: 1; transform: none; }
+  .inner-page .growth-panel.is-visible .growth-head > div,
+  .inner-page .growth-panel.is-visible .growth-head > p,
+  .inner-page .growth-panel.is-visible .growth-item,
+  .inner-page .growth-panel.is-visible .growth-foot { animation: none; }
+  .case-pattern-packet { display: none; }
+}

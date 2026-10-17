@@ -26,3 +26,12 @@ export const projectReferences = [
   ['CRM implementations','CRM setup and workflows'],['AI Voice Agents','Voice agent workflows'],['Business workflow automation','Connected operational workflows'],
 ];
 export const innerServicePath = (service) => `/services/${service.slug}`;
+// Industry workflows provide concrete examples on service pages.
+export const serviceIndustryExamples = {
+  'web-development': 'finance-investment',
+  'ai-agents-chatbots': 'sales-lead-generation',
+  'crm-erp-systems': 'real-estate',
+  'workflow-automation': 'apparel-manufacturing',
+  'api-integrations': 'healthcare',
+  'digital-transformation': 'healthcare',
+};

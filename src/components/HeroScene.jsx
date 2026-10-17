@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { innerIndustries, innerServices } from './innerData.js';
-import { industryEditorial } from './innerEditorial.js';
 import { RobotWorkstation } from './RobotWorkstation.jsx';
 import { motion } from 'motion/react';
 import { Preview } from './ServiceExperience.jsx';
 import { legacyExperience } from './serviceExperienceData.js';
+import { TechLabel } from './TechIcon.jsx';
+import { IndustryHeroScene } from './IndustryHeroScene.jsx';
 
 const heroTabs = {
   web:['React app','WordPress site','Node.js API'],
@@ -217,19 +218,45 @@ function IndustriesScene() {
 }
 
 function IndustryScene({ industry }) {
-  const stages=industryEditorial[industry.slug]?.workflow || ['Enquiry','Team action','Follow-up'];
-  const [active,setActive]=useMovingSelection(stages.length);
-  return <SceneFrame label={`${industry.title.toUpperCase()} / WORKFLOW`} note="AUTO / SELECT A STAGE" className={`inner-scene-industry inner-scene-industry-${industry.slug}`}><div className="inner-industry-scene-flow">{stages.map((stage,index)=><button type="button" key={stage} className={active===index?'selected':''} onClick={()=>setActive(index)} aria-pressed={active===index}><span>{String(index+1).padStart(2,'0')}</span><b>{stage}</b></button>)}</div><p className="inner-industry-scene-caption">{industry.intro}</p></SceneFrame>;
+  if (industry.slug === 'travel') return <div className="inner-hero-scene inner-scene-industry inner-scene-industry-travel inner-scene-travel-globe"><IndustryHeroScene industry={industry}/></div>;
+  return <IndustryWorkflowScene industry={industry}/>;
+}
+
+function IndustryWorkflowScene({ industry }) {
+  const [active,setActive]=useMovingSelection(3, industry.slug === 'real-estate' ? 4800 : 3400);
+  return <SceneFrame label={`${industry.title.toUpperCase()} / WORKFLOW`} note="AUTO / SELECT A STAGE" className={`inner-scene-industry inner-scene-industry-${industry.slug}`}><IndustryHeroScene industry={industry} active={active} onSelect={setActive}/></SceneFrame>;
 }
 
 function OtherScene() {
-  const names=['React','n8n','OpenAI','GoHighLevel','HubSpot','Airtable','Slack'];
-  const [active,setActive]=useMovingSelection(names.length, 2700);
-  return <SceneFrame label="CONNECTED TOOLKIT" note="AUTO / EXPLORE THE PLATFORMS" className="inner-scene-other"><div className="inner-other-scene-grid">{names.map((name,index)=><button type="button" key={name} aria-pressed={active===index} onClick={()=>setActive(index)}>{name}</button>)}</div><div key={active} className="inner-other-scene-caption">{names[active]} <span>→</span> build around the workflow</div></SceneFrame>;
+  const tools=[
+    {name:'React', detail:'Customer-facing interface', path:'M18 18 H34 V39 L50 50'},
+    {name:'n8n', detail:'Workflow orchestration', path:'M50 16 V50'},
+    {name:'OpenAI', detail:'Scoped AI assistance', path:'M82 18 H66 V39 L50 50'},
+    {name:'GoHighLevel', detail:'Lead and booking flow', path:'M18 50 H50'},
+    {name:'HubSpot', detail:'Customer context', path:'M82 50 H50'},
+    {name:'Airtable', detail:'Structured records', path:'M18 82 H34 V61 L50 50'},
+    {name:'Slack', detail:'Team handover', path:'M82 82 H66 V61 L50 50'},
+  ];
+  const [active,setActive]=useMovingSelection(tools.length, 2700);
+  return <SceneFrame label="CONNECTED TOOLKIT" note="LIVE / SELECT A PLATFORM" className="inner-scene-other">
+    <div className="inner-other-network">
+      <svg className="inner-other-network-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        {tools.map((tool,index)=><g key={tool.name} className={active===index?'is-active':''} style={{'--flow-duration':`${2.2+index*.15}s`,'--flow-delay':`${-index*.37}s`}}>
+          <path d={tool.path} className="inner-other-connection" vectorEffect="non-scaling-stroke"/>
+          <path d={tool.path} pathLength="100" className="inner-other-flow" vectorEffect="non-scaling-stroke"/>
+        </g>)}
+      </svg>
+      {tools.map((tool,index)=><button type="button" key={tool.name} className={`inner-other-node inner-other-node-${index}`} aria-pressed={active===index} onClick={()=>setActive(index)}><TechLabel name={tool.name}/></button>)}
+      <div className="inner-other-hub" aria-hidden="true"><span>BAIG BOTS</span><small>CONNECT / BUILD</small></div>
+    </div>
+    <div key={active} className="inner-other-scene-caption"><span className="inner-other-caption-index">0{active+1} / 07</span><strong>{tools[active].name}</strong><span aria-hidden="true">→</span>{tools[active].detail}</div>
+  </SceneFrame>;
 }
 
 function ContactScene() {
-  return <SceneFrame label="PROJECT ENQUIRY" note="A SIMPLE START" className="inner-scene-contact"><div className="inner-contact-scene-list"><div><span>01</span><b>Choose a direction</b><i/></div><div><span>02</span><b>Describe the work</b><i/></div><div><span>03</span><b>Review the next step</b><i/></div></div><a href="#contact">Open quick enquiry →</a></SceneFrame>;
+  const [active] = useMovingSelection(3, 2300);
+  const steps = ['Choose a direction', 'Describe the work', 'Review the next step'];
+  return <SceneFrame label="PROJECT ENQUIRY" note="AUTO / NEXT STEP" className="inner-scene-contact"><div className="inner-contact-scene-list">{steps.map((step,index)=><motion.div key={step} className={active===index?'selected':''} animate={{x:active===index?8:0,opacity:active===index?1:.68}} transition={{duration:.55,ease:[.22,1,.36,1]}}><span>0{index+1}</span><b>{step}</b><i/></motion.div>)}</div><a href="#contact">Open quick enquiry →</a></SceneFrame>;
 }
 
 function NotFoundScene() {

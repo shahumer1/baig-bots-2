@@ -232,10 +232,14 @@ for (const route of routes) {
   if (detailService) {
     assert(serviceGrowthData[detailService.slug]?.[2]?.length === 3, `${route} is missing service-specific business value copy`);
     assert(html.includes('growth-panel') && html.includes('growth-track'), `${route} is missing its animated business value section`);
+    assert(html.includes('project-steps-scroll') && html.includes('inner-related-grid'), `${route} is missing shared scroll steps or compact related cards`);
     assert(!html.includes('data-quick-brief'), `${route} should link to Contact instead of showing a form`);
     assert(html.includes(`/contact?service=${encodeURIComponent(detailService.title)}`), `${route} CTA does not lead to Contact`);
     if (route === '/services/custom-software-saas') assert(html.includes('cs-explorer') && html.includes('Customer and admin portals'), 'Custom Software interactive section is missing');
-    else assert(html.includes('sx-explorer') && html.includes('sx-preview'), `${route} is missing its interactive service section`);
+    else if (innerServices.some((service) => service.slug === detailService.slug)) {
+      assert(html.includes(`lab-${detailService.visual}`) && html.includes('lab-visual'), `${route} is missing its service-specific interactive visual`);
+      assert(html.includes('service-final-section') && html.includes('service-section-link'), `${route} is missing its contextual or final CTA`);
+    } else assert(html.includes('sx-explorer') && html.includes('sx-preview'), `${route} is missing its interactive service section`);
   } else assert(html.includes('data-quick-brief'), `${route} did not render the contact form`);
   assert(html.includes('<h1'), `${route} did not render its page heading`);
   if (route === '/') assert(!html.includes('class="inner-circuit"'), 'The home page must keep its original circuit');
@@ -250,6 +254,11 @@ for (const route of routes) {
   if (innerServices.some((service) => route === `/services/${service.slug}`)) {
     assert(html.includes('inner-hero-scene'), `${route} is missing its service hero`);
     assert(html.includes('Types of work') && html.includes('Technology in context'), `${route} is missing detailed service content`);
+    assert(html.includes('practice-timeline') && html.includes('practice-line-fill'), `${route} is missing the shared scroll timeline`);
+    assert.equal((html.match(/class="practice-card"/g) || []).length, 3, `${route} should show three practice cards`);
+    assert(html.includes('class="h2 lab-heading"') && html.includes('class="lab-visual-motion"'), `${route} is missing the stable heading or shared visual motion`);
+    assert(html.includes('project-steps-scroll') && html.includes('project-step-visual') && html.includes('inner-related-grid'), `${route} is missing the illustrated steps or compact related cards`);
+    assert(html.includes('tech-icon-') && html.includes('growth-panel'), `${route} is missing stack icons or the business-value panel`);
     const service = innerServices.find((item) => route === `/services/${item.slug}`);
     assert(html.includes(`inner-scene-${service.visual}`), `${route} has the wrong hero scene`);
     const motionElement = { web: 'inner-browser-preview-app', cloud: 'inner-cloud-data-packet', agents: 'inner-agent-chat', vision: 'inner-vision-sweep', crm: 'inner-crm-route', workflow: 'inner-workflow-signal', api: 'inner-api-wire', transform: 'inner-transform-arrow' }[service.visual];
@@ -268,6 +277,12 @@ for (const route of routes) {
   if (innerIndustries.some((industry) => route === `/industries/${industry.slug}`)) {
     const industry = innerIndustries.find((item) => route === `/industries/${item.slug}`);
     assert(html.includes(`inner-scene-industry-${industry.slug}`), `${route} is missing its industry hero`);
+    assert(html.includes('project-steps-scroll') && html.includes('project-step-visual') && html.includes('growth-panel') && html.includes('inner-related-grid'), `${route} is missing its shared storytelling sections`);
+    assert(!html.includes('id="project-reference"'), `${route} should not show the generic project-reference band`);
+    if (industry.slug === 'healthcare') assert(html.includes('healthcare-practices'), 'healthcare should show practice tabs');
+    else if (industry.slug === 'real-estate') assert(html.includes('real-estate-opportunities') && html.includes('Property listings'), 'real estate should show relevant images and opportunity tabs');
+    else if (industry.slug === 'sales-lead-generation') assert(html.includes('sales%20chatbot.png'), 'sales should show the supplied sales assistant image');
+    else if (industry.slug === 'finance-investment') assert(html.includes('finance-opportunities') && html.includes('dashboard.png'), 'finance should show workflow opportunities and the supplied dashboard');
   }
   if (route === '/services/web-development') assert(html.includes('WordPress') && html.includes('Node.js'), 'web development stack is incomplete');
   if (route === '/services') assert(!html.includes('inner-intro-graph'), 'the generic heading graph returned');

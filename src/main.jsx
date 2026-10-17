@@ -8,6 +8,14 @@ import './inner-hero.css';
 import './custom-software.css';
 import './service-experience.css';
 import './service-growth.css';
+import './service-lab.css';
+import './service-practice.css';
+import './inner-enhancements.css';
+import './industry-benefits.css';
+import './industry-hero.css';
+import './industry-showcase.css';
+import './healthcare-practices.css';
+import './project-step-visual.css';
 
 document.documentElement.dataset.theme = getSavedTheme();
 createRoot(document.getElementById('root')).render(<Page />);

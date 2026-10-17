@@ -1,0 +1,86 @@
+/* Benefit-first industry stories. The graphic is used until client images are supplied. */
+.industry-benefits{position:relative}
+.industry-benefits-intro{max-width:990px;margin-bottom:36px}
+.industry-benefits-intro .h2{max-width:18ch;margin:14px 0 16px;color:var(--head);font-size:clamp(2.35rem,4.4vw,4.6rem);line-height:1.06}
+.industry-benefits-intro>p:last-child{max-width:69ch;margin:0;color:var(--text-soft);font-size:clamp(1.05rem,1.4vw,1.22rem);line-height:1.65}
+.industry-benefits-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:start;gap:clamp(22px,4vw,58px)}
+.industry-benefits-list{display:grid;gap:10px;perspective:1000px}
+.industry-benefit-option{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-height:106px;width:100%;padding:17px 54px 17px 20px;border:1px solid var(--line);background:color-mix(in srgb,var(--card) 92%,transparent);color:var(--text);text-align:left;cursor:pointer;clip-path:var(--cut-corner-shape);backdrop-filter:blur(8px);transition:transform .36s var(--ease),box-shadow .36s,border-color .36s,background .36s}
+.industry-benefit-option:hover{transform:perspective(900px) rotateY(-2deg) translateY(-4px);border-color:var(--accent);box-shadow:0 18px 38px -25px var(--shadow)}
+.industry-benefit-option[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 20px 42px -29px var(--shadow)}
+.industry-benefit-option:focus-visible{outline:3px solid var(--head);outline-offset:3px}
+.industry-benefit-index{font:600 9px var(--f-mono);letter-spacing:.14em;color:var(--head)}
+.industry-benefit-option[aria-pressed=true] .industry-benefit-index{color:#fff}
+.industry-benefit-option strong{font:700 clamp(1rem,1.25vw,1.2rem)/1.2 var(--f-display)}
+.industry-benefit-short{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;color:var(--muted);font-size:.83rem;line-height:1.35}
+.industry-benefit-option[aria-pressed=true] .industry-benefit-short{color:rgba(255,255,255,.88)}
+.industry-benefit-option>i{position:absolute;right:20px;top:42%;font:700 20px var(--f-display);font-style:normal;color:var(--head);transition:transform .3s}
+.industry-benefit-option:hover>i{transform:translateX(4px)}.industry-benefit-option[aria-pressed=true]>i{color:#fff}
+.industry-benefits-display{position:sticky;top:105px;align-self:start;overflow:hidden;min-height:606px;border:1px solid var(--line);background:var(--card);clip-path:var(--cut-corner-shape);box-shadow:0 26px 58px -48px var(--shadow)}
+.industry-benefits-display::before{content:"";position:absolute;z-index:0;inset:0;pointer-events:none;background-image:linear-gradient(to right,var(--line) 1px,transparent 1px),linear-gradient(to bottom,var(--line) 1px,transparent 1px);background-size:37px 37px;opacity:.2;mask-image:linear-gradient(to bottom,#000,transparent 67%)}
+.ib-graphic{position:relative;z-index:1;height:300px;overflow:hidden;border-bottom:1px solid var(--line);background:radial-gradient(circle at 50% 65%,var(--glow),transparent 58%)}
+.ib-graphic small,.ib-graphic b{font:700 10px var(--f-mono);letter-spacing:.09em}
+.industry-benefits-image{position:relative;z-index:1;display:block;width:100%;height:300px;object-fit:cover;border-bottom:1px solid var(--line)}
+.industry-benefits-diagram{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:4px;min-height:46px;padding:0 24px;border-bottom:1px solid var(--line);font:600 9px var(--f-mono);letter-spacing:.08em;color:var(--head)}
+.industry-benefits-diagram span{display:flex;align-items:center;gap:7px;white-space:nowrap}.industry-benefits-diagram i{width:6px;height:6px;border-radius:50%;background:var(--accent)}.industry-benefits-diagram b{margin-left:10px;font-size:16px;font-weight:400;color:var(--muted)}
+.industry-benefits-display-copy{position:relative;z-index:1;display:flex;flex-direction:column;min-height:257px;padding:27px clamp(22px,3vw,38px) 24px}
+.industry-benefits-live{display:flex;align-items:center;gap:8px;font:600 10px var(--f-mono);letter-spacing:.13em;color:var(--head)}.industry-benefits-live i{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--ring);animation:ib-beacon 2s ease-in-out infinite}
+.industry-benefits-display-copy h3{margin:22px 0 9px;font:700 clamp(1.5rem,2.35vw,2.25rem)/1.12 var(--f-display);letter-spacing:-.04em}
+.industry-benefits-display-copy p{max-width:57ch;margin:0;color:var(--muted);font-size:.94rem;line-height:1.55}
+.industry-benefits-progress{display:flex;gap:6px;margin-top:auto;padding-top:20px}.industry-benefits-progress span{flex:1;height:3px;background:var(--line)}.industry-benefits-progress span.is-active{background:var(--accent);animation:ib-progress 4.3s linear both;transform-origin:left}
+.industry-benefits-foot{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.93rem}
+.industry-benefits-foot .btn{flex:none;max-width:100%;font-size:.88rem}
+
+/* Healthcare: an intake card, appointment signal and reminder. */
+.ib-health-symbol{position:absolute;top:29px;left:36px;display:grid;place-items:center;width:66px;height:66px;border:1px solid var(--accent);border-radius:50%;background:var(--card);color:var(--head);font:300 54px/1 var(--f-body);animation:ib-float 4s ease-in-out infinite}
+.ib-health-card{position:absolute;top:38px;right:9%;width:50%;padding:18px;border:1px solid var(--accent);background:var(--card);clip-path:var(--cut-corner-shape);box-shadow:10px 12px 0 var(--ring)}
+.ib-health-card small{display:block;margin-bottom:16px;color:var(--head)}.ib-health-card i{display:block;height:7px;margin-top:8px;background:var(--line)}.ib-health-card i:nth-of-type(2){width:70%}.ib-health-card i:nth-of-type(3){width:84%}
+.ib-graphic-healthcare svg{position:absolute;left:3%;bottom:55px;width:94%;height:75px;overflow:visible}.ib-graphic-healthcare svg path{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:370;animation:ib-health-draw 4s ease-in-out infinite}
+.ib-health-reminder{position:absolute;right:8%;bottom:21px;padding:9px 12px;border:1px solid var(--line);background:var(--card);color:var(--head);font:700 9px var(--f-mono);letter-spacing:.08em}.ib-health-reminder span{margin:0 7px}
+/* Real estate: a property photo and the actual enquiry-to-follow-up journey. */
+.ib-property-listing{position:absolute;z-index:1;left:8%;top:35px;width:41%;height:230px;overflow:hidden;border:1px solid var(--line);background:var(--card);clip-path:var(--cut-corner-shape);box-shadow:0 16px 36px -29px var(--shadow);transition:border-color .6s ease,transform .6s var(--ease)}
+.ib-property-listing:hover{border-color:var(--accent);transform:translateY(-4px)}
+.ib-property-photo{position:relative;height:136px;background-image:linear-gradient(180deg,transparent 53%,rgba(45,7,12,.55)),url('/assets/realstate-1.png');background-size:cover,740% auto;background-position:center,24.2% 35.8%;filter:saturate(.78)}
+.ib-property-photo span{position:absolute;left:12px;bottom:11px;padding:6px 8px;background:var(--accent);color:#fff;font:700 9px/1 var(--f-mono);letter-spacing:.08em}
+.ib-property-listing-info{padding:13px 14px}.ib-property-listing-info small{color:var(--head)}.ib-property-listing-info b{display:block;margin-top:6px;color:var(--text);font:700 13px/1.25 var(--f-display);letter-spacing:0}.ib-property-listing-info i{display:block;width:64%;height:3px;margin-top:11px;background:var(--accent);transform-origin:left;animation:ib-listing-progress 4.5s ease-in-out infinite}
+.ib-property-viewing,.ib-property-followup{position:absolute;z-index:1;right:8%;width:35%;padding:16px;border:1px solid var(--line);background:var(--card);clip-path:var(--cut-corner-shape);transition:transform .6s var(--ease),border-color .6s ease,box-shadow .6s ease}
+.ib-property-viewing{top:64px}.ib-property-followup{bottom:34px}.ib-property-viewing:hover,.ib-property-followup:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 15px 30px -24px var(--shadow)}
+.ib-property-viewing small,.ib-property-followup small{display:block;color:var(--head)}.ib-property-viewing b,.ib-property-followup b{display:block;margin-top:9px;color:var(--text);font:700 12px/1.3 var(--f-display);letter-spacing:0}.ib-property-viewing span{display:block;margin-top:7px;color:var(--muted);font:600 9px var(--f-mono)}
+.ib-property-route{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;fill:none}.ib-property-route-base{stroke:var(--line);stroke-width:1.5;vector-effect:non-scaling-stroke}.ib-property-route-signal{stroke:var(--accent);stroke-width:2;stroke-dasharray:9 91;stroke-linecap:round;vector-effect:non-scaling-stroke;animation:ib-property-flow 4.5s linear infinite}
+/* Sales: a narrowing funnel with an unmistakable moving handover. */
+.ib-sales-funnel{position:absolute;left:10%;top:35px;display:grid;gap:12px;width:72%}.ib-sales-funnel span{position:relative;display:grid;place-items:center;height:54px;border:1px solid var(--accent);background:var(--card);color:var(--head);font:700 10px var(--f-mono);letter-spacing:.1em;clip-path:var(--cut-corner-shape)}.ib-sales-funnel span:nth-child(2){width:78%;margin-left:11%}.ib-sales-funnel span:nth-child(3){width:55%;margin-left:22.5%;background:var(--accent);color:#fff}
+.ib-sales-funnel span::after{content:"";position:absolute;right:0;width:25%;height:2px;background:var(--accent);animation:ib-signal 2.7s ease-in-out infinite alternate}.ib-sales-funnel span:nth-child(2)::after{animation-delay:.5s}
+.ib-sales-signal{position:absolute;right:11%;bottom:17px;display:flex;align-items:center;gap:8px;color:var(--head);font:700 9px var(--f-mono)}.ib-sales-signal i{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:ib-beacon 2s infinite}
+/* Finance: structured rows and abstract reporting bars, without fictitious figures. */
+.ib-finance-ledger{position:absolute;top:34px;left:8%;width:52%;padding:19px;border:1px solid var(--accent);background:var(--card);clip-path:var(--cut-corner-shape)}.ib-finance-ledger small{display:block;margin-bottom:14px;color:var(--head)}.ib-finance-ledger i{display:block;height:23px;margin-top:7px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,var(--ring) 35%,transparent 35%)}
+.ib-finance-chart{position:absolute;right:9%;bottom:39px;display:flex;align-items:end;gap:8px;width:46%;height:151px;padding:10px;border-left:1px solid var(--line);border-bottom:1px solid var(--line)}.ib-finance-chart span{flex:1;height:var(--bar-height);background:var(--accent);opacity:.75;transform-origin:bottom;animation:ib-bar 2.6s ease-in-out infinite alternate}.ib-finance-chart span:nth-child(1){--bar-height:35%}.ib-finance-chart span:nth-child(2){--bar-height:58%;animation-delay:.2s}.ib-finance-chart span:nth-child(3){--bar-height:43%;animation-delay:.4s}.ib-finance-chart span:nth-child(4){--bar-height:75%;animation-delay:.6s}.ib-finance-chart span:nth-child(5){--bar-height:62%;animation-delay:.8s}
+.ib-finance-label{position:absolute;right:9%;top:24px;color:var(--head);font:700 9px var(--f-mono);letter-spacing:.1em}
+/* Travel: a route, ticket and customer update. */
+.ib-graphic-travel svg{position:absolute;inset:40px 7% auto;width:86%;height:170px;overflow:visible}.ib-graphic-travel svg path{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-dasharray:7 6;animation:ib-route 2s linear infinite}.ib-graphic-travel svg circle{fill:var(--card);stroke:var(--accent);stroke-width:2}
+.ib-travel-ticket{position:absolute;left:18%;top:55px;display:flex;flex-direction:column;gap:13px;width:44%;padding:19px;border:1px solid var(--accent);background:var(--card);clip-path:var(--cut-corner-shape);transform:rotate(-3deg);animation:ib-ticket 5s ease-in-out infinite}.ib-travel-ticket small{color:var(--head)}.ib-travel-ticket b{font-size:14px}.ib-travel-ticket i{width:65%;height:6px;background:var(--line)}
+.ib-travel-update{position:absolute;right:9%;bottom:27px;padding:10px 14px;border:1px solid var(--line);background:var(--card);color:var(--head);font:700 9px var(--f-mono)}.ib-travel-update span{margin-left:7px}
+/* Apparel: an order moving across the handover rail. */
+.ib-apparel-rail{position:absolute;left:10%;right:10%;top:52%;height:2px;background:var(--accent)}.ib-apparel-rail i{position:absolute;top:-5px;left:0;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px var(--ring);animation:ib-travel 3.5s linear infinite}
+.ib-apparel-boxes{position:absolute;inset:50px 9% auto;display:flex;justify-content:space-between;gap:9px}.ib-apparel-boxes div{display:flex;flex-direction:column;justify-content:space-between;flex:1;height:100px;padding:13px;border:1px solid var(--accent);background:var(--card);color:var(--head);font:700 9px var(--f-mono);clip-path:var(--cut-corner-shape);animation:ib-float 4s ease-in-out infinite}.ib-apparel-boxes div:nth-child(2){animation-delay:.4s}.ib-apparel-boxes div:nth-child(3){animation-delay:.8s}.ib-apparel-boxes span{font-size:19px}
+.ib-apparel-label{position:absolute;left:50%;bottom:31px;transform:translateX(-50%);white-space:nowrap;color:var(--head);font:700 10px var(--f-mono);letter-spacing:.1em}
+/* Staffing: candidate group, review and a clear human decision point. */
+.ib-people{position:absolute;left:10%;top:64px;display:flex;gap:13px}.ib-people span{position:relative;display:block;width:48px;height:48px;border:2px solid var(--accent);border-radius:50%;background:var(--card)}.ib-people span::after{content:"";position:absolute;top:56px;left:-8px;width:60px;height:42px;border:2px solid var(--line);border-radius:50% 50% 8px 8px}.ib-people span:nth-child(2){transform:translateY(-19px)}.ib-people span:nth-child(3){transform:translateY(8px)}
+.ib-staffing-path{position:absolute;left:16%;right:17%;bottom:52px;border-bottom:2px dashed var(--accent)}.ib-staffing-path i{position:absolute;left:0;bottom:-6px;width:10px;height:10px;background:var(--accent);border-radius:50%;animation:ib-travel 3.2s linear infinite}
+.ib-staffing-review{position:absolute;right:8%;top:52px;width:33%;padding:20px;border:1px solid var(--accent);background:var(--card);clip-path:var(--cut-corner-shape)}.ib-staffing-review small{color:var(--head)}.ib-staffing-review i{display:block;height:7px;margin-top:14px;background:var(--line)}.ib-staffing-review i:last-child{width:65%}
+.ib-staffing-label{position:absolute;right:8%;bottom:20px;color:var(--head);font:700 9px var(--f-mono);letter-spacing:.08em}
+
+@keyframes ib-beacon{50%{opacity:.4;box-shadow:0 0 0 9px var(--ring)}}
+@keyframes ib-property-flow{to{stroke-dashoffset:-100}}
+@keyframes ib-listing-progress{0%,100%{transform:scaleX(.35);opacity:.5}50%{transform:scaleX(1);opacity:1}}
+@keyframes ib-progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes ib-float{50%{transform:translateY(-7px)}}
+@keyframes ib-health-draw{0%{stroke-dashoffset:370}55%,100%{stroke-dashoffset:0}}
+@keyframes ib-window{to{background:var(--ring)}}
+@keyframes ib-travel{to{left:100%}}
+@keyframes ib-signal{from{opacity:.15;transform:scaleX(.4)}to{opacity:1;transform:scaleX(1)}}
+@keyframes ib-bar{to{transform:scaleY(.55)}}
+@keyframes ib-route{to{stroke-dashoffset:-26}}
+@keyframes ib-ticket{50%{transform:translateY(-7px) rotate(1deg)}}
+@media(max-width:980px){.industry-benefits-layout{grid-template-columns:1fr}.industry-benefits-display{position:relative;top:auto;min-height:0;max-width:740px}.industry-benefits-list{grid-template-columns:repeat(2,minmax(0,1fr))}.industry-benefit-option{min-height:130px}}
+@media(max-width:620px){.industry-benefits-intro .h2{font-size:clamp(2.2rem,10vw,3.5rem)}.industry-benefits-list{grid-template-columns:1fr}.industry-benefit-option{min-height:106px}.industry-benefits-display{min-height:0}.ib-graphic,.industry-benefits-image{height:260px}.industry-benefits-diagram{padding:0 12px;font-size:7px;letter-spacing:0}.industry-benefits-diagram span{gap:4px}.industry-benefits-diagram b{margin-left:2px}.industry-benefits-display-copy{min-height:270px}.industry-benefits-foot{align-items:stretch;flex-direction:column}.industry-benefits-foot .btn{align-self:flex-start}.ib-property-listing{top:29px;height:205px}.ib-property-photo{height:112px}.ib-property-listing-info{padding:10px}.ib-property-listing-info b{font-size:11px}.ib-property-viewing,.ib-property-followup{width:39%;padding:10px}.ib-property-viewing{top:49px}.ib-property-followup{bottom:26px}.ib-property-viewing b,.ib-property-followup b{font-size:10px}.ib-sales-funnel{width:82%}.ib-people span{width:38px;height:38px}.ib-people span::after{top:47px;width:50px}}
+@media(prefers-reduced-motion:reduce){.industry-benefits *,.industry-benefits *::before,.industry-benefits *::after{animation:none!important;transition-duration:.01ms!important}.industry-benefit-option:hover{transform:none}.industry-benefits-progress span.is-active{transform:scaleX(1)}}
