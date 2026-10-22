@@ -309,11 +309,11 @@ body{margin:0;background:var(--bg)}
 @media(max-width:639px){
   .cards{gap:14px}
   .cards>[data-cw]{min-width:0;height:350px}
-  .card{height:350px;min-height:0;padding:22px 20px 20px;gap:12px}
+  .card{display:grid;grid-template-rows:46px 54px minmax(0,1fr) 34px;height:350px;min-height:0;padding:22px 20px 20px;gap:12px}
   .card h3,.card p{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical}
   .card h3{-webkit-line-clamp:2;line-clamp:2}
   .card p{-webkit-line-clamp:4;line-clamp:4}
-  .card .more{margin-top:auto}
+  .card .more{align-self:end;margin-top:0}
 }
 
 .lines-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 48px;margin:clamp(64px,7vw,104px) 0 28px}

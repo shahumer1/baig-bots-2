@@ -796,12 +796,12 @@ export class BaigBotsSite {
       const amt = card.hasAttribute('data-tilt') ? 6 : 9;
       let rx = null;
       let ry = null;
-      if (tiltable && fine && !reduce) {
+      if (tiltable && fine && !compact && !reduce) {
         gsap.set(card, { transformPerspective: 900 });
         rx = gsap.quickTo(card, 'rotationY', { duration: 0.6, ease: 'power3' });
         ry = gsap.quickTo(card, 'rotationX', { duration: 0.6, ease: 'power3' });
       }
-      if (fine) this._on(card, 'pointermove', (e) => {
+      if (fine && !compact) this._on(card, 'pointermove', (e) => {
         const r = card.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width;
         const py = (e.clientY - r.top) / r.height;
