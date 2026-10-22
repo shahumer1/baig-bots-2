@@ -764,14 +764,22 @@ export class BaigBotsSite {
     const compact = window.matchMedia('(max-width: 767px)').matches;
     const wraps = $$('[data-cw]');
     if (!reduce) {
-      wraps.forEach((w) => { if (!compact) { w.style.opacity = '0'; w.style.transform = 'translateY(40px)'; } });
       wraps.forEach((w, i) => {
-        inView(w, () => {
-          animate(w, compact
-            ? { opacity: [0.88, 1], transform: ['translateY(12px)', 'translateY(0px)'] }
-            : { opacity: 1, transform: 'translateY(0px)' },
-          { duration: compact ? 0.4 : 0.85, delay: compact ? 0 : (i % 3) * 0.1, ease: [0.22, 1, 0.36, 1] });
-        }, compact ? { amount: 0, margin: '0px 0px 140px 0px' } : { amount: 0.15 });
+        if (compact) {
+          // Moving the clipped card layer while Android Chrome scrolls can
+          // leave its text and CTA painted at different positions.
+          w.style.removeProperty('opacity');
+          w.style.removeProperty('transform');
+          const stop = inView(w, () => w.classList.add('is-visible'), { amount: 0, margin: '0px 0px 140px 0px' });
+          this._cleanups.push(stop);
+        } else {
+          w.style.opacity = '0';
+          w.style.transform = 'translateY(40px)';
+          const stop = inView(w, () => {
+            animate(w, { opacity: 1, transform: 'translateY(0px)' }, { duration: 0.85, delay: (i % 3) * 0.1, ease: [0.22, 1, 0.36, 1] });
+          }, { amount: 0.15 });
+          this._cleanups.push(stop);
+        }
       });
     }
     if (!reduce) {

@@ -302,6 +302,10 @@ body{margin:0;background:var(--bg)}
 .card:hover .trace{transform:scaleX(1)}
 .card .via{position:absolute;z-index:2;top:10px;right:10px;width:7px;height:7px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);transition:border-color .3s,background .3s}
 .card:hover .via{border-color:var(--head);background:var(--head)}
+@media(max-width:767px){
+  .cards>[data-cw].is-visible .card .trace{transform:scaleX(1)}
+  .cards>[data-cw].is-visible .card .ic *{animation:icdraw .8s var(--ease) both}
+}
 @media(max-width:639px){
   .cards{gap:14px}
   .cards>[data-cw]{min-width:0;height:350px}
