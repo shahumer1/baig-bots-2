@@ -302,6 +302,7 @@ body{margin:0;background:var(--bg)}
 .card:hover .trace{transform:scaleX(1)}
 .card .via{position:absolute;z-index:2;top:10px;right:10px;width:7px;height:7px;border-radius:50%;border:1.5px solid var(--line);background:var(--card);transition:border-color .3s,background .3s}
 .card:hover .via{border-color:var(--head);background:var(--head)}
+@media(max-width:639px){.cards{gap:14px}.cards>[data-cw]{min-width:0}.card{height:auto;min-height:0;padding:22px 20px 20px;gap:12px}.card .more{margin-top:6px}}
 
 .lines-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 48px;margin:clamp(64px,7vw,104px) 0 28px}
 .lines-head>div{display:flex;flex-direction:column;align-items:flex-start;gap:16px}

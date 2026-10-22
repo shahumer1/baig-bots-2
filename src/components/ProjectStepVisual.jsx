@@ -99,15 +99,12 @@ export function ProjectStepVisual({ industry, service, active }) {
     </div>
   </div>;
   return <div className={`project-step-visual psv-${scene.kind}`} aria-hidden="true">
-    <div className="psv-network"><i/><i/><i/></div>
     <div className="psv-card">
-      <div className="psv-card-head"><span className="psv-glyph"><SceneGlyph kind={scene.kind}/></span><span>WORKFLOW / 0{active + 1}</span><b/></div>
+      <div className="psv-card-head"><span className="psv-glyph"><SceneGlyph kind={scene.kind}/></span><span>WORKFLOW / 0{active + 1}</span><span className="psv-card-phase">{scene.source} → {scene.target}</span></div>
       <strong>{scene.title}</strong>
       {scene.kind === 'calendar' && <div className="psv-calendar"><i/><i/><i/><i/><i/><i/><i/></div>}
-      {scene.kind === 'route' && <div className="psv-route"><i/><i/><i/></div>}
-      <div className="psv-rows">{scene.rows.map((row, index) => <div key={row}><span>0{index + 1}</span><b>{row}</b><i/></div>)}</div>
-      <div className="psv-card-foot"><span><i/> {scene.signal}</span><span>READY →</span></div>
+      <div className="psv-rows">{scene.rows.map((row, index) => <div key={row}><span>0{index + 1}</span><b>{row}</b></div>)}</div>
+      <div className="psv-card-foot"><span>{scene.signal}</span><span>READY</span></div>
     </div>
-    <div className="psv-path"><span>{scene.source}</span><div><i/></div><span>{scene.target}</span></div>
   </div>;
 }

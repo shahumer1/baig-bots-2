@@ -690,6 +690,15 @@ export class BaigBotsSite {
     const compact = window.matchMedia('(max-width: 767px)').matches;
     $$('[data-split]').forEach((el) => {
       const circle = el.closest('[data-circle-word]');
+      if (compact && !circle) {
+        // Keep narrow headings in the document flow. Splitting and masking
+        // every word can clip text when mobile fonts reflow during a scroll.
+        const stop = Motion.inView(el, () => {
+          Motion.animate(el, { opacity: [0.88, 1], transform: ['translateY(10px)', 'translateY(0px)'] }, { duration: 0.42, ease: [0.22, 1, 0.36, 1] });
+        }, { amount: 0.1 });
+        this._cleanups.push(stop);
+        return;
+      }
       let circleTarget = null;
       const positionCircle = () => {
         if (!circleTarget?.isConnected) { return; }
@@ -755,10 +764,13 @@ export class BaigBotsSite {
     const compact = window.matchMedia('(max-width: 767px)').matches;
     const wraps = $$('[data-cw]');
     if (!reduce) {
-      wraps.forEach((w) => { w.style.opacity = compact ? '0.65' : '0'; w.style.transform = `translateY(${compact ? 14 : 40}px)`; });
+      wraps.forEach((w) => { if (!compact) { w.style.opacity = '0'; w.style.transform = 'translateY(40px)'; } });
       wraps.forEach((w, i) => {
         inView(w, () => {
-          animate(w, { opacity: 1, transform: 'translateY(0px)' }, { duration: compact ? 0.45 : 0.85, delay: compact ? 0 : (i % 3) * 0.1, ease: [0.22, 1, 0.36, 1] });
+          animate(w, compact
+            ? { opacity: [0.88, 1], transform: ['translateY(12px)', 'translateY(0px)'] }
+            : { opacity: 1, transform: 'translateY(0px)' },
+          { duration: compact ? 0.4 : 0.85, delay: compact ? 0 : (i % 3) * 0.1, ease: [0.22, 1, 0.36, 1] });
         }, compact ? { amount: 0, margin: '0px 0px 140px 0px' } : { amount: 0.15 });
       });
     }
