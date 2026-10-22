@@ -3,15 +3,16 @@ import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import Globe from './lightswind/globe.tsx';
 
 const travelMarkers = [
-  { location: [33.69, 73.06], size: 0.055 },
-  { location: [25.2, 55.27], size: 0.045 },
-  { location: [51.5, -0.12], size: 0.045 },
-  { location: [1.35, 103.82], size: 0.045 },
-  { location: [40.71, -74.01], size: 0.045 },
+  { location: [33.69, 73.06], size: 0.032 },
+  { location: [25.2, 55.27], size: 0.026 },
+  { location: [51.5, -0.12], size: 0.026 },
+  { location: [1.35, 103.82], size: 0.026 },
+  { location: [40.71, -74.01], size: 0.026 },
 ];
 const travelArcs = [
   { from: [33.69, 73.06], to: [25.2, 55.27] },
-  { from: [33.69, 73.06], to: [51.5, -0.12] },
+  { from: [25.2, 55.27], to: [51.5, -0.12] },
+  { from: [51.5, -0.12], to: [40.71, -74.01] },
   { from: [33.69, 73.06], to: [1.35, 103.82] },
 ];
 
@@ -102,7 +103,7 @@ function TravelArt() {
     return () => observer.disconnect();
   }, []);
   return <div className="ih-art ih-travel" aria-label="Rotating travel globe">
-    <div className="ih-travel-globe-wrap"><div className="ih-travel-globe-fallback"/><Globe className="ih-travel-globe" theta={0.19} dark={darkTheme ? 0.25 : 0.1} scale={1.08} diffuse={1.2} mapSamples={21000} mapBrightness={10} baseColor={darkTheme ? '#9d626a' : '#b48186'} markerColor={darkTheme ? '#ff737c' : '#a90f1c'} glowColor={darkTheme ? '#511d24' : '#f4e3e5'} markers={travelMarkers} arcs={travelArcs} arcColor={darkTheme ? '#ff737c' : '#a90f1c'} enableZoom={false} autoRotateSpeed={0.0025}/></div>
+    <div className="ih-travel-globe-wrap"><div className="ih-travel-globe-fallback"/><Globe className="ih-travel-globe" theta={0.19} dark={darkTheme ? 0.25 : 0.1} scale={1.08} diffuse={1.2} mapSamples={21000} mapBrightness={10} baseColor={darkTheme ? '#9d626a' : '#b48186'} markerColor={darkTheme ? '#ff737c' : '#a90f1c'} glowColor={darkTheme ? '#511d24' : '#f4e3e5'} markers={travelMarkers} arcs={travelArcs} arcColor={darkTheme ? '#ff737c' : '#a90f1c'} animateArcPackets enableZoom={false} autoRotateSpeed={0.0022}/></div>
   </div>;
 }
 

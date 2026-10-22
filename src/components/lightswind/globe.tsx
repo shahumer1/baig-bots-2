@@ -29,6 +29,7 @@ const hexToRgbNormalized = (hex: string): [number, number, number] => {
 export interface GlobeMarker {
   location: [number, number];
   size: number;
+  color?: [number, number, number];
 }
 
 export interface GlobeArc {
@@ -38,6 +39,24 @@ export interface GlobeArc {
 
 const EMPTY_MARKERS: GlobeMarker[] = [];
 const EMPTY_ARCS: GlobeArc[] = [];
+
+const interpolateRoute = (from: [number, number], to: [number, number], progress: number): [number, number] => {
+  const toVector = ([latitude, longitude]: [number, number]) => {
+    const lat = latitude * Math.PI / 180;
+    const lon = longitude * Math.PI / 180;
+    return [Math.cos(lat) * Math.cos(lon), Math.sin(lat), Math.cos(lat) * Math.sin(lon)];
+  };
+  const start = toVector(from);
+  const end = toVector(to);
+  const angle = Math.acos(Math.max(-1, Math.min(1, start[0] * end[0] + start[1] * end[1] + start[2] * end[2])));
+  const denominator = Math.sin(angle);
+  const startWeight = denominator < 0.0001 ? 1 - progress : Math.sin((1 - progress) * angle) / denominator;
+  const endWeight = denominator < 0.0001 ? progress : Math.sin(progress * angle) / denominator;
+  const x = start[0] * startWeight + end[0] * endWeight;
+  const y = start[1] * startWeight + end[1] * endWeight;
+  const z = start[2] * startWeight + end[2] * endWeight;
+  return [Math.atan2(y, Math.hypot(x, z)) * 180 / Math.PI, Math.atan2(z, x) * 180 / Math.PI];
+};
 
 export interface GlobeProps {
   className?: string;
@@ -54,6 +73,7 @@ export interface GlobeProps {
   markers?: GlobeMarker[];
   arcs?: GlobeArc[];
   arcColor?: [number, number, number] | string;
+  animateArcPackets?: boolean;
   
   /** Enable mouse wheel and pinch zoom */
   enableZoom?: boolean;
@@ -84,6 +104,7 @@ const Globe: React.FC<GlobeProps> = ({
   markers = EMPTY_MARKERS,
   arcs = EMPTY_ARCS,
   arcColor = "#701018",
+  animateArcPackets = false,
   enableZoom = true,
   minScale = 0.4,
   maxScale = 3.5,
@@ -114,6 +135,7 @@ const Globe: React.FC<GlobeProps> = ({
     if (!canvas) return;
     let frameId = 0;
     let lastFrame = 0;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const stopGlobe = () => {
       window.cancelAnimationFrame(frameId);
@@ -129,10 +151,27 @@ const Globe: React.FC<GlobeProps> = ({
       lastFrame = time;
       currentScaleRef.current += (targetScaleRef.current - currentScaleRef.current) * 0.12;
       if (!isDragging.current && autoRotate) phiRef.current += autoRotateSpeed * frameScale;
+      const animatedMarkers = animateArcPackets && !reducedMotion
+        ? [
+            ...markers.map((marker, index) => ({
+              ...marker,
+              size: marker.size * (0.94 + 0.06 * Math.sin(time / 650 + index * 1.3)),
+            })),
+            ...arcs.map((arc, index) => {
+              const progress = (time / 6200 + index / arcs.length) % 1;
+              return {
+                location: interpolateRoute(arc.from, arc.to, progress),
+                size: 0.018 * Math.sin(Math.PI * progress),
+                color: resolvedArcColor,
+              };
+            }),
+          ]
+        : markers;
       globeRef.current.update({
         phi: phiRef.current,
         theta: thetaRef.current,
         scale: currentScaleRef.current,
+        ...(animateArcPackets ? { markers: animatedMarkers } : {}),
       });
       frameId = window.requestAnimationFrame(renderFrame);
     };
@@ -177,8 +216,9 @@ const Globe: React.FC<GlobeProps> = ({
         markers: markers,
         arcs: arcs,
         arcColor: resolvedArcColor,
-        arcWidth: 0.7,
-        arcHeight: 0.35,
+        arcWidth: 0.4,
+        arcHeight: 0.14,
+        markerElevation: 0.025,
       });
       frameId = window.requestAnimationFrame(renderFrame);
       } catch {
@@ -362,6 +402,7 @@ const Globe: React.FC<GlobeProps> = ({
     markers,
     arcs,
     arcColor,
+    animateArcPackets,
   ]);
 
   return (

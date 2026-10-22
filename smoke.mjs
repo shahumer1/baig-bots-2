@@ -3,18 +3,20 @@ import { JSDOM } from 'jsdom';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { createServer } from 'vite';
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
 import { allServices } from './src/components/serviceData.js';
 import { innerIndustries, innerServices } from './src/components/innerData.js';
 import { serviceGrowthData } from './src/components/serviceGrowthData.js';
 
-const vite = await createServer({ configLoader: 'runner', optimizeDeps: { disabled: true }, server: { middlewareMode: true }, appType: 'custom' });
+const vite = await createServer({ configLoader: 'runner', optimizeDeps: { noDiscovery: true, include: [] }, server: { middlewareMode: true }, appType: 'custom' });
 let page;
 let Page;
 let HeroScene;
 let ServiceExperience;
 let Header;
 try {
-  ({ Page } = await vite.ssrLoadModule('/src/components/Page.jsx'));
+  ({ Page } = await vite.ssrLoadModule('/src/pages/Page.jsx'));
   ({ HeroScene } = await vite.ssrLoadModule('/src/components/HeroScene.jsx'));
   ({ ServiceExperience } = await vite.ssrLoadModule('/src/components/ServiceExperience.jsx'));
   ({ Header } = await vite.ssrLoadModule('/src/components/Header.jsx'));
@@ -225,9 +227,11 @@ assert(experienceHost.querySelector('.sx-choice[aria-pressed="true"]')?.textCont
 await React.act(async () => { experienceRoot.unmount(); });
 experienceHost.remove();
 const routes = ['/', '/services', '/services/other', '/industries', '/contact', ...innerServices.map((service) => `/services/${service.slug}`), ...innerIndustries.map((industry) => `/industries/${industry.slug}`), ...allServices.map((service) => `/services/${service.slug}`)];
+const renderedPages = new Map();
 for (const route of routes) {
   window.history.replaceState({}, '', route);
   const html = renderToStaticMarkup(React.createElement(Page));
+  renderedPages.set(route, html);
   const detailService = [...innerServices, ...allServices].find((service) => route === `/services/${service.slug}`);
   if (detailService) {
     assert(serviceGrowthData[detailService.slug]?.[2]?.length === 3, `${route} is missing service-specific business value copy`);
@@ -287,6 +291,31 @@ for (const route of routes) {
   if (route === '/services/web-development') assert(html.includes('WordPress') && html.includes('Node.js'), 'web development stack is incomplete');
   if (route === '/services') assert(!html.includes('inner-intro-graph'), 'the generic heading graph returned');
 }
+const pageNodes = new Map([...renderedPages].map(([route, html]) => [route, JSDOM.fragment(html)]));
+const pageIds = new Map([...pageNodes].map(([route, node]) => [route, new Set([...node.querySelectorAll('[id]')].map((element) => element.id))]));
+let checkedLinks = 0;
+let checkedImages = 0;
+for (const [route, node] of pageNodes) {
+  for (const anchor of node.querySelectorAll('a[href]')) {
+    const href = anchor.getAttribute('href');
+    assert(href && href !== '#', `${route} has an empty link`);
+    const destination = new URL(href, `http://localhost:5173${route}`);
+    if (destination.origin !== 'http://localhost:5173') continue;
+    const path = destination.pathname.replace(/\/+$/, '') || '/';
+    assert(pageNodes.has(path), `${route} links to missing page ${href}`);
+    if (destination.hash) {
+      const id = decodeURIComponent(destination.hash.slice(1));
+      assert(pageIds.get(path).has(id), `${route} links to missing section ${href}`);
+    }
+    checkedLinks++;
+  }
+  for (const image of node.querySelectorAll('img[src]')) {
+    const src = image.getAttribute('src');
+    if (!src?.startsWith('/')) continue;
+    assert(existsSync(join('public', decodeURIComponent(src.slice(1)))), `${route} references missing image ${src}`);
+    checkedImages++;
+  }
+}
 window.close();
-console.log('Motion startup smoke test passed');
+console.log(`Motion and navigation smoke test passed: ${pageNodes.size} pages, ${checkedLinks} internal links, ${checkedImages} images checked`);
 process.exit(0);

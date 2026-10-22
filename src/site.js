@@ -188,15 +188,23 @@ export class BaigBotsSite {
     const nav = $('[data-nav]');
     const btn = $('[data-menu]');
     if (btn) {
+      const closeMenu = () => {
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Open menu');
+      };
       this._on(btn, 'click', () => {
         const open = nav.classList.toggle('open');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
         btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       });
-      $$('[data-panel] a').forEach((a) => this._on(a, 'click', () => {
-        nav.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-      }));
+      $$('[data-panel] a').forEach((a) => this._on(a, 'click', closeMenu));
+      this._on(document, 'pointerdown', (event) => {
+        if (nav.classList.contains('open') && !nav.contains(event.target)) closeMenu();
+      });
+      this._on(document, 'keydown', (event) => {
+        if (event.key === 'Escape' && nav.classList.contains('open')) closeMenu();
+      });
     }
     ScrollTrigger.create({ start: 24, end: 'max', onUpdate: (self) => nav.classList.toggle('is-scrolled', self.scroll() > 24) });
     $$('[data-scr]').forEach((a) => {
@@ -1568,10 +1576,9 @@ export class BaigBotsSite {
       e.preventDefault();
       const ok = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value.trim());
       f.classList.toggle('err', !ok);
-      f.classList.toggle('ok', ok);
-      msg.textContent = ok ? 'Thanks, you are on the list.' : 'Please enter a valid email address.';
+      f.classList.remove('ok');
+      msg.textContent = ok ? 'Email looks valid. Newsletter signup is not available yet.' : 'Please enter a valid email address.';
       if (ok) {
-        input.value = '';
         if (!reduce) { gsap.fromTo(btn.querySelector('svg'), { x: 0 }, { x: 40, duration: 0.35, ease: 'power2.in', yoyo: true, repeat: 1 }); }
       } else if (!reduce) {
         gsap.fromTo(f.querySelector('.news-row'), { x: -7 }, { x: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });

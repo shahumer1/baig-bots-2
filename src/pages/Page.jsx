@@ -1,24 +1,20 @@
 import { useEffect } from 'react';
 import { BaigBotsSite } from '../site.js';
 import { getSavedTheme } from '../theme/theme.js';
-import { GlobalEffects } from './GlobalEffects.jsx';
-import { Header } from './Header.jsx';
-import { Hero } from './Hero.jsx';
-import { Marquees } from './Marquees.jsx';
-import { Stats } from './Stats.jsx';
-import { Services } from './Services.jsx';
-import { Solutions } from './Solutions.jsx';
-import { Statement } from './Statement.jsx';
-import { Agents } from './Agents.jsx';
-import { Estimator } from './Estimator.jsx';
-import { Process } from './Process.jsx';
-import { Engage } from './Engage.jsx';
-import { Faq } from './Faq.jsx';
-import { Contact } from './Contact.jsx';
-import { Footer } from './Footer.jsx';
-import { ContactLanding, IndustriesPage, IndustryDetail, NotFoundPage, ServiceDetail, ServicesIndex } from './ContentPages.jsx';
-import { allServices } from './serviceData.js';
-import { innerIndustries, innerServices } from './innerData.js';
+import { GlobalEffects } from '../components/GlobalEffects.jsx';
+import { Header } from '../components/Header.jsx';
+import { Contact } from '../components/Contact.jsx';
+import { Footer } from '../components/Footer.jsx';
+import { allServices } from '../components/serviceData.js';
+import { innerIndustries, innerServices } from '../components/innerData.js';
+import { HomePage } from './HomePage.jsx';
+import { ServicesIndex } from './ServicesPage.jsx';
+import { OtherPage } from './OtherServicesPage.jsx';
+import { ServiceDetail } from './ServiceDetailPage.jsx';
+import { IndustriesPage } from './IndustriesPage.jsx';
+import { IndustryDetail } from './IndustryDetailPage.jsx';
+import { ContactLanding } from './ContactPage.jsx';
+import { NotFoundPage } from './NotFoundPage.jsx';
 
 function getPage(pathname) {
   const path = pathname.replace(/\/+$/, '') || '/';
@@ -50,22 +46,9 @@ export function Page() {
     <div id="bb" data-theme={getSavedTheme()} data-canvas-width="1440" data-canvas-height="8000" data-document-role="page" data-label={`Website — ${page.title}`}>
       <GlobalEffects />
       <Header inner={page.kind !== 'home'} />
-      {page.kind === 'home' && <>
-        <Hero />
-        <Marquees />
-        <Stats />
-        <Services />
-        <Solutions />
-        <Statement />
-        <Agents />
-        <Estimator />
-        {/* <Stack /> — keep the Technology section available, but hide it on the home page. */}
-        <Process />
-        <Engage />
-        <Faq />
-      </>}
+      {page.kind === 'home' && <HomePage />}
       {page.kind === 'services' && <ServicesIndex />}
-      {page.kind === 'other' && <ServicesIndex category="other" />}
+      {page.kind === 'other' && <OtherPage />}
       {page.kind === 'detail' && <ServiceDetail service={page.service} />}
       {page.kind === 'industries' && <IndustriesPage />}
       {page.kind === 'industry-detail' && <IndustryDetail industry={page.industry} />}

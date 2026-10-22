@@ -13,7 +13,7 @@ export function Footer({ inner = false }) {
         <p className="foot-tag">People <b>+</b> Automation <b>+</b> A brighter tomorrow</p>
         <form className="news" data-news="" noValidate>
           <label className="news-l" htmlFor="news-email">Occasional notes on automation, integrations and AI</label>
-          <div className="news-row"><input id="news-email" type="email" name="email" autoComplete="email" placeholder="you@company.com" /><button type="submit" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></button></div>
+          <div className="news-row"><input id="news-email" type="email" name="email" autoComplete="email" placeholder="you@company.com" /><button type="submit" aria-label="Check email"><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></button></div>
           <span className="news-msg" data-news-msg="" aria-live="polite"></span>
         </form>
       </div>
@@ -47,7 +47,6 @@ export function Footer({ inner = false }) {
         <ul>
           <li>baigbots.com</li>
           <li><a href="mailto:contact@baigbots.com">contact@baigbots.com</a></li>
-          <li>[YOUR PHONE]</li>
           <li>NASTP · Suite No. 217</li>
         </ul>
       </div>
