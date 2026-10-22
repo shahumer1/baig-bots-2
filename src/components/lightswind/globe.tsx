@@ -136,6 +136,9 @@ const Globe: React.FC<GlobeProps> = ({
     let frameId = 0;
     let lastFrame = 0;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const mobile = window.matchMedia('(max-width: 767px), (pointer: coarse)').matches;
+    let lastWidth = 0;
+    let lastHeight = 0;
 
     const stopGlobe = () => {
       window.cancelAnimationFrame(frameId);
@@ -195,7 +198,9 @@ const Globe: React.FC<GlobeProps> = ({
       const rect = canvas.getBoundingClientRect();
       const width = Math.max(100, Math.round(rect.width || 600));
       const height = Math.max(100, Math.round(rect.height || 500));
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const dpr = Math.min(window.devicePixelRatio || 1, mobile ? 1.25 : 2);
+      lastWidth = width;
+      lastHeight = height;
 
       try { globeRef.current = createGlobe(canvas, {
         devicePixelRatio: dpr,
@@ -206,7 +211,7 @@ const Globe: React.FC<GlobeProps> = ({
         dark: dark,
         scale: currentScaleRef.current,
         diffuse: diffuse,
-        mapSamples: mapSamples,
+        mapSamples: mobile ? Math.min(mapSamples, 11000) : mapSamples,
         mapBrightness: mapBrightness,
         baseColor: resolvedBaseColor,
         markerColor: resolvedMarkerColor,
@@ -360,7 +365,8 @@ const Globe: React.FC<GlobeProps> = ({
     canvas.addEventListener("touchend", onTouchEnd, { passive: true });
 
     const handleResize = () => {
-      if (isVisible) {
+      const rect = canvas.getBoundingClientRect();
+      if (isVisible && (Math.round(rect.width) !== lastWidth || Math.round(rect.height) !== lastHeight)) {
         initGlobe();
       }
     };

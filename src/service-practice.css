@@ -92,6 +92,7 @@
 
 .practice-card:hover::before,
 .practice-card:focus-within::before { opacity: 1; }
+@media(max-width:767px){.practice-card:hover,.practice-card:focus-within{-webkit-backdrop-filter:none;backdrop-filter:none}}
 .practice-card > * { position: relative; z-index: 1; }
 .practice-card .inner-kicker { display: block; }
 .practice-card h3 {

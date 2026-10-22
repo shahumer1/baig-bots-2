@@ -285,7 +285,7 @@ for (const route of routes) {
     assert(!html.includes('id="project-reference"'), `${route} should not show the generic project-reference band`);
     if (industry.slug === 'healthcare') assert(html.includes('healthcare-practices'), 'healthcare should show practice tabs');
     else if (industry.slug === 'real-estate') assert(html.includes('real-estate-opportunities') && html.includes('Property listings'), 'real estate should show relevant images and opportunity tabs');
-    else if (industry.slug === 'sales-lead-generation') assert(html.includes('sales%20chatbot.png'), 'sales should show the supplied sales assistant image');
+    else if (industry.slug === 'sales-lead-generation') assert(html.includes('sales%20chatbot.webp'), 'sales should show the supplied sales assistant image');
     else if (industry.slug === 'finance-investment') assert(html.includes('finance-opportunities') && html.includes('dashboard.png'), 'finance should show workflow opportunities and the supplied dashboard');
   }
   if (route === '/services/web-development') assert(html.includes('WordPress') && html.includes('Node.js'), 'web development stack is incomplete');

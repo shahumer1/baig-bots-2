@@ -948,4 +948,7 @@ body{margin:0;background:var(--bg)}
 .inner-not-found{padding-bottom:90px}
 @media(max-width:700px){.detail-grid{grid-template-columns:1fr}.inner-intro{padding-top:72px}.nav-services>.nav-service-list{display:none}}
 @media(max-width:560px){.hero-stage .chip{padding:8px 10px;font-size:10px}.chip.c1{top:8%;left:0}.chip.c3{top:57%;left:0}.chip.c4{top:30%;right:12%}.chip.c2{bottom:8%;right:0}.hero{min-height:0}.nav-in{height:68px}.eyebrow{align-items:flex-start;font-size:11px;letter-spacing:.1em;line-height:1.6}.eyebrow .dot{margin-top:5px}.flow-head{align-items:flex-start}.flow-head .pdot{margin-top:4px}}
+@media(max-width:390px){.nav-in{gap:10px}.nav-actions{gap:8px}}
+@media(max-width:360px){.nav-in{gap:8px}.nav .brand{gap:8px;min-width:0}.nav .blg{width:52px}.nav .brand-txt b{font-size:1rem;white-space:nowrap}.nav .brand-txt i{display:none}.nav-actions{gap:4px;flex:none}}
+@media(max-width:360px){.impact-metric{padding-inline:3px}.impact-metric strong{font-size:.68rem}}
 

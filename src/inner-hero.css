@@ -121,7 +121,7 @@
 .inner-scene-other .inner-other-scene-caption strong{color:var(--head);font-size:12px}.inner-scene-other .inner-other-scene-caption span{padding:0}.inner-scene-other .inner-other-caption-index{margin-right:auto;color:var(--head);white-space:nowrap}
 @keyframes inner-other-hub-pulse{50%{box-shadow:0 0 0 14px var(--ring),0 12px 30px -20px var(--shadow)}}
 @keyframes inner-other-travel{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
-@media(max-width:430px){.inner-other-network{min-height:270px;margin:6px 5px 0}.inner-other-node{width:clamp(74px,27%,100px);min-height:40px;font-size:9px}.inner-other-node .tech-icon{width:12px;height:12px}.inner-other-hub{width:83px;height:66px}.inner-scene-other .inner-other-scene-caption{margin:0 10px 10px;font-size:9px;gap:5px}}
+@media(max-width:430px){.inner-other-network{min-height:270px;margin:6px 5px 0}.inner-other-node{width:clamp(90px,30%,100px);min-height:40px;padding:4px;font-size:9px}.inner-other-node .tech-label{gap:3px}.inner-other-node .tech-icon{width:11px;height:11px}.inner-other-hub{width:83px;height:66px}.inner-scene-other .inner-other-scene-caption{margin:0 10px 10px;font-size:9px;gap:5px}}
 @media(prefers-reduced-motion:reduce){.inner-other-flow{display:none}.inner-other-hub,.inner-other-node[aria-pressed=true]::after{animation:none}}
 .inner-contact-scene-list div{animation:inner-contact-step 6s ease-in-out infinite}.inner-contact-scene-list div:nth-child(2){animation-delay:2s}.inner-contact-scene-list div:nth-child(3){animation-delay:4s}
 .inner-not-found-code span{display:inline-block;animation:inner-slash-blink 1.6s steps(2,end) infinite}

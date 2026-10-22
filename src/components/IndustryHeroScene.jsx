@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
-import Globe from './lightswind/globe.tsx';
+const Globe = lazy(() => import('./lightswind/globe.tsx'));
 
 const travelMarkers = [
   { location: [33.69, 73.06], size: 0.032 },
@@ -103,7 +103,7 @@ function TravelArt() {
     return () => observer.disconnect();
   }, []);
   return <div className="ih-art ih-travel" aria-label="Rotating travel globe">
-    <div className="ih-travel-globe-wrap"><div className="ih-travel-globe-fallback"/><Globe className="ih-travel-globe" theta={0.19} dark={darkTheme ? 0.25 : 0.1} scale={1.08} diffuse={1.2} mapSamples={21000} mapBrightness={10} baseColor={darkTheme ? '#9d626a' : '#b48186'} markerColor={darkTheme ? '#ff737c' : '#a90f1c'} glowColor={darkTheme ? '#511d24' : '#f4e3e5'} markers={travelMarkers} arcs={travelArcs} arcColor={darkTheme ? '#ff737c' : '#a90f1c'} animateArcPackets enableZoom={false} autoRotateSpeed={0.0022}/></div>
+    <div className="ih-travel-globe-wrap"><div className="ih-travel-globe-fallback"/><Suspense fallback={null}><Globe className="ih-travel-globe" theta={0.19} dark={darkTheme ? 0.25 : 0.1} scale={1.08} diffuse={1.2} mapSamples={21000} mapBrightness={10} baseColor={darkTheme ? '#9d626a' : '#b48186'} markerColor={darkTheme ? '#ff737c' : '#a90f1c'} glowColor={darkTheme ? '#511d24' : '#f4e3e5'} markers={travelMarkers} arcs={travelArcs} arcColor={darkTheme ? '#ff737c' : '#a90f1c'} animateArcPackets enableZoom={false} autoRotateSpeed={0.0022}/></Suspense></div>
   </div>;
 }
 

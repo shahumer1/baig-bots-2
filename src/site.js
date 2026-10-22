@@ -3,7 +3,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
-import * as THREE from 'three';
 import * as Motion from 'motion';
 import { applyTheme, getSavedTheme, saveTheme, themeColor } from './theme/theme.js';
 
@@ -12,6 +11,7 @@ export class BaigBotsSite {
   renderVals() { return {}; }
 
   componentDidMount() {
+    this._disposed = false;
     this._cleanups = [];
     this._themeHooks = [];
     this.dark = false;
@@ -20,6 +20,7 @@ export class BaigBotsSite {
   }
 
   componentWillUnmount() {
+    this._disposed = true;
     clearTimeout(this._bt);
     (this._cleanups || []).forEach((fn) => { try { fn(); } catch (e) { /* ignore */ } });
     this._cleanups = [];
@@ -246,9 +247,16 @@ export class BaigBotsSite {
     gsap.from($$(`${selector} .base`), { drawSVG: 0, duration: 2.2, ease: 'power2.inOut', stagger: 0.12, delay: 0.2 });
     gsap.from($$(`${selector} .node`), { scale: 0, transformOrigin: '50% 50%', duration: 0.5, ease: 'back.out(3)', stagger: 0.12, delay: 1.3 });
     gsap.fromTo($$(`${selector} .pulse`), { opacity: 0 }, { opacity: 0.9, duration: 0.6, delay: 2.2 });
-    $$(`${selector} .pulse`).forEach((path, index) => {
-      gsap.fromTo(path, { strokeDashoffset: 0 }, { strokeDashoffset: -100, duration: 5 + index * 0.9, ease: 'none', repeat: -1, delay: 2 + index * 0.6 });
-    });
+    const pulses = $$(`${selector} .pulse`).map((path, index) =>
+      gsap.fromTo(path, { strokeDashoffset: 0 }, { strokeDashoffset: -100, duration: 5 + index * 0.9, ease: 'none', repeat: -1, delay: 2 + index * 0.6 }));
+    const circuit = this.root.querySelector(selector);
+    if (circuit && pulses.length) {
+      const observer = new IntersectionObserver(([entry]) => {
+        pulses.forEach((tween) => entry.isIntersecting ? tween.resume() : tween.pause());
+      });
+      observer.observe(circuit);
+      this._cleanups.push(() => { observer.disconnect(); pulses.forEach((tween) => tween.kill()); });
+    }
   }
 
   /* ---------- hero: circuit draw, kinetic headline, entrance ---------- */
@@ -304,7 +312,24 @@ export class BaigBotsSite {
     const canvas = $('[data-gl]');
     if (!stage || !canvas) { return; }
     const hero = $('.hero');
-    const T = THREE;
+    // The 3D scene belongs to the home page only. Keep Three.js out of every
+    // service and industry route, and wait until the hero approaches the screen.
+    const loadScene = () => import('three').then((T) => {
+      if (!this._disposed && stage.isConnected) this._mountHero3d(stage, canvas, hero, reduce, T);
+    }).catch(() => {
+      if (!this._disposed && stage.isConnected) this._hero2d(stage, canvas, reduce);
+    });
+    if (!('IntersectionObserver' in window)) { loadScene(); return; }
+    const loader = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      loader.disconnect();
+      loadScene();
+    }, { rootMargin: '250px' });
+    loader.observe(stage);
+    this._cleanups.push(() => loader.disconnect());
+  }
+
+  _mountHero3d(stage, canvas, hero, reduce, T) {
     let renderer;
     try {
       renderer = new T.WebGLRenderer({ canvas, alpha: true, antialias: true });
@@ -455,7 +480,7 @@ export class BaigBotsSite {
     const size = () => {
       const w = stage.clientWidth || 600;
       const h = stage.clientHeight || 520;
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, window.matchMedia('(max-width: 767px)').matches ? 1.25 : 2));
       renderer.setSize(w, h, false);
       camera.aspect = w / h;
       baseZ = w < 520 ? 15.5 : (w / h < 1 ? 14 : 12.8);
@@ -479,8 +504,6 @@ export class BaigBotsSite {
     ScrollTrigger.create({ trigger: hero, start: 'top top', end: 'bottom top', scrub: true, onUpdate: (self) => { sp = self.progress; } });
 
     let visible = true;
-    const io = new IntersectionObserver((en) => { visible = en[0].isIntersecting; });
-    io.observe(stage);
     const chipQ = Array.from(stage.querySelectorAll('.chip')).map((c) => ({ d: parseFloat(c.getAttribute('data-depth')) || 0, x: gsap.quickTo(c, 'x', { duration: 0.8, ease: 'power3' }), y: gsap.quickTo(c, 'y', { duration: 0.8, ease: 'power3' }) }));
     const clock = new T.Clock();
     let spinY = 0;
@@ -528,10 +551,28 @@ export class BaigBotsSite {
       gsap.from(canvas, { opacity: 0, scale: 0.9, duration: 1.6, ease: 'power3.out', delay: 0.4 });
       gsap.ticker.add(frame);
     }
+    const io = new IntersectionObserver(([entry]) => {
+      const nextVisible = !!entry.isIntersecting && !document.hidden;
+      if (nextVisible === visible) return;
+      visible = nextVisible;
+      if (reduce) return;
+      if (visible) { clock.getDelta(); gsap.ticker.add(frame); }
+      else gsap.ticker.remove(frame);
+    });
+    io.observe(stage);
+    const onVisibility = () => {
+      const nextVisible = !document.hidden && stage.getBoundingClientRect().bottom > 0 && stage.getBoundingClientRect().top < innerHeight;
+      if (nextVisible === visible || reduce) return;
+      visible = nextVisible;
+      if (visible) { clock.getDelta(); gsap.ticker.add(frame); }
+      else gsap.ticker.remove(frame);
+    };
+    document.addEventListener('visibilitychange', onVisibility);
     this._cleanups.push(() => {
       gsap.ticker.remove(frame);
       ro.disconnect();
       io.disconnect();
+      document.removeEventListener('visibilitychange', onVisibility);
       renderer.dispose();
     });
   }
@@ -544,6 +585,8 @@ export class BaigBotsSite {
     let width = 0;
     let height = 0;
     let frameId = 0;
+    let visible = true;
+    let lastFrame = 0;
     let pointerX = 0;
     let pointerY = 0;
     const points = Array.from({ length: 22 }, (_, i) => {
@@ -555,11 +598,11 @@ export class BaigBotsSite {
     const resize = () => {
       width = stage.clientWidth || 600;
       height = stage.clientHeight || 520;
-      const ratio = Math.min(window.devicePixelRatio || 1, 2);
+      const ratio = Math.min(window.devicePixelRatio || 1, 1.25);
       canvas.width = Math.round(width * ratio);
       canvas.height = Math.round(height * ratio);
       ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-      draw(0);
+      draw(performance.now());
     };
     const draw = (time) => {
       ctx.clearRect(0, 0, width, height);
@@ -616,8 +659,18 @@ export class BaigBotsSite {
         ctx.stroke();
       }
       ctx.restore();
-      if (!reduce) { frameId = requestAnimationFrame(draw); }
     };
+    const tick = (time) => {
+      if (!visible || reduce) { frameId = 0; return; }
+      if (time - lastFrame >= 1000 / 30) { draw(time); lastFrame = time; }
+      frameId = requestAnimationFrame(tick);
+    };
+    const io = new IntersectionObserver(([entry]) => {
+      visible = !!entry.isIntersecting && !document.hidden;
+      if (visible && !reduce && !frameId) frameId = requestAnimationFrame(tick);
+      if (!visible && frameId) { cancelAnimationFrame(frameId); frameId = 0; }
+    });
+    io.observe(stage);
     this._on(stage, 'pointermove', (e) => {
       const box = stage.getBoundingClientRect();
       pointerX = (e.clientX - box.left) / (box.width || 1) * 2 - 1;
@@ -627,12 +680,14 @@ export class BaigBotsSite {
     const observer = new ResizeObserver(resize);
     observer.observe(stage);
     resize();
-    this._cleanups.push(() => { cancelAnimationFrame(frameId); observer.disconnect(); });
+    if (!reduce) frameId = requestAnimationFrame(tick);
+    this._cleanups.push(() => { cancelAnimationFrame(frameId); observer.disconnect(); io.disconnect(); });
   }
 
   /* ---------- section headings: masked line reveal, words hop on hover ---------- */
   _headings({ $$, reduce, fine }) {
     if (reduce) { return; }
+    const compact = window.matchMedia('(max-width: 767px)').matches;
     $$('[data-split]').forEach((el) => {
       const circle = el.closest('[data-circle-word]');
       let circleTarget = null;
@@ -674,7 +729,7 @@ export class BaigBotsSite {
             circle.classList.remove('is-positioned');
             positionCircle();
           }
-          if (fine) {
+          if (fine && !compact) {
             self.words.forEach((w) => {
               w.addEventListener('pointerenter', () => {
                 if (!gsap.isTweening(w)) { gsap.fromTo(w, { y: 0 }, { y: -10, duration: 0.22, ease: 'power2.out', yoyo: true, repeat: 1 }); }
@@ -683,10 +738,10 @@ export class BaigBotsSite {
           }
           return gsap.from(self.words, {
             yPercent: 115,
-            duration: 1,
-            stagger: 0.05,
+            duration: compact ? 0.55 : 1,
+            stagger: compact ? 0.015 : 0.05,
             ease: 'expo.out',
-            scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+            scrollTrigger: { trigger: el, start: compact ? 'top 110%' : 'top 88%', toggleActions: 'play none none none' },
             onComplete: () => { $$('[class*="-mask"]', el).forEach((mk) => { mk.style.overflow = 'visible'; }); }
           });
         }
@@ -697,22 +752,23 @@ export class BaigBotsSite {
   /* ---------- service cards: Motion entrance + spotlight + 3D tilt ---------- */
   _cards({ $$, fine, reduce }) {
     const { animate, inView } = Motion;
+    const compact = window.matchMedia('(max-width: 767px)').matches;
     const wraps = $$('[data-cw]');
     if (!reduce) {
-      wraps.forEach((w) => { w.style.opacity = '0'; w.style.transform = 'translateY(40px)'; });
+      wraps.forEach((w) => { w.style.opacity = compact ? '0.65' : '0'; w.style.transform = `translateY(${compact ? 14 : 40}px)`; });
       wraps.forEach((w, i) => {
         inView(w, () => {
-          animate(w, { opacity: 1, transform: 'translateY(0px)' }, { duration: 0.85, delay: (i % 3) * 0.1, ease: [0.22, 1, 0.36, 1] });
-        }, { amount: 0.15 });
+          animate(w, { opacity: 1, transform: 'translateY(0px)' }, { duration: compact ? 0.45 : 0.85, delay: compact ? 0 : (i % 3) * 0.1, ease: [0.22, 1, 0.36, 1] });
+        }, compact ? { amount: 0, margin: '0px 0px 140px 0px' } : { amount: 0.15 });
       });
     }
     if (!reduce) {
       const items = $$('[data-li]');
       if (items.length) {
-        items.forEach((it) => { it.style.opacity = '0'; });
+        items.forEach((it) => { it.style.opacity = compact ? '0.65' : '0'; });
         inView(items[0].parentElement, () => {
-          animate(items, { opacity: 1, transform: ['translateY(22px)', 'translateY(0px)'] }, { duration: 0.7, delay: Motion.stagger(0.06), ease: [0.22, 1, 0.36, 1] });
-        }, { amount: 0.15 });
+          animate(items, { opacity: 1, transform: [`translateY(${compact ? 12 : 22}px)`, 'translateY(0px)'] }, { duration: compact ? 0.4 : 0.7, delay: Motion.stagger(compact ? 0.025 : 0.06), ease: [0.22, 1, 0.36, 1] });
+        }, compact ? { amount: 0, margin: '0px 0px 140px 0px' } : { amount: 0.15 });
       }
     }
     $$('[data-card],[data-tilt],.flow,.hud').forEach((card) => {
@@ -720,12 +776,12 @@ export class BaigBotsSite {
       const amt = card.hasAttribute('data-tilt') ? 6 : 9;
       let rx = null;
       let ry = null;
-      if (tiltable) {
+      if (tiltable && fine && !reduce) {
         gsap.set(card, { transformPerspective: 900 });
         rx = gsap.quickTo(card, 'rotationY', { duration: 0.6, ease: 'power3' });
         ry = gsap.quickTo(card, 'rotationX', { duration: 0.6, ease: 'power3' });
       }
-      this._on(card, 'pointermove', (e) => {
+      if (fine) this._on(card, 'pointermove', (e) => {
         const r = card.getBoundingClientRect();
         const px = (e.clientX - r.left) / r.width;
         const py = (e.clientY - r.top) / r.height;
@@ -735,7 +791,7 @@ export class BaigBotsSite {
       });
       if (rx) { this._on(card, 'pointerleave', () => { rx(0); ry(0); }); }
       const title = card.querySelector('h3 a') || card.querySelector('h3');
-      if (title && card.hasAttribute('data-card') && !reduce) {
+      if (title && card.hasAttribute('data-card') && fine && !compact && !reduce) {
         const txt = title.textContent;
         this._on(card, 'pointerenter', () => gsap.to(title, { duration: 0.6, scrambleText: { text: txt, chars: 'lowerCase', speed: 1 }, overwrite: true }));
       }
@@ -748,6 +804,7 @@ export class BaigBotsSite {
     const text = $('[data-stmt-text]');
     if (!sec || !text) { return; }
     if (reduce) { return; }
+    const compact = window.matchMedia('(max-width: 767px)').matches;
     $$('[data-px]', sec).forEach((layer) => {
       gsap.to(layer, { yPercent: parseFloat(layer.getAttribute('data-px')), ease: 'none', scrollTrigger: { trigger: sec, start: 'top bottom', end: 'bottom top', scrub: true } });
     });
@@ -778,10 +835,10 @@ export class BaigBotsSite {
     });
     const { animate, inView, stagger } = Motion;
     const prs = $$('[data-pr]', sec);
-    prs.forEach((p) => { p.style.opacity = '0'; });
+    prs.forEach((p) => { p.style.opacity = compact ? '0.7' : '0'; });
     inView(prs[0].parentElement, () => {
-      animate(prs, { opacity: 1, transform: ['translateY(28px)', 'translateY(0px)'] }, { duration: 0.8, delay: stagger(0.12), ease: [0.22, 1, 0.36, 1] });
-    }, { amount: 0.25 });
+      animate(prs, { opacity: 1, transform: [`translateY(${compact ? 12 : 28}px)`, 'translateY(0px)'] }, { duration: compact ? 0.4 : 0.8, delay: stagger(compact ? 0.03 : 0.12), ease: [0.22, 1, 0.36, 1] });
+    }, compact ? { amount: 0, margin: '0px 0px 140px 0px' } : { amount: 0.25 });
   }
 
   /* ---------- agents: scripted workflow ---------- */
@@ -819,6 +876,7 @@ export class BaigBotsSite {
     const tl = $('[data-tl]');
     const prog = $('[data-tl-prog]');
     if (!tl || !prog) { return; }
+    const compact = window.matchMedia('(max-width: 767px)').matches;
     const steps = $$('[data-step]');
     if (!reduce) {
       gsap.to(prog, { scaleY: 1, ease: 'none', scrollTrigger: { trigger: tl, start: 'top 70%', end: 'bottom 62%', scrub: 0.4 } });
@@ -831,8 +889,8 @@ export class BaigBotsSite {
     if (reduce) { steps.forEach((s) => s.classList.add('is-on')); return; }
     const { animate, inView } = Motion;
     steps.forEach((s) => {
-      s.style.opacity = '0';
-      inView(s, () => { animate(s, { opacity: 1, transform: ['translateX(34px)', 'translateX(0px)'] }, { duration: 0.8, ease: [0.22, 1, 0.36, 1] }); }, { amount: 0.3 });
+      s.style.opacity = compact ? '0.7' : '0';
+      inView(s, () => { animate(s, { opacity: 1, transform: [`translateX(${compact ? 12 : 34}px)`, 'translateX(0px)'] }, { duration: compact ? 0.4 : 0.8, ease: [0.22, 1, 0.36, 1] }); }, compact ? { amount: 0, margin: '0px 0px 140px 0px' } : { amount: 0.3 });
     });
   }
 
@@ -840,15 +898,16 @@ export class BaigBotsSite {
   _cta({ $, $$, reduce, fine }) {
     const sec = $('[data-cta]');
     const h = $('[data-cta-h]');
+    const compact = window.matchMedia('(max-width: 767px)').matches;
     let chars = [];
-    SplitText.create(h, {
+    if (!reduce) SplitText.create(h, {
       type: 'chars,words',
       charsClass: 'ch',
       autoSplit: true,
       onSplit: (self) => {
         chars = self.chars.map((el) => ({ el, k: 0 }));
         if (reduce) { return null; }
-        return gsap.from(self.chars, { yPercent: 70, opacity: 0, duration: 1, stagger: 0.03, ease: 'expo.out', scrollTrigger: { trigger: h, start: 'top 85%', toggleActions: 'play none none none' } });
+        return gsap.from(self.chars, { yPercent: 70, opacity: 0, duration: compact ? 0.55 : 1, stagger: compact ? 0.012 : 0.03, ease: 'expo.out', scrollTrigger: { trigger: h, start: compact ? 'top 110%' : 'top 85%', toggleActions: 'play none none none' } });
       }
     });
     if (!reduce) {
@@ -858,19 +917,21 @@ export class BaigBotsSite {
       const pulseTweens = [];
       ScrollTrigger.create({
         trigger: sec,
-        start: 'top 75%',
-        once: true,
-        onEnter: () => {
-          gsap.to(pulses, { opacity: 0.9, duration: 0.5, stagger: 0.12 });
-          pulses.forEach((pulse, index) => {
-            pulseTweens.push(gsap.fromTo(pulse, { strokeDashoffset: 0 }, {
-              strokeDashoffset: -100,
-              duration: 5 + index * 0.8,
-              ease: 'none',
-              repeat: -1,
-              delay: index * 0.45,
-            }));
-          });
+        start: 'top bottom',
+        end: 'bottom top',
+        onToggle: (self) => {
+          if (self.isActive && !pulseTweens.length) {
+            gsap.to(pulses, { opacity: 0.9, duration: 0.5, stagger: 0.12 });
+            pulses.forEach((pulse, index) => {
+              pulseTweens.push(gsap.fromTo(pulse, { strokeDashoffset: 0 }, {
+                strokeDashoffset: -100,
+                duration: 5 + index * 0.8,
+                ease: 'none',
+                repeat: -1,
+                delay: index * 0.45,
+              }));
+            });
+          } else pulseTweens.forEach((tween) => self.isActive ? tween.resume() : tween.pause());
         },
       });
       this._cleanups.push(() => pulseTweens.forEach((tween) => tween.kill()));
@@ -1165,6 +1226,7 @@ export class BaigBotsSite {
   /* ---------- capability cards: count and flip into view ---------- */
   _stats({ $$, reduce }) {
     const pad = (v) => (v < 10 ? '0' : '') + v;
+    const compact = window.matchMedia('(max-width: 767px)').matches;
     const timelines = [];
     $$('[data-count]').forEach((el, i) => {
       const card = el.closest('.stat');
@@ -1175,30 +1237,30 @@ export class BaigBotsSite {
       const o = { v: 0 };
       el.textContent = '00';
       const timeline = gsap.timeline({
-        delay: i * 0.1,
-        scrollTrigger: { trigger: card, start: 'top 75%', toggleActions: 'play none none none' }
+        delay: compact ? 0 : i * 0.1,
+        scrollTrigger: { trigger: card, start: compact ? 'top 120%' : 'top 75%', toggleActions: 'play none none none' }
       });
       timeline.fromTo(card,
-        { y: 34, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.75, ease: 'power3.out' },
+        { y: compact ? 12 : 34, opacity: compact ? 0.8 : 0 },
+        { y: 0, opacity: 1, duration: compact ? 0.4 : 0.75, ease: 'power3.out' },
         0
       ).to(o, {
         v: n,
-        duration: 1.5,
+        duration: compact ? 0.75 : 1.5,
         ease: 'power3.out',
         onUpdate: () => { el.textContent = pad(Math.round(o.v)); }
       }, 0.16).fromTo(el,
-        { scale: 0.55, rotationX: -120, y: 24, opacity: 0, transformOrigin: '50% 50%' },
-        { scale: 1, rotationX: 0, y: 0, opacity: 1, duration: 1.25, ease: 'back.out(1.5)' },
+        { scale: compact ? 0.85 : 0.55, rotationX: compact ? 0 : -120, y: compact ? 8 : 24, opacity: compact ? 0.75 : 0, transformOrigin: '50% 50%' },
+        { scale: 1, rotationX: 0, y: 0, opacity: 1, duration: compact ? 0.5 : 1.25, ease: 'back.out(1.5)' },
         0.14
       ).fromTo(copy,
-        { y: 22, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: 'power3.out' },
-        0.28
+        { y: compact ? 7 : 22, opacity: compact ? 0.8 : 0 },
+        { y: 0, opacity: 1, duration: compact ? 0.4 : 0.8, stagger: compact ? 0.03 : 0.1, ease: 'power3.out' },
+        compact ? 0.08 : 0.28
       ).fromTo(arrow,
-        { y: 12, rotation: -45, opacity: 0 },
-        { y: 0, rotation: 0, opacity: 1, duration: 0.7, ease: 'back.out(1.5)' },
-        0.38
+        { y: compact ? 4 : 12, rotation: compact ? 0 : -45, opacity: compact ? 0.8 : 0 },
+        { y: 0, rotation: 0, opacity: 1, duration: compact ? 0.4 : 0.7, ease: 'back.out(1.5)' },
+        compact ? 0.1 : 0.38
       );
       timelines.push(timeline);
     });

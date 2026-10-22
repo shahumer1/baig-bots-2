@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { BaigBotsSite } from '../site.js';
+import { lazy, Suspense, useEffect } from 'react';
 import { getSavedTheme } from '../theme/theme.js';
 import { GlobalEffects } from '../components/GlobalEffects.jsx';
 import { Header } from '../components/Header.jsx';
@@ -7,14 +6,30 @@ import { Contact } from '../components/Contact.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { allServices } from '../components/serviceData.js';
 import { innerIndustries, innerServices } from '../components/innerData.js';
-import { HomePage } from './HomePage.jsx';
-import { ServicesIndex } from './ServicesPage.jsx';
-import { OtherPage } from './OtherServicesPage.jsx';
-import { ServiceDetail } from './ServiceDetailPage.jsx';
-import { IndustriesPage } from './IndustriesPage.jsx';
-import { IndustryDetail } from './IndustryDetailPage.jsx';
-import { ContactLanding } from './ContactPage.jsx';
-import { NotFoundPage } from './NotFoundPage.jsx';
+
+// Server rendering keeps pages synchronous for the route smoke test. In the
+// browser, only the module for the current route is downloaded and parsed.
+const serverPages = import.meta.env.SSR ? {
+  HomePage: (await import('./HomePage.jsx')).HomePage,
+  ServicesIndex: (await import('./ServicesPage.jsx')).ServicesIndex,
+  OtherPage: (await import('./OtherServicesPage.jsx')).OtherPage,
+  ServiceDetail: (await import('./ServiceDetailPage.jsx')).ServiceDetail,
+  IndustriesPage: (await import('./IndustriesPage.jsx')).IndustriesPage,
+  IndustryDetail: (await import('./IndustryDetailPage.jsx')).IndustryDetail,
+  ContactLanding: (await import('./ContactPage.jsx')).ContactLanding,
+  NotFoundPage: (await import('./NotFoundPage.jsx')).NotFoundPage,
+} : null;
+const routeComponent = (name, importer) => import.meta.env.SSR
+  ? serverPages[name]
+  : lazy(() => importer().then((module) => ({ default: module[name] })));
+const HomePage = routeComponent('HomePage', () => import('./HomePage.jsx'));
+const ServicesIndex = routeComponent('ServicesIndex', () => import('./ServicesPage.jsx'));
+const OtherPage = routeComponent('OtherPage', () => import('./OtherServicesPage.jsx'));
+const ServiceDetail = routeComponent('ServiceDetail', () => import('./ServiceDetailPage.jsx'));
+const IndustriesPage = routeComponent('IndustriesPage', () => import('./IndustriesPage.jsx'));
+const IndustryDetail = routeComponent('IndustryDetail', () => import('./IndustryDetailPage.jsx'));
+const ContactLanding = routeComponent('ContactLanding', () => import('./ContactPage.jsx'));
+const NotFoundPage = routeComponent('NotFoundPage', () => import('./NotFoundPage.jsx'));
 
 function getPage(pathname) {
   const path = pathname.replace(/\/+$/, '') || '/';
@@ -30,30 +45,50 @@ function getPage(pathname) {
   return { kind: 'not-found', title: 'Page Not Found' };
 }
 
+function PageEffects({ page }) {
+  useEffect(() => {
+    let disposed = false;
+    let site;
+    let anchorFrame = null;
+    import('../site.js').then(({ BaigBotsSite }) => {
+      if (disposed) return;
+      site = new BaigBotsSite();
+      site.componentDidMount();
+      anchorFrame = window.requestAnimationFrame(() => {
+        if (window.location.hash) {
+          try {
+            document.getElementById(decodeURIComponent(window.location.hash.slice(1)))?.scrollIntoView({ block: 'start', behavior: 'instant' });
+          } catch (_) { /* Ignore malformed URL fragments. */ }
+        } else if (Number.isFinite(window.__bbInitialScrollY)) {
+          window.scrollTo({ top: window.__bbInitialScrollY, behavior: 'instant' });
+          delete window.__bbInitialScrollY;
+        }
+      });
+    });
+    return () => { disposed = true; if (anchorFrame !== null) window.cancelAnimationFrame(anchorFrame); site?.componentWillUnmount(); };
+  }, []);
+  return null;
+}
+
 export function Page() {
   const page = getPage(typeof window === 'undefined' ? '/' : window.location.pathname);
-  useEffect(() => {
-    document.title = page.kind === 'home' ? 'Baig Bots — Digital Solutions' : `${page.title} — Baig Bots`;
-    const site = new BaigBotsSite();
-    site.componentDidMount();
-    const anchorFrame = page.kind === 'industry-detail' && window.location.hash
-      ? window.requestAnimationFrame(() => document.getElementById(decodeURIComponent(window.location.hash.slice(1)))?.scrollIntoView({ block: 'start', behavior: 'instant' }))
-      : null;
-    return () => { if (anchorFrame !== null) window.cancelAnimationFrame(anchorFrame); site.componentWillUnmount(); };
-  }, []);
+  useEffect(() => { document.title = page.kind === 'home' ? 'Baig Bots — Digital Solutions' : `${page.title} — Baig Bots`; }, []);
 
   return (
     <div id="bb" data-theme={getSavedTheme()} data-canvas-width="1440" data-canvas-height="8000" data-document-role="page" data-label={`Website — ${page.title}`}>
       <GlobalEffects />
       <Header inner={page.kind !== 'home'} />
-      {page.kind === 'home' && <HomePage />}
-      {page.kind === 'services' && <ServicesIndex />}
-      {page.kind === 'other' && <OtherPage />}
-      {page.kind === 'detail' && <ServiceDetail service={page.service} />}
-      {page.kind === 'industries' && <IndustriesPage />}
-      {page.kind === 'industry-detail' && <IndustryDetail industry={page.industry} />}
-      {page.kind === 'not-found' && <NotFoundPage />}
-      {page.kind === 'contact' && <ContactLanding />}
+      <Suspense fallback={<main className="inner-page" style={{ minHeight: '75vh' }} />}>
+        {page.kind === 'home' && <HomePage />}
+        {page.kind === 'services' && <ServicesIndex />}
+        {page.kind === 'other' && <OtherPage />}
+        {page.kind === 'detail' && <ServiceDetail service={page.service} />}
+        {page.kind === 'industries' && <IndustriesPage />}
+        {page.kind === 'industry-detail' && <IndustryDetail industry={page.industry} />}
+        {page.kind === 'not-found' && <NotFoundPage />}
+        {page.kind === 'contact' && <ContactLanding />}
+        <PageEffects page={page} />
+      </Suspense>
       {page.kind !== 'detail' && <Contact inner={page.kind !== 'home'} />}
       <Footer inner={page.kind !== 'home'} />
     </div>

@@ -4,6 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baig Bots — Digital Solutions</title>
+  <script>
+    // The route body loads asynchronously. Browser scroll restoration can run
+    // against the short loading layout and clamp a saved position to the footer.
+    (() => {
+      const key = `bb:scroll:${location.pathname}${location.search}`;
+      const navigation = performance.getEntriesByType('navigation')[0];
+      history.scrollRestoration = 'manual';
+      try {
+        if (navigation?.type === 'reload' || navigation?.type === 'back_forward') {
+          const saved = sessionStorage.getItem(key);
+          if (saved !== null) window.__bbInitialScrollY = Math.max(0, Number(saved) || 0);
+        }
+        addEventListener('pagehide', () => sessionStorage.setItem(key, String(window.scrollY)));
+      } catch (_) { /* Storage may be unavailable in a private browser. */ }
+    })();
+  </script>
 </head>
 <body>
   <div id="root"></div>
