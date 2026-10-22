@@ -1,14 +1,7 @@
 import { useEffect, useRef } from 'react';
-import { coreServices, servicePath } from './serviceData.js';
 import { innerIndustries, innerServices, innerServicePath } from './innerData.js';
 
 const serviceLinks = [
-  { title: 'All Services', href: '/services' },
-  ...coreServices.map((service) => ({ title: service.title, href: servicePath(service) })),
-  { title: 'Other', href: '/services/other' },
-];
-
-const innerLinks = [
   { title: 'All Services', href: '/services' },
   ...innerServices.map((service) => ({ title: service.title, href: innerServicePath(service) })),
   { title: 'Other', href: '/services/other' },
@@ -28,7 +21,7 @@ function NavDropdown({ label, links, mobile = false }) {
   </details>;
 }
 
-export function Header({ inner = false }) {
+export function Header() {
   const headerRef = useRef(null);
 
   useEffect(() => {
@@ -59,7 +52,7 @@ export function Header({ inner = false }) {
       </a>
       <nav className="links" aria-label="Primary">
         <a href="/" data-scr="">Home</a>
-        <NavDropdown label="Services" links={inner ? innerLinks : serviceLinks}/>
+        <NavDropdown label="Services" links={serviceLinks}/>
         <NavDropdown label="Industries" links={industryLinks}/>
         <a href="/contact" data-scr="">Contact Us</a>
       </nav>
@@ -76,7 +69,7 @@ export function Header({ inner = false }) {
     </div>
     <nav className="mobile-panel" data-panel="" aria-label="Mobile primary">
       <a href="/">Home</a>
-      <NavDropdown label="Services" links={inner ? innerLinks : serviceLinks} mobile/>
+      <NavDropdown label="Services" links={serviceLinks} mobile/>
       <NavDropdown label="Industries" links={industryLinks} mobile/>
       <a href="/contact">Contact Us</a>
     </nav>
