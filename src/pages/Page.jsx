@@ -75,7 +75,7 @@ export function Page() {
   useEffect(() => { document.title = page.kind === 'home' ? 'Baig Bots — Digital Solutions' : `${page.title} — Baig Bots`; }, []);
 
   return (
-    <div id="bb" data-theme={getSavedTheme()} data-canvas-width="1440" data-canvas-height="8000" data-document-role="page" data-label={`Website — ${page.title}`}>
+    <div id="bb" className={page.kind === 'home' ? 'home-page' : undefined} data-theme={getSavedTheme()} data-canvas-width="1440" data-canvas-height="8000" data-document-role="page" data-label={`Website — ${page.title}`}>
       <GlobalEffects />
       <Header inner={page.kind !== 'home'} />
       <Suspense fallback={<main className="inner-page" style={{ minHeight: '75vh' }} />}>

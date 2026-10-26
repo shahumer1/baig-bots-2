@@ -5,7 +5,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import { createServer } from 'vite';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { allServices } from './src/components/serviceData.js';
+import { allServices, coreServices, otherServices } from './src/components/serviceData.js';
 import { innerIndustries, innerServices } from './src/components/innerData.js';
 import { serviceGrowthData } from './src/components/serviceGrowthData.js';
 
@@ -109,10 +109,11 @@ assert.equal(quickForm.elements.description.value, suggestions[3].getAttribute('
 window.document.querySelector('.hero-cta-card .btn').click();
 assert.equal(quickForm.elements.problem.value, '', 'hero project link did not open a fresh quick enquiry');
 const serviceLink = window.document.querySelector('#services .card .more');
+assert.deepEqual([...window.document.querySelectorAll('#services .card .more')].map((link) => link.getAttribute('href')), coreServices.map((service) => `/contact?service=${encodeURIComponent(service.title)}`), 'core service CTAs need working contact-page fallbacks');
 serviceLink.click();
 assert.equal(window.document.querySelector('[data-quick-brief] [name="problem"]').value, 'AI Solutions & Intelligent Agents', 'service click did not preselect the quick enquiry');
-window.document.querySelector('#services .line-item').click();
-assert.equal(window.document.querySelector('[data-quick-brief] [name="problem"]').value, 'Web & Mobile Development', 'service line click did not preselect the quick enquiry');
+const serviceLineLinks = [...window.document.querySelectorAll('#services .line-item')];
+assert.deepEqual(serviceLineLinks.map((link) => link.getAttribute('href')), otherServices.map((service) => `/services/${service.slug}`), 'complementary service rows should link to their matching pages');
 window.document.querySelector('[data-pick="Retainer support"]').click();
 assert.equal(quickForm.elements.problem.value, 'Retainer support', 'engagement choice did not preselect the quick enquiry');
 window.document.querySelector('[data-uc-plan="AI support assistant"]').click();

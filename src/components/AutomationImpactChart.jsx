@@ -1,103 +1,68 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 
-// Illustrative values, not measured customer results.
-const metrics = [
-  { key: 'time', label: 'Time back', ai: 68, without: 12 },
-  { key: 'accuracy', label: 'Accuracy', ai: 92, without: 74 },
-  { key: 'routine', label: 'Routine work', ai: 82, without: 16 },
+const drivers = [
+  { key: 'booking', number: '01', title: 'AI booking agent', detail: 'Enquiries become bookings', percent: 20, start: 0 },
+  { key: 'followup', number: '02', title: 'AI follow-ups', detail: 'Missed leads return', percent: 20, start: 20 },
+  { key: 'qualify', number: '03', title: 'Lead qualification', detail: 'Sales speaks to ready buyers', percent: 15, start: 40 },
+  { key: 'reminders', number: '04', title: 'No-show reminders', detail: 'Fewer missed appointments', percent: 10, start: 55 },
 ];
+const totalGrowth = drivers.reduce((total, driver) => total + driver.percent, 0);
 
-const xPositions = [104, 243, 382];
-const chartTop = 30;
-const chartBottom = 210;
-const chartY = (value) => chartBottom - (chartBottom - chartTop) * value / 100;
-const sharedStart = { x: 58, y: chartY(metrics[0].without) };
-const linePath = (series) => `M ${sharedStart.x} ${sharedStart.y} ${metrics.map((metric, index) =>
-  `L ${xPositions[index]} ${chartY(metric[series])}`
-).join(' ')}`;
-const gridLevels = [0, 25, 50, 75, 100];
-const lineVariants = (duration, delay = 0) => ({
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: { pathLength: 1.08, opacity: 1, transition: { pathLength: { duration, delay, ease: 'easeInOut' }, opacity: { duration: 0.15, delay } } },
-});
+function DriverIcon({ kind }) {
+  const common = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round' };
+  if (kind === 'booking') return <svg viewBox="0 0 24 24" aria-hidden="true" {...common}><rect x="3.5" y="5.5" width="17" height="15" rx="2" /><path d="M7.5 3.5v4M16.5 3.5v4M3.5 9.5h17M8 14h3l1.4 1.5L16 12" /></svg>;
+  if (kind === 'followup') return <svg viewBox="0 0 24 24" aria-hidden="true" {...common}><path d="M20 11.5a8 8 0 1 1-2.4-5.7M20 4v5h-5" /><path d="M8.5 13h7M12 9.5v7" /></svg>;
+  if (kind === 'qualify') return <svg viewBox="0 0 24 24" aria-hidden="true" {...common}><circle cx="12" cy="12" r="8.5" /><circle cx="12" cy="12" r="4.5" /><path d="m9.5 12 1.7 1.7 3.3-3.5" /></svg>;
+  return <svg viewBox="0 0 24 24" aria-hidden="true" {...common}><path d="M6 16.5h12c-1.4-1.3-2-2.9-2-5V9a4 4 0 0 0-8 0v2.5c0 2.1-.6 3.7-2 5ZM10 19a2 2 0 0 0 4 0" /><path d="M18.5 5.5c1.1.9 1.8 2.1 2 3.5M5.5 5.5C4.4 6.4 3.7 7.6 3.5 9" /></svg>;
+}
 
 export function AutomationImpactChart() {
   const [active, setActive] = useState(null);
-  const selected = metrics.find((metric) => metric.key === active);
 
   return (
-    <div className="impact-card" data-tilt="">
+    <div className="impact-card">
       <div className="impact-heading">
         <span className="impact-kicker">Automation opportunity</span>
-        <h3>Make more time for meaningful work.</h3>
-        <p>See what repetitive work could give back to your team.</p>
+        <h3>Four ways automation can help you grow.</h3>
       </div>
 
-      <div className="impact-plot">
-        <motion.svg
-          viewBox="0 0 440 230"
-          role="img"
-          aria-label="Line chart starting both series at the same point, then comparing with AI automation and without automation for time back, accuracy, and routine work"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.45 }}
-        >
-          {gridLevels.map((level) => (
-            <g key={level} className="impact-grid-line">
-              <line x1="48" x2="398" y1={chartY(level)} y2={chartY(level)} />
-              <text x="40" y={chartY(level) + 4} textAnchor="end">{level}</text>
-            </g>
-          ))}
-          {xPositions.map((x, index) => (
-            <line key={metrics[index].key} className="impact-guide" x1={x} x2={x} y1={chartTop} y2={chartBottom} />
-          ))}
-          <motion.path className="impact-line without-halo" d={linePath('without')} variants={lineVariants(1.25)} />
-          <motion.path
-            className="impact-line without"
-            d={linePath('without')}
-            variants={lineVariants(1.25)}
-          />
-          <motion.path
-            className="impact-line ai"
-            d={linePath('ai')}
-            variants={lineVariants(1.45, 0.15)}
-          />
-          <circle className="impact-dot without" cx={sharedStart.x} cy={sharedStart.y} r="4.5" />
-          {metrics.map((metric, index) => (
-            <g key={metric.key}>
-              <motion.circle className="impact-dot without" cx={xPositions[index]} cy={chartY(metric.without)} r="4.5"
-                variants={{ hidden: { scale: 0, opacity: 0 }, visible: { scale: 1, opacity: 1, transition: { delay: 1.25 + index * 0.07, duration: 0.25 } } }} />
-              <motion.circle className="impact-dot ai" cx={xPositions[index]} cy={chartY(metric.ai)} r="5"
-                variants={{ hidden: { scale: 0, opacity: 0 }, visible: { scale: 1, opacity: 1, transition: { delay: 1.6 + index * 0.07, duration: 0.25 } } }} />
-            </g>
-          ))}
-        </motion.svg>
-        {selected && (
-          <div className="impact-tooltip" role="status">
-            <strong>{selected.label}</strong>
-            <span>With AI automation {selected.ai}%</span>
-            <span>Without automation {selected.without}%</span>
+      <div className="impact-content">
+        <div className="impact-donut" role="img" aria-label="Illustrative growth opportunity: 20 percent from AI booking, 20 percent from follow-ups, 15 percent from lead qualification and 10 percent from reminders">
+          <svg viewBox="0 0 240 240" aria-hidden="true">
+            <circle className="impact-ring-depth" cx="120" cy="129" r="77" pathLength="100" />
+            <circle className="impact-ring-track" cx="120" cy="120" r="77" pathLength="100" />
+            {drivers.map((driver, index) => (
+              <motion.circle key={driver.key} className={`impact-ring-segment ${driver.key}${active === driver.key ? ' is-active' : ''}`}
+                cx="120" cy="120" r="77" pathLength="100" transform={`rotate(${-90 + driver.start * 3.6} 120 120)`}
+                initial={{ strokeDasharray: '0 100' }}
+                whileInView={{ strokeDasharray: `${driver.percent} ${100 - driver.percent}` }}
+                viewport={{ once: true, amount: 0.55 }}
+                transition={{ duration: 0.55, delay: index * 0.24, ease: 'easeOut' }} />
+            ))}
+          </svg>
+          <div className="impact-donut-center">
+            <strong>+{totalGrowth}%</strong>
+            <span>example growth</span>
           </div>
-        )}
-      </div>
+        </div>
 
-      <div className="impact-metrics">
-        {metrics.map((metric) => (
-          <button key={metric.key} className="impact-metric" type="button"
-            aria-label={`${metric.label}: with AI automation ${metric.ai} percent, without automation ${metric.without} percent`}
-            onMouseEnter={() => setActive(metric.key)} onMouseLeave={() => setActive(null)}
-            onFocus={() => setActive(metric.key)} onBlur={() => setActive(null)} onClick={() => setActive(metric.key)}>
-            <span>{metric.label}</span>
-            <strong>{metric.ai}% <small>/ {metric.without}%</small></strong>
-          </button>
-        ))}
+        <div className="impact-drivers">
+          {drivers.map((driver) => (
+            <button key={driver.key} className={`impact-driver ${driver.key}${active === driver.key ? ' is-active' : ''}`} type="button"
+              aria-pressed={active === driver.key}
+              aria-label={`${driver.title}: illustrative ${driver.percent} percent growth. ${driver.detail}`}
+              onMouseEnter={() => setActive(driver.key)} onMouseLeave={() => setActive(null)}
+              onFocus={() => setActive(driver.key)} onBlur={() => setActive(null)}
+              onClick={() => setActive(active === driver.key ? null : driver.key)}>
+              <span className="impact-driver-icon"><DriverIcon kind={driver.key} /></span>
+              <span className="impact-driver-copy"><small>{driver.number}</small><strong>{driver.title}</strong></span>
+              <b>+{driver.percent}%</b>
+            </button>
+          ))}
+        </div>
       </div>
-      <div className="impact-legend">
-        <span><i className="ai" />With AI automation</span>
-        <span><i className="without" />Without automation</span>
-      </div>
-      <p className="impact-note">Illustrative scenario · Actual impact depends on your workflow.</p>
+      <p className="impact-note">Illustrative example · Results depend on your business.</p>
     </div>
   );
 }

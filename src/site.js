@@ -114,30 +114,16 @@ export class BaigBotsSite {
     if (toggle) { this._on(toggle, 'click', () => update(this.dark ? 'light' : 'dark', true)); }
   }
 
-  /* ---------- pointer: cursor ring, flashlight grid, shared position ---------- */
+  /* ---------- pointer: flashlight grid and shared position ---------- */
   _pointer({ $, reduce }) {
     if (reduce) { return; }
-    const ring = $('[data-cur-ring]');
-    const dot = $('[data-cur-dot]');
     const rev = $('[data-reveal]');
-    const rx = gsap.quickTo(ring, 'x', { duration: 0.45, ease: 'power3' });
-    const ry = gsap.quickTo(ring, 'y', { duration: 0.45, ease: 'power3' });
-    const dx = gsap.quickTo(dot, 'x', { duration: 0.1, ease: 'power2' });
-    const dy = gsap.quickTo(dot, 'y', { duration: 0.1, ease: 'power2' });
-    let shown = false;
     const p = this.ptr;
     this._on(document, 'pointermove', (e) => {
       if (e.pointerType === 'touch') { return; }
       p.x = e.clientX;
       p.y = e.clientY;
       p.on = true;
-      if (!shown) {
-        shown = true;
-        gsap.set([ring, dot], { x: e.clientX, y: e.clientY });
-        gsap.to([ring, dot], { opacity: 1, duration: 0.3 });
-        rev.style.opacity = '1';
-      }
-      rx(e.clientX); ry(e.clientY); dx(e.clientX); dy(e.clientY);
       const t = e.target;
       const overSlider = !!(t && t.closest && t.closest('.marqs,[data-sugg-slider]'));
       rev.style.opacity = overSlider ? '0' : '1';
@@ -146,15 +132,11 @@ export class BaigBotsSite {
         rev.style.setProperty('--cy', e.clientY + 'px');
       }
       if (t && t.closest) {
-        ring.classList.toggle('hot', !!t.closest('a,button,[data-card],[data-stage],label,select,[role="tab"]'));
-        ring.classList.toggle('txt', !!t.closest('input[type="text"],input[type="email"],input[type="tel"],input[type="number"],textarea'));
         rev.classList.toggle('on-dark', !!t.closest('.stmt,.cta,.marqs,.foot,.nav'));
       }
     });
     this._on(document.documentElement, 'pointerleave', () => {
-      shown = false;
       p.on = false;
-      gsap.to([ring, dot], { opacity: 0, duration: 0.2 });
       rev.style.opacity = '0';
     });
   }
@@ -990,12 +972,12 @@ export class BaigBotsSite {
     this._scrollTo(form);
   }
 
-  _quick({ $, $$ }) {
+  _quick({ root, $, $$ }) {
     const form = $('[data-quick-brief]');
     if (!form) { return; }
     const select = form.elements.problem;
     const status = $('[data-quick-status]', form);
-    const links = $$('#services .card .more, #services .line-item');
+    const links = $$('#services .card .more');
     links.forEach((link) => {
       const title = link.closest('.card, .line-item')?.querySelector('h3, h4')?.textContent.trim();
       if (!title) { return; }
@@ -1005,10 +987,14 @@ export class BaigBotsSite {
         option.textContent = title;
         select.add(option);
       }
-      this._on(link, 'click', (event) => {
-        event.preventDefault();
-        this._toQuick(title);
-      });
+    });
+    this._on(root, 'click', (event) => {
+      const link = event.target.closest?.('#services .card .more');
+      if (!link || window.matchMedia?.('(max-width: 767px)').matches) { return; }
+      const title = link.closest('.card')?.querySelector('h3')?.textContent.trim();
+      if (!title) { return; }
+      event.preventDefault();
+      this._toQuick(title);
     });
     const control = select.closest('.ctl');
     const trigger = document.createElement('button');
@@ -1384,7 +1370,13 @@ export class BaigBotsSite {
       const mx = parseFloat(el.max) || 100;
       el.style.setProperty('--p', (((parseFloat(el.value) - mn) / (mx - mn)) * 100).toFixed(1) + '%');
     };
-    const ring = q('[data-ring]');
+    const rings = [
+      { el: q('[data-ring="share"]'), portion: (share) => share },
+      { el: q('[data-ring="saved"]'), portion: (share) => share },
+      { el: q('[data-ring="cost"]'), portion: (share) => share },
+      { el: q('[data-ring="today"]'), portion: () => 1 },
+      { el: q('[data-ring="after"]'), portion: (share) => 1 - share }
+    ].filter(({ el }) => el);
     const after = q('[data-bar="after"]');
     const set = (sel, txt) => { const el = q(sel); if (el) { el.textContent = txt; } };
     const calc = (animate) => {
@@ -1419,21 +1411,21 @@ export class BaigBotsSite {
       const d = reduce || !animate ? 0 : 0.7;
       if (d === 0) {
         shown.hours = saved; shown.cost = cost; shown.fte = fte; paint();
-        if (ring) { gsap.set(ring, { strokeDashoffset: 100 - s * 100 }); }
+        rings.forEach(({ el, portion }) => gsap.set(el, { strokeDashoffset: 100 - portion(s) * 100 }));
         if (after) { gsap.set(after, { scaleX: 1 - s }); }
       } else {
         gsap.to(shown, { hours: saved, cost, fte, duration: d, ease: 'power3.out', overwrite: true, onUpdate: paint });
-        if (ring) { gsap.to(ring, { strokeDashoffset: 100 - s * 100, duration: d, ease: 'power3.out', overwrite: true }); }
+        rings.forEach(({ el, portion }) => gsap.to(el, { strokeDashoffset: 100 - portion(s) * 100, duration: d, ease: 'power3.out', overwrite: true }));
         if (after) { gsap.to(after, { scaleX: 1 - s, duration: d, ease: 'power3.out', overwrite: true }); }
       }
-      const pr = box.querySelector('input[name="proc"]:checked');
+      const pr = box.querySelector('[name="proc"]');
       this._estimate = { n, h, s, r, c, total, saved, cost, fte, proc: pr ? pr.value : '' };
     };
     ['people', 'hours', 'share', 'rate', 'cur'].forEach((k) => {
       this._on(inp[k], 'input', () => calc(true));
       this._on(inp[k], 'change', () => calc(true));
     });
-    $$('input[name="proc"]', box).forEach((el) => this._on(el, 'change', () => calc(true)));
+    this._on(q('[name="proc"]'), 'change', () => calc(true));
     calc(false);
     if (!reduce) {
       ScrollTrigger.create({
@@ -1442,7 +1434,7 @@ export class BaigBotsSite {
         once: true,
         onEnter: () => {
           shown.hours = 0; shown.cost = 0; shown.fte = 0;
-          if (ring) { gsap.set(ring, { strokeDashoffset: 100 }); }
+          rings.forEach(({ el }) => gsap.set(el, { strokeDashoffset: 100 }));
           if (after) { gsap.set(after, { scaleX: 1 }); }
           calc(true);
         }
@@ -1691,6 +1683,7 @@ export class BaigBotsSite {
       this._on(el, 'pointerleave', up);
     });
     $$('.btn,.bbtn,[data-card]').forEach((el) => {
+      if (el.hasAttribute('data-card') && window.matchMedia('(max-width: 767px)').matches) { return; }
       this._on(el, 'pointerdown', (e) => {
         const r = el.getBoundingClientRect();
         const s = Math.max(r.width, r.height) * 2;
