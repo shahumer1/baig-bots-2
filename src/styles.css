@@ -230,6 +230,7 @@ body{margin:0;background:var(--bg)}
 #bb[data-theme="dark"] .theme-toggle .theme-sun{display:block}
 .menu-btn{display:none;width:46px;height:46px;place-items:center;color:var(--tone-fff)}
 .menu-btn svg{display:block}
+.menu-glyph{display:grid;gap:6px;width:22px}.menu-glyph i{display:block;width:22px;height:2px;background:currentColor}
 .mobile-panel{display:none;flex-direction:column;gap:4px;padding:8px clamp(20px,4vw,56px) 24px;border-top:1px solid var(--alpha-cecccc-p14)}
 .mobile-panel a{padding:14px 0;font:600 1.15rem var(--f-display);color:var(--tone-fff);border-bottom:1px solid var(--alpha-cecccc-p12)}
 .nav.open .mobile-panel{display:flex}

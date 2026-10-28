@@ -3,6 +3,7 @@ import { Page } from './pages/Page.jsx';
 import { getSavedTheme } from './theme/theme.js';
 import './theme/colors.css';
 import './styles.css';
+import './home-premium.css';
 import './inner-pages.css';
 import './inner-hero.css';
 import './custom-software.css';

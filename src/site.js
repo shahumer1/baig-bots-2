@@ -56,7 +56,7 @@ export class BaigBotsSite {
     this.root = root;
     const $ = (s, c) => (c || root).querySelector(s);
     const $$ = (s, c) => Array.from((c || root).querySelectorAll(s));
-    const reduce = false;
+    const reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     const fine = !!(window.matchMedia && window.matchMedia('(any-hover: hover) and (any-pointer: fine)').matches);
     gsap.registerPlugin(ScrollTrigger, SplitText, DrawSVGPlugin, ScrambleTextPlugin);
     this.scroller = this._findScroller(root);
@@ -70,6 +70,7 @@ export class BaigBotsSite {
     this._safe('logo', () => this._logo(ctx));
     this._safe('progress', () => this._progress(ctx));
     this._safe('hero', () => this._hero(ctx));
+    this._safe('home editorial', () => this._homeEditorial(ctx));
     this._safe('three', () => this._hero3d(ctx));
     this._safe('headings', () => this._headings(ctx));
     this._safe('cards', () => this._cards(ctx));
@@ -132,7 +133,7 @@ export class BaigBotsSite {
         rev.style.setProperty('--cy', e.clientY + 'px');
       }
       if (t && t.closest) {
-        rev.classList.toggle('on-dark', !!t.closest('.stmt,.cta,.marqs,.foot,.nav'));
+        rev.classList.toggle('on-dark', !!t.closest('.stmt,.cta,.marqs,.foot,.nav,.home-vision'));
       }
     });
     this._on(document.documentElement, 'pointerleave', () => {
@@ -241,50 +242,43 @@ export class BaigBotsSite {
     }
   }
 
-  /* ---------- hero: circuit draw, kinetic headline, entrance ---------- */
-  _hero({ $, $$, reduce, fine }) {
+  /* ---------- hero: circuit draw and entrance ---------- */
+  _hero({ $, $$, reduce }) {
     const h1 = $('[data-hero-h1]');
     if (!h1) { return; }
-    this._heroChars = [];
-    if (fine && !reduce) {
-      this._proximity(() => this._heroChars, 150, (c, k) => { c.el.style.setProperty('--k', k.toFixed(3)); });
-    }
     if (reduce) { return; }
     this._animateCircuit('.hero-circuit', { $$ });
     gsap.from('[data-hero="eyebrow"]', { y: 16, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.1 });
+    gsap.from(h1, { y: 34, opacity: 0, duration: 1.05, ease: 'expo.out', delay: 0.25 });
     gsap.from('[data-hero="lead"]', { y: 24, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 0.95 });
     gsap.from('[data-hero="cta"] > *', { y: 22, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 1.1, stagger: 0.1 });
-    gsap.from('.hero-stage .chip', { scale: 0.8, opacity: 0, duration: 0.8, ease: 'back.out(2)', delay: 1.4, stagger: 0.15 });
-    gsap.delayedCall(2.4, () => h1.classList.add('is-ready'));
+  }
 
-    let wave = null;
-    SplitText.create(h1, {
-      type: 'lines,words,chars',
-      mask: 'lines',
-      charsClass: 'ch',
-      linesClass: 'ln',
-      autoSplit: true,
-      onSplit: (self) => {
-        const kinChars = $$('.kin .ch', h1);
-        const kin = $('.kin', h1);
-        this._heroChars = self.chars.filter((el) => !el.closest('.kin')).map((el) => ({ el, k: 0 }));
-        if (wave) { wave.kill(); wave = null; }
-        if (kin && kinChars.length) {
-          kin.style.display = 'inline-block';
-          kin.style.width = '';
-          gsap.set(kinChars, { '--w': 800, '--wd': 100 });
-          kin.style.width = Math.ceil(kin.getBoundingClientRect().width) + 'px';
-          gsap.set(kinChars, { '--w': 700, '--wd': 100 });
-        }
-        const intro = gsap.from(self.chars, { yPercent: 118, rotate: 5, opacity: 0, duration: 1.1, stagger: 0.02, ease: 'expo.out', delay: 0.3 });
-        if (kinChars.length) {
-          wave = gsap.timeline({ repeat: -1, repeatDelay: 0.8, delay: 2 });
-          wave.to(kinChars, { '--w': 260, '--wd': 75, duration: 0.8, ease: 'sine.inOut', stagger: 0.1 })
-              .to(kinChars, { '--w': 800, '--wd': 100, duration: 0.8, ease: 'sine.inOut', stagger: 0.1 }, '>-0.3')
-              .to(kinChars, { '--w': 700, '--wd': 100, duration: 0.6, ease: 'sine.inOut', stagger: 0.06 }, '>-0.2');
-        }
-        return intro;
-      }
+  /* ---------- hero 3D: Three.js neural core, theme aware, click shockwave ---------- */
+  _homeEditorial({ $, $$, reduce }) {
+    const section = $('.home-intro');
+    if (!section || reduce) return;
+    const heading = $('.home-intro-main h2', section);
+    if (heading) {
+      SplitText.create(heading, {
+        type: 'lines,words', mask: 'lines', autoSplit: true,
+        onSplit: (self) => gsap.from(self.words, {
+          yPercent: 110, filter: 'blur(9px)', duration: 1.15, stagger: .055,
+          ease: 'expo.out', scrollTrigger: { trigger: heading, start: 'top 83%', toggleActions: 'play none none reverse' }
+        })
+      });
+    }
+    $$('[data-home-reveal]', section).filter((el) => el !== heading).forEach((el) => {
+      gsap.from(el, { y: 35, opacity: 0, duration: .9, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none reverse' } });
+    });
+    gsap.fromTo($('.home-intro-rule', section), { scaleX: 0 }, { scaleX: 1, ease: 'none',
+      scrollTrigger: { trigger: section, start: 'top 75%', end: 'bottom 80%', scrub: true } });
+    const factsHeading = $('.home-facts-head h2');
+    if (factsHeading) SplitText.create(factsHeading, {
+      type: 'lines,words', mask: 'lines', autoSplit: true,
+      onSplit: (self) => gsap.from(self.words, { yPercent: 105, opacity: 0, duration: .95,
+        stagger: .06, ease: 'expo.out', scrollTrigger: { trigger: factsHeading, start: 'top 84%', toggleActions: 'play none none reverse' } })
     });
   }
 

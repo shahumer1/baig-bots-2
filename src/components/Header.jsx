@@ -63,7 +63,7 @@ export function Header() {
           <svg className="theme-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.7"></circle><path d="M12 2V4M12 20V22M4.93 4.93L6.35 6.35M17.65 17.65L19.07 19.07M2 12H4M20 12H22M4.93 19.07L6.35 17.65M17.65 6.35L19.07 4.93" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round"></path></svg>
         </button>
         <button className="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" data-menu="">
-          <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M4 9H22M4 17H22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"></path></svg>
+          <span className="menu-glyph" aria-hidden="true"><i/><i/></span>
         </button>
       </div>
     </div>

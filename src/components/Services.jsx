@@ -1,99 +1,152 @@
-import { ServiceIcon } from './ServiceIcon.jsx';
+import { useEffect, useRef } from 'react';
+import { innerServices, innerServicePath } from './innerData.js';
+import { coreServices } from './serviceData.js';
+import './ServicesGallery.css';
+
+// The former card grid's useful descriptions now live in the slider.
+const serviceCopy = {
+  'web-development': coreServices[2].description,
+  'cloud-infrastructure': coreServices[6].description,
+  'ai-agents-chatbots': coreServices[0].description,
+  'computer-vision': 'Visual analysis and AI document processing that turn images and video into useful business signals.',
+  'crm-erp-systems': 'Customer and admin portals, connected records, dashboards and workflows built around your team.',
+  'workflow-automation': coreServices[1].description,
+  'api-integrations': coreServices[3].description,
+  'digital-transformation': 'Connect the tools, people and processes behind your business with a practical delivery roadmap.',
+};
+
+const galleryServices = innerServices.map((service) => ({
+  ...service,
+  href: innerServicePath(service),
+  detail: serviceCopy[service.slug] || service.intro,
+}));
+
+function ServicesGallery() {
+  const galleryRef = useRef(null);
+
+  useEffect(() => {
+    const gallery = galleryRef.current;
+    if (!gallery) return;
+    const stage = gallery.querySelector('.sg-stage');
+    const cards = [...gallery.querySelectorAll('.sg-card')];
+    const counter = gallery.querySelector('.sg-counter strong');
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const fine = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const total = cards.length;
+    let target = 0;
+    let progress = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+    let targetX = 0;
+    let targetY = 0;
+    let frame = 0;
+    let last = performance.now();
+    let focused = -1;
+    const clamp = (value) => Math.max(0, Math.min(1, value));
+
+    const draw = () => {
+      const width = stage.clientWidth;
+      const compact = width < 700;
+      const radius = compact ? width * .72 : Math.min(width * .46, 650);
+      const depth = compact ? 105 : 250;
+      const lean = compact ? 36 : 72;
+      let nearest = 0;
+      let nearestDistance = Infinity;
+
+      cards.forEach((card, index) => {
+        let slot = index - progress * (total - 1);
+        slot = ((slot + total / 2) % total + total) % total - total / 2;
+        const distance = Math.abs(slot);
+        if (distance < nearestDistance) { nearest = index; nearestDistance = distance; }
+        const angle = slot * (compact ? .46 : .41);
+        const focus = Math.max(0, Math.cos(angle));
+        const edge = clamp((total / 2 - distance) / .6);
+        const x = Math.sin(angle) * radius + pointerX * (9 + focus * 13);
+        const y = (1 - focus) * (compact ? 55 : 90) + Math.sin(angle * 1.15) * lean + pointerY * (6 + focus * 11);
+        const z = (focus - .42) * depth;
+        const scale = .76 + .43 * Math.exp(-distance * distance * 1.8);
+        card.style.transform = `translate3d(calc(-50% + ${x.toFixed(2)}px), calc(-50% + ${y.toFixed(2)}px), ${z.toFixed(2)}px) rotateY(${(-angle * 55).toFixed(2)}deg) rotateZ(${(slot * (compact ? 2.4 : 3.2)).toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+        card.style.opacity = (edge * (.4 + .6 * Math.exp(-distance * distance * 1.5))).toFixed(3);
+        card.style.zIndex = String(Math.round(focus * 100));
+        card.tabIndex = edge < .15 ? -1 : 0;
+        card.style.setProperty('--sg-glint-x', `${50 + pointerX * 22}%`);
+        card.style.setProperty('--sg-glint-y', `${30 + pointerY * 18}%`);
+      });
+      cards.forEach((card, index) => { card.dataset.center = index === nearest ? 'true' : 'false'; });
+      cards[nearest].style.zIndex = '200';
+      if (focused !== nearest) {
+        focused = nearest;
+        counter.textContent = String(nearest + 1).padStart(2, '0');
+      }
+      gallery.dataset.ready = 'true';
+    };
+
+    const tick = (now) => {
+      const delta = Math.max(0, Math.min(50, now - last));
+      last = now;
+      const ease = motion.matches ? 1 : 1 - Math.exp(-delta / 170);
+      progress += (target - progress) * ease;
+      pointerX += (targetX - pointerX) * ease;
+      pointerY += (targetY - pointerY) * ease;
+      if (Math.abs(progress - target) < .0002) progress = target;
+      if (Math.abs(pointerX - targetX) < .001) pointerX = targetX;
+      if (Math.abs(pointerY - targetY) < .001) pointerY = targetY;
+      draw();
+      frame = 0;
+      if (progress !== target || pointerX !== targetX || pointerY !== targetY) start();
+    };
+    const start = () => { if (!frame) { last = performance.now(); frame = requestAnimationFrame(tick); } };
+    const updateScroll = () => {
+      const rect = gallery.getBoundingClientRect();
+      const stickyTop = parseFloat(getComputedStyle(stage).top) || 0;
+      const travel = Math.max(1, gallery.offsetHeight - stage.offsetHeight);
+      const next = clamp((stickyTop - rect.top) / travel);
+      if (Math.abs(next - target) > .0002) { target = next; start(); }
+    };
+    const move = (event) => {
+      if (!fine.matches || motion.matches) return;
+      const rect = stage.getBoundingClientRect();
+      targetX = ((event.clientX - rect.left) / rect.width - .5) * 2;
+      targetY = ((event.clientY - rect.top) / rect.height - .5) * 2;
+      start();
+    };
+    const leave = () => { targetX = 0; targetY = 0; start(); };
+    const resize = () => { updateScroll(); draw(); };
+    updateScroll();
+    progress = target;
+    draw();
+    window.addEventListener('scroll', updateScroll, { passive: true });
+    window.addEventListener('resize', resize);
+    stage.addEventListener('pointermove', move, { passive: true });
+    stage.addEventListener('pointerleave', leave);
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', updateScroll);
+      window.removeEventListener('resize', resize);
+      stage.removeEventListener('pointermove', move);
+      stage.removeEventListener('pointerleave', leave);
+    };
+  }, []);
+
+  return <div className="sg-gallery" ref={galleryRef} aria-label="Explore Baig Bots services">
+    <div className="sg-stage">
+      <div className="sg-backtype" aria-hidden="true">SERVICES</div>
+      <p className="sg-intro">SOFTWARE / AUTOMATION / AI</p>
+      <svg className="sg-curve" viewBox="0 0 1440 700" preserveAspectRatio="none" aria-hidden="true"><path d="M-80 390C260 160 480 500 720 420S1200 200 1520 370" /></svg>
+      <div className="sg-deck">
+        {galleryServices.map((service, index) => <a className="sg-card" href={service.href} key={service.slug} aria-label={`Explore ${service.title}`}>
+          <span className="sg-card-index">{String(index + 1).padStart(2, '0')} / {String(galleryServices.length).padStart(2, '0')}</span>
+          <span className="sg-card-title">{service.title}</span>
+          <span className="sg-card-detail">{service.detail}</span>
+          <span className="sg-card-focus">{service.focus.slice(0, 2).join(' · ')}</span>
+          <span className="sg-card-arrow" aria-hidden="true">↗</span>
+        </a>)}
+      </div>
+      <div className="sg-foot" aria-hidden="true"><span>SCROLL TO EXPLORE</span><span className="sg-counter"><strong>01</strong> / {String(galleryServices.length).padStart(2, '0')}</span></div>
+    </div>
+  </div>;
+}
 
 export function Services() {
-  return <><section className="sec" id="services">
-  <div className="wrap">
-    <div className="sec-head">
-      <p className="eyebrow"><span className="dot"></span>01 — Core services</p>
-      <h2 className="h2" data-split="">Software, automation and AI for the way your business really runs.</h2>
-      <p className="lead muted">Enterprise applications, payment technology and data operations, joined up by one team that understands all three.</p>
-    </div>
-    <div className="cards">
-      <div data-cw=""><article className="card" data-card="">
-        <i className="via"></i><i className="trace"></i>
-        <div className="card-top"><span className="idx">01</span>
-          <ServiceIcon index={0} /></div>
-        <h3><a href="/services/ai-solutions-intelligent-agents">AI Solutions &amp; Intelligent Agents</a></h3>
-        <p>Chatbots and support assistants, conversational interfaces, knowledge-base search, workflow copilots and AI document processing.</p>
-        <a className="more" href="/contact?service=AI%20Solutions%20%26%20Intelligent%20Agents">Discuss this service <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></a>
-      </article></div>
-      <div data-cw=""><article className="card" data-card="">
-        <i className="via"></i><i className="trace"></i>
-        <div className="card-top"><span className="idx">02</span>
-          <ServiceIcon index={1} /></div>
-        <h3><a href="/services/business-process-automation">Business Process Automation</a></h3>
-        <p>Power Automate and n8n flows for alerts, approvals, scheduled processes and cross-platform data sync.</p>
-        <a className="more" href="/contact?service=Business%20Process%20Automation">Discuss this service <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></a>
-      </article></div>
-      <div data-cw=""><article className="card" data-card="">
-        <i className="via"></i><i className="trace"></i>
-        <div className="card-top"><span className="idx">03</span>
-          <ServiceIcon index={2} /></div>
-        <h3><a href="/services/custom-software-saas">Custom Software &amp; SaaS</a></h3>
-        <p>Business applications, customer and admin portals, dashboards, scalable backends and bespoke SaaS products.</p>
-        <a className="more" href="/contact?service=Custom%20Software%20%26%20SaaS">Discuss this service <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></a>
-      </article></div>
-      <div data-cw=""><article className="card" data-card="">
-        <i className="via"></i><i className="trace"></i>
-        <div className="card-top"><span className="idx">04</span>
-          <ServiceIcon index={3} /></div>
-        <h3><a href="/services/apis-system-integrations">APIs &amp; System Integrations</a></h3>
-        <p>REST/SOAP interfaces, webhooks, XML/XSD processing, middleware, payment APIs and secure data exchange.</p>
-        <a className="more" href="/contact?service=APIs%20%26%20System%20Integrations">Discuss this service <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></a>
-      </article></div>
-      <div data-cw=""><article className="card" data-card="">
-        <i className="via"></i><i className="trace"></i>
-        <div className="card-top"><span className="idx">05</span>
-          <ServiceIcon index={4} /></div>
-        <h3><a href="/services/fintech-payment-technology">Fintech &amp; Payment Technology</a></h3>
-        <p>SmartVista services, card issuing and acquiring, ATM/POS transactions, billing, clearing, settlement and reconciliation.</p>
-        <a className="more" href="/contact?service=Fintech%20%26%20Payment%20Technology">Discuss this service <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></a>
-      </article></div>
-      <div data-cw=""><article className="card" data-card="">
-        <i className="via"></i><i className="trace"></i>
-        <div className="card-top"><span className="idx">06</span>
-          <ServiceIcon index={5} /></div>
-        <h3><a href="/services/data-engineering-bi">Data Engineering &amp; BI</a></h3>
-        <p>Oracle and MongoDB data work, ETL and validation, Power BI and Tableau dashboards, financial reporting.</p>
-        <a className="more" href="/contact?service=Data%20Engineering%20%26%20BI">Discuss this service <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></a>
-      </article></div>
-      <div data-cw=""><article className="card" data-card="">
-        <i className="via"></i><i className="trace"></i>
-        <div className="card-top"><span className="idx">07</span>
-          <ServiceIcon index={6} /></div>
-        <h3><a href="/services/cloud-managed-it">Cloud &amp; Managed IT</a></h3>
-        <p>Deployment, hosting coordination, environment maintenance, server diagnostics and observability.</p>
-        <a className="more" href="/contact?service=Cloud%20%26%20Managed%20IT">Discuss this service <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></a>
-      </article></div>
-      <div data-cw=""><article className="card" data-card="">
-        <i className="via"></i><i className="trace"></i>
-        <div className="card-top"><span className="idx">08</span>
-          <ServiceIcon index={7} /></div>
-        <h3><a href="/services/enterprise-support-consulting">Enterprise Support &amp; Consulting</a></h3>
-        <p>Incident and root-cause analysis, UAT/SIT support, performance reviews and production troubleshooting.</p>
-        <a className="more" href="/contact?service=Enterprise%20Support%20%26%20Consulting">Discuss this service <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></a>
-      </article></div>
-    </div>
-    <div className="lines-head">
-      <div>
-        <p className="eyebrow"><span className="dot"></span>Complementary service lines</p>
-        <h3 data-split="">Digital &amp; creative, delivered by specialist teams.</h3>
-      </div>
-      <p>Client-facing work that sits next to the engineering, from your website and CRM to brand, content and campaigns.</p>
-    </div>
-    <div className="lines">
-      <a className="line-item" href="/services/web-mobile-development" data-li=""><span className="li-n">01</span><h4>Web &amp; Mobile Development</h4><span className="li-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 20 20"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></span><p>Corporate sites, eCommerce, WordPress and Shopify, mobile apps and digital portals.</p></a>
-      <a className="line-item" href="/services/crm-erp-solutions" data-li=""><span className="li-n">02</span><h4>CRM &amp; ERP Solutions</h4><span className="li-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 20 20"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></span><p>CRM setup, lead and customer workflows, integrations, data migration and extensions.</p></a>
-      <a className="line-item" href="/services/ui-ux-product-design" data-li=""><span className="li-n">03</span><h4>UI/UX &amp; Product Design</h4><span className="li-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 20 20"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></span><p>Discovery, wireframes, prototypes, user journeys and design systems.</p></a>
-      <a className="line-item" href="/services/branding-graphic-design" data-li=""><span className="li-n">04</span><h4>Branding &amp; Graphic Design</h4><span className="li-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 20 20"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></span><p>Logos and identity, brand guidelines, pitch decks, brochures and collateral.</p></a>
-      <a className="line-item" href="/services/digital-marketing-seo" data-li=""><span className="li-n">05</span><h4>Digital Marketing &amp; SEO</h4><span className="li-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 20 20"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></span><p>Technical and on-page SEO, campaigns, social content, email and paid ads.</p></a>
-      <a className="line-item" href="/services/video-digital-content" data-li=""><span className="li-n">06</span><h4>Video &amp; Digital Content</h4><span className="li-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 20 20"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></span><p>Short-form reels, motion graphics, promotional assets and marketing creatives.</p></a>
-      <a className="line-item" href="/services/ai-extensions-emerging-tech" data-li=""><span className="li-n">07</span><h4>AI Extensions &amp; Emerging Tech</h4><span className="li-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 20 20"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></span><p>AI voice interfaces, computer vision and business-specific AI integrations.</p></a>
-      <a className="line-item" href="/services/dedicated-development-teams" data-li=""><span className="li-n">08</span><h4>Dedicated Development Teams</h4><span className="li-go" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 20 20"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></span><p>Project-based engineers, specialist resourcing, maintenance and improvement sprints.</p></a>
-    </div>
-  </div>
-</section>
-
-{/* SOLUTIONS */}
-</>;
+  return <section className="sec" id="services"><ServicesGallery /></section>;
 }

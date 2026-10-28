@@ -1,6 +1,5 @@
-import { Hero } from '../components/Hero.jsx';
-import { Marquees } from '../components/Marquees.jsx';
-import { Stats } from '../components/Stats.jsx';
+import { HomeStory } from '../components/HomeStory.jsx';
+import { HomeVision } from '../components/HomeVision.jsx';
 import { Services } from '../components/Services.jsx';
 import { Solutions } from '../components/Solutions.jsx';
 import { Statement } from '../components/Statement.jsx';
@@ -12,9 +11,8 @@ import { Faq } from '../components/Faq.jsx';
 
 export function HomePage() {
   return <>
-    <Hero />
-    <Marquees />
-    <Stats />
+    <HomeStory />
+    <HomeVision />
     <Services />
     <Solutions />
     <Statement />
