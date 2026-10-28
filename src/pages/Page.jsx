@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react';
 import { getSavedTheme } from '../theme/theme.js';
 import { GlobalEffects } from '../components/GlobalEffects.jsx';
+import { KineticGrid } from '../components/KineticGrid.jsx';
 import { Header } from '../components/Header.jsx';
 import { Contact } from '../components/Contact.jsx';
 import { Footer } from '../components/Footer.jsx';
@@ -77,6 +78,7 @@ export function Page() {
   return (
     <div id="bb" className={page.kind === 'home' ? 'home-page' : undefined} data-theme={getSavedTheme()} data-canvas-width="1440" data-canvas-height="8000" data-document-role="page" data-label={`Website — ${page.title}`}>
       <GlobalEffects />
+      <KineticGrid sitewide />
       <Header inner={page.kind !== 'home'} />
       <Suspense fallback={<main className="inner-page" style={{ minHeight: '75vh' }} />}>
         {page.kind === 'home' && <HomePage />}

@@ -7,7 +7,7 @@
     "dev": "vite --configLoader runner",
     "build": "vite build --configLoader runner",
     "preview": "vite preview --configLoader runner",
-    "test:smoke": "node smoke.mjs && node kinetic-grid.smoke.mjs && node hero-orbit.smoke.mjs"
+    "test:smoke": "node smoke.mjs && node kinetic-grid.smoke.mjs && node hero-orbit.smoke.mjs && node vision-flip.smoke.mjs"
   },
   "dependencies": {
     "cobe": "^2.0.1",

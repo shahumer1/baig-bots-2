@@ -8,15 +8,16 @@ const clamp = (value) => Math.max(0, Math.min(1, value));
 const lerp = (from, to, amount) => from + (to - from) * amount;
 const rgba = (color, alpha) => `rgba(${color.map(Math.round).join(',')},${alpha})`;
 
-export function KineticGrid() {
+export function KineticGrid({ sitewide = false }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const host = canvas?.parentElement;
     const story = canvas?.closest('.home-story');
+    const root = canvas?.closest('#bb') || story;
     const context = canvas?.getContext('2d', { alpha: true });
-    if (!canvas || !host || !story || !context) return;
+    if (!canvas || !host || !root || !context) return;
 
     const pointer = { x: -9999, y: -9999 };
     const target = { x: -9999, y: -9999 };
@@ -25,6 +26,8 @@ export function KineticGrid() {
     let height = 0;
     let frame = 0;
     let visible = true;
+    let overStory = false;
+    let homeStory = sitewide ? root?.querySelector('.home-story') : null;
     let last = window.performance.now();
 
     const resize = () => {
@@ -67,8 +70,9 @@ export function KineticGrid() {
     const draw = (now) => {
       if (!width || !height) return;
       context.clearRect(0, 0, width, height);
-      const light = clamp(Number(story.style.getPropertyValue('--scene-light')) || 0);
-      const darkTheme = story.closest('#bb')?.dataset.theme === 'dark';
+      const darkTheme = root.dataset.theme === 'dark';
+      const scene = story || (overStory ? homeStory : null);
+      const light = scene ? clamp(Number(scene.style.getPropertyValue('--scene-light')) || 0) : darkTheme ? 0 : 1;
       const base = darkTheme
         ? [lerp(255, 112, light), lerp(214, 44, light), lerp(225, 58, light)]
         : [lerp(125, 112, light), lerp(39, 44, light), lerp(52, 58, light)];
@@ -117,7 +121,7 @@ export function KineticGrid() {
         context.beginPath();
         context.moveTo(a.x, a.y);
         context.lineTo(b.x, b.y);
-        context.strokeStyle = rgba(color, (.14 + strength * .67).toFixed(3));
+        context.strokeStyle = rgba(color, ((sitewide ? .24 : .14) + strength * .67).toFixed(3));
         context.lineWidth = .8 + strength * .7;
         context.stroke();
       };
@@ -138,7 +142,7 @@ export function KineticGrid() {
             context.arc(point.x, point.y, 10, 0, Math.PI * 2);
             context.fill();
           }
-          context.fillStyle = rgba(color, (.28 + strength * .72).toFixed(3));
+          context.fillStyle = rgba(color, ((sitewide ? .42 : .28) + strength * (sitewide ? .58 : .72)).toFixed(3));
           context.beginPath();
           context.arc(point.x, point.y, 1.65 + strength * 1.6, 0, Math.PI * 2);
           context.fill();
@@ -171,9 +175,27 @@ export function KineticGrid() {
     };
     const start = () => { if (visible && !frame) { last = window.performance.now(); frame = requestAnimationFrame(animate); } };
     const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; if (visible) start(); else if (frame) { cancelAnimationFrame(frame); frame = 0; } });
+    let storyObserver;
+    let mutationObserver;
+    const bindStory = () => {
+      if (!sitewide || !root.classList.contains('home-page')) return;
+      homeStory ||= root.querySelector('.home-story');
+      if (!homeStory || storyObserver) return;
+      storyObserver = new IntersectionObserver(([entry]) => {
+        overStory = entry.isIntersecting;
+        draw(window.performance.now());
+      });
+      storyObserver.observe(homeStory);
+      mutationObserver?.disconnect();
+    };
     const resizer = new ResizeObserver(resize);
     resizer.observe(host);
     observer.observe(host);
+    bindStory();
+    if (!homeStory && sitewide && root.classList.contains('home-page')) {
+      mutationObserver = new window.MutationObserver(bindStory);
+      mutationObserver.observe(root, { childList: true, subtree: true });
+    }
     resize();
     start();
     window.addEventListener('pointermove', onMove, { passive: true });
@@ -181,11 +203,13 @@ export function KineticGrid() {
     return () => {
       if (frame) cancelAnimationFrame(frame);
       observer.disconnect();
+      storyObserver?.disconnect();
+      mutationObserver?.disconnect();
       resizer.disconnect();
       window.removeEventListener('pointermove', onMove);
       window.removeEventListener('pointerdown', onDown);
     };
-  }, []);
+  }, [sitewide]);
 
-  return <div className="kinetic-grid" aria-hidden="true"><canvas ref={canvasRef} /></div>;
+  return <div className={sitewide ? 'kinetic-grid sitewide-grid' : 'kinetic-grid'} aria-hidden="true"><canvas ref={canvasRef} /></div>;
 }

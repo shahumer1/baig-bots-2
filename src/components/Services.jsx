@@ -66,15 +66,14 @@ function ServicesGallery() {
         const z = (focus - .42) * depth;
         const scale = .76 + .43 * Math.exp(-distance * distance * 1.8);
         card.style.transform = `translate3d(calc(-50% + ${x.toFixed(2)}px), calc(-50% + ${y.toFixed(2)}px), ${z.toFixed(2)}px) rotateY(${(-angle * 55).toFixed(2)}deg) rotateZ(${(slot * (compact ? 2.4 : 3.2)).toFixed(2)}deg) scale(${scale.toFixed(3)})`;
-        card.style.opacity = (edge * (.4 + .6 * Math.exp(-distance * distance * 1.5))).toFixed(3);
+        card.style.opacity = (edge * (.2 + .8 * Math.exp(-distance * distance * 1.6))).toFixed(3);
         card.style.zIndex = String(Math.round(focus * 100));
         card.tabIndex = edge < .15 ? -1 : 0;
         card.style.setProperty('--sg-glint-x', `${50 + pointerX * 22}%`);
         card.style.setProperty('--sg-glint-y', `${30 + pointerY * 18}%`);
       });
-      cards.forEach((card, index) => { card.dataset.center = index === nearest ? 'true' : 'false'; });
-      cards[nearest].style.zIndex = '200';
       if (focused !== nearest) {
+        cards.forEach((card, index) => { card.dataset.center = index === nearest ? 'true' : 'false'; });
         focused = nearest;
         counter.textContent = String(nearest + 1).padStart(2, '0');
       }
@@ -84,7 +83,7 @@ function ServicesGallery() {
     const tick = (now) => {
       const delta = Math.max(0, Math.min(50, now - last));
       last = now;
-      const ease = motion.matches ? 1 : 1 - Math.exp(-delta / 170);
+      const ease = motion.matches ? 1 : 1 - Math.exp(-delta / 270);
       progress += (target - progress) * ease;
       pointerX += (targetX - pointerX) * ease;
       pointerY += (targetY - pointerY) * ease;

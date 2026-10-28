@@ -49,7 +49,23 @@ for (let attempt = 0; attempt < 15 && (!warped() || !rippled()); attempt++) {
 assert(strokes.length > baseline, 'grid did not redraw after pointer movement with reduced motion enabled');
 assert(warped(), 'grid points did not bend toward the pointer');
 assert(rippled(), 'grid did not draw a click ripple');
+root.render(React.createElement('div', { id: 'bb' }, React.createElement(KineticGrid, { sitewide: true })));
+await new Promise((resolve) => setTimeout(resolve, 80));
+assert(window.document.querySelector('.sitewide-grid canvas'), 'sitewide grid did not mount');
+const siteBaseline = strokes.length;
+const siteMoves = moves.length;
+window.dispatchEvent(new window.MouseEvent('pointermove', { clientX: 250, clientY: 250, bubbles: true }));
+window.dispatchEvent(new window.MouseEvent('pointerdown', { clientX: 250, clientY: 250, bubbles: true }));
+const siteWarped = () => moves.slice(siteMoves).some(([x, y]) =>
+  Math.abs(x / 55 - Math.round(x / 55)) > .02 || Math.abs(y / 55 - Math.round(y / 55)) > .02);
+const siteRippled = () => strokes.slice(siteBaseline).some((stroke) => stroke.radius > 10);
+for (let attempt = 0; attempt < 15 && (!siteWarped() || !siteRippled()); attempt++) {
+  await new Promise((resolve) => setTimeout(resolve, 25));
+}
+assert(strokes.length > siteBaseline, 'sitewide grid did not react to the pointer');
+assert(siteWarped(), 'sitewide grid did not bend toward the pointer');
+assert(siteRippled(), 'sitewide grid did not draw a click ripple');
 root.unmount();
 await vite.close();
 window.close();
-console.log('Kinetic grid pointer and ripple smoke test passed with reduced motion enabled');
+console.log('Hero and sitewide kinetic grid smoke tests passed with reduced motion enabled');
