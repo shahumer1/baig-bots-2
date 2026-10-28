@@ -67,7 +67,7 @@ export function IndustryBenefits({ industry }) {
     <div className="industry-benefits-layout">
       <div className="industry-benefits-list" role="group" aria-label={`${industry.title} business benefits`}>
         {content.benefits.map(([benefitTitle, description, label], index) => <button type="button" key={benefitTitle} className="industry-benefit-option" aria-pressed={active === index} onClick={() => choose(index)}>
-          <span className="industry-benefit-index">{String(index + 1).padStart(2, '0')} / {label}</span><strong>{benefitTitle}</strong><span className="industry-benefit-short">{description}</span><i aria-hidden="true">→</i>
+          <span className="industry-benefit-index">{String(index + 1).padStart(2, '0')} / {label}</span><strong>{benefitTitle}</strong><span className="industry-benefit-short">{description}</span>
         </button>)}
       </div>
       <div className="industry-benefits-display">
@@ -79,6 +79,6 @@ export function IndustryBenefits({ industry }) {
         </div>
       </div>
     </div>
-    <div className="industry-benefits-foot"><span>{content.businessNote}</span><a className="btn btn-primary" href={`/contact?service=${encodeURIComponent(industry.title)}`}><span>Discuss your {industry.title.toLowerCase()} project →</span></a></div>
+    <div className="industry-benefits-foot"><span>{content.businessNote}</span><a className="btn btn-primary" href={`/contact?service=${encodeURIComponent(industry.title)}`}><span>Discuss your {industry.title.toLowerCase()} project</span></a></div>
   </section>;
 }

@@ -6,8 +6,7 @@ export function Process() {
       <p className="eyebrow"><span className="dot"></span>06 — Process</p>
       <h2 className="h2" data-split="">A clear path from requirement to live system.</h2>
       <p className="lead muted">No black boxes. You see the plan, the progress and the test results at every stage.</p>
-      <a className="btn btn-primary" href="#contact" data-magnet="" data-press=""><span>Talk to us</span>
-        <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></a>
+      <a className="btn btn-primary" href="#contact" data-magnet="" data-press=""><span>Talk to us</span></a>
       <ProcessGrowth />
     </div>
     <div className="tl" data-tl="">

@@ -139,7 +139,6 @@ function ServicesGallery() {
           <span className="sg-card-title">{service.title}</span>
           <span className="sg-card-detail">{service.detail}</span>
           <span className="sg-card-focus">{service.focus.slice(0, 2).join(' · ')}</span>
-          <span className="sg-card-arrow" aria-hidden="true">↗</span>
         </a>)}
       </div>
       <div className="sg-foot" aria-hidden="true"><span>SCROLL TO EXPLORE</span><span className="sg-counter"><strong>01</strong> / {String(galleryServices.length).padStart(2, '0')}</span></div>

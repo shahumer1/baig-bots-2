@@ -7,7 +7,7 @@ export function HomeIntroduction() {
         <h2 id="about-heading" data-home-reveal="">Technology should make complex work feel <em>simple.</em></h2>
         <div className="home-intro-bottom">
           <p data-home-reveal="">We design and develop connected software, automation and AI solutions around the way a business actually operates. From the first workflow to the finished experience, every part has a purpose.</p>
-          <a href="/services" className="btn btn-primary home-services-btn" data-magnet="" data-press="" aria-label="Explore all services"><span>Explore services</span><span aria-hidden="true">↗</span></a>
+          <a href="/services" className="btn btn-primary home-services-btn" data-magnet="" data-press="" aria-label="Explore all services"><span>Explore services</span></a>
         </div>
       </div>
     </div>

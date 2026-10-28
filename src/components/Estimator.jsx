@@ -118,7 +118,7 @@ export function Estimator() {
             <div className="est-fte"><span>Full-time equivalent</span><strong data-k="fte">0.27</strong></div>
           </div>
         </details>
-        <div className="est-foot"><p>Illustrative estimate based on 48 working weeks. We confirm real numbers during discovery.</p><button className="btn btn-primary btn-sm" type="button" data-est-send="" data-magnet="" data-press=""><span>Ask about this estimate</span><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></button></div>
+        <div className="est-foot"><p>Illustrative estimate based on 48 working weeks. We confirm real numbers during discovery.</p><button className="btn btn-primary btn-sm" type="button" data-est-send="" data-magnet="" data-press=""><span>Ask about this estimate</span></button></div>
       </div>
     </div>
   </section>;

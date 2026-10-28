@@ -247,7 +247,6 @@ export class BaigBotsSite {
     const h1 = $('[data-hero-h1]');
     if (!h1) { return; }
     if (reduce) { return; }
-    this._animateCircuit('.hero-circuit', { $$ });
     gsap.from('[data-hero="eyebrow"]', { y: 16, opacity: 0, duration: 0.8, ease: 'power3.out', delay: 0.1 });
     gsap.from(h1, { y: 34, opacity: 0, duration: 1.05, ease: 'expo.out', delay: 0.25 });
     gsap.from('[data-hero="lead"]', { y: 24, opacity: 0, duration: 0.9, ease: 'power3.out', delay: 0.95 });

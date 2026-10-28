@@ -34,6 +34,6 @@ export function ProjectSteps({ steps, eyebrow, title, service, industry, id }) {
         <div className="project-step-progress" aria-hidden="true">{steps.map((_, index) => <span key={index} className={index <= active ? 'is-active' : ''}/>)}</div>
       </div>
     </div>
-    {contact && <Reveal><a className="btn btn-primary project-steps-cta" href={contact}><span>Plan the first step →</span></a></Reveal>}
+    {contact && <Reveal><a className="btn btn-primary project-steps-cta" href={contact}><span>Plan the first step</span></a></Reveal>}
   </section>;
 }

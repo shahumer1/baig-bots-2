@@ -29,7 +29,7 @@ function AgentVisual() {
 
 function VisionVisual() {
   const [scanned, setScanned] = useState(false);
-  return <div className="lab-vision"><div className="lab-vision-image" data-scanned={scanned}><div className="lab-vision-shape shape-one"/><div className="lab-vision-shape shape-two"/><div className="lab-vision-shape shape-three"/><span className="lab-vision-sweep"/><div className="lab-vision-box box-one">REGION 01</div><div className="lab-vision-box box-two">REGION 02</div></div><div className="lab-vision-bottom"><p>{scanned?'Illustrative regions marked for human review.':'Sample visual input / no image uploaded.'}</p><button type="button" onClick={()=>setScanned(value=>!value)}>{scanned?'Reset review':'Run sample scan'} <span aria-hidden="true">→</span></button></div></div>;
+  return <div className="lab-vision"><div className="lab-vision-image" data-scanned={scanned}><div className="lab-vision-shape shape-one"/><div className="lab-vision-shape shape-two"/><div className="lab-vision-shape shape-three"/><span className="lab-vision-sweep"/><div className="lab-vision-box box-one">REGION 01</div><div className="lab-vision-box box-two">REGION 02</div></div><div className="lab-vision-bottom"><p>{scanned?'Illustrative regions marked for human review.':'Sample visual input / no image uploaded.'}</p><button type="button" onClick={()=>setScanned(value=>!value)}>{scanned?'Reset review':'Run sample scan'}</button></div></div>;
 }
 
 function CrmVisual() {

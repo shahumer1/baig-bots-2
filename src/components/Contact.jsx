@@ -36,7 +36,7 @@ export function Contact({ standalone = false, inner = false }) {
             </div>
             <label className="fld"><span className="lb">Description</span><span className="ctl"><textarea name="description" rows="5" maxLength="1200" placeholder="A few lines about what's happening or what you need" required></textarea><i className="ul"></i></span></label>
             <p className="quick-status" data-quick-status="" role="status" aria-live="polite"></p>
-            <button className="bbtn quick-submit" type="submit">Preview enquiry <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10H16M11 5L16 10L11 15" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"></path></svg></button>
+            <button className="bbtn quick-submit" type="submit">Preview enquiry</button>
             <small className="quick-demo-note">Frontend preview only — nothing is sent yet.</small>
           </div>
         </form>

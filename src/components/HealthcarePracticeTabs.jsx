@@ -87,7 +87,7 @@ export function IndustryOpportunityTabs({ id, label, heading, intro, items, focu
     <Reveal className="healthcare-practices-heading"><div><p className="eyebrow"><span className="dot"/>{label}</p><h2 id={`${id}-title`} className="h2">{heading}</h2></div><p>{intro}</p></Reveal>
     <div className="healthcare-practices-layout">
       <div className="healthcare-practices-tabs" style={{ '--opportunity-count': items.length }} role="tablist" aria-label={tabListLabel} onKeyDown={onKeyDown}>
-        {items.map((item, index) => <button key={item.name} id={`${id}-tab-${index}`} type="button" role="tab" aria-selected={active === index} aria-controls={`${id}-panel`} tabIndex={active === index ? 0 : -1} onClick={() => setActive(index)}><span>{String(index + 1).padStart(2, '0')}</span><strong>{item.name}</strong><i aria-hidden="true">→</i></button>)}
+        {items.map((item, index) => <button key={item.name} id={`${id}-tab-${index}`} type="button" role="tab" aria-selected={active === index} aria-controls={`${id}-panel`} tabIndex={active === index ? 0 : -1} onClick={() => setActive(index)}><span>{String(index + 1).padStart(2, '0')}</span><strong>{item.name}</strong></button>)}
       </div>
       <div id={`${id}-panel`} className="healthcare-practices-panel" role="tabpanel" aria-labelledby={`${id}-tab-${active}`} tabIndex={0}>
         <div className="healthcare-practices-panel-top"><span><i/>{focusLabel} / {selected.short}</span><span>{String(active + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}</span></div>
@@ -96,7 +96,7 @@ export function IndustryOpportunityTabs({ id, label, heading, intro, items, focu
           <div className="healthcare-practices-friction"><span>WHERE OPPORTUNITY GETS LOST</span>{selected.friction.map(item => <p key={item}><i aria-hidden="true"/> {item}</p>)}</div>
           <div className="healthcare-practices-support"><span>HOW WE CAN HELP</span>{selected.support.map(([title, body], index) => <div key={title}><b>{String(index + 1).padStart(2, '0')}</b><div><strong>{title}</strong><p>{body}</p></div></div>)}</div>
           <div className="healthcare-practices-journey" aria-label="Example business journey">{selected.journey.map((step, index) => <span key={step}><i/>{step}{index < selected.journey.length - 1 && <b aria-hidden="true">→</b>}</span>)}</div>
-          <a className="btn btn-primary" href={`/contact?service=${encodeURIComponent(contactBase + ' — ' + selected.name)}`}><span>Discuss this workflow →</span></a>
+          <a className="btn btn-primary" href={`/contact?service=${encodeURIComponent(contactBase + ' — ' + selected.name)}`}><span>Discuss this workflow</span></a>
         </motion.div></AnimatePresence>
       </div>
     </div>
