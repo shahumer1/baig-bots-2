@@ -6,6 +6,7 @@ import { Preview } from './ServiceExperience.jsx';
 import { legacyExperience } from './serviceExperienceData.js';
 import { TechLabel } from './TechIcon.jsx';
 import { IndustryHeroScene } from './IndustryHeroScene.jsx';
+import DriftWall from './DriftWall.jsx';
 
 const heroTabs = {
   web:['React app','WordPress site','Node.js API'],
@@ -207,9 +208,14 @@ function LegacyServiceScene({ service }) {
   </div>;
 }
 
+const serviceWallItems = innerServices.map((service) => ({
+  title: service.title,
+  detail: service.intro,
+  href: `/services/${service.slug}`,
+}));
+
 function ServicesScene() {
-  const [active,setActive]=useMovingSelection(innerServices.length, 2000);
-  return <SceneFrame label="SERVICE DIRECTORY" note="AUTO / EXPLORE A CAPABILITY" className="inner-scene-directory"><div className="inner-directory-layout"><div className="inner-directory-list">{innerServices.map((item,index)=><button type="button" key={item.slug} aria-pressed={active===index} onClick={()=>setActive(index)}><span>{String(index+1).padStart(2,'0')}</span>{item.title}</button>)}</div><div key={active} className="inner-directory-feature"><span>SELECTED SERVICE</span><strong>{innerServices[active].title}</strong><p>{innerServices[active].intro}</p><a href={`/services/${innerServices[active].slug}`}>View service →</a></div></div></SceneFrame>;
+  return <SceneFrame label="SERVICE WALL" note="EXPLORE A CAPABILITY" className="inner-scene-service-wall"><DriftWall items={serviceWallItems}/></SceneFrame>;
 }
 
 function IndustriesScene() {
