@@ -83,7 +83,8 @@ assert.equal(site.root.getAttribute('data-theme'), 'dark', 'system preference sh
 themeToggle.click();
 assert.equal(site.root.getAttribute('data-theme'), 'light', 'theme button did not restore light mode');
 assert(window.document.querySelector('#bb > .sitewide-grid canvas'), 'sitewide interactive grid background did not render');
-assert.equal(window.document.querySelectorAll('.kinetic-grid').length, 1, 'homepage rendered duplicate grid layers');
+assert(window.document.querySelector('.story-backdrop .kinetic-grid canvas'), 'hero background grid did not render behind its content');
+assert.equal(window.document.querySelectorAll('.kinetic-grid').length, 2, 'homepage should render one local and one sitewide grid');
 assert(!window.document.querySelector('.story-logo-stage, .hero-logo-control'), 'background logo sequence still renders');
 assert(window.document.querySelector('.home-intro') && window.document.querySelector('.home-vision') && window.document.querySelector('.sg-gallery'), 'homepage story, facts and service slider did not render');
 assert.equal(window.document.querySelectorAll('.home-vision .vision-flip-strip').length, 64, 'key facts flip strips did not render');

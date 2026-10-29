@@ -1,5 +1,47 @@
+import { useEffect, useRef } from 'react';
+
 export function Solutions() {
-  return <><section className="sec alt" id="solutions" data-uc="">
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    const body = section?.querySelector('.uc-body');
+    const left = section?.querySelector('.uc-panels');
+    const right = section?.querySelector('.pipe');
+    if (!body || !left || !right) return;
+
+    let frame = 0;
+    const render = () => {
+      frame = 0;
+      const start = window.innerHeight * .95;
+      const end = window.innerHeight * .55;
+      const distance = window.innerWidth < 768 ? 105 : 125;
+      const updatePanel = (panel, direction) => {
+        const top = panel.getBoundingClientRect().top;
+        const progress = Math.max(0, Math.min(1, (start - top) / (start - end)));
+        const eased = progress * progress * (3 - 2 * progress);
+        panel.style.transform = `translate3d(${direction * distance * (1 - eased)}%, 0, 0)`;
+        panel.style.opacity = String(.55 + eased * .45);
+      };
+      updatePanel(left, -1);
+      updatePanel(right, 1);
+    };
+    const schedule = () => { if (!frame) frame = window.requestAnimationFrame(render); };
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    render();
+    return () => {
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+      if (frame) window.cancelAnimationFrame(frame);
+      left.style.removeProperty('transform');
+      right.style.removeProperty('transform');
+      left.style.removeProperty('opacity');
+      right.style.removeProperty('opacity');
+    };
+  }, []);
+
+  return <><section className="sec alt" id="solutions" data-uc="" ref={sectionRef}>
   <div className="wrap">
     <div className="sec-head">
       <p className="eyebrow"><span className="dot"></span>02 — Solutions</p>

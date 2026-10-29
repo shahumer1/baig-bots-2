@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { KineticGrid } from './KineticGrid.jsx';
 import { Hero } from './Hero.jsx';
 import { HomeIntroduction } from './HomeIntroduction.jsx';
 
@@ -59,6 +60,7 @@ export function HomeStory() {
 
   return <div className="home-story" data-home-story="" ref={storyRef}>
     <div className="story-backdrop">
+      <KineticGrid />
       <svg className="story-approach-lines" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <path className="approach-line from-left" pathLength="100" d="M-100 490C150 330 355 650 720 450" />
         <path className="approach-line from-right" pathLength="100" d="M1540 400C1260 570 1090 240 720 450" />

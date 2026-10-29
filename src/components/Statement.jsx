@@ -1,4 +1,46 @@
+import { useEffect, useRef } from 'react';
+
+const statementPlain = 'Every engagement starts with your business requirements, a practical architecture and ';
+const statementAccent = 'clear, testable outcomes.';
+
+function typedWords(value) {
+  return value.split(/(\s+)/).map((part, index) => /\s/.test(part)
+    ? part
+    : <span className="stmt-type-word" key={index}>{Array.from(part, (letter, letterIndex) => <span className="stmt-type-char" key={letterIndex}>{letter}</span>)}</span>);
+}
+
 export function Statement() {
+  const textRef = useRef(null);
+
+  useEffect(() => {
+    const text = textRef.current;
+    if (!text) return;
+    const letters = Array.from(text.querySelectorAll('.stmt-type-char'));
+    text.dataset.typingReady = '';
+    let timer;
+    let index = 0;
+    const typeNext = () => {
+      if (index) letters[index - 1].classList.remove('is-cursor');
+      if (index >= letters.length) return;
+      const letter = letters[index++];
+      letter.classList.add('is-typed', 'is-cursor');
+      timer = window.setTimeout(typeNext, /[,.;]/.test(letter.textContent) ? 160 : 33);
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      observer.disconnect();
+      typeNext();
+    }, { threshold: 0.25 });
+    observer.observe(text);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(timer);
+      delete text.dataset.typingReady;
+      letters.forEach((letter) => letter.classList.remove('is-typed', 'is-cursor'));
+    };
+  }, []);
+
   return <><section className="sec stmt dark" data-stmt="">
   <div className="px" data-px="-5" aria-hidden="true">
     <svg className="l1" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -39,7 +81,7 @@ export function Statement() {
         }}><span className="dot" style={{
             background: "var(--m300)"
           }}></span>Our approach</p>
-    <p className="stmt-text" data-stmt-text="">Every engagement starts with your business requirements, a practical architecture and <em>clear, testable outcomes.</em></p>
+    <p className="stmt-text" data-stmt-text="" ref={textRef} aria-label={statementPlain + statementAccent}><span aria-hidden="true">{typedWords(statementPlain)}</span><em aria-hidden="true">{typedWords(statementAccent)}</em></p>
     <div className="principles">
       <div className="principle" data-pr=""><span className="pn">A</span><h3>Integrity end to end</h3><p>We connect processes and platforms while keeping data integrity and operational traceability intact.</p></div>
       <div className="principle" data-pr=""><span className="pn">B</span><h3>Evidence, not guesswork</h3><p>Integration and payment issues are traced with logs, database evidence and reproducible tests.</p></div>

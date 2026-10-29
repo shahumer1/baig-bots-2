@@ -75,7 +75,6 @@ export class BaigBotsSite {
     this._safe('headings', () => this._headings(ctx));
     this._safe('cards', () => this._cards(ctx));
     this._safe('statement', () => this._statement(ctx));
-    this._safe('agents', () => this._agents(ctx));
     this._safe('process', () => this._process(ctx));
     this._safe('cta', () => this._cta(ctx));
     this._safe('micro', () => this._micro(ctx));
@@ -814,20 +813,6 @@ export class BaigBotsSite {
       });
       this._on(sec, 'pointerleave', () => qs.forEach((o) => { o.x(0); o.y(0); }));
     }
-    SplitText.create(text, {
-      type: 'words',
-      wordsClass: 'w',
-      autoSplit: true,
-      onSplit: (self) => {
-        const accent = self.words.filter((w) => w.closest('em'));
-        const plain = self.words.filter((w) => !w.closest('em'));
-        gsap.set(self.words, { color: themeColor('statement-soft') });
-        const tl = gsap.timeline({ scrollTrigger: { trigger: text, start: 'top 80%', end: 'bottom 55%', scrub: 0.6 } });
-        tl.to(plain, { color: themeColor('scene-highlight'), stagger: 0.12, ease: 'none', duration: 1 }, 0)
-          .to(accent, { color: themeColor('tone-ff4d5a'), stagger: 0.12, ease: 'none', duration: 1 }, plain.length * 0.12);
-        return tl;
-      }
-    });
     const { animate, inView, stagger } = Motion;
     const prs = $$('[data-pr]', sec);
     prs.forEach((p) => { p.style.opacity = compact ? '0.7' : '0'; });
@@ -837,35 +822,6 @@ export class BaigBotsSite {
   }
 
   /* ---------- agents: scripted workflow ---------- */
-  _agents({ $, $$, reduce }) {
-    const flow = $('[data-flow]');
-    if (!flow || reduce) { return; }
-    const um = $('[data-m="u"]', flow);
-    const bm = $('[data-m="b"]', flow);
-    const ty = $('[data-typing]', flow);
-    const txt = $('[data-scr-text]', flow);
-    const steps = $$('[data-s]', flow);
-    const ticks = steps.map((s) => s.querySelector('.tick path'));
-    const full = txt.textContent;
-    const tl = gsap.timeline({ paused: true, repeat: -1, repeatDelay: 3.4, defaults: { ease: 'power3.out' } });
-    tl.call(() => { txt.textContent = ''; }, null, 0)
-      .set([um, bm, ty], { autoAlpha: 0, y: 14 }, 0)
-      .set(steps, { opacity: 0.3 }, 0)
-      .set(ticks, { drawSVG: '0% 0%' }, 0)
-      .to(um, { autoAlpha: 1, y: 0, duration: 0.5 }, 0.4)
-      .to(ty, { autoAlpha: 1, y: 0, duration: 0.3 }, 1.2)
-      .to(ty, { autoAlpha: 0, duration: 0.2 }, 2.5)
-      .set(bm, { autoAlpha: 1, y: 0 }, 2.5)
-      .to(txt, { duration: 1.7, scrambleText: { text: full, chars: '01', speed: 0.6, revealDelay: 0.15 } }, 2.5);
-    steps.forEach((s, i) => {
-      tl.to(s, { opacity: 1, duration: 0.3 }, 4.5 + i * 0.75)
-        .to(ticks[i], { drawSVG: '0% 100%', duration: 0.45 }, '<');
-    });
-    tl.pause(0.01);
-    ScrollTrigger.create({ trigger: flow, start: 'top 90%', end: 'bottom 5%', onToggle: (self) => { if (self.isActive) { tl.play(); } else { tl.pause(); } } });
-    this._cleanups.push(() => tl.kill());
-  }
-
   /* ---------- process timeline ---------- */
   _process({ $, $$, reduce }) {
     const tl = $('[data-tl]');

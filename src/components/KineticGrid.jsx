@@ -171,9 +171,9 @@ export function KineticGrid({ sitewide = false }) {
       pointer.x = lerp(pointer.x, target.x, ease);
       pointer.y = lerp(pointer.y, target.y, ease);
       draw(now);
-      frame = visible ? requestAnimationFrame(animate) : 0;
+      frame = visible && !(sitewide && overStory) ? requestAnimationFrame(animate) : 0;
     };
-    const start = () => { if (visible && !frame) { last = window.performance.now(); frame = requestAnimationFrame(animate); } };
+    const start = () => { if (visible && !(sitewide && overStory) && !frame) { last = window.performance.now(); frame = requestAnimationFrame(animate); } };
     const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; if (visible) start(); else if (frame) { cancelAnimationFrame(frame); frame = 0; } });
     let storyObserver;
     let mutationObserver;
@@ -183,7 +183,8 @@ export function KineticGrid({ sitewide = false }) {
       if (!homeStory || storyObserver) return;
       storyObserver = new IntersectionObserver(([entry]) => {
         overStory = entry.isIntersecting;
-        draw(window.performance.now());
+        if (overStory && frame) { cancelAnimationFrame(frame); frame = 0; }
+        else start();
       });
       storyObserver.observe(homeStory);
       mutationObserver?.disconnect();

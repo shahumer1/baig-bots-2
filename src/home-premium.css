@@ -536,10 +536,14 @@
 }
 
 /* The same responsive, pointer-reactive grid carries through every page. */
-#bb .sitewide-grid{position:fixed;inset:0;z-index:55;overflow:hidden;pointer-events:none;opacity:.78;transition:opacity .4s ease}
+#bb .sitewide-grid{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:.78;transition:opacity .4s ease}
 #bb .sitewide-grid::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 65% at 54% 48%,rgba(112,16,24,.09),transparent 75%);pointer-events:none}
 #bb[data-theme="dark"] .sitewide-grid::before{background:radial-gradient(ellipse 65% 70% at 54% 48%,rgba(176,30,54,.2),transparent 78%)}
 #bb .sitewide-grid canvas{display:block;width:100%;height:100%}
+#bb > .home-story,#bb > .home-vision,#bb > .sec,#bb > .inner-page,#bb > .foot{position:relative;z-index:1}
+#bb.home-page > .sec:not(.stmt):not(.cta){background:color-mix(in srgb,var(--bg) 46%,transparent)}
+#bb.home-page > .sec.alt{background:color-mix(in srgb,var(--bg-alt) 52%,transparent)}
+#bb.home-page #services.sec{background:transparent}
 #bb[data-vision-visible] .sitewide-grid{opacity:0}
 @media(prefers-reduced-motion:reduce){#bb .sitewide-grid{transition:none}}
 
