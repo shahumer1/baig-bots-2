@@ -124,11 +124,14 @@ export function Contact({ standalone = false, inner = false }) {
        */}
       </div>
       <div className="contact-side">
+        <ul className="contact-list">
+          <li><span className="cl-k">Phone</span><a href="tel:+923446612249">+92 344 6612249</a></li>
+        </ul>
         {/* Contact details block retained for later use.
          <p class="lead">Tell us what you want to build, automate or connect. We'll reply with a plan and a clear next step.</p>
          <ul class="contact-list">
           <li><span class="cl-k">Email</span><span>[YOUR EMAIL]</span></li>
-          <li><span class="cl-k">Phone</span><span>[YOUR PHONE]</span></li>
+          <li><span class="cl-k">Phone</span><span>+92 344 6612249</span></li>
           <li><span class="cl-k">Web</span><span>baigbots.com</span></li>
           <li><span class="cl-k">Office</span><span>NASTP · Suite No. 217</span></li>
          </ul>

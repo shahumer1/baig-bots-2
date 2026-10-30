@@ -49,6 +49,7 @@ export function Footer({ inner = false }) {
         <ul>
           <li>baigbots.com</li>
           <li><a href="mailto:contact@baigbots.com">contact@baigbots.com</a></li>
+          <li><a href="tel:+923446612249">+92 344 6612249</a></li>
           <li>NASTP · Suite No. 217</li>
         </ul>
       </div>
