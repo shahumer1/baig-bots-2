@@ -8,10 +8,10 @@
 .service-chapter:nth-of-type(even) .service-chapter-surface { background: color-mix(in srgb, var(--bg) 76%, var(--head) 24%); }
 .service-chapter-surface::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to right, color-mix(in srgb, var(--head) 10%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, var(--head) 10%, transparent) 1px, transparent 1px), radial-gradient(circle at 83% 50%, color-mix(in srgb, var(--head) 13%, transparent), transparent 50%); background-size: 58px 58px, 58px 58px, 100% 100%; }
 .service-chapter-inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(340px, .7fr); align-items: center; gap: clamp(36px, 7vw, 130px); min-height: clamp(640px, 88vh, 900px); padding-top: 100px; padding-bottom: 100px; }
-.service-chapter-main { opacity: var(--chapter-progress); transform: translate3d(0, var(--chapter-main-y, 90px), 0); }
+.service-chapter-main { min-width: 0; opacity: var(--chapter-progress); transform: translate3d(0, var(--chapter-main-y, 90px), 0); }
 .service-chapter-label { display: flex; gap: 26px; margin: 0 0 clamp(30px, 5vw, 70px); color: var(--head); font: 650 12px/1.2 var(--f-mono); letter-spacing: .14em; }
 .service-chapter-label span + span { color: var(--muted); }
-.service-chapter-main h3 { max-width: 11ch; margin: 0 0 30px; color: var(--text); font: 750 clamp(4rem, 7.2vw, 8rem)/.94 var(--f-display); letter-spacing: -.075em; overflow-wrap: anywhere; }
+.service-chapter-main h3 { max-width: 100%; margin: 0 0 30px; color: var(--text); font: 750 clamp(3.2rem, 5.8vw, 6.4rem)/.96 var(--f-display); letter-spacing: -.075em; overflow-wrap: normal; word-break: normal; }
 .service-chapter-intro { max-width: 44ch; margin: 0; font-size: clamp(1.15rem, 1.6vw, 1.45rem); line-height: 1.55; color: var(--muted); }
 .service-chapter-link { display: inline-flex; align-items: center; gap: 28px; margin-top: 38px; padding: 0 0 12px; border-bottom: 1px solid var(--head); color: var(--head); font-weight: 700; transition: gap .35s ease; }
 .service-chapter-link:hover { gap: 38px; }
@@ -24,7 +24,7 @@
 .service-chapter-ghost { position: absolute; z-index: 0; right: -1vw; bottom: -9vw; color: var(--head); opacity: var(--chapter-ghost-opacity, 0); font: 800 clamp(15rem, 35vw, 40rem)/.8 var(--f-display); letter-spacing: -.12em; pointer-events: none; }
 @media (max-width: 850px) {
   .service-chapter-inner { grid-template-columns: 1fr; min-height: 0; gap: 55px; padding-top: 110px; padding-bottom: 110px; }
-  .service-chapter-main h3 { font-size: clamp(3.7rem, 11vw, 6.5rem); }
+  .service-chapter-main h3 { font-size: clamp(2.8rem, 8.5vw, 5.5rem); }
   .service-chapter-glass { transform: translate3d(0, var(--chapter-glass-y, 55px), 0); }
 }
 @media (max-width: 600px) {
@@ -33,7 +33,7 @@
   .services-chapters-intro > p:last-child { margin-left: 0; }
   .service-chapter-inner { gap: 40px; padding-top: 80px; padding-bottom: 85px; }
   .service-chapter-main { transform: translate3d(0, var(--chapter-main-y, 48px), 0); }
-  .service-chapter-main h3 { font-size: clamp(3.3rem, 13vw, 5rem); }
+  .service-chapter-main h3 { font-size: clamp(2.45rem, 10.5vw, 4.5rem); }
   .service-chapter-label { margin-bottom: 32px; }
   .service-chapter-glass { padding: 26px; border-radius: 22px; }
   .service-chapter-glass li { font-size: 1.2rem; }
