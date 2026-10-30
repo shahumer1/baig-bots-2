@@ -1,70 +1,355 @@
-.services-chapters { position: relative; }
-.services-chapters-intro { padding-top: clamp(100px, 12vw, 180px); padding-bottom: clamp(100px, 13vw, 190px); }
-.services-chapters-intro h2 { max-width: 1000px; margin: 22px 0 30px; color: var(--text); font: 750 clamp(3.5rem, 8vw, 8.5rem)/.96 var(--f-display); letter-spacing: -.075em; }
-.services-chapters-intro h2 em { color: var(--head); font-style: normal; }
-.services-chapters-intro > p:last-child { max-width: 42ch; margin-left: auto; color: var(--muted); font-size: clamp(1.1rem, 1.8vw, 1.5rem); line-height: 1.45; }
-.service-chapter { position: relative; isolation: isolate; overflow: hidden; border-top: 1px solid color-mix(in srgb, var(--head) 24%, transparent); }
-.service-chapter-surface { position: absolute; z-index: 0; inset: 0; pointer-events: none; background: color-mix(in srgb, var(--bg) 94%, var(--head) 6%); }
-.service-chapter:nth-of-type(even) .service-chapter-surface { background: color-mix(in srgb, var(--bg) 76%, var(--head) 24%); }
-.service-chapter-surface::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(to right, color-mix(in srgb, var(--head) 10%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, var(--head) 10%, transparent) 1px, transparent 1px), radial-gradient(circle at 83% 50%, color-mix(in srgb, var(--head) 13%, transparent), transparent 50%); background-size: 58px 58px, 58px 58px, 100% 100%; }
-.service-chapter-inner { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(340px, .7fr); align-items: center; gap: clamp(36px, 7vw, 130px); min-height: clamp(640px, 88vh, 900px); padding-top: 100px; padding-bottom: 100px; }
-.service-chapter-main { min-width: 0; opacity: var(--chapter-progress); transform: translate3d(0, var(--chapter-main-y, 90px), 0); }
-.service-chapter-label { display: flex; gap: 26px; margin: 0 0 clamp(30px, 5vw, 70px); color: var(--head); font: 650 12px/1.2 var(--f-mono); letter-spacing: .14em; }
-.service-chapter-label span + span { color: var(--muted); }
-.service-chapter-main h3 { max-width: 100%; margin: 0 0 30px; color: var(--text); font: 750 clamp(3.2rem, 5.8vw, 6.4rem)/.96 var(--f-display); letter-spacing: -.075em; overflow-wrap: normal; word-break: normal; }
-.service-chapter-intro { max-width: 44ch; margin: 0; font-size: clamp(1.15rem, 1.6vw, 1.45rem); line-height: 1.55; color: var(--muted); }
-.service-chapter-link { display: inline-flex; align-items: center; gap: 28px; margin-top: 38px; padding: 0 0 12px; border-bottom: 1px solid var(--head); color: var(--head); font-weight: 700; transition: gap .35s ease; }
-.service-chapter-link:hover { gap: 38px; }
-.service-chapter-glass { position: relative; padding: clamp(28px, 3.5vw, 48px); border: 1px solid color-mix(in srgb, var(--head) 30%, transparent); border-radius: 30px; background: color-mix(in srgb, var(--card) 72%, transparent); box-shadow: inset 0 1px 0 color-mix(in srgb, white 60%, transparent), 0 28px 70px -35px var(--shadow); backdrop-filter: blur(28px) saturate(1.25); -webkit-backdrop-filter: blur(28px) saturate(1.25); opacity: var(--chapter-progress); transform: perspective(1000px) translate3d(var(--chapter-glass-x, 120px), 0, 0) rotateY(var(--chapter-rotate, -8deg)); }
-.service-chapter-glass-kicker { color: var(--head); font: 650 11px var(--f-mono); letter-spacing: .16em; }
-.service-chapter-glass ol { list-style: none; margin: 35px 0 38px; padding: 0; }
-.service-chapter-glass li { display: flex; gap: 25px; align-items: baseline; padding: 20px 0; border-top: 1px solid color-mix(in srgb, var(--head) 18%, transparent); color: var(--text); font: 650 clamp(1.2rem, 1.7vw, 1.7rem)/1.25 var(--f-display); letter-spacing: -.025em; }
-.service-chapter-glass li span { flex: none; color: var(--head); font: 650 11px var(--f-mono); letter-spacing: .1em; }
-.service-chapter-glass p { margin: 0; padding-top: 16px; border-top: 1px solid color-mix(in srgb, var(--head) 18%, transparent); color: var(--muted); font: 600 10px/1.6 var(--f-mono); letter-spacing: .07em; text-transform: uppercase; }
-.service-chapter-ghost { position: absolute; z-index: 0; right: -1vw; bottom: -9vw; color: var(--head); opacity: var(--chapter-ghost-opacity, 0); font: 800 clamp(15rem, 35vw, 40rem)/.8 var(--f-display); letter-spacing: -.12em; pointer-events: none; }
+.services-chapters {
+  position: relative;
+}
+
+.services-chapters-intro {
+  padding-top: clamp(100px, 12vw, 180px);
+  padding-bottom: clamp(100px, 13vw, 190px);
+}
+
+.services-chapters-intro h2 {
+  max-width: 1000px;
+  margin: 22px 0 30px;
+  color: var(--text);
+  font: 750 clamp(3.5rem, 8vw, 8.5rem)/.96 var(--f-display);
+  letter-spacing: -.075em;
+}
+
+.services-chapters-intro h2 em {
+  color: var(--head);
+  font-style: normal;
+}
+
+.services-chapters-intro > p:last-child {
+  max-width: 42ch;
+  margin-left: auto;
+  color: var(--muted);
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  line-height: 1.45;
+}
+
+.service-chapter {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-top: 1px solid color-mix(in srgb, var(--head) 24%, transparent);
+}
+
+.service-chapter-surface {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--bg) 94%, var(--head) 6%);
+}
+
+.service-chapter:nth-of-type(even) .service-chapter-surface {
+  background: color-mix(in srgb, var(--bg) 76%, var(--head) 24%);
+}
+
+.service-chapter-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to right, color-mix(in srgb, var(--head) 10%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in srgb, var(--head) 10%, transparent) 1px, transparent 1px), radial-gradient(circle at 83% 50%, color-mix(in srgb, var(--head) 13%, transparent), transparent 50%);
+  background-size: 58px 58px, 58px 58px, 100% 100%;
+}
+
+.service-chapter-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(340px, .7fr);
+  align-items: center;
+  gap: clamp(36px, 7vw, 130px);
+  min-height: clamp(640px, 88vh, 900px);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.service-chapter-main {
+  min-width: 0;
+  opacity: var(--chapter-progress);
+  transform: translate3d(0, var(--chapter-main-y, 90px), 0);
+}
+
+.service-chapter-label {
+  display: flex;
+  gap: 26px;
+  margin: 0 0 clamp(30px, 5vw, 70px);
+  color: var(--head);
+  font: 650 12px/1.2 var(--f-mono);
+  letter-spacing: .14em;
+}
+
+.service-chapter-label span + span {
+  color: var(--muted);
+}
+
+.service-chapter-main h3 {
+  max-width: 100%;
+  margin: 0 0 30px;
+  color: var(--text);
+  font: 750 clamp(3.2rem, 5.8vw, 6.4rem)/.96 var(--f-display);
+  letter-spacing: -.075em;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.service-chapter-intro {
+  max-width: 44ch;
+  margin: 0;
+  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.service-chapter-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 38px;
+  padding: 0 0 12px;
+  border-bottom: 1px solid var(--head);
+  color: var(--head);
+  font-weight: 700;
+  transition: gap .35s ease;
+}
+
+.service-chapter-link:hover {
+  gap: 38px;
+}
+
+.service-chapter-glass {
+  position: relative;
+  padding: clamp(28px, 3.5vw, 48px);
+  border: 1px solid color-mix(in srgb, var(--head) 30%, transparent);
+  border-radius: 30px;
+  background: color-mix(in srgb, var(--card) 72%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 60%, transparent), 0 28px 70px -35px var(--shadow);
+  backdrop-filter: blur(28px) saturate(1.25);
+  -webkit-backdrop-filter: blur(28px) saturate(1.25);
+  opacity: var(--chapter-progress);
+  transform: perspective(1000px) translate3d(var(--chapter-glass-x, 120px), 0, 0) rotateY(var(--chapter-rotate, -8deg));
+}
+
+.service-chapter-glass-kicker {
+  color: var(--head);
+  font: 650 11px var(--f-mono);
+  letter-spacing: .16em;
+}
+
+.service-chapter-glass ol {
+  list-style: none;
+  margin: 35px 0 38px;
+  padding: 0;
+}
+
+.service-chapter-glass li {
+  display: flex;
+  gap: 25px;
+  align-items: baseline;
+  padding: 20px 0;
+  border-top: 1px solid color-mix(in srgb, var(--head) 18%, transparent);
+  color: var(--text);
+  font: 650 clamp(1.2rem, 1.7vw, 1.7rem)/1.25 var(--f-display);
+  letter-spacing: -.025em;
+}
+
+.service-chapter-glass li span {
+  flex: none;
+  color: var(--head);
+  font: 650 11px var(--f-mono);
+  letter-spacing: .1em;
+}
+
+.service-chapter-glass p {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid color-mix(in srgb, var(--head) 18%, transparent);
+  color: var(--muted);
+  font: 600 10px/1.6 var(--f-mono);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.service-chapter-ghost {
+  position: absolute;
+  z-index: 0;
+  right: -1vw;
+  bottom: -9vw;
+  color: var(--head);
+  opacity: var(--chapter-ghost-opacity, 0);
+  font: 800 clamp(15rem, 35vw, 40rem)/.8 var(--f-display);
+  letter-spacing: -.12em;
+  pointer-events: none;
+}
+
 @media (max-width: 850px) {
-  .service-chapter-inner { grid-template-columns: 1fr; min-height: 0; gap: 55px; padding-top: 110px; padding-bottom: 110px; }
-  .service-chapter-main h3 { font-size: clamp(2.8rem, 8.5vw, 5.5rem); }
-  .service-chapter-glass { transform: translate3d(0, var(--chapter-glass-y, 55px), 0); }
+  .service-chapter-inner {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 55px;
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+  .service-chapter-main h3 {
+    font-size: clamp(2.8rem, 8.5vw, 5.5rem);
+  }
+  .service-chapter-glass {
+    transform: translate3d(0, var(--chapter-glass-y, 55px), 0);
+  }
 }
+
 @media (max-width: 600px) {
-  .services-chapters-intro { padding-top: 90px; padding-bottom: 95px; }
-  .services-chapters-intro h2 { font-size: clamp(3rem, 12vw, 5rem); }
-  .services-chapters-intro > p:last-child { margin-left: 0; }
-  .service-chapter-inner { gap: 40px; padding-top: 80px; padding-bottom: 85px; }
-  .service-chapter-main { transform: translate3d(0, var(--chapter-main-y, 48px), 0); }
-  .service-chapter-main h3 { font-size: clamp(2.45rem, 10.5vw, 4.5rem); }
-  .service-chapter-label { margin-bottom: 32px; }
-  .service-chapter-glass { padding: 26px; border-radius: 22px; }
-  .service-chapter-glass li { font-size: 1.2rem; }
-  .service-chapter-ghost { bottom: 5px; font-size: 18rem; }
+  .services-chapters-intro {
+    padding-top: 90px;
+    padding-bottom: 95px;
+  }
+  .services-chapters-intro h2 {
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+  .services-chapters-intro > p:last-child {
+    margin-left: 0;
+  }
+  .service-chapter-inner {
+    gap: 40px;
+    padding-top: 80px;
+    padding-bottom: 85px;
+  }
+  .service-chapter-main {
+    transform: translate3d(0, var(--chapter-main-y, 48px), 0);
+  }
+  .service-chapter-main h3 {
+    font-size: clamp(2.45rem, 10.5vw, 4.5rem);
+  }
+  .service-chapter-label {
+    margin-bottom: 32px;
+  }
+  .service-chapter-glass {
+    padding: 26px;
+    border-radius: 22px;
+  }
+  .service-chapter-glass li {
+    font-size: 1.2rem;
+  }
+  .service-chapter-ghost {
+    bottom: 5px;
+    font-size: 18rem;
+  }
 }
+
 /* One pinned viewport scrubs between chapters as the page moves. */
-.services-chapters-sequence { position: relative; }
-.services-chapters-stage { position: sticky; top: 0; height: 100svh; overflow: hidden; background: var(--bg); }
-.services-chapters-stage .service-chapter { position: absolute; inset: 0; height: 100%; will-change: opacity; }
-.services-chapters-stage .service-chapter-inner { height: 100%; min-height: 0; padding-top: clamp(90px, 10vh, 120px); padding-bottom: clamp(78px, 9vh, 110px); }
-.services-chapters-progress { position: absolute; z-index: 10; right: max(5vw, 32px); bottom: 26px; width: min(280px, 24vw); height: 2px; background: color-mix(in srgb, var(--head) 25%, transparent); pointer-events: none; }
-.services-chapters-progress span { display: block; width: 100%; height: 100%; background: var(--head); transform: scaleX(var(--sequence-progress, 0)); transform-origin: left; }
+
+.services-chapters-sequence {
+  position: relative;
+}
+
+.services-chapters-stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.services-chapters-stage .service-chapter {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  will-change: opacity;
+}
+
+.services-chapters-stage .service-chapter-inner {
+  height: 100%;
+  min-height: 0;
+  padding-top: clamp(90px, 10vh, 120px);
+  padding-bottom: clamp(78px, 9vh, 110px);
+}
+
+.services-chapters-progress {
+  position: absolute;
+  z-index: 10;
+  right: max(5vw, 32px);
+  bottom: 26px;
+  width: min(280px, 24vw);
+  height: 2px;
+  background: color-mix(in srgb, var(--head) 25%, transparent);
+  pointer-events: none;
+}
+
+.services-chapters-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--head);
+  transform: scaleX(var(--sequence-progress, 0));
+  transform-origin: left;
+}
+
 @media (min-width: 851px) {
   .services-chapters-stage .service-chapter-main,
-  .services-chapters-stage .service-chapter-glass { opacity: var(--chapter-content-opacity, 1); }
+  .services-chapters-stage .service-chapter-glass {
+    opacity: var(--chapter-content-opacity, 1);
+  }
 }
+
 @media (min-width: 851px) and (max-height: 700px) {
-  .services-chapters-stage .service-chapter-inner { padding-top: 70px; padding-bottom: 36px; }
-  .service-chapter-main h3 { font-size: clamp(3.5rem, 6vw, 6rem); }
-  .service-chapter-glass { padding: 26px; }
-  .service-chapter-glass ol { margin: 18px 0; }
-  .service-chapter-glass li { padding: 12px 0; }
+  .services-chapters-stage .service-chapter-inner {
+    padding-top: 70px;
+    padding-bottom: 36px;
+  }
+  .service-chapter-main h3 {
+    font-size: clamp(3.5rem, 6vw, 6rem);
+  }
+  .service-chapter-glass {
+    padding: 26px;
+  }
+  .service-chapter-glass ol {
+    margin: 18px 0;
+  }
+  .service-chapter-glass li {
+    padding: 12px 0;
+  }
 }
+
 @media (max-width: 850px) {
-  .services-chapters-sequence { height: auto !important; }
-  .services-chapters-stage { position: relative; top: auto; height: auto; min-height: 0; overflow: visible; background: transparent; }
-  .services-chapters-stage .service-chapter { position: relative; inset: auto; height: auto; opacity: 1 !important; will-change: auto; }
-  .services-chapters-stage .service-chapter-surface { clip-path: none !important; }
-  .services-chapters-stage .service-chapter-inner { height: auto; min-height: 0; padding-top: 100px; padding-bottom: 100px; }
-  .services-chapters-progress { display: none; }
+  .services-chapters-sequence {
+    height: auto !important;
+  }
+  .services-chapters-stage {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    background: transparent;
+  }
+  .services-chapters-stage .service-chapter {
+    position: relative;
+    inset: auto;
+    height: auto;
+    opacity: 1 !important;
+    will-change: auto;
+  }
+  .services-chapters-stage .service-chapter-surface {
+    clip-path: none !important;
+  }
+  .services-chapters-stage .service-chapter-inner {
+    height: auto;
+    min-height: 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .services-chapters-progress {
+    display: none;
+  }
 }
+
 @media (max-width: 600px) {
-  .services-chapters-stage .service-chapter-inner { padding-top: 80px; padding-bottom: 85px; }
+  .services-chapters-stage .service-chapter-inner {
+    padding-top: 80px;
+    padding-bottom: 85px;
+  }
 }

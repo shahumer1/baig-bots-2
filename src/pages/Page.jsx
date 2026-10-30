@@ -18,6 +18,7 @@ const serverPages = import.meta.env.SSR ? {
   IndustriesPage: (await import('./IndustriesPage.jsx')).IndustriesPage,
   IndustryDetail: (await import('./IndustryDetailPage.jsx')).IndustryDetail,
   ContactLanding: (await import('./ContactPage.jsx')).ContactLanding,
+  LegalPage: (await import('./LegalPage.jsx')).LegalPage,
   NotFoundPage: (await import('./NotFoundPage.jsx')).NotFoundPage,
 } : null;
 const routeComponent = (name, importer) => import.meta.env.SSR
@@ -30,6 +31,7 @@ const ServiceDetail = routeComponent('ServiceDetail', () => import('./ServiceDet
 const IndustriesPage = routeComponent('IndustriesPage', () => import('./IndustriesPage.jsx'));
 const IndustryDetail = routeComponent('IndustryDetail', () => import('./IndustryDetailPage.jsx'));
 const ContactLanding = routeComponent('ContactLanding', () => import('./ContactPage.jsx'));
+const LegalPage = routeComponent('LegalPage', () => import('./LegalPage.jsx'));
 const NotFoundPage = routeComponent('NotFoundPage', () => import('./NotFoundPage.jsx'));
 
 function getPage(pathname) {
@@ -39,6 +41,8 @@ function getPage(pathname) {
   if (path === '/services/other') return { kind: 'other', title: 'Other Services' };
   if (path === '/industries') return { kind: 'industries', title: 'Industries' };
   if (path === '/contact') return { kind: 'contact', title: 'Contact Us' };
+  if (path === '/terms-and-conditions' || path === '/terms') return { kind: 'legal', title: 'Terms & Conditions', document: 'terms' };
+  if (path === '/privacy-policy' || path === '/privacy') return { kind: 'legal', title: 'Privacy Policy', document: 'privacy' };
   const industry = innerIndustries.find((item) => path === `/industries/${item.slug}`);
   if (industry) return { kind: 'industry-detail', title: industry.title, industry };
   const service = [...innerServices, ...allServices].find((item) => path === `/services/${item.slug}`);
@@ -89,9 +93,10 @@ export function Page() {
         {page.kind === 'industry-detail' && <IndustryDetail industry={page.industry} />}
         {page.kind === 'not-found' && <NotFoundPage />}
         {page.kind === 'contact' && <ContactLanding />}
+        {page.kind === 'legal' && <LegalPage document={page.document} />}
         <PageEffects page={page} />
       </Suspense>
-      {page.kind !== 'detail' && <Contact inner={page.kind !== 'home'} />}
+      {page.kind !== 'detail' && page.kind !== 'legal' && <Contact inner={page.kind !== 'home'} />}
       <Footer inner={page.kind !== 'home'} />
     </div>
   );

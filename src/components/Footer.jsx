@@ -40,6 +40,8 @@ export function Footer({ inner = false }) {
           <li><a href="/#engage">Ways to work</a></li>
           <li><a href="/#faq">FAQ</a></li>
           <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
         </ul>
       </div>
       <div>

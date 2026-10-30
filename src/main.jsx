@@ -18,6 +18,7 @@ import './industry-hero.css';
 import './industry-showcase.css';
 import './healthcare-practices.css';
 import './project-step-visual.css';
+import './legal-pages.css';
 
 document.documentElement.dataset.theme = getSavedTheme();
 createRoot(document.getElementById('root')).render(<Page />);

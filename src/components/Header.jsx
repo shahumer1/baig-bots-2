@@ -11,6 +11,10 @@ const industryLinks = [
   { title: 'All Industries', href: '/industries' },
   ...innerIndustries.map((industry) => ({ title: industry.title, href: `/industries/${industry.slug}` })),
 ];
+const legalLinks = [
+  { title: 'Terms & Conditions', href: '/terms-and-conditions' },
+  { title: 'Privacy Policy', href: '/privacy-policy' },
+];
 
 function NavDropdown({ label, links, mobile = false }) {
   return <details className={mobile ? 'nav-services-mobile' : 'nav-services'}>
@@ -54,6 +58,7 @@ export function Header() {
         <a href="/" data-scr="">Home</a>
         <NavDropdown label="Services" links={serviceLinks}/>
         <NavDropdown label="Industries" links={industryLinks}/>
+        <NavDropdown label="Legal" links={legalLinks}/>
         <a href="/contact" data-scr="">Contact Us</a>
       </nav>
       <div className="nav-actions">
@@ -71,6 +76,7 @@ export function Header() {
       <a href="/">Home</a>
       <NavDropdown label="Services" links={serviceLinks} mobile/>
       <NavDropdown label="Industries" links={industryLinks} mobile/>
+      <NavDropdown label="Legal" links={legalLinks} mobile/>
       <a href="/contact">Contact Us</a>
     </nav>
   </header>;

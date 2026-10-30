@@ -1,0 +1,212 @@
+/* Shared scroll choreography for every service detail route. The animations
+   follow viewport progress, so scrolling upward naturally runs them backward. */
+
+@supports (animation-timeline: view()) {
+  .service-detail-page .inner-section-head,
+  .service-detail-page .lab-intro,
+  .service-detail-page .sx-heading,
+  .service-detail-page .cs-heading,
+  .service-detail-page .inner-editorial-lead > .inner-reveal,
+  .service-detail-page .sx-next-inner,
+  .service-detail-page .cs-next-inner,
+  .service-detail-page .service-final-section > .inner-reveal {
+    animation: service-detail-copy-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 42%;
+  }
+  .service-detail-page .inner-editorial-lead > .inner-reveal:first-child {
+    --detail-entry-x: -52px;
+  }
+  .service-detail-page .inner-editorial-lead > .inner-reveal:nth-child(2) {
+    --detail-entry-x: 52px;
+  }
+  .service-detail-page .inner-editorial-grid > .inner-editorial-card,
+  .service-detail-page .inner-stack-grid > .inner-stack-note,
+  .service-detail-page .inner-related-grid > .inner-tile {
+    animation: service-detail-card-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 44%;
+  }
+  .service-detail-page .inner-editorial-grid > :nth-child(even),
+  .service-detail-page .inner-stack-grid > :nth-child(even),
+  .service-detail-page .inner-related-grid > :nth-child(even) {
+    --detail-card-x: 42px;
+    --detail-card-angle: 1.5deg;
+  }
+  .service-detail-page .inner-editorial-grid > :nth-child(odd),
+  .service-detail-page .inner-stack-grid > :nth-child(odd),
+  .service-detail-page .inner-related-grid > :nth-child(odd) {
+    --detail-card-x: -42px;
+    --detail-card-angle: -1.5deg;
+  }
+  .service-detail-page .sx-explorer,
+  .service-detail-page .cs-explorer,
+  .service-detail-page .service-showcase-shell,
+  .service-detail-page .project-steps-sticky {
+    animation: service-detail-panel-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 26%;
+  }
+  .service-detail-page .inner-section-head {
+    position: relative;
+    padding-bottom: 18px;
+  }
+  .service-detail-page .inner-section-head::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: min(100%, 680px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--head), color-mix(in srgb, var(--head) 35%, transparent), transparent);
+    transform-origin: left;
+    animation: service-detail-rule-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 52%;
+  }
+  .service-detail-page .inner-editorial-grid > .inner-editorial-card,
+  .service-detail-page .inner-stack-grid > .inner-stack-note,
+  .service-detail-page .inner-related-grid > .inner-tile {
+    position: relative;
+    isolation: isolate;
+  }
+  .service-detail-page .inner-editorial-grid > .inner-editorial-card::after,
+  .service-detail-page .inner-stack-grid > .inner-stack-note::after,
+  .service-detail-page .inner-related-grid > .inner-tile::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--head), transparent 85%);
+    transform-origin: left;
+    pointer-events: none;
+    animation: service-detail-rule-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 62%;
+  }
+  /* The lab's existing reduced-motion rule disables its internal demo loops.
+     Keep this gentle section entrance tied to the user's scroll. */
+  @media (prefers-reduced-motion: reduce) {
+    .service-detail-page .lab-section .lab-intro {
+      animation: service-detail-copy-in linear both !important;
+      animation-timeline: view() !important;
+      animation-range: entry 0% cover 42% !important;
+    }
+  }
+}
+
+@keyframes service-detail-copy-in {
+  from {
+    opacity: .25;
+    translate: var(--detail-entry-x, 0px) 42px;
+    clip-path: inset(0 0 20% 0);
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    clip-path: inset(0);
+  }
+}
+
+@keyframes service-detail-card-in {
+  from {
+    opacity: .28;
+    translate: var(--detail-card-x, 0px) 46px;
+    rotate: var(--detail-card-angle, 0deg);
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    rotate: 0deg;
+  }
+}
+
+@keyframes service-detail-panel-in {
+  from {
+    opacity: .38;
+    translate: 0 36px;
+    scale: .975;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+
+@keyframes service-detail-rule-in {
+  from {
+    opacity: 0;
+    scale: 0 1;
+  }
+  to {
+    opacity: 1;
+    scale: 1 1;
+  }
+}
+
+@media (max-width: 700px) {
+  .service-detail-page {
+    --detail-entry-x: 0px;
+    --detail-card-x: 0px;
+  }
+  @supports (animation-timeline: view()) {
+    .service-detail-page .inner-section-head,
+    .service-detail-page .lab-intro,
+    .service-detail-page .sx-heading,
+    .service-detail-page .cs-heading,
+    .service-detail-page .inner-editorial-lead > .inner-reveal,
+    .service-detail-page .sx-next-inner,
+    .service-detail-page .cs-next-inner,
+    .service-detail-page .service-final-section > .inner-reveal {
+      animation-range: entry 0% cover 24%;
+    }
+    .service-detail-page .inner-editorial-grid > .inner-editorial-card,
+    .service-detail-page .inner-stack-grid > .inner-stack-note,
+    .service-detail-page .inner-related-grid > .inner-tile {
+      animation-range: entry 0% cover 24%;
+    }
+    .service-detail-page .sx-explorer,
+    .service-detail-page .cs-explorer,
+    .service-detail-page .service-showcase-shell,
+    .service-detail-page .project-steps-sticky {
+      animation-range: entry 0% cover 22%;
+    }
+  }
+  @keyframes service-detail-copy-in {
+    from {
+      opacity: .4;
+      translate: 0 22px;
+      clip-path: inset(0 0 8% 0);
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+      clip-path: inset(0);
+    }
+  }
+  @keyframes service-detail-card-in {
+    from {
+      opacity: .45;
+      translate: 0 24px;
+      rotate: 0deg;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  @keyframes service-detail-panel-in {
+    from {
+      opacity: .48;
+      translate: 0 20px;
+      scale: .99;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+}

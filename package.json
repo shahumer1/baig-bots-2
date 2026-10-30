@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite --configLoader runner",
     "build": "vite build --configLoader runner",
+    "format:css": "node scripts/format-css.mjs",
+    "format:css:check": "node scripts/format-css.mjs --check",
     "preview": "vite preview --configLoader runner",
     "test:smoke": "node smoke.mjs && node kinetic-grid.smoke.mjs && node hero-orbit.smoke.mjs && node vision-flip.smoke.mjs"
   },
@@ -19,6 +21,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.0.0",
+    "postcss": "^8.5.6",
     "jsdom": "^29.1.1",
     "vite": "^7.0.0"
   }

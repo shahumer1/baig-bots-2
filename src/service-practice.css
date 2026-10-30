@@ -17,7 +17,10 @@
   pointer-events: none;
 }
 
-.practice-line-track { background: var(--line); }
+.practice-line-track {
+  background: var(--line);
+}
+
 .practice-line-fill {
   z-index: 1;
   background: var(--accent);
@@ -74,8 +77,7 @@
   z-index: 0;
   pointer-events: none;
   opacity: 0;
-  background:
-    radial-gradient(circle at var(--gloss-x, 50%) var(--gloss-y, 50%), color-mix(in srgb, var(--accent) 17%, transparent), transparent 57%),
+  background: radial-gradient(circle at var(--gloss-x, 50%) var(--gloss-y, 50%), color-mix(in srgb, var(--accent) 17%, transparent), transparent 57%),
     linear-gradient(135deg, color-mix(in srgb, var(--card) 70%, transparent), transparent 56%);
   transition: opacity .35s ease;
 }
@@ -91,16 +93,38 @@
 }
 
 .practice-card:hover::before,
-.practice-card:focus-within::before { opacity: 1; }
-@media(max-width:767px){.practice-card:hover,.practice-card:focus-within{-webkit-backdrop-filter:none;backdrop-filter:none}}
-.practice-card > * { position: relative; z-index: 1; }
-.practice-card .inner-kicker { display: block; }
+.practice-card:focus-within::before {
+  opacity: 1;
+}
+
+@media(max-width:767px) {
+  .practice-card:hover,.practice-card:focus-within {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+.practice-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.practice-card .inner-kicker {
+  display: block;
+}
+
 .practice-card h3 {
   margin: 19px 0 10px;
   font: 700 clamp(1.22rem, 1.9vw, 1.75rem)/1.2 var(--f-display);
   letter-spacing: -.035em;
 }
-.practice-card p { margin: 0 0 18px; color: var(--muted); line-height: 1.65; }
+
+.practice-card p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 .practice-card a {
   display: inline-flex;
   align-items: center;
@@ -113,18 +137,37 @@
   color: var(--head);
   font-weight: 700;
 }
-.practice-card a span { transition: transform .25s ease; }
-.practice-card a:hover span { transform: translateX(4px); }
+
+.practice-card a span {
+  transition: transform .25s ease;
+}
+
+.practice-card a:hover span {
+  transform: translateX(4px);
+}
 
 @media (max-width: 650px) {
-  .practice-timeline { gap: 13px; }
-  .practice-row { grid-template-columns: 34px minmax(0, 1fr); }
-  .practice-line-track, .practice-line-fill { left: 15px; }
-  .practice-node { left: 9px; }
-  .practice-card { min-height: 0; padding: 20px; }
+  .practice-timeline {
+    gap: 13px;
+  }
+  .practice-row {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
+  .practice-line-track, .practice-line-fill {
+    left: 15px;
+  }
+  .practice-node {
+    left: 9px;
+  }
+  .practice-card {
+    min-height: 0;
+    padding: 20px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .practice-card:hover,
-  .practice-card:focus-within { transform: none; }
+  .practice-card:focus-within {
+    transform: none;
+  }
 }
